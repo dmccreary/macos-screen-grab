@@ -90,7 +90,6 @@ struct HotKeyCenterTests {
         defer { center.suspend() }
         var fired: [GrabAction] = []
         center.handler = { fired.append($0) }
-        center.apply(combos)
 
         var event: EventRef?
         let created = CreateEvent(
