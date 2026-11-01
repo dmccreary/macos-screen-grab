@@ -248,9 +248,8 @@ struct OverlayRenderingTests {
 
 @MainActor
 struct StatusMenuTests {
-    private func makeController(defaults: UserDefaults? = nil) -> (StatusMenuController, AppSettings) {
-        let suite = defaults ?? UserDefaults(suiteName: "com.dmccreary.screengrab.tests.\(UUID().uuidString)")!
-        let settings = AppSettings(defaults: suite)
+    private func makeController() -> (StatusMenuController, AppSettings) {
+        let settings = AppSettings(defaults: InMemoryDefaults())
         let controller = StatusMenuController(settings: settings, actions: .init(
             grab: {}, grabWithDelay: {}, cancel: {}, showPreferences: {}, showCustomDelay: {}))
         return (controller, settings)
@@ -314,7 +313,7 @@ struct StatusMenuTests {
 struct PreferencesAndHUDTests {
     private func makePreferences(failed: Set<GrabAction> = []) -> (PreferencesWindowController, AppSettings) {
         _ = NSApplication.shared
-        let settings = AppSettings(defaults: UserDefaults(suiteName: "com.dmccreary.screengrab.tests.\(UUID().uuidString)")!)
+        let settings = AppSettings(defaults: InMemoryDefaults())
         let controller = PreferencesWindowController(
             settings: settings, failedActions: { failed }, onRecordingChanged: { _ in })
         return (controller, settings)

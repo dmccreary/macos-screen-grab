@@ -48,6 +48,20 @@ enum TestImages {
     }
 }
 
+/// Defaults held in memory. A real suite leaves a plist in ~/Library/Preferences on every
+/// test run, even after its persistent domain is removed.
+final class InMemoryDefaults: UserDefaults {
+    private var values: [String: Any] = [:]
+
+    override func object(forKey key: String) -> Any? { values[key] }
+    override func string(forKey key: String) -> String? { values[key] as? String }
+    override func data(forKey key: String) -> Data? { values[key] as? Data }
+    override func bool(forKey key: String) -> Bool { values[key] as? Bool ?? false }
+    override func set(_ value: Any?, forKey key: String) { values[key] = value }
+    override func set(_ value: Int, forKey key: String) { values[key] = value }
+    override func set(_ value: Bool, forKey key: String) { values[key] = value }
+}
+
 /// Polls until `condition` holds, for state that changes in a `Task`.
 @MainActor
 func eventually(timeoutSeconds: Double = 5, _ condition: () -> Bool) async -> Bool {

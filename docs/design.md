@@ -65,7 +65,7 @@ Capturing *before* activating removes the conflict:
 | Color | Always capture in **sRGB** | Tagged sRGB pastes predictably everywhere. Colors outside sRGB clip slightly, which is acceptable for screenshots. |
 | Pasteboard formats | PNG **and** LZW-compressed TIFF | Some apps prefer one or the other. |
 | Package structure | Library `ScreenGrabKit` plus a one-file executable `ScreenGrab` | Lets tests import everything, including views. |
-| Tests | Swift Testing (`import Testing`) | The Command Line Tools ship `Testing.framework` but not XCTest. |
+| Tests | Swift Testing (`import Testing`), run through `scripts/test.sh` | The Command Line Tools ship `Testing.framework` but not XCTest. SwiftPM doesn't find the framework's macro plugin with these tools alone, so the script passes its path. |
 | Swift language mode | Swift 5 (`swift-tools-version: 5.9`) | Avoids strict-concurrency friction with AppKit and Carbon callbacks. UI types are still annotated `@MainActor`. |
 | UI construction | Programmatic AppKit | No Xcode means no storyboards or nibs. |
 | Capture sound | System `Screen Capture.aif`, falling back to `Pop` | The file is present on the target machine, but the path isn't a public API, so the fallback is needed. |
@@ -74,7 +74,6 @@ Capturing *before* activating removes the conflict:
 
 ```
 macos-screen-grab/
-├── README.md                     Build, run, and permission notes
 ├── .gitignore
 ├── docs/
 │   ├── specification.md
@@ -82,10 +81,13 @@ macos-screen-grab/
 ├── dist/                         Build output, git-ignored
 │   └── ScreenGrab.app
 └── src/
+    ├── README.md                 Installation, usage, and troubleshooting
+    ├── install.sh                Tests, builds, and installs the app
     ├── Package.swift
     ├── Info.plist                Bundle metadata (LSUIElement, bundle ID)
     ├── scripts/
-    │   └── build-app.sh          Builds, bundles, and signs the app
+    │   ├── build-app.sh          Builds, bundles, and signs the app
+    │   └── test.sh               Runs the unit tests
     ├── Sources/
     │   ├── ScreenGrab/
     │   │   └── main.swift        Application entry point
@@ -95,6 +97,7 @@ macos-screen-grab/
     │       ├── GrabCoordinator.swift
     │       ├── ScreenCapturer.swift
     │       ├── ScreenRecordingPermission.swift
+    │       ├── Alerts.swift
     │       ├── RegionSelector.swift
     │       ├── OverlayViews.swift
     │       ├── SelectionGeometry.swift
@@ -146,6 +149,7 @@ flowchart TD
 | `GrabCoordinator` | Owns the grab state machine; the only component that sequences a grab |
 | `ScreenCapturer` | Captures each display to a `FrozenDisplay`; the only ScreenCaptureKit user |
 | `ScreenRecordingPermission` | Preflight, system prompt, explanatory alert |
+| `Alerts` | Modal alerts from a menu bar app, returning focus to the previous app afterwards |
 | `RegionSelector` | Creates one overlay panel per display, handles activation and focus handback |
 | `OverlayViews` | Draws the still image, dimming, border, and label; handles mouse and keyboard |
 | `SelectionGeometry` | Pure geometry functions; see [§6](#6-coordinate-systems-and-geometry) |
@@ -169,6 +173,7 @@ protocol PermissionChecking   { func ensureGranted() -> Bool }
 protocol CountdownPresenting  { func start(seconds: Int, onFinish: @escaping () -> Void, onCancel: @escaping () -> Void); func stop() }
 protocol SelectionPresenting  { func begin(_ frames: [FrozenDisplay], onFinish: @escaping (GrabSelection?) -> Void); func cancel() }
 protocol GrabOutputting       { func deliver(_ selection: GrabSelection) async -> GrabOutcome }
+protocol GrabFeedback         { func grabSucceeded(); func grabFailed(_ failure: GrabFailure) }
 ```
 
 ## 5. Grab workflow
@@ -302,7 +307,8 @@ When a grab starts from the menu rather than a hotkey, the coordinator waits abo
 3. Call `NSApp.activate(ignoringOtherApps: true)`. This is the call tested in
    [§2.1](#21-freeze-frame-selection). It is deprecated from macOS 14 but works; the
    newer `activate()` is cooperative and could be refused.
-4. Register `.crosshair` as the cursor rect across each overlay.
+4. Register `.crosshair` as the cursor rect across each overlay, and set it again when
+   the app's activation completes, because the pointer may not be moving at that moment.
 
 **View hierarchy** (two layers, so a drag never repaints the image):
 
@@ -365,8 +371,10 @@ equivalent. Key names come from a table of ANSI keys and function keys, so label
 assume a US layout.
 
 `HotKeyCenter` installs one Carbon event handler and maps `EventHotKeyID` to an action.
-`register` returns whether it succeeded; a failure such as `eventHotKeyExistsErr`
-(another app owns the shortcut) feeds the warning in FR-7.5.
+Shortcuts are registered with `kEventHotKeyExclusive`, because without it a shortcut
+another app owns may not be reported as a conflict. A failure such as
+`eventHotKeyExistsErr` (-9878) feeds the warning in FR-7.5. Testing confirmed that a
+second process trying to take a registered shortcut gets this error.
 
 While a `ShortcutRecorderButton` is recording, all hotkeys are **suspended** so the
 keys being recorded don't start a grab.
@@ -379,6 +387,9 @@ callback that re-registers hotkeys and refreshes the menu. Preferences apply imm
 The window is an `NSGridView` laid out per spec §8.4. Accessory apps have no visible main
 menu, so a hidden `NSApp.mainMenu` supplies ⌘W and the standard Edit commands; without it
 those key equivalents wouldn't work in the custom delay field.
+
+Opening the app while it's already running shows Preferences (FR-6.7). This gives a way
+in if the menu bar icon is hidden behind the notch.
 
 ### 7.7 Screen Recording permission
 
@@ -435,7 +446,9 @@ second, using template images so it follows light and dark menu bars.
 
 ### 10.1 Automated (`swift test`)
 
-Automated tests need no permissions and don't touch the real clipboard or show windows.
+Automated tests need no permissions, don't touch the real clipboard, and put nothing on
+the visible screen. Most views render without being shown. One test orders a window far
+off-screen, because only a window that is ordered in has real layer backing stores.
 
 | Area | What is verified |
 |---|---|
@@ -445,14 +458,24 @@ Automated tests need no permissions and don't touch the real clipboard or show w
 | Clipboard | Round trip through a private named pasteboard; both types present; previous contents replaced |
 | `FileNaming`, save | Format, collision suffixes, folder creation, unwritable-folder error |
 | `HotKeyCombo` | Validation rules, duplicates, display strings, `Codable` round trip |
-| `AppSettings` | Defaults, clamping, persistence (with a private `UserDefaults` suite) |
+| `AppSettings` | Defaults, clamping, persistence (with an in-memory `UserDefaults` subclass, because a real suite leaves a plist behind on every run) |
 | `GrabCoordinator` | Every cell of the [§5.1](#51-state-machine) table using fakes, including stale frames after a cancel and repeated triggers |
-| `SelectionOverlayView` | Synthesized mouse and key events produce the right selection or cancel; the view hierarchy renders off-screen to a bitmap, with pixels checked for dimming, the undimmed hole, and correct orientation |
+| `SelectionOverlayView` | Synthesized mouse and key events produce the right selection or cancel; the view hierarchy renders off-screen to a bitmap, with pixels checked for dimming, the undimmed hole, and correct orientation; repeated partial redraws don't accumulate dimming in the layer's backing store |
 
 ### 10.2 Smoke test (no permission needed)
 
-Launch the built app, then confirm that it runs as a `UIElement` (`lsappinfo`), that a
-second launch exits, and that it doesn't crash or prompt at launch.
+These checks run against the installed app, and none of them trigger a permission prompt:
+
+| Check | How |
+|---|---|
+| Runs with no Dock icon | `lsappinfo info ScreenGrab` reports `type="UIElement"` |
+| A second launch exits | Run the binary directly; the first process keeps its ID |
+| Holds its hotkeys | A second process calling `RegisterEventHotKey` for ⌃⇧4 gets -9878, while an unused control combination succeeds |
+| Menu bar icon exists | A probe status item's x position shifts by the width of one item when ScreenGrab is running compared with stopped |
+| Idle cost | `ps` reports CPU and resident memory |
+
+The menu bar icon needs this indirect check. On macOS 26, `CGWindowListCopyWindowInfo`
+doesn't list third-party status items, even for the process that owns them.
 
 ### 10.3 Manual acceptance
 
@@ -461,13 +484,43 @@ the acceptance tests in [spec §10](specification.md#10-acceptance-tests) are ru
 These cover what automation can't reach: actual ScreenCaptureKit output, on-screen overlay
 behavior, the live crosshair, and pasting into real applications.
 
+### 10.4 Verification status (2026-11-01)
+
+| Area | Status |
+|---|---|
+| 93 automated tests | Passing |
+| Installer: fresh install, upgrade, rollback after a failed swap, uninstall, name conflict | Tested (rollback with a stubbed `mv`) |
+| Installer: `--reset-permission`, `--purge` | Flow tested with stubbed `tccutil` and `defaults`, so no real settings were changed |
+| Universal build | Built and signed; contains arm64 and x86_64. The x86_64 slice hasn't been run. |
+| Smoke checks in [§10.2](#102-smoke-test-no-permission-needed) | Passing on macOS 26.6.2: 0.0 % CPU and about 25 MB idle |
+| Crosshair, activation, and focus handback | Tested in a prototype ([§2.1](#21-freeze-frame-selection)), not yet in the finished app |
+| Real grab on one Retina display | Working. A 980×570 grab reached the clipboard as PNG and TIFF, tagged sRGB at 144 DPI, and pasted into another app with correct orientation and colors. Identified from its metadata, as the grab itself was made by hand. |
+| Countdown HUD, on-screen cancel paths, Preferences recording, NFR-1 and NFR-2 timings, multiple displays | **Not yet run.** These need a person, as in [§10.3](#103-manual-acceptance) |
+
 ## 11. Build, packaging, and signing
 
 `src/scripts/build-app.sh`:
 
-1. `swift build -c release --package-path src`
-2. Assembles `dist/ScreenGrab.app/Contents/{MacOS/ScreenGrab, Info.plist}`
-3. `codesign --force --sign "${SIGN_IDENTITY:--}" dist/ScreenGrab.app`
+1. `swift build -c release --package-path src`. With `UNIVERSAL=1`, each architecture is
+   built in its own scratch folder and the results are combined with `lipo`.
+2. Assembles `dist/ScreenGrab.app/Contents/{MacOS/ScreenGrab, Info.plist, PkgInfo}` in a
+   staging folder.
+3. `codesign --force --sign "${SIGN_IDENTITY:--}"`, then verifies the signature.
+4. Replaces any previous build only once the new one is complete.
+
+`src/install.sh` wraps this for installation. Its order is chosen so that the installed
+app keeps working if anything goes wrong:
+
+1. Checks the OS, the build tools, and the destination. It refuses to replace an app
+   with a different bundle identifier, or to run as root.
+2. Runs the tests, then builds. A failure here leaves the installed app untouched and
+   still running.
+3. Copies the build beside the target and verifies the copy.
+4. Stops the running app, moves the old version aside, and moves the new one into place.
+   An exit trap restores the old version if the swap doesn't complete.
+5. Removes the old version, registers the new one with LaunchServices, and opens it.
+
+The script is written for Bash 3.2, the version macOS ships.
 
 `Info.plist` key values:
 
@@ -479,9 +532,9 @@ behavior, the live crosshair, and pasting into real applications.
 
 **Signing and the Screen Recording grant:** macOS identifies an ad-hoc signed app by its
 code hash, which changes on every rebuild, so each rebuild needs the permission granted
-again. Setting `SIGN_IDENTITY` to a stable self-signed certificate avoids this. The README
-gives the Keychain Access steps. Because this changes the user's keychain, the build script
-never creates a certificate on its own.
+again. Setting `SIGN_IDENTITY` to a stable self-signed certificate avoids this.
+[`src/README.md`](../src/README.md) gives the Keychain Access steps. Because this changes
+the user's keychain, the scripts never create a certificate on their own.
 
 ## 12. Requirements traceability
 
@@ -496,6 +549,7 @@ never creates a certificate on its own.
 | FR-7.x (hotkeys) | `HotKeyCombo`, `HotKeyCenter`, `ShortcutRecorderButton` |
 | FR-8.x (permissions) | `ScreenRecordingPermission`, `GrabCoordinator` |
 | FR-9.x (feedback, errors) | `StatusMenuController`, `GrabCoordinator`, `AppDelegate` |
+| FR-10.x (installation) | `src/install.sh`, `src/scripts/build-app.sh`, `src/README.md` |
 | NFR-1, NFR-2 | [§2.1](#21-freeze-frame-selection), [§8](#8-concurrency-model) |
 | NFR-6 | [§6](#6-coordinate-systems-and-geometry) |
 | NFR-8 | [§4.1](#41-testing-seams), [§10](#10-testing-strategy) |

@@ -83,6 +83,32 @@ struct HotKeyCenterTests {
         #expect(late.failedActions == Set(GrabAction.allCases))
     }
 
+    /// Sends the same Carbon event the system delivers for a key press, which tests
+    /// everything after the key press itself.
+    @Test func aHotKeyEventReachesTheHandler() async throws {
+        let center = HotKeyCenter()
+        defer { center.suspend() }
+        var fired: [GrabAction] = []
+        center.handler = { fired.append($0) }
+        center.apply(combos)
+
+        var event: EventRef?
+        let created = CreateEvent(
+            nil, OSType(kEventClassKeyboard), UInt32(kEventHotKeyPressed), 0,
+            EventAttributes(kEventAttributeNone), &event)
+        #expect(created == noErr)
+
+        // IDs follow GrabAction's order, so 2 is the delayed grab.
+        var id = EventHotKeyID(signature: 0x5347_5242, id: 2)
+        let set = SetEventParameter(
+            event, EventParamName(kEventParamDirectObject), EventParamType(typeEventHotKeyID),
+            MemoryLayout<EventHotKeyID>.size, &id)
+        #expect(set == noErr)
+
+        #expect(SendEventToEventTarget(event, GetEventDispatcherTarget()) == noErr)
+        #expect(await eventually { fired == [.delayedRegion] })
+    }
+
     @Test func suspendingReleasesShortcutsAndResumingTakesThemBack() {
         let first = HotKeyCenter()
         defer { first.suspend() }
@@ -102,7 +128,7 @@ struct HotKeyCenterTests {
 @MainActor
 struct AppSettingsTests {
     private func makeSettings() -> (AppSettings, UserDefaults) {
-        let defaults = UserDefaults(suiteName: "com.dmccreary.screengrab.tests.\(UUID().uuidString)")!
+        let defaults = InMemoryDefaults()
         return (AppSettings(defaults: defaults), defaults)
     }
 

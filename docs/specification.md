@@ -181,6 +181,7 @@ in [§8.4](#84-preferences-window). Changes apply **immediately** (no OK/Apply).
 | FR-6.4 | **Also save to folder** checkbox (default off) with a *Choose…* button and the current path displayed. |
 | FR-6.5 | Preferences persist across launches (user defaults). |
 | FR-6.6 | A quick **Delay** submenu in the menu bar menu offers the presets and checks the current one, so the delay can be changed without opening Preferences. |
+| FR-6.7 | Opening the app while it's already running shows Preferences, which gives a way in if the menu bar icon is hidden behind the notch. |
 
 ### 6.7 Global hotkeys
 
@@ -215,6 +216,18 @@ screen.
 | FR-9.4 | The overlay and HUD are always torn down, even when an error occurs. |
 | FR-9.5 | If a display is connected or disconnected mid-grab, the grab is cancelled cleanly without a crash. |
 
+### 6.10 Installation
+
+| ID | Requirement |
+|---|---|
+| FR-10.1 | `src/install.sh` tests, builds, signs, and installs the app with one command, then opens it. |
+| FR-10.2 | The default destination is `/Applications`, falling back to `~/Applications` if that isn't writable. A destination can also be chosen. |
+| FR-10.3 | A failed test or build leaves any installed copy untouched. If replacing the installed copy fails, the previous version is restored. |
+| FR-10.4 | The installer refuses to replace or remove an app with a different bundle identifier that happens to be named `ScreenGrab.app`. |
+| FR-10.5 | The installer checks its prerequisites first and gives a specific instruction for anything missing. It refuses to run as root. |
+| FR-10.6 | The installer can uninstall the app, optionally deleting its preferences, and can clear the app's Screen Recording entry. |
+| FR-10.7 | `src/README.md` documents installation, permissions, usage, troubleshooting, and development. |
+
 ## 7. Non-functional requirements
 
 | ID | Category | Requirement |
@@ -225,7 +238,7 @@ screen.
 | NFR-4 | Privacy | No network access, no analytics, no persistence of image data unless FR-5.4 is enabled. Preferences contain no image data. |
 | NFR-5 | Reliability | No crash on cancel, rapid repeated hotkeys, display changes, or empty clipboard states. |
 | NFR-6 | Quality of image | Pixel-exact capture: output pixel size equals selection size × display scale; no resampling blur. |
-| NFR-7 | Footprint | Source under ~1,500 lines of Swift; no third-party packages. |
+| NFR-7 | Footprint | Source of about 2,000 lines of Swift, excluding tests; no third-party packages. |
 | NFR-8 | Maintainability | Pure logic (geometry conversion, file naming, delay clamping, hotkey validation) is separated from UI and unit-tested. |
 | NFR-9 | Accessibility | Menu items and Preferences controls have accessibility labels; every grab can be cancelled from the keyboard (Esc). |
 | NFR-10 | Buildability | `src/scripts/build-app.sh` produces a runnable `ScreenGrab.app` on a Mac that has only the Command Line Tools. |
@@ -341,12 +354,17 @@ automated unit tests; see [design.md](design.md#10-testing-strategy)).
 | AC-27 | Observe app idle for 1 minute | ~0 % CPU in Activity Monitor | NFR-3 |
 | AC-28 | Grab a region that includes the title bar of the frontmost window | Title bar and traffic lights appear active (in color), not greyed out | FR-2.11 |
 | AC-29 | Type in a text editor, press ⌃⇧4, complete a grab, then keep typing without clicking. Repeat, cancelling with Esc | The text goes into the editor both times | FR-2.12 |
+| AC-30 | Open the app from the Applications folder while it's running | Preferences appears | FR-6.7 |
+| AC-31 | Run `src/install.sh` on a clean machine, then again as an upgrade | App is installed and running both times; preferences are kept | FR-10.1, 10.2 |
+| AC-32 | Make the build fail, then run the installer | Error shown; the installed app is unchanged and still running | FR-10.3 |
+| AC-33 | Put a different app named `ScreenGrab.app` in the destination, then install and uninstall | Both refuse to touch it | FR-10.4 |
+| AC-34 | Run `src/install.sh --uninstall --purge` | App and preferences are gone; saved PNGs remain | FR-10.6 |
 
 ## 11. Risks and known operating-system behavior
 
 | ID | Risk / behavior | Mitigation |
 |---|---|---|
-| R1 | macOS ties the Screen Recording grant to the app's **code signature**. An ad-hoc signed app gets a new identity on every rebuild, so the permission must be re-granted after each rebuild. | `build-app.sh` accepts a `SIGN_IDENTITY` so a stable self-signed certificate can be used; documented in the README. Rebuilds are rare for personal use. |
+| R1 | macOS ties the Screen Recording grant to the app's **code signature**. An ad-hoc signed app gets a new identity whenever its code changes, so the permission must be re-granted after such a rebuild. | The scripts accept a `SIGN_IDENTITY` so a stable self-signed certificate can be used, as documented in `src/README.md`. The installer warns when the signature has changed. Rebuilds are rare for personal use. |
 | R2 | Since macOS 15, the system periodically asks the user to **re-confirm** Screen Recording access for apps that capture the screen. | Out of the app's control; documented. |
 | R3 | The selector has to activate ScreenGrab to show a crosshair, which closes other apps' open menus and greys their title bars. | Freeze-frame: the image is captured before activation, so none of this appears in grabs. The remaining effect is that a menu open when the selector starts is closed once the grab ends, including a cancelled one. |
 | R4 | The chosen shortcuts may collide with other apps. | Configurable hotkeys; collision warning (FR-7.5). |
