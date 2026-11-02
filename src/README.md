@@ -337,8 +337,8 @@ scripts/build-app.sh
 ```
 
 Use `scripts/test.sh` rather than `swift test` on its own. With only the Command Line
-Tools installed, `swift test` can't find the Swift Testing macro plugin, and this script
-supplies its location.
+Tools installed, `swift test` can't always find Swift Testing or its macro plugin, and
+fails with `no such module 'Testing'`. This script supplies their locations.
 
 ### What the tests cover
 
