@@ -1,0 +1,23 @@
+{
+  "title": "AI Coding Agent Loop Stepper",
+  "description": "The learner will explain the order of the seven stages an AI coding agent moves through, by predicting the next stage correctly in at least 5 of 6 steps.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ai-coding-agent-loop-stepper",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "scaffold",
+  "chapter_number": 5,
+  "chapter_title": "Generative AI and Coding Agents",
+  "chapter_dir": "05-generative-ai-coding-agents",
+  "chapter_rel_dir": "chapters/05-generative-ai-coding-agents"
+}

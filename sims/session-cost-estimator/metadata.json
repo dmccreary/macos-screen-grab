@@ -1,0 +1,23 @@
+{
+  "title": "Session Cost Estimator",
+  "description": "The learner will calculate the estimated API cost of each of the three ScreenGrab session stages from its token counts and the stated prices, to within $0.02.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "session-cost-estimator",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "Measuring an AI Session: Time and Cost",
+  "chapter_dir": "11-measuring-ai-session",
+  "chapter_rel_dir": "chapters/11-measuring-ai-session"
+}

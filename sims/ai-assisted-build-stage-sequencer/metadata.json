@@ -1,0 +1,23 @@
+{
+  "title": "AI-Assisted Build Stage Sequencer",
+  "description": "The learner will list the five stages of the ScreenGrab build in their correct order, given five unordered cards that each show a stage and its output, within two attempts.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "ai-assisted-build-stage-sequencer",
+  "library": "p5.js",
+  "bloomLevel": "Remember",
+  "bloomVerb": "list",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "Generating, Building, and Installing the Code",
+  "chapter_dir": "09-generating-building-installing",
+  "chapter_rel_dir": "chapters/09-generating-building-installing"
+}

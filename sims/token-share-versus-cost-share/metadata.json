@@ -1,0 +1,23 @@
+{
+  "title": "Token Share Versus Cost Share Chart",
+  "description": "The learner will distinguish the token type that has the largest share of tokens from the token type that has the largest share of cost in the whole ScreenGrab session, and select each correctly on the first attempt.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "token-share-versus-cost-share",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "distinguish",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "Measuring an AI Session: Time and Cost",
+  "chapter_dir": "11-measuring-ai-session",
+  "chapter_rel_dir": "chapters/11-measuring-ai-session"
+}

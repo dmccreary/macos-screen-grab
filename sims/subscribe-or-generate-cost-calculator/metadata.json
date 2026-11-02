@@ -1,0 +1,23 @@
+{
+  "title": "Subscribe or Generate Cost Calculator",
+  "description": "The learner will calculate the five-year cost of a three-computer subscription and of three generated-tool scenarios, each to within $1.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "subscribe-or-generate-cost-calculator",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 15,
+  "chapter_title": "The Final Decision and the Capstone Project",
+  "chapter_dir": "15-decision-and-capstone",
+  "chapter_rel_dir": "chapters/15-decision-and-capstone"
+}

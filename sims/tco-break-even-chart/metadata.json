@@ -1,0 +1,23 @@
+{
+  "title": "Break-Even Chart for a Generated Tool",
+  "description": "The learner will calculate the break-even time between a paid subscription and a generated tool, to within 0.1 year, for 3 values of the generated tool's yearly maintenance time.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "tco-break-even-chart",
+  "library": "Chart.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 4,
+  "chapter_title": "Total Cost of Ownership",
+  "chapter_dir": "04-total-cost-of-ownership",
+  "chapter_rel_dir": "chapters/04-total-cost-of-ownership"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Feature Growth and Usage Explorer",
+  "description": "The learner will calculate the percentage of an illustrative product's features that a given user never uses, for a given version, to within 1 percentage point.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "bloat-feature-growth-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "Software Features and the Anatomy of Bloat",
+  "chapter_dir": "01-software-bloat",
+  "chapter_rel_dir": "chapters/01-software-bloat"
+}

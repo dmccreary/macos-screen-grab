@@ -18,7 +18,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../02-feature-usage/">
+        <link rel="next" href="quiz/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -55,6 +55,8 @@
       <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -309,63 +311,33 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
         
       
     
@@ -416,189 +388,73 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
           
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   <span class="md-ellipsis">
     1. Software Features and the Anatomy of Bloat
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Software Features and the Anatomy of Bloat
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    1. Software Features and the Anatomy of Bloat
+    Quiz
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-products-and-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software, Products, and Features
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Software, Products, and Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-software-vocabulary-concept-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Software Vocabulary Concept Map
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versions-and-release-cycles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Versions and Release Cycles
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Versions and Release Cycles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-feature-growth-and-usage-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Feature Growth and Usage Explorer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-software-bloat-is" class="md-nav__link">
-    <span class="md-ellipsis">
-      What Software Bloat Is
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-job-to-be-done" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Job To Be Done
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-footprint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resource Footprint
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Resource Footprint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-resource-footprint-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Resource Footprint Comparison
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#putting-the-vocabulary-to-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      Putting the Vocabulary to Work
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Takeaways
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -611,15 +467,73 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-feature-usage/" class="md-nav__link">
+      <a href="references/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../02-feature-usage/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     2. Feature Usage and the 95/5 Rule
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -631,16 +545,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../03-licenses-subscriptions/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../03-licenses-subscriptions/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     3. Licenses, Subscriptions, and Vendor Incentives
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -652,16 +595,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../04-total-cost-of-ownership/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../04-total-cost-of-ownership/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     4. Total Cost of Ownership
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -673,16 +645,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../05-generative-ai-coding-agents/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../05-generative-ai-coding-agents/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     5. Generative AI and Coding Agents
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -694,16 +695,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-build-or-buy/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../06-build-or-buy/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     6. Build or Buy and the Rise of Personal Software
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -715,16 +745,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../07-requirements-minimal-specs/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../07-requirements-minimal-specs/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     7. Requirements and Minimal Specifications
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -736,16 +795,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../08-software-design-platform/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../08-software-design-platform/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     8. Software Design and Platform Constraints
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -757,16 +845,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../09-generating-building-installing/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../09-generating-building-installing/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     9. Generating, Building, and Installing the Code
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -778,16 +895,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../10-tokens-caching-pricing/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../10-tokens-caching-pricing/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     10. Tokens, Prompt Caching, and Token Pricing
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -799,16 +945,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-measuring-ai-session/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../11-measuring-ai-session/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     11. Measuring an AI Session: Time and Cost
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -820,16 +995,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-software-testing/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../12-software-testing/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     12. Software Testing: Automated and Manual
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -841,16 +1045,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../13-bugs-evidence-verification/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../13-bugs-evidence-verification/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     13. Bugs, Evidence, and Verification Plans
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -862,16 +1095,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-maintenance-open-source/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../14-maintenance-open-source/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     14. Maintenance and Open Source Sharing
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -883,16 +1145,45 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-decision-and-capstone/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../15-decision-and-capstone/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     15. The Final Decision and the Capstone Project
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -916,6 +1207,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
         
@@ -970,6 +1267,130 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
       
         
           
@@ -1093,6 +1514,26 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2232,6 +2673,7 @@ You can now tell a software product from the software inside it, trace how a fea
 <li>Resource footprint, including install size and idle resource use, is the measurable side of bloat.</li>
 <li>A single-purpose utility, guided by the Unix philosophy, is the contrast case.</li>
 </ul>
+<p><a href="references/">See Annotated References</a></p>
 
 
 
@@ -2287,13 +2729,13 @@ You can now tell a software product from the software inside it, trace how a fea
         
         
           
-          <a href="../02-feature-usage/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Feature Usage and the 95/5 Rule">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                2. Feature Usage and the 95/5 Rule
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2330,6 +2772,12 @@ You can now tell a software product from the software inside it, trace how a fea
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex-config.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

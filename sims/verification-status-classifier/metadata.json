@@ -1,0 +1,23 @@
+{
+  "title": "Verification Status Classifier",
+  "description": "The learner will judge the verification status of each of ten ScreenGrab claims from the evidence offered for it, with at least 8 of 10 correct on the first attempt.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "verification-status-classifier",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "judge",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Bugs, Evidence, and Verification Plans",
+  "chapter_dir": "13-bugs-evidence-verification",
+  "chapter_rel_dir": "chapters/13-bugs-evidence-verification"
+}

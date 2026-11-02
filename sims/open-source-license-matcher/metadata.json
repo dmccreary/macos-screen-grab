@@ -1,0 +1,23 @@
+{
+  "title": "Open Source License Matcher",
+  "description": "The learner will apply the conditions of five license choices to choose the license that fits each of eight scenarios, with at least 7 of 8 correct on the first attempt.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "open-source-license-matcher",
+  "library": "p5.js",
+  "bloomLevel": "Apply",
+  "bloomVerb": "apply",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "Maintenance and Open Source Sharing",
+  "chapter_dir": "14-maintenance-open-source",
+  "chapter_rel_dir": "chapters/14-maintenance-open-source"
+}

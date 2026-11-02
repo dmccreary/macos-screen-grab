@@ -1,0 +1,23 @@
+{
+  "title": "Weighted Decision Matrix Explorer",
+  "description": "The learner will judge how robust the winner of a weighted decision matrix is by finding which single-criterion weight changes flip the winner, answering both evaluation questions correctly.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "weighted-decision-matrix-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "judge",
+  "completion_status": "scaffold",
+  "chapter_number": 15,
+  "chapter_title": "The Final Decision and the Capstone Project",
+  "chapter_dir": "15-decision-and-capstone",
+  "chapter_rel_dir": "chapters/15-decision-and-capstone"
+}

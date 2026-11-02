@@ -1,0 +1,2136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/macos-screen-grab/chapters/12-software-testing/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - ScreenGrab: Software Bloat and the Generated Alternative</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-software-testing-automated-and-manual" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-header__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenGrab: Software Bloat and the Generated Alternative
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/macos-screen-grab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-nav__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ScreenGrab: Software Bloat and the Generated Alternative
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/macos-screen-grab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-software-bloat/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Software Features and the Anatomy of Bloat
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-feature-usage/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. Feature Usage and the 95/5 Rule
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-licenses-subscriptions/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. Licenses, Subscriptions, and Vendor Incentives
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-total-cost-of-ownership/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Total Cost of Ownership
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-generative-ai-coding-agents/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. Generative AI and Coding Agents
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-build-or-buy/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Build or Buy and the Rise of Personal Software
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-requirements-minimal-specs/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Requirements and Minimal Specifications
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-software-design-platform/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Software Design and Platform Constraints
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-generating-building-installing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Generating, Building, and Installing the Code
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-tokens-caching-pricing/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Tokens, Prompt Caching, and Token Pricing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-measuring-ai-session/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Measuring an AI Session: Time and Cost
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    12. Software Testing: Automated and Manual
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            12. Software Testing: Automated and Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-unit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a unit test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-smoke-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What is a smoke test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-are-test-side-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What are test side effects?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-why-must-a-tests-expected-value-come-from-the-requirement-rather-than-from-running-the-code-and-copying-its-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Why must a test's expected value come from the requirement rather than from running the code and copying its output?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-can-an-automated-test-generally-not-confirm-that-a-manual-test-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. What can an automated test generally not confirm that a manual test can?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-does-high-test-coverage-not-prove-that-the-tests-are-good" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Why does high test coverage not prove that the tests are good?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-you-want-to-test-screengrabs-grab-coordinator-without-a-real-display-or-a-permission-prompt-what-technique-does-the-chapter-describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. You want to test ScreenGrab's grab coordinator without a real display or a permission prompt. What technique does the chapter describe?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-an-automated-test-sends-a-synthesized-esc-event-to-the-overlay-view-and-the-view-reports-cancel-what-additional-evidence-is-needed-to-show-that-pressing-the-real-esc-key-cancels-a-real-grab" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. An automated test sends a synthesized Esc event to the overlay view, and the view reports "cancel." What additional evidence is needed to show that pressing the real Esc key cancels a real grab?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-does-a-traceability-matrix-help-you-judge-whether-testing-is-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. How does a traceability matrix help you judge whether testing is complete?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-screengrabs-94-automated-tests-are-strongest-where-behavior-is-pure-logic-and-weaker-closer-to-the-real-screen-and-keyboard-what-is-the-underlying-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. ScreenGrab's 94 automated tests are strongest where behavior is pure logic and weaker closer to the real screen and keyboard. What is the underlying reason?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotated References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-bugs-evidence-verification/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Bugs, Evidence, and Verification Plans
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-maintenance-open-source/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Maintenance and Open Source Sharing
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../15-decision-and-capstone/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. The Final Decision and the Capstone Project
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../specification/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Project Documents
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../appendices/snagit-pricing-2026-11/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-unit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a unit test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-a-smoke-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What is a smoke test?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-are-test-side-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What are test side effects?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-why-must-a-tests-expected-value-come-from-the-requirement-rather-than-from-running-the-code-and-copying-its-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Why must a test's expected value come from the requirement rather than from running the code and copying its output?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-can-an-automated-test-generally-not-confirm-that-a-manual-test-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. What can an automated test generally not confirm that a manual test can?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-does-high-test-coverage-not-prove-that-the-tests-are-good" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Why does high test coverage not prove that the tests are good?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-you-want-to-test-screengrabs-grab-coordinator-without-a-real-display-or-a-permission-prompt-what-technique-does-the-chapter-describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. You want to test ScreenGrab's grab coordinator without a real display or a permission prompt. What technique does the chapter describe?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-an-automated-test-sends-a-synthesized-esc-event-to-the-overlay-view-and-the-view-reports-cancel-what-additional-evidence-is-needed-to-show-that-pressing-the-real-esc-key-cancels-a-real-grab" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. An automated test sends a synthesized Esc event to the overlay view, and the view reports "cancel." What additional evidence is needed to show that pressing the real Esc key cancels a real grab?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-does-a-traceability-matrix-help-you-judge-whether-testing-is-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. How does a traceability matrix help you judge whether testing is complete?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-screengrabs-94-automated-tests-are-strongest-where-behavior-is-pure-logic-and-weaker-closer-to-the-real-screen-and-keyboard-what-is-the-underlying-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. ScreenGrab's 94 automated tests are strongest where behavior is pure logic and weaker closer to the real screen and keyboard. What is the underlying reason?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/macos-screen-grab/blob/main/docs/chapters/12-software-testing/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-software-testing-automated-and-manual">Quiz: Software Testing: Automated and Manual<a class="headerlink" href="#quiz-software-testing-automated-and-manual" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of verification, automated and manual tests, unit and integration tests, stubs, acceptance tests, and smoke tests with these review questions.</p>
+<hr />
+<h4 id="1-what-is-a-unit-test">1. What is a unit test?<a class="headerlink" href="#1-what-is-a-unit-test" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A test that checks the whole installed app on a real screen</li>
+<li>A test that checks one small piece of logic in isolation, such as a single function or class</li>
+<li>A test that a person runs by hand to judge how the screen looks</li>
+<li>A test that confirms the software starts</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. Unit tests are the fastest and most precise kind, because when one fails you know which function broke. ScreenGrab's design deliberately separated pure logic, such as geometry conversion, file naming, delay limits, and hotkey validation, from window-handling code so that the logic could be unit tested. Option A describes manual or acceptance testing, and option D describes a smoke test.</p>
+<p><strong>Concept Tested:</strong> Unit Tests</p>
+<p><strong>See:</strong> <a href="../#unit-tests">Unit Tests</a></p>
+</details>
+<hr />
+<h4 id="2-what-is-a-smoke-test">2. What is a smoke test?<a class="headerlink" href="#2-what-is-a-smoke-test" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A test of how well the software handles overheating hardware</li>
+<li>A complete proof that the software is correct</li>
+<li>A test that measures code coverage</li>
+<li>A quick set of checks that the software starts and its most basic parts are alive</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. The name comes from hardware: power it on and see whether smoke comes out. A smoke test does not prove the software correct, only that it is worth testing further. ScreenGrab's smoke checks confirm the app runs with no Dock icon, that a second launch exits and leaves the first process running, and that idle use is about 0.0% CPU and about 25 MB of memory.</p>
+<p><strong>Concept Tested:</strong> Smoke Tests</p>
+<p><strong>See:</strong> <a href="../#smoke-tests">Smoke Tests</a></p>
+</details>
+<hr />
+<h4 id="3-what-are-test-side-effects">3. What are test side effects?<a class="headerlink" href="#3-what-are-test-side-effects" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Benefits a test brings to unrelated code</li>
+<li>Warnings printed by the compiler</li>
+<li>Changes a test makes outside itself, such as writing files, changing settings, or overwriting the clipboard</li>
+<li>Errors in the specification</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. Side effects are a hazard because they make tests depend on each other and can damage the machine under test. ScreenGrab's tests use a private named pasteboard so they never touch your real clipboard, and they hold preferences in an in-memory object because a real suite would leave a settings file in the user's library. The automated tests need no permissions and show nothing on the visible screen.</p>
+<p><strong>Concept Tested:</strong> Test Side Effects</p>
+<p><strong>See:</strong> <a href="../#test-side-effects">Test Side Effects</a></p>
+</details>
+<hr />
+<h4 id="4-why-must-a-tests-expected-value-come-from-the-requirement-rather-than-from-running-the-code-and-copying-its-output">4. Why must a test's expected value come from the requirement rather than from running the code and copying its output?<a class="headerlink" href="#4-why-must-a-tests-expected-value-come-from-the-requirement-rather-than-from-running-the-code-and-copying-its-output" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>A test built from the code's own output passes by construction and proves nothing</li>
+<li>Requirements are always shorter than code</li>
+<li>The compiler refuses to accept copied values</li>
+<li>Copied values make tests run slower</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. If you ask an agent to run the code and write down whatever it prints, the test cannot fail when the code is wrong. A useful test fails when the code is wrong, and the failure message should show which behavior broke. The chapter's clamping example shows a rectangle running past the display edge. Tests show the presence of confirmed behavior, not the absence of mistakes.</p>
+<p><strong>Concept Tested:</strong> Software Testing</p>
+<p><strong>See:</strong> <a href="../#software-testing">Software Testing</a></p>
+</details>
+<hr />
+<h4 id="5-what-can-an-automated-test-generally-not-confirm-that-a-manual-test-can">5. What can an automated test generally not confirm that a manual test can?<a class="headerlink" href="#5-what-can-an-automated-test-generally-not-confirm-that-a-manual-test-can" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Whether a function returns the right value</li>
+<li>What real hardware and a real operating system do, such as delivering a physical key press or granting a real permission</li>
+<li>Whether the code compiles</li>
+<li>Whether a file name is formatted correctly</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. An automated test can only confirm what a program can observe. A program cannot easily press a physical key, feel whether a crosshair looks right, or ask the operating system's permission dialog for consent. The design document says a real key press cannot be simulated without Accessibility access. Options A, C, and D are things automation does well.</p>
+<p><strong>Concept Tested:</strong> Manual Testing</p>
+<p><strong>See:</strong> <a href="../#manual-testing">Manual Testing</a></p>
+</details>
+<hr />
+<h4 id="6-why-does-high-test-coverage-not-prove-that-the-tests-are-good">6. Why does high test coverage not prove that the tests are good?<a class="headerlink" href="#6-why-does-high-test-coverage-not-prove-that-the-tests-are-good" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Coverage numbers are always inaccurate</li>
+<li>High coverage always means perfect software</li>
+<li>Coverage only measures documentation</li>
+<li>A test can run a line without checking its result, so coverage shows only which code nobody tested</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. Test coverage is the proportion of code or requirements a suite exercises, usually reported as the percentage of lines run. A line that runs but is never checked counts as covered. The chapter advises using coverage to find code that nobody tested, not as proof that the tested code is right. Option B is the misconception the chapter warns against.</p>
+<p><strong>Concept Tested:</strong> Test Coverage</p>
+<p><strong>See:</strong> <a href="../#test-coverage">Test Coverage</a></p>
+</details>
+<hr />
+<h4 id="7-you-want-to-test-screengrabs-grab-coordinator-without-a-real-display-or-a-permission-prompt-what-technique-does-the-chapter-describe">7. You want to test ScreenGrab's grab coordinator without a real display or a permission prompt. What technique does the chapter describe?<a class="headerlink" href="#7-you-want-to-test-screengrabs-grab-coordinator-without-a-real-display-or-a-permission-prompt-what-technique-does-the-chapter-describe" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Replace the screen capturer, permission checker, countdown, selector, and output with stubs or fakes supplied by the test</li>
+<li>Run the test only on a machine with Xcode</li>
+<li>Skip the test and rely on the agent's report</li>
+<li>Grant every permission in advance</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. A stubbed dependency is a stand-in for a part the code relies on, returning fixed answers, and a fake also records what it was asked. Using them, every cell of the coordinator's state table can be exercised without a real display. The installer tests do the same with shell commands, such as a stubbed <code>mv</code> for rollback and stubbed <code>tccutil</code> and <code>defaults</code> for the permission reset.</p>
+<p><strong>Concept Tested:</strong> Stubbed Dependencies</p>
+<p><strong>See:</strong> <a href="../#stubbed-dependencies">Stubbed Dependencies</a></p>
+</details>
+<hr />
+<h4 id="8-an-automated-test-sends-a-synthesized-esc-event-to-the-overlay-view-and-the-view-reports-cancel-what-additional-evidence-is-needed-to-show-that-pressing-the-real-esc-key-cancels-a-real-grab">8. An automated test sends a synthesized Esc event to the overlay view, and the view reports "cancel." What additional evidence is needed to show that pressing the real Esc key cancels a real grab?<a class="headerlink" href="#8-an-automated-test-sends-a-synthesized-esc-event-to-the-overlay-view-and-the-view-reports-cancel-what-additional-evidence-is-needed-to-show-that-pressing-the-real-esc-key-cancels-a-real-grab" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>Another identical automated test</li>
+<li>A higher coverage percentage</li>
+<li>A manual acceptance test such as AC-5, in which a person starts a grab, presses Esc, and observes the overlay disappear and the clipboard unchanged</li>
+<li>A longer README</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>. The synthesized-event test shows the view reacts to an Esc event, but it cannot prove that macOS delivers a physical key press to the view. The chapter's three rows of evidence form a chain from logic down to the real screen, and the manual test is the link that observes the real behavior. Repeating a test of the same kind, as in option A, adds no new kind of evidence.</p>
+<p><strong>Concept Tested:</strong> Acceptance Tests</p>
+<p><strong>See:</strong> <a href="../#acceptance-tests">Acceptance Tests</a></p>
+</details>
+<hr />
+<h4 id="9-how-does-a-traceability-matrix-help-you-judge-whether-testing-is-complete">9. How does a traceability matrix help you judge whether testing is complete?<a class="headerlink" href="#9-how-does-a-traceability-matrix-help-you-judge-whether-testing-is-complete" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>It counts how many lines of code each developer wrote</li>
+<li>It lists the files in the project</li>
+<li>It measures how fast the tests run</li>
+<li>It traces each requirement to the tests that cover it, so you can ask whether every requirement has at least one acceptance test</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>D</strong>. In ScreenGrab's specification, requirement FR-2.5, cancelling a grab with Esc or a right click, is covered by acceptance tests AC-5 and AC-7. The link lets you ask whether every requirement is covered by at least one test and whether every test traces to a requirement. The 34 acceptance tests are named AC-1 to AC-34, and several still have to be run by hand.</p>
+<p><strong>Concept Tested:</strong> Acceptance Tests</p>
+<p><strong>See:</strong> <a href="../#acceptance-tests">Acceptance Tests</a></p>
+</details>
+<hr />
+<h4 id="10-screengrabs-94-automated-tests-are-strongest-where-behavior-is-pure-logic-and-weaker-closer-to-the-real-screen-and-keyboard-what-is-the-underlying-reason">10. ScreenGrab's 94 automated tests are strongest where behavior is pure logic and weaker closer to the real screen and keyboard. What is the underlying reason?<a class="headerlink" href="#10-screengrabs-94-automated-tests-are-strongest-where-behavior-is-pure-logic-and-weaker-closer-to-the-real-screen-and-keyboard-what-is-the-underlying-reason" title="Permanent link">&para;</a></h4>
+<div class="upper-alpha">
+<ol>
+<li>The design separated pure logic so it could be tested in isolation, while real screen capture, key delivery, and permissions need a real system or a person</li>
+<li>The agent wrote lazier tests for the screen code</li>
+<li>Pure logic is harder to test than window code</li>
+<li>Tests cannot check logic</li>
+</ol>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>A</strong>. Logic that takes inputs as parameters and returns results is easy to unit test, while code that reaches out to the clock, the disk, or the screen is hard. The design document says real ScreenCaptureKit output, on-screen overlay behavior, the live crosshair, and pasting into real applications are beyond automation. Those are covered by manual tests, which need a record of who ran them and when.</p>
+<p><strong>Concept Tested:</strong> Automated Tests</p>
+<p><strong>See:</strong> <a href="../#automated-tests">Automated Tests</a></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotated References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Annotated References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Code under the MIT License. Book content under <a href="license/">CC BY-NC-SA 4.0</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/katex-config.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

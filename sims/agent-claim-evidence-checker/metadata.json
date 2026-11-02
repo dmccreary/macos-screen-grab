@@ -1,0 +1,23 @@
+{
+  "title": "Claim and Evidence Checker",
+  "description": "The learner will judge whether each of 8 claims in an illustrative agent report is supported or unsupported by the evidence shown with it, with at least 7 correct.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "agent-claim-evidence-checker",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "judge",
+  "completion_status": "scaffold",
+  "chapter_number": 5,
+  "chapter_title": "Generative AI and Coding Agents",
+  "chapter_dir": "05-generative-ai-coding-agents",
+  "chapter_rel_dir": "chapters/05-generative-ai-coding-agents"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Buy, Subscribe, or Generate Decision Explorer",
+  "description": "The learner will recommend buy, subscribe, or generate for each of 8 scenarios, justified by how long the tool will be used and who supports it, with at least 6 correct.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "buy-subscribe-generate-decision-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate",
+  "bloomVerb": "recommend",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Build or Buy and the Rise of Personal Software",
+  "chapter_dir": "06-build-or-buy",
+  "chapter_rel_dir": "chapters/06-build-or-buy"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Resource Footprint Comparison",
+  "description": "The learner will compare the resource footprint of an illustrative full-featured product and an illustrative single-purpose utility on three measures, correctly ranking which measure differs most between them.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "bloat-footprint-comparison",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "Software Features and the Anatomy of Bloat",
+  "chapter_dir": "01-software-bloat",
+  "chapter_rel_dir": "chapters/01-software-bloat"
+}
