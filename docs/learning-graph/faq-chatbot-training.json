@@ -1,0 +1,1810 @@
+{
+  "faq_version": "1.0",
+  "generated_date": "2026-11-01",
+  "source_textbook": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "total_questions": 76,
+  "questions": [
+    {
+      "id": "faq-001",
+      "category": "Getting Started",
+      "question": "What is this course about?",
+      "answer": "*ScreenGrab: Software Bloat and the Generated Alternative* is a short course built around one real case. A screen grab utility that cost $9 once now charges $30 per computer per year, which is $90 a year on the author's three Macs. The course uses that story to explain how software bloats, why about 95% of users rely on only about 5% of the features, and what generative AI changes: a person can describe the two features they actually use and generate a small custom tool for about $14 in estimated API cost.\n\nYou learn to calculate total cost of ownership, write a minimal specification, direct an AI coding agent, measure tokens and cost, verify the result, and decide whether to buy, subscribe, or generate. See the [course description](course-description.md) for the full outline and [Chapter 1](chapters/01-software-bloat/index.md) to begin.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "ScreenGrab Case Study",
+        "Software Bloat"
+      ],
+      "keywords": [
+        "course",
+        "overview",
+        "bloat",
+        "generated alternative"
+      ],
+      "source_links": [
+        "docs/chapters/01-software-bloat/index.md",
+        "docs/course-description.md"
+      ],
+      "has_example": false,
+      "word_count": 141
+    },
+    {
+      "id": "faq-002",
+      "category": "Getting Started",
+      "question": "Who is the target audience for this course?",
+      "answer": "The audience is adult continuing education and professional development learners: technically curious computer users, students, and software professionals who pay for software they barely use and want to judge when generating a tool is a better choice than buying one. You do not need to be a programmer. If you have ever renewed a subscription and wondered what you were paying for, the case study is written for you.\n\nThe [About page](about.md) and the [course description](course-description.md) state the audience and prerequisites.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Casual Users",
+        "Software Product"
+      ],
+      "keywords": [
+        "audience",
+        "learners",
+        "professionals"
+      ],
+      "source_links": [
+        "docs/about.md",
+        "docs/course-description.md"
+      ],
+      "has_example": false,
+      "word_count": 85
+    },
+    {
+      "id": "faq-003",
+      "category": "Getting Started",
+      "question": "What do I need to know before starting?",
+      "answer": "The course description lists three prerequisites: comfort installing and using desktop applications, basic familiarity with the command line and Git, and no Swift or macOS programming experience. If Git is new to you, [Chapter 9](chapters/09-generating-building-installing/index.md) introduces version control and commits in context, and the [glossary](glossary.md) defines each term in plain language.\n\nFor example, if you can open Terminal and run `git status` in a project folder, you have enough to start. Nothing in the first four chapters needs any programming. They are about licenses, pricing, and arithmetic, so you can start there while you pick up the command line basics.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Git Repository",
+        "Developer Toolchain"
+      ],
+      "keywords": [
+        "prerequisites",
+        "command line",
+        "git"
+      ],
+      "source_links": [
+        "docs/chapters/09-generating-building-installing/index.md",
+        "docs/glossary.md"
+      ],
+      "has_example": true,
+      "word_count": 104
+    },
+    {
+      "id": "faq-004",
+      "category": "Getting Started",
+      "question": "What will I be able to do after finishing the course?",
+      "answer": "The learning outcomes span all six Bloom's Taxonomy levels. You will be able to define software bloat and list the token types that determine API cost, explain why products gain unused features, calculate the multi-year cost of a per-computer subscription, break a session's cost into input, output, and cache tokens, judge whether generated software has been verified enough to rely on, and decide whether to buy, subscribe to, or generate a tool.\n\nThe capstone is the highest-level outcome: choose a paid tool you use, specify only the features you need, generate and test a replacement, and publish a cost comparison. [Chapter 15](chapters/15-decision-and-capstone/index.md) walks through it.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Replacement Tool Capstone",
+        "Build-Or-Buy Decision"
+      ],
+      "keywords": [
+        "outcomes",
+        "skills",
+        "capstone"
+      ],
+      "source_links": [
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": false,
+      "word_count": 107
+    },
+    {
+      "id": "faq-005",
+      "category": "Getting Started",
+      "question": "Do I need to know Swift or macOS programming?",
+      "answer": "No. The course does not teach Swift or AppKit programming. The ScreenGrab app is written in Swift, but you only need to see that the language is a design decision with a reason attached. [Chapter 8](chapters/08-software-design-platform/index.md) treats it that way and shows how to ask the agent to justify its choice against the specification. For example, you can ask \"why Swift and not a web wrapper?\" and judge the answer without writing any Swift.\n\nYou do need a Mac if you want to follow the case study hands-on, because the app is a native macOS program. The ideas about cost, specifications, and verification apply to any platform.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Programming Language Choice",
+        "Native Application"
+      ],
+      "keywords": [
+        "swift",
+        "programming",
+        "macos",
+        "beginner"
+      ],
+      "source_links": [
+        "docs/chapters/08-software-design-platform/index.md"
+      ],
+      "has_example": true,
+      "word_count": 109
+    },
+    {
+      "id": "faq-006",
+      "category": "Getting Started",
+      "question": "What topics does the course leave out?",
+      "answer": "The course description names four topics it does not cover: teaching Swift or AppKit programming, the internals of large language models, comparing screen grab products, and legal advice on software licensing. The licensing chapters explain how licenses work so you can read them, but nothing in the book is legal advice, and entries about copyright and licenses in the [glossary](glossary.md) say so.\n\nLeaving topics out on purpose is also the book's theme. A short list of non-goals keeps a course, like a tool, from growing past its purpose.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Scope Boundaries",
+        "Non-Goals"
+      ],
+      "keywords": [
+        "scope",
+        "not covered",
+        "legal advice"
+      ],
+      "source_links": [
+        "docs/glossary.md"
+      ],
+      "has_example": false,
+      "word_count": 90
+    },
+    {
+      "id": "faq-007",
+      "category": "Getting Started",
+      "question": "How is the book organized?",
+      "answer": "The book has 15 chapters that follow the story from problem to decision. Chapters 1 to 4 cover bloat, feature usage, licensing, and total cost of ownership. Chapters 5 to 9 cover generative AI, build-or-buy, requirements, design, and generating and installing the code. Chapters 10 and 11 cover tokens, caching, pricing, and measuring a session. Chapters 12 to 14 cover testing, bugs and evidence, and maintenance and open source. Chapter 15 brings the numbers together for the final decision and the capstone.\n\nThe [list of chapters](chapters/index.md) has a summary of each one.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Software Bloat",
+        "Total Cost Of Ownership",
+        "Software Verification"
+      ],
+      "keywords": [
+        "chapters",
+        "structure",
+        "organization"
+      ],
+      "source_links": [
+        "docs/chapters/index.md"
+      ],
+      "has_example": false,
+      "word_count": 94
+    },
+    {
+      "id": "faq-008",
+      "category": "Getting Started",
+      "question": "How should I read the book?",
+      "answer": "Read the chapters in order. Concepts are introduced in dependency order, so each chapter's prerequisites are covered before they are used, and every chapter lists the earlier chapters it builds on. If you want to see how a single concept fits into the whole, the [learning graph](learning-graph/index.md) shows the 206 concepts and their dependencies.\n\nUse the search bar to jump to a term, and the [glossary](glossary.md) when a word is unfamiliar. Chapters also describe interactive MicroSims; check the [MicroSims page](sims/index.md) for which ones are published.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [],
+      "keywords": [
+        "reading order",
+        "learning graph",
+        "dependencies"
+      ],
+      "source_links": [
+        "docs/glossary.md",
+        "docs/learning-graph/index.md",
+        "docs/sims/index.md"
+      ],
+      "has_example": false,
+      "word_count": 91
+    },
+    {
+      "id": "faq-009",
+      "category": "Getting Started",
+      "question": "What is the ScreenGrab case study?",
+      "answer": "It is the real build the book follows. The author replaced a paid screen grab tool with a two-feature macOS menu bar app generated with Claude Code. The app grabs a region of the screen, optionally after a delay, and puts the image on the clipboard. The first install was about 2,000 lines of Swift in 19 files, about 1,370 lines of tests with 94 automated tests, and about 500 lines of install and build scripts, built in about 36 minutes for an estimated $6.\n\nThe whole session, including hotkey testing, took about 70 active minutes and an estimated $14. [Chapter 9](chapters/09-generating-building-installing/index.md) tells the story in detail, and the [course description](course-description.md) has the numbers.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "ScreenGrab Case Study",
+        "Screen Grab Tool"
+      ],
+      "keywords": [
+        "case study",
+        "screengrab",
+        "claude code",
+        "cost"
+      ],
+      "source_links": [
+        "docs/chapters/09-generating-building-installing/index.md",
+        "docs/course-description.md"
+      ],
+      "has_example": false,
+      "word_count": 120
+    },
+    {
+      "id": "faq-010",
+      "category": "Getting Started",
+      "question": "Who is Pinch the hermit crab?",
+      "answer": "Pinch is the book's learning mascot. A hermit crab is a good fit for a book about carrying only what you need: Pinch asks the practical questions this course keeps returning to, such as what a tool costs, what can be left out, and who checked it. Pinch appears in short callout boxes that flag a key idea, a tip, a common mistake, or a hard passage, and the poses tell you which kind of message to expect.\n\nPinch introduces the book in [Chapter 1](chapters/01-software-bloat/index.md). The callouts are always short, and the main content never depends on them.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Cognitive Load"
+      ],
+      "keywords": [
+        "pinch",
+        "mascot",
+        "hermit crab"
+      ],
+      "source_links": [
+        "docs/chapters/01-software-bloat/index.md"
+      ],
+      "has_example": false,
+      "word_count": 100
+    },
+    {
+      "id": "faq-011",
+      "category": "Getting Started",
+      "question": "Is the ScreenGrab app free to use?",
+      "answer": "Yes. The current version of the app is fully open source under the MIT License, and anyone can use it without a fee. The MIT License is a short, permissive license that allows reuse, modification, and distribution with few conditions, mainly keeping the copyright and license notice. [Chapter 14](chapters/14-maintenance-open-source/index.md) explains what that means in practice.\n\nThe book itself is a separate work with its own terms; see the [license page](license.md). Neither is legal advice, so read the license text yourself before you reuse either.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "MIT License",
+        "Open Source Software"
+      ],
+      "keywords": [
+        "free",
+        "open source",
+        "mit license",
+        "download"
+      ],
+      "source_links": [
+        "docs/chapters/14-maintenance-open-source/index.md",
+        "docs/license.md"
+      ],
+      "has_example": false,
+      "word_count": 88
+    },
+    {
+      "id": "faq-012",
+      "category": "Core Concepts",
+      "question": "What is software bloat?",
+      "answer": "Software bloat is the growth of a product in features, size, and resource demands beyond what most of its users need. It raises complexity, cost, and risk without matching benefit for typical users. For example, a tool that began as a simple screen grabber and grew into a video editor and cloud service is bloated for someone who needs one screenshot.\n\nBloat shows up in several places: an interface with thirty menu items, an install that occupies hundreds of megabytes, a background process that uses memory while it waits for a hotkey, and a price that rose because of features you never open. [Chapter 1](chapters/01-software-bloat/index.md) defines the vocabulary.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Software Bloat",
+        "Software Feature"
+      ],
+      "keywords": [
+        "bloat",
+        "features",
+        "definition"
+      ],
+      "source_links": [
+        "docs/chapters/01-software-bloat/index.md"
+      ],
+      "has_example": true,
+      "word_count": 110
+    },
+    {
+      "id": "faq-013",
+      "category": "Core Concepts",
+      "question": "What is the 95/5 rule of thumb?",
+      "answer": "The 95/5 rule says that about 95% of users rely on about 5% of a product's features. It is an approximation used to show that usage is very uneven, not a measured law. It is a more extreme cousin of the Pareto principle, which says a small share of causes often produces a large share of effects, usually stated as 80% of results from 20% of inputs.\n\nFor example, of 40 features in a capture suite, about two cover the needs of nearly every user. The rest are the long tail of features, each valuable to only a few people. [Chapter 2](chapters/02-feature-usage/index.md) works through the idea, including why the exact percentages should not be quoted as fact.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "95/5 Rule Of Thumb",
+        "Pareto Principle"
+      ],
+      "keywords": [
+        "95/5",
+        "pareto",
+        "feature usage",
+        "rule of thumb"
+      ],
+      "source_links": [
+        "docs/chapters/02-feature-usage/index.md"
+      ],
+      "has_example": true,
+      "word_count": 119
+    },
+    {
+      "id": "faq-014",
+      "category": "Core Concepts",
+      "question": "How is feature creep different from software bloat?",
+      "answer": "Feature creep is the process, and bloat is the result. Feature creep is the gradual addition of features beyond a product's original purpose, typically in small steps that each seem reasonable. Bloat is the state a product reaches after enough of those steps: more features, size, and resource demand than most users need.\n\nFor example, a utility might add annotation, then video, then cloud storage, each justified separately. No single step looks wrong, but the sum changes the product's character. The distinction matters because you can stop the process with non-goals, while you can only react to the result. See [Chapter 1](chapters/01-software-bloat/index.md) and [Chapter 2](chapters/02-feature-usage/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Feature Creep",
+        "Software Bloat"
+      ],
+      "keywords": [
+        "feature creep",
+        "bloat",
+        "difference"
+      ],
+      "source_links": [
+        "docs/chapters/01-software-bloat/index.md",
+        "docs/chapters/02-feature-usage/index.md"
+      ],
+      "has_example": true,
+      "word_count": 109
+    },
+    {
+      "id": "faq-015",
+      "category": "Core Concepts",
+      "question": "What is a job to be done, and why does it matter?",
+      "answer": "A job to be done is the specific task or outcome a person hires a product to accomplish, described as progress the user wants to make instead of as product features. For example, for ScreenGrab the job is \"put a picture of part of my screen on the clipboard.\"\n\nFraming the need as a job keeps a specification small, because every proposed feature can be tested against it: does this help with the job? To apply it, finish the sentence \"I need to ___\" without naming any product. Whatever is left is your requirement, and everything else is a candidate for the non-goals list. [Chapter 1](chapters/01-software-bloat/index.md) introduces the idea and [Chapter 7](chapters/07-requirements-minimal-specs/index.md) uses it to write requirements.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Job To Be Done",
+        "User Need"
+      ],
+      "keywords": [
+        "job to be done",
+        "user need",
+        "requirements"
+      ],
+      "source_links": [
+        "docs/chapters/01-software-bloat/index.md",
+        "docs/chapters/07-requirements-minimal-specs/index.md"
+      ],
+      "has_example": true,
+      "word_count": 121
+    },
+    {
+      "id": "faq-016",
+      "category": "Core Concepts",
+      "question": "Why do vendors keep adding features that most users never use?",
+      "answer": "The reasons are financial and competitive, not malicious. Vendors that depend on upgrade revenue or recurring revenue need a reason for customers to pay again, and new features are the easiest reason to announce. Competitive feature matching adds capabilities because rivals have them, and feature checklist marketing sells breadth with comparison tables of check marks, which encourages buyers to value features they will never use.\n\nA product roadmap also tends to list additions, rarely removals. [Chapter 2](chapters/02-feature-usage/index.md) covers why features keep arriving and [Chapter 3](chapters/03-licenses-subscriptions/index.md) shows how pricing shapes vendor behavior. Understanding these incentives explains why one-time purchases drift into subscriptions.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Vendor Incentives",
+        "Competitive Feature Matching",
+        "Upgrade Revenue"
+      ],
+      "keywords": [
+        "vendor incentives",
+        "feature checklist",
+        "upgrade revenue"
+      ],
+      "source_links": [
+        "docs/chapters/02-feature-usage/index.md",
+        "docs/chapters/03-licenses-subscriptions/index.md"
+      ],
+      "has_example": false,
+      "word_count": 105
+    },
+    {
+      "id": "faq-017",
+      "category": "Core Concepts",
+      "question": "What is the difference between a one-time license and a subscription?",
+      "answer": "A one-time license is paid for once and lets you use a specific version, typically with no further charges for that version. A perpetual license has no expiration date, though upgrades and support may cost extra. A subscription license grants use only while recurring payments continue, and access ends or becomes limited if you stop.\n\nFor example, the original $9 screen grab tool was a one-time license. The same product now charges $30 per computer per year, so the author's access depends on paying $90 every year. The vendor gains steady income, and the customer gains lower upfront cost but permanent dependence. See [Chapter 3](chapters/03-licenses-subscriptions/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "One-Time License",
+        "Subscription License",
+        "Perpetual License"
+      ],
+      "keywords": [
+        "license",
+        "subscription",
+        "one-time",
+        "perpetual"
+      ],
+      "source_links": [
+        "docs/chapters/03-licenses-subscriptions/index.md"
+      ],
+      "has_example": true,
+      "word_count": 107
+    },
+    {
+      "id": "faq-018",
+      "category": "Core Concepts",
+      "question": "What is the difference between per-computer and per-user licensing?",
+      "answer": "Per-computer licensing charges separately for each machine where the software is installed, so total price scales with the number of computers. Per-user licensing charges for each person and usually allows that person to install the software on several devices, so total price scales with the number of individuals.\n\nThe same product can therefore cost different amounts for the same person. For example, a single user with three Macs pays $30 once under a per-user model but $90 per year under a per-computer model at $30 each. The cost per computer is the number that makes multi-device pricing visible. [Chapter 3](chapters/03-licenses-subscriptions/index.md) and [Chapter 4](chapters/04-total-cost-of-ownership/index.md) cover both.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Per-Computer Licensing",
+        "Per-User Licensing",
+        "Cost Per Computer"
+      ],
+      "keywords": [
+        "per-computer",
+        "per-user",
+        "license",
+        "cost per computer"
+      ],
+      "source_links": [
+        "docs/chapters/03-licenses-subscriptions/index.md",
+        "docs/chapters/04-total-cost-of-ownership/index.md"
+      ],
+      "has_example": true,
+      "word_count": 109
+    },
+    {
+      "id": "faq-019",
+      "category": "Core Concepts",
+      "question": "What is total cost of ownership?",
+      "answer": "Total cost of ownership is the full cost of acquiring and using a product over its lifetime. It includes the purchase price, recurring fees, maintenance, learning, and support, and so extends well beyond the sticker price. It is the main analytical frame of the book.\n\nFor example, comparing a $9 purchase price with a $30 fee misses that the fee repeats every year, applies to every computer, and sits alongside the learning cost of a complicated interface and the opportunity cost of your time. [Chapter 4](chapters/04-total-cost-of-ownership/index.md) builds the frame one cost at a time and then adds them up.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Total Cost Of Ownership",
+        "Purchase Price",
+        "Maintenance Cost"
+      ],
+      "keywords": [
+        "total cost of ownership",
+        "tco",
+        "cost"
+      ],
+      "source_links": [
+        "docs/chapters/04-total-cost-of-ownership/index.md"
+      ],
+      "has_example": true,
+      "word_count": 101
+    },
+    {
+      "id": "faq-020",
+      "category": "Core Concepts",
+      "question": "How do I calculate the multi-year cost of a per-computer subscription?",
+      "answer": "Multiply the number of computers by the annual fee per computer by the number of years: C = n × f × y. State the horizon first, because the answer depends on it.\n\nFor example, for the author, n = 3 computers and f = $30. Over one year C = $90, over five years C = $450, and over ten years C = $900, which is a hundred times the original $9. A tool you will use for two months should be judged on two months, and a tool you will use for a decade on ten years, so pick the horizon honestly before you compare. [Chapter 4](chapters/04-total-cost-of-ownership/index.md) has the full table.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Multi-Year Cost",
+        "Annual Fee",
+        "Per-Computer Licensing"
+      ],
+      "keywords": [
+        "multi-year cost",
+        "formula",
+        "calculation",
+        "subscription"
+      ],
+      "source_links": [
+        "docs/chapters/04-total-cost-of-ownership/index.md"
+      ],
+      "has_example": true,
+      "word_count": 107
+    },
+    {
+      "id": "faq-021",
+      "category": "Core Concepts",
+      "question": "What is a break-even point for a generated tool?",
+      "answer": "The break-even point is the moment when the total costs of two options become equal, after which one of them is cheaper. For a generated tool compared with a subscription, it is when the fees you have avoided equal what you spent on the tool.\n\nFor example, using only purchase prices, a $14 generated tool against $90 per year in fees breaks even after 14 / 90 ≈ 0.16 years, which is under two months. That is a first approximation. Later costs, such as your time, verification, and maintenance, move the point later, which is why [Chapter 4](chapters/04-total-cost-of-ownership/index.md) and [Chapter 15](chapters/15-decision-and-capstone/index.md) keep adding to the comparison instead of stopping at the purchase prices.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Break-Even Point",
+        "Cost Comparison"
+      ],
+      "keywords": [
+        "break-even",
+        "payback",
+        "generate vs subscribe"
+      ],
+      "source_links": [
+        "docs/chapters/04-total-cost-of-ownership/index.md",
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": true,
+      "word_count": 116
+    },
+    {
+      "id": "faq-022",
+      "category": "Core Concepts",
+      "question": "What are the three options in the build-or-buy decision?",
+      "answer": "The book frames the decision as three options. The buy option is a one-time purchase under the vendor's license, with low effort but dependence on the vendor's pricing and update policy. The subscribe option means recurring fees for as long as you need access, with low upfront cost but continuing cost and dependence. The generate option means directing an AI coding agent from a written description to create a program tailored to your needs.\n\nEach option trades cost, effort, risk, and control differently. AI coding agents did not make generating always better; they made it cheap enough to be worth considering for small tools. [Chapter 6](chapters/06-build-or-buy/index.md) compares the three.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Build-Or-Buy Decision",
+        "Buy Option",
+        "Subscribe Option",
+        "Generate Option"
+      ],
+      "keywords": [
+        "buy",
+        "subscribe",
+        "generate",
+        "options"
+      ],
+      "source_links": [
+        "docs/chapters/06-build-or-buy/index.md"
+      ],
+      "has_example": false,
+      "word_count": 111
+    },
+    {
+      "id": "faq-023",
+      "category": "Core Concepts",
+      "question": "What is an AI coding agent?",
+      "answer": "An AI coding agent is a program that uses a language model to plan, write, run, and revise code, often by using tools such as a file editor and a command line. It works toward a goal with limited step-by-step instruction, which is what separates it from a chatbot that only returns text.\n\nClaude Code, the agent used for ScreenGrab, runs in a terminal, reads a project's files, edits them, runs commands such as the test suite, and reads the results to decide its next step. A person stays in the loop to approve actions and review output. For example, asked to add a delay, the agent can edit the file, run the tests, and fix its own failure before reporting back. [Chapter 5](chapters/05-generative-ai-coding-agents/index.md) explains how this works and where it goes wrong.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "AI Coding Agent",
+        "Claude Code",
+        "Agent Tool Use"
+      ],
+      "keywords": [
+        "ai coding agent",
+        "claude code",
+        "agent",
+        "tools"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md"
+      ],
+      "has_example": true,
+      "word_count": 135
+    },
+    {
+      "id": "faq-024",
+      "category": "Core Concepts",
+      "question": "What is a minimal specification?",
+      "answer": "A minimal specification is limited to the essential behavior, with extras left out, and is short enough to read in minutes. It matters because the specification is the main input to a coding agent, so what it omits the agent does not build.\n\nFor example, the ScreenGrab specification names two features, region selection and delayed capture, and one output, the clipboard. It also lists non-goals such as no video recording, annotation, or cloud upload. To write your own, state the job to be done, list the few behaviors that satisfy it, state the exclusions, and add acceptance criteria for each behavior. [Chapter 7](chapters/07-requirements-minimal-specs/index.md) walks through it and the project's own [specification](specification.md) is a real example.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Minimal Specification",
+        "Software Specification"
+      ],
+      "keywords": [
+        "minimal specification",
+        "spec",
+        "requirements"
+      ],
+      "source_links": [
+        "docs/chapters/07-requirements-minimal-specs/index.md",
+        "docs/specification.md"
+      ],
+      "has_example": true,
+      "word_count": 119
+    },
+    {
+      "id": "faq-025",
+      "category": "Core Concepts",
+      "question": "What are non-goals, and why should I write them?",
+      "answer": "Non-goals are explicit statements of what the software will not do. They set limits on the work and prevent both the agent and the author from adding features.\n\nFor example, without them an agent may helpfully add a settings window, an image editor, or a file save option, and each addition brings more code to read, test, and maintain. With them, a request for annotation gets a one-line answer: it is out of scope. Write non-goals as plain sentences, such as \"No video recording, annotation, or cloud upload,\" and review them whenever a new idea appears. [Chapter 7](chapters/07-requirements-minimal-specs/index.md) covers setting boundaries.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Non-Goals",
+        "Scope Boundaries",
+        "Feature Creep"
+      ],
+      "keywords": [
+        "non-goals",
+        "scope",
+        "exclusions"
+      ],
+      "source_links": [
+        "docs/chapters/07-requirements-minimal-specs/index.md"
+      ],
+      "has_example": true,
+      "word_count": 103
+    },
+    {
+      "id": "faq-026",
+      "category": "Core Concepts",
+      "question": "What stages did the ScreenGrab build go through?",
+      "answer": "The work moved through a set order: specification, design, code, tests, and installer. The specification says what the tool does and does not do, the design turns the requirements into a plan that fits the platform, the code is written from the design, the tests check the code against the specification, and the installer packages code that already exists and has been checked.\n\nThe order matters because each stage depends on the one before. Writing the specification after the code only describes whatever got built, and an installer written before the code has nothing to install. [Chapter 9](chapters/09-generating-building-installing/index.md) covers generating, building, and installing, and Chapter 12 covers the tests: see [Chapter 12](chapters/12-software-testing/index.md).",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "ScreenGrab Case Study",
+        "Design Document",
+        "Installer Script"
+      ],
+      "keywords": [
+        "stages",
+        "build process",
+        "specification",
+        "design",
+        "tests",
+        "installer"
+      ],
+      "source_links": [
+        "docs/chapters/09-generating-building-installing/index.md",
+        "docs/chapters/12-software-testing/index.md"
+      ],
+      "has_example": false,
+      "word_count": 116
+    },
+    {
+      "id": "faq-027",
+      "category": "Core Concepts",
+      "question": "What is a token?",
+      "answer": "A token is the basic unit of text a language model reads and writes, typically a word fragment of a few characters. Usage and pricing are counted in tokens. For example, the word \"screenshot\" may be split into two tokens.\n\nTokens are the unit of cost for AI-generated software, so understanding them lets you estimate what a session will cost. The context window limits how many tokens a model can consider at once, and providers charge different rates for input, output, and cached tokens. [Chapter 10](chapters/10-tokens-caching-pricing/index.md) builds this up step by step.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Token",
+        "Large Language Model",
+        "Token Pricing"
+      ],
+      "keywords": [
+        "token",
+        "unit",
+        "language model"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 94
+    },
+    {
+      "id": "faq-028",
+      "category": "Core Concepts",
+      "question": "What is prompt caching, and why does it make sessions cheap?",
+      "answer": "Prompt caching lets the vendor keep the already-processed beginning of a prompt, so the next request that starts with the same material does not pay full price to process it again. The cache matches from the start of the prompt, so it works on stable material at the front.\n\nThe book's worked example sends a 100,000-token project context on each of 40 turns. Without caching that costs $20.00 at $5 per million tokens. With caching, one write of $0.50 plus 39 reads of $0.78 totals $1.28, a saving of about 94%. In a long agent session the same history is re-sent on almost every turn, which is why caching is a major reason a session can cost only a few dollars. See [Chapter 10](chapters/10-tokens-caching-pricing/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Prompt Caching",
+        "Cache Read Tokens",
+        "Cache Write Tokens"
+      ],
+      "keywords": [
+        "prompt caching",
+        "cache",
+        "cost",
+        "prefix"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 131
+    },
+    {
+      "id": "faq-029",
+      "category": "Core Concepts",
+      "question": "How is automated testing different from manual testing?",
+      "answer": "An automated test is run by a computer without human involvement, comparing actual results with expected ones, and it can be repeated at any time, which makes it safe to change code. Manual testing is carried out by a person who operates the software and observes the result, and it finds issues scripted checks miss.\n\nUse each where it is strong. For example, a test can check that a captured image has the selected size every time you build. Only a person can confirm that a real key press triggers capture, that macOS shows the permission prompt, or that the pasted result looks right in a real document. ScreenGrab needed both. [Chapter 12](chapters/12-software-testing/index.md) covers the two kinds.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Automated Test",
+        "Manual Testing",
+        "Limits Of Automated Tests"
+      ],
+      "keywords": [
+        "automated",
+        "manual",
+        "testing",
+        "difference"
+      ],
+      "source_links": [
+        "docs/chapters/12-software-testing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 119
+    },
+    {
+      "id": "faq-030",
+      "category": "Core Concepts",
+      "question": "How do switching costs create vendor lock-in?",
+      "answer": "Switching costs are the money, time, and effort needed to move to another product: relearning shortcuts, converting data, and losing customization. Vendor lock-in is the situation those costs create, where a customer cannot easily leave. Proprietary file formats deepen it, because years of saved work may open only in the vendor's software.\n\nThe link to pricing is the important part. When switching is expensive, a vendor can raise prices with less fear of losing customers, so a $9 purchase can become a $30 annual fee. Lock-in is therefore something to weigh before you buy or subscribe, and one reason a tool that stores nothing but a clipboard image is easy to leave. See [Chapter 3](chapters/03-licenses-subscriptions/index.md).",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Switching Costs",
+        "Vendor Lock-In",
+        "Proprietary File Format"
+      ],
+      "keywords": [
+        "lock-in",
+        "switching costs",
+        "file formats"
+      ],
+      "source_links": [
+        "docs/chapters/03-licenses-subscriptions/index.md"
+      ],
+      "has_example": false,
+      "word_count": 117
+    },
+    {
+      "id": "faq-031",
+      "category": "Core Concepts",
+      "question": "What is a software license, and what does it actually give me?",
+      "answer": "A software license is a legal agreement that grants a user specific permissions to use, copy, or modify software, along with limits and conditions. It defines what you actually receive, which is usually the right to use the software and not ownership of the code. The base is copyright, which gives the creator control over copying and distribution.\n\nFor example, a license might allow installation on one Mac for a single payment, or on three Macs only while an annual fee is paid. The license type decides whether costs are one-time, recurring, per computer, or free. Many commercial licenses arrive as an end user license agreement that you accept during installation. This is general information, not legal advice. See [Chapter 3](chapters/03-licenses-subscriptions/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Software License",
+        "End User License Agreement",
+        "Copyright"
+      ],
+      "keywords": [
+        "software license",
+        "eula",
+        "copyright",
+        "permissions"
+      ],
+      "source_links": [
+        "docs/chapters/03-licenses-subscriptions/index.md"
+      ],
+      "has_example": true,
+      "word_count": 123
+    },
+    {
+      "id": "faq-032",
+      "category": "Core Concepts",
+      "question": "What is personal software?",
+      "answer": "Personal software is software created for the needs of one person or a small group, without the aim of broad sale. It fits narrow requirements and is typically small. Cheaper generation with AI coding agents makes it practical for ordinary professionals, not just developers.\n\nFor example, a capture tool tuned to one person's workflow is personal software. It sits on a spectrum: disposable software is made for a short-term need and discarded, while long-lived software is expected to be used and maintained for years. ScreenGrab straddles the two, since it is cheap to make but worth keeping. [Chapter 6](chapters/06-build-or-buy/index.md) discusses where personal software fits.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Personal Software",
+        "Disposable Software",
+        "Long-Lived Software"
+      ],
+      "keywords": [
+        "personal software",
+        "custom tool",
+        "disposable"
+      ],
+      "source_links": [
+        "docs/chapters/06-build-or-buy/index.md"
+      ],
+      "has_example": true,
+      "word_count": 106
+    },
+    {
+      "id": "faq-033",
+      "category": "Core Concepts",
+      "question": "Why does software maintenance matter even for a small tool?",
+      "answer": "Software maintenance is the work of keeping software usable over time: fixing defects, adapting to new systems, and making improvements. It continues through the software's life and often exceeds the original creation cost over a long period.\n\nA small tool still needs it. For example, a hotkey can stop working after an operating system update, and a new Swift version can reject older syntax. When you buy, the vendor does this work and charges for it through fees. When you generate, you take it on yourself, which is part of the risks of ownership. [Chapter 4](chapters/04-total-cost-of-ownership/index.md) introduces its cost and [Chapter 14](chapters/14-maintenance-open-source/index.md) covers operating system compatibility, toolchain changes, and patch releases.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Software Maintenance",
+        "Maintenance Cost",
+        "Operating System Compatibility"
+      ],
+      "keywords": [
+        "maintenance",
+        "updates",
+        "compatibility",
+        "long term"
+      ],
+      "source_links": [
+        "docs/chapters/04-total-cost-of-ownership/index.md",
+        "docs/chapters/14-maintenance-open-source/index.md"
+      ],
+      "has_example": true,
+      "word_count": 115
+    },
+    {
+      "id": "faq-034",
+      "category": "Core Concepts",
+      "question": "What is source code, and why does owning it matter?",
+      "answer": "Source code is the human-readable instructions of a program, written in a programming language and converted into a runnable form by a compiler. Lines of code is a count of those lines, a rough measure of size that does not directly measure quality or value.\n\nOwning the source lets you inspect and change the software. For example, the roughly 2,000 lines of Swift in ScreenGrab can be read in an afternoon, and anyone with the repository can fix or extend them. A purchased app usually gives you only the compiled program. [Chapter 5](chapters/05-generative-ai-coding-agents/index.md) introduces both ideas.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Source Code",
+        "Lines Of Code",
+        "Open Source Software"
+      ],
+      "keywords": [
+        "source code",
+        "lines of code",
+        "ownership"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md"
+      ],
+      "has_example": true,
+      "word_count": 99
+    },
+    {
+      "id": "faq-035",
+      "category": "Core Concepts",
+      "question": "How do release cycles and feature sets drive bloat?",
+      "answer": "A software release cycle is the recurring schedule by which a vendor prepares and distributes new versions. A short cycle needs something new to announce every time, and a longer feature set is the easiest thing to announce. Each version is a uniquely identified state of the product, and different versions can differ in features, fixes, and system requirements.\n\nThe result is an upgrade treadmill: users repeatedly pay for or install new versions to keep compatibility or support, without proportionate benefit. For example, an old version may stop working on a new operating system, forcing a paid upgrade, while the feature set keeps growing. Together these explain how a $9 utility became a large product. See [Chapter 1](chapters/01-software-bloat/index.md) and [Chapter 3](chapters/03-licenses-subscriptions/index.md).",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Software Release Cycle",
+        "Feature Set",
+        "Software Version",
+        "Upgrade Treadmill"
+      ],
+      "keywords": [
+        "release cycle",
+        "feature set",
+        "versions",
+        "upgrade treadmill"
+      ],
+      "source_links": [
+        "docs/chapters/01-software-bloat/index.md",
+        "docs/chapters/03-licenses-subscriptions/index.md"
+      ],
+      "has_example": true,
+      "word_count": 125
+    },
+    {
+      "id": "faq-036",
+      "category": "Technical Details",
+      "question": "What is the difference between input, output, and cache tokens?",
+      "answer": "Input tokens are everything sent to the model: the prompt, files, and conversation history. Output tokens are what the model produces, such as generated code and explanations, and they are billed at a higher rate than input. Cache write tokens are input stored in the cache the first time it is processed. Cache read tokens are input served from the cache on later turns.\n\nThis book's price model charges $20 per million output tokens, $5 per million for plain input and cache writes, and $0.20 per million for cache reads. For example, in the ScreenGrab session the 18.9 million cache reads cost far less than the 325,000 output tokens. See [Chapter 10](chapters/10-tokens-caching-pricing/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Input Tokens",
+        "Output Tokens",
+        "Cache Read Tokens",
+        "Cache Write Tokens"
+      ],
+      "keywords": [
+        "input tokens",
+        "output tokens",
+        "cache read",
+        "cache write"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 117
+    },
+    {
+      "id": "faq-037",
+      "category": "Technical Details",
+      "question": "Why are cache read tokens so much cheaper than regular input?",
+      "answer": "A read is cheap because the vendor stores the work it already did on that prefix and reuses it instead of computing it again. In the book's price table a cache read costs $0.20 per million tokens, one twenty-fifth of the $5 plain input price, which is a 96% discount.\n\nThe discount matters because reads are numerous. The whole ScreenGrab session used about 18.9 million cache reads but only about 1.15 million new tokens, since the growing history is read again on almost every turn. Prices change over time and differ by vendor, so treat the numbers as the book's stated assumptions. See [Chapter 10](chapters/10-tokens-caching-pricing/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Cache Read Tokens",
+        "Input Tokens",
+        "Token Pricing"
+      ],
+      "keywords": [
+        "cache read",
+        "price",
+        "discount",
+        "input"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": false,
+      "word_count": 110
+    },
+    {
+      "id": "faq-038",
+      "category": "Technical Details",
+      "question": "What is a context window?",
+      "answer": "The context window is the maximum amount of text, measured in tokens, that a language model can consider at one time. It includes the conversation, the files it has read, and its own output. Content beyond the limit is not seen.\n\nFor a coding agent, the window limits how much code and history it can keep in view. For example, a long session can fill the window and lose earlier detail, which is one reason to keep specifications short and projects small. [Chapter 10](chapters/10-tokens-caching-pricing/index.md) places the context window alongside the pricing concepts.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Context Window",
+        "Token"
+      ],
+      "keywords": [
+        "context window",
+        "limit",
+        "tokens"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 94
+    },
+    {
+      "id": "faq-039",
+      "category": "Technical Details",
+      "question": "How does cache expiration work?",
+      "answer": "Cache expiration is the rule that a cached prefix is discarded if it is not used within a time limit. A typical default lifetime is a few minutes, and each read usually renews it, but exact limits differ by vendor and change over time.\n\nIf you step away longer than the lifetime, the next request pays to write the context again. That is why a burst of fast work is cheaper than the same work spread across a day. To spot it, check the next usage report: if cache reads are near zero and cache writes jumped, the cache expired. [Chapter 10](chapters/10-tokens-caching-pricing/index.md) has a tip on this.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Cache Expiration",
+        "Prompt Caching"
+      ],
+      "keywords": [
+        "cache expiration",
+        "timeout",
+        "pause"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": false,
+      "word_count": 109
+    },
+    {
+      "id": "faq-040",
+      "category": "Technical Details",
+      "question": "What is the difference between wall-clock time and active working time?",
+      "answer": "Wall-clock time is the elapsed real-world time from the start to the end of a task, including waiting and idle periods. Active working time is the portion in which a person is actually engaged, excluding waiting and breaks.\n\nThe case study reports both. For example, the app was built and installed about 36 minutes after the first prompt, and the first real screen grab came about 44 minutes in. The whole session, including hotkey testing, took about 70 active minutes. Active time is the true labor cost, while wall-clock time can include lunch. State which one you measure so numbers can be compared. See [Chapter 11](chapters/11-measuring-ai-session/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Wall-Clock Time",
+        "Active Working Time"
+      ],
+      "keywords": [
+        "wall-clock",
+        "active time",
+        "elapsed",
+        "measurement"
+      ],
+      "source_links": [
+        "docs/chapters/11-measuring-ai-session/index.md"
+      ],
+      "has_example": true,
+      "word_count": 108
+    },
+    {
+      "id": "faq-041",
+      "category": "Technical Details",
+      "question": "What is an API cost estimate, and how is it different from what a subscriber pays?",
+      "answer": "An API cost estimate is a calculation of what a session would cost if billed at published per-token rates. It lets different users compare sessions on a common basis. A subscriber does not pay that amount; they pay a flat fee for a bounded allowance of usage that resets over a period, called a subscription usage window.\n\nThe ScreenGrab session ran on a subscription, where the build used about 5% of one five-hour usage window, but the book quotes about $14 as the API-equivalent estimate. Always list your estimation assumptions, such as the model and rates, so the figure can be reproduced. See [Chapter 11](chapters/11-measuring-ai-session/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "API Cost Estimate",
+        "Subscription Usage Window",
+        "Estimation Assumptions"
+      ],
+      "keywords": [
+        "api cost",
+        "estimate",
+        "subscription",
+        "usage window"
+      ],
+      "source_links": [
+        "docs/chapters/11-measuring-ai-session/index.md"
+      ],
+      "has_example": false,
+      "word_count": 107
+    },
+    {
+      "id": "faq-042",
+      "category": "Technical Details",
+      "question": "What is ad-hoc signing, and why does a personal tool use it?",
+      "answer": "Code signing attaches a digital signature to an app so the operating system can verify it has not changed. Ad-hoc signing is signing without a developer identity: the signature names no developer and needs no paid developer account, but it satisfies macOS's requirement that the code carry a signature.\n\nIt is the right level for a personal tool you build and run on your own computers. It gives strangers no reason to trust the app, and because the signature is tied to the exact build, rebuilding can change how macOS recognizes the app, so a permission such as screen recording may need to be granted again. [Chapter 9](chapters/09-generating-building-installing/index.md) has a comparison table.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Ad-Hoc Signing",
+        "Code Signing"
+      ],
+      "keywords": [
+        "ad-hoc signing",
+        "code signing",
+        "macos",
+        "permissions"
+      ],
+      "source_links": [
+        "docs/chapters/09-generating-building-installing/index.md"
+      ],
+      "has_example": false,
+      "word_count": 114
+    },
+    {
+      "id": "faq-043",
+      "category": "Technical Details",
+      "question": "What is the screen recording permission?",
+      "answer": "It is a macOS privacy setting that must be granted before an application may read screen contents. Without it, captures are blank or limited. It is a platform constraint: software that can see everything on your display could also spy on it, so macOS puts a gate in the way.\n\nA capture tool must therefore ask for permission and handle a refusal gracefully. The permission also cannot be granted by a test, so a person must grant it once on first use. [Chapter 8](chapters/08-software-design-platform/index.md) explains the platform constraints that shaped the design.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Screen Recording Permission",
+        "Platform Constraints"
+      ],
+      "keywords": [
+        "screen recording",
+        "permission",
+        "privacy",
+        "macos"
+      ],
+      "source_links": [
+        "docs/chapters/08-software-design-platform/index.md"
+      ],
+      "has_example": false,
+      "word_count": 94
+    },
+    {
+      "id": "faq-044",
+      "category": "Technical Details",
+      "question": "What is a native application, and why was ScreenGrab built as one?",
+      "answer": "A native application is built with the platform's own tools and libraries, so it runs directly on the operating system, not inside another layer such as a web browser. A native macOS app starts quickly, uses the system's own controls, and reaches features such as the menu bar and the clipboard without a go-between.\n\nThe alternative is a cross-platform app, which usually includes a large runtime with its own browser engine. That saves work if you must support many systems but makes the app larger, slower to start, and less integrated. ScreenGrab supports one platform, so native Swift was the better trade-off. See [Chapter 8](chapters/08-software-design-platform/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Native Application",
+        "Programming Language Choice",
+        "Zero-Dependency Design"
+      ],
+      "keywords": [
+        "native",
+        "swift",
+        "cross-platform",
+        "design"
+      ],
+      "source_links": [
+        "docs/chapters/08-software-design-platform/index.md"
+      ],
+      "has_example": false,
+      "word_count": 107
+    },
+    {
+      "id": "faq-045",
+      "category": "Technical Details",
+      "question": "What is zero-dependency design?",
+      "answer": "Zero-dependency design uses only the platform's built-in capabilities and no outside code libraries. It reduces size and avoids external breakage. ScreenGrab has no third-party dependencies, using only Apple's frameworks.\n\nA third-party dependency brings convenience and risk: more size, an update burden, and potential breakage when the library changes. For a personal tool kept for years, fewer dependencies means less to maintain. [Chapter 8](chapters/08-software-design-platform/index.md) discusses dependencies as a design trade-off.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Zero-Dependency Design",
+        "Third-Party Dependency"
+      ],
+      "keywords": [
+        "zero dependency",
+        "libraries",
+        "third-party",
+        "install size"
+      ],
+      "source_links": [
+        "docs/chapters/08-software-design-platform/index.md"
+      ],
+      "has_example": false,
+      "word_count": 71
+    },
+    {
+      "id": "faq-046",
+      "category": "Technical Details",
+      "question": "How do unit tests, integration tests, and smoke tests differ?",
+      "answer": "They differ in scope. A unit test checks one small piece of code, such as a function, in isolation and runs quickly. An integration test checks that several parts work together, such as selection, capture, and clipboard in sequence, and so finds problems that unit tests miss. A smoke test is a quick check that the program starts and its main function works at all.\n\nRun the smoke test first after each build, because failure means deeper testing is not worth starting. Unit tests make up most of the 94 tests in the case study. See [Chapter 12](chapters/12-software-testing/index.md).",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Unit Test",
+        "Integration Test",
+        "Smoke Test"
+      ],
+      "keywords": [
+        "unit test",
+        "integration test",
+        "smoke test",
+        "difference"
+      ],
+      "source_links": [
+        "docs/chapters/12-software-testing/index.md"
+      ],
+      "has_example": false,
+      "word_count": 100
+    },
+    {
+      "id": "faq-047",
+      "category": "Technical Details",
+      "question": "What are stubbed dependencies and off-screen rendering used for in tests?",
+      "answer": "Both let tests run without disturbing the real system. A stubbed dependency is a simplified stand-in that returns fixed responses, for example a fake screen source that returns a known image, so a test needs neither the real screen nor the real permission. Off-screen rendering draws an image in memory without showing it on the display, so tests can inspect visuals safely.\n\nThey support test isolation and prevent test side effects, such as a test overwriting the developer's clipboard. The cost is that a stub shows the code handles the stub's answers, not what the real tool does, which is a limit covered in [Chapter 12](chapters/12-software-testing/index.md) and [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Stubbed Dependency",
+        "Off-Screen Rendering",
+        "Test Isolation",
+        "Test Side Effects"
+      ],
+      "keywords": [
+        "stub",
+        "off-screen rendering",
+        "test isolation",
+        "side effects"
+      ],
+      "source_links": [
+        "docs/chapters/12-software-testing/index.md",
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 113
+    },
+    {
+      "id": "faq-048",
+      "category": "Technical Details",
+      "question": "What is a regression test?",
+      "answer": "A regression test confirms that a previously fixed problem or working behavior has not returned after later changes. It protects past fixes. Each fixed bug should add one: for example, after fixing an offset bug in the captured region, write a test that fails if the offset comes back.\n\nRegression tests depend on bug reproduction, because you can only test a fix for something you can make happen on demand. See [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Regression Test",
+        "Software Bug"
+      ],
+      "keywords": [
+        "regression test",
+        "bug",
+        "fix"
+      ],
+      "source_links": [
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 75
+    },
+    {
+      "id": "faq-049",
+      "category": "Technical Details",
+      "question": "What is the difference between functional and non-functional requirements?",
+      "answer": "A functional requirement describes a specific behavior the software must perform, for example \"The app captures the selected region after a chosen delay.\" A non-functional requirement describes a quality such as speed, reliability, size, or security, for example \"The app must start in under one second and use little memory.\"\n\nFunctional requirements list the features, and non-functional requirements shape footprint and responsiveness. For a small tool, the non-functional ones are often what keep it from bloating. [Chapter 7](chapters/07-requirements-minimal-specs/index.md) covers both.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Functional Requirement",
+        "Non-Functional Requirement",
+        "Requirements"
+      ],
+      "keywords": [
+        "functional",
+        "non-functional",
+        "requirements"
+      ],
+      "source_links": [
+        "docs/chapters/07-requirements-minimal-specs/index.md"
+      ],
+      "has_example": true,
+      "word_count": 82
+    },
+    {
+      "id": "faq-050",
+      "category": "Technical Details",
+      "question": "What does the MIT License allow?",
+      "answer": "The MIT License is a short, widely used permissive license. It allows reuse, modification, and distribution, including in other projects, with few conditions, mainly keeping the copyright and license notice. ScreenGrab uses it.\n\nA permissive license makes sharing easy, but it is not the only choice. Other licenses add conditions, and Creative Commons licenses are meant for text and images, not code. This is general information, not legal advice. [Chapter 14](chapters/14-maintenance-open-source/index.md) compares the options.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "MIT License",
+        "Permissive License",
+        "Open Source License"
+      ],
+      "keywords": [
+        "mit license",
+        "permissive",
+        "reuse"
+      ],
+      "source_links": [
+        "docs/chapters/14-maintenance-open-source/index.md"
+      ],
+      "has_example": false,
+      "word_count": 76
+    },
+    {
+      "id": "faq-051",
+      "category": "Common Challenges",
+      "question": "Why did the Control-Shift-4 hotkey fail early on, and was it ever explained?",
+      "answer": "An early report said the hotkey did nothing. Later a real key press worked, confirmed by the log. The cause was never found: the earlier processes logged no hotkey activity with the same code and the shortcut registered, and neither Secure Input nor the frontmost app was recorded at those moments. Nothing was changed that could account for the difference.\n\nThe design document therefore calls it an unexplained failure and does not claim it is fixed. The right response is to leave it open and write down what to capture next time. \"I do not know why it failed\" tells the next person what to measure; \"it must have been a glitch\" hides the risk. See [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Unexplained Failure",
+        "Global Hotkey",
+        "Root Cause Analysis"
+      ],
+      "keywords": [
+        "hotkey",
+        "unexplained failure",
+        "control-shift-4",
+        "root cause"
+      ],
+      "source_links": [
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 120
+    },
+    {
+      "id": "faq-052",
+      "category": "Common Challenges",
+      "question": "If all 94 automated tests pass, does that prove ScreenGrab works?",
+      "answer": "No. A test result and a verification result are different things. The tests exercised everything after a key press, including a hand-built hotkey event reaching the handler, but a program could not press the physical key, so the question of whether the keyboard produced that event stayed open until a person tried it.\n\nOther limits include the Screen Recording permission, which a person grants, pasting into real applications, behavior on hardware the author does not own such as the Intel half of a universal build, and the blind spots a generated test suite shares with generated code. Say what was and was not checked, as in \"94 automated tests pass; manual permission flow not yet tried.\" See [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Limits Of Automated Tests",
+        "Verification Status",
+        "Manual Testing"
+      ],
+      "keywords": [
+        "tests pass",
+        "limits of automated tests",
+        "verification",
+        "manual testing"
+      ],
+      "source_links": [
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": false,
+      "word_count": 121
+    },
+    {
+      "id": "faq-053",
+      "category": "Common Challenges",
+      "question": "Why does my captured image come out blank, or why did the permission vanish after a rebuild?",
+      "answer": "Check the Screen Recording permission first. Without it, macOS gives captures that are blank or limited. If the permission seemed to disappear after you rebuilt the app, the ad-hoc signature is the likely cause: the signature is tied to the exact build, so macOS may treat the rebuilt app as a new program and ask again.\n\nOpen the privacy settings, grant the permission to the rebuilt app, and try a capture. The course description also notes a later fix for Macs that have only the Command Line Tools installed, so make sure your developer tools match the README. See [Chapter 9](chapters/09-generating-building-installing/index.md) and [Chapter 8](chapters/08-software-design-platform/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Screen Recording Permission",
+        "Ad-Hoc Signing",
+        "Platform Constraints"
+      ],
+      "keywords": [
+        "blank capture",
+        "permission",
+        "rebuild",
+        "signing"
+      ],
+      "source_links": [
+        "docs/chapters/08-software-design-platform/index.md",
+        "docs/chapters/09-generating-building-installing/index.md"
+      ],
+      "has_example": false,
+      "word_count": 108
+    },
+    {
+      "id": "faq-054",
+      "category": "Common Challenges",
+      "question": "What should I do if the hotkey conflicts with another app?",
+      "answer": "A hotkey conflict happens when two programs or system functions claim the same shortcut, so one may not work. Change one of them. Decide whether the other program is more important than the capture shortcut, then reassign whichever you prefer to give up.\n\nFor example, if a clipboard utility already uses Control-Shift-4, ScreenGrab's hotkey will not fire. Conflicts are one source of environment-specific bugs, defects that appear only under certain conditions of the computer, such as other installed utilities or system settings. Because they may not happen on the author's machine, record what is running when the failure happens. [Chapter 8](chapters/08-software-design-platform/index.md) and [Chapter 13](chapters/13-bugs-evidence-verification/index.md) explain why the design must pick a shortcut and cope with a clash.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Hotkey Conflict",
+        "Global Hotkey",
+        "Environment-Specific Bug"
+      ],
+      "keywords": [
+        "hotkey conflict",
+        "shortcut",
+        "environment"
+      ],
+      "source_links": [
+        "docs/chapters/08-software-design-platform/index.md",
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 121
+    },
+    {
+      "id": "faq-055",
+      "category": "Common Challenges",
+      "question": "Why does an AI agent sometimes claim work is done when it is not?",
+      "answer": "Overconfident reporting is a pattern in which an agent states that work is complete or correct without adequate evidence, so the claim exceeds what was actually checked. For example, an agent may say \"all tests pass\" without having run them.\n\nThe remedy is evidence-based reporting: state results only to the extent supported by observed evidence, such as test output or a direct trial, and mark unchecked claims as unchecked. Ask for the command that was run and its output, and treat a summary without evidence as a lead, not a result. See [Chapter 5](chapters/05-generative-ai-coding-agents/index.md) and [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Overconfident Reporting",
+        "Evidence-Based Reporting"
+      ],
+      "keywords": [
+        "overconfident",
+        "agent claims",
+        "evidence",
+        "reporting"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md",
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 101
+    },
+    {
+      "id": "faq-056",
+      "category": "Common Challenges",
+      "question": "What is an AI hallucination in code, and how do I catch one?",
+      "answer": "An AI hallucination is output from a language model that is false or invented but presented as true. In code it can be a function that does not exist, a wrong claim about what an API does, or a made-up test result. For example, the agent calls a macOS function that does not exist.\n\nThe compiler catches some of these as errors, and agents commonly fix their own compiler errors by reading them and retrying. Others compile but behave wrongly, so you need tests and a manual check. Hallucination is the main reason generated code must be verified, not trusted. See [Chapter 5](chapters/05-generative-ai-coding-agents/index.md), [Chapter 9](chapters/09-generating-building-installing/index.md), and [Chapter 12](chapters/12-software-testing/index.md).",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "AI Hallucination",
+        "Software Verification",
+        "Compiler Errors"
+      ],
+      "keywords": [
+        "hallucination",
+        "invented function",
+        "verification"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md",
+        "docs/chapters/09-generating-building-installing/index.md",
+        "docs/chapters/12-software-testing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 114
+    },
+    {
+      "id": "faq-057",
+      "category": "Common Challenges",
+      "question": "Why do my token counts and my cost tell different stories?",
+      "answer": "Because token types are priced very differently. For example, in the ScreenGrab session cache reads were 94.3% of the tokens but only 26.2% of the cost, while output tokens were 1.6% of the tokens and 45.1% of the cost. The question \"what used the most tokens?\" and the question \"what cost the most?\" have different answers.\n\nUse cost-weighted tokens, which scale each token by its price, to combine input, output, and cache tokens into one comparable number. A chart of raw token counts alone would send you looking in the wrong place. See [Chapter 11](chapters/11-measuring-ai-session/index.md).",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Session Cost Breakdown",
+        "Cost-Weighted Tokens",
+        "Output Tokens"
+      ],
+      "keywords": [
+        "token share",
+        "cost share",
+        "breakdown",
+        "output"
+      ],
+      "source_links": [
+        "docs/chapters/11-measuring-ai-session/index.md"
+      ],
+      "has_example": true,
+      "word_count": 101
+    },
+    {
+      "id": "faq-058",
+      "category": "Common Challenges",
+      "question": "What if the agent keeps adding features I did not ask for?",
+      "answer": "Put the exclusions in writing and make the agent read them. List non-goals in the specification, and put standing rules in an agent instructions file so you do not repeat them in each prompt. Review the plan before code is written, since visible plans let a human catch scope growth early.\n\nIf an unwanted feature already appeared, ask the agent to remove it and add the exclusion to the non-goals. Each extra feature adds code, interface, and testing obligations, so it is cheaper to refuse it at the specification stage than to delete it later. See [Chapter 5](chapters/05-generative-ai-coding-agents/index.md) and [Chapter 7](chapters/07-requirements-minimal-specs/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Non-Goals",
+        "Feature Creep",
+        "Human In The Loop"
+      ],
+      "keywords": [
+        "scope creep",
+        "agent",
+        "non-goals",
+        "review"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md",
+        "docs/chapters/07-requirements-minimal-specs/index.md"
+      ],
+      "has_example": false,
+      "word_count": 105
+    },
+    {
+      "id": "faq-059",
+      "category": "Common Challenges",
+      "question": "What can I do when I cannot reproduce a bug?",
+      "answer": "Reproduction is the first step toward fixing a bug, so try to make it occur by following known steps, and note the conditions: operating system version, display setup, other running apps, and settings. If it still does not happen, do not close it as fixed.\n\nInstead capture evidence for the next time it occurs, such as log entries and the state of the machine, and record the bug as unexplained. A bug you cannot reproduce cannot be tested, so you cannot show a fix worked. The ScreenGrab hotkey failure was handled exactly this way. See [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Bug Reproduction",
+        "Unexplained Failure",
+        "Session Log"
+      ],
+      "keywords": [
+        "reproduce",
+        "bug",
+        "logs",
+        "evidence"
+      ],
+      "source_links": [
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 99
+    },
+    {
+      "id": "faq-060",
+      "category": "Common Challenges",
+      "question": "Why did my AI session cost more than I expected?",
+      "answer": "Look for token-heavy activities, which are tasks that consume many tokens: reading many files, long debugging loops, and generating large outputs. For example, repeatedly rereading the whole project during debugging adds up quickly.\n\nThen check cache expiration. Long pauses let the cache lapse, so the next request pays to write the context again. A third cause is model choice, since a more capable model costs more per token. Compare your usage report against a session cost breakdown to find which token type grew, then change that behavior. [Chapter 11](chapters/11-measuring-ai-session/index.md) and [Chapter 10](chapters/10-tokens-caching-pricing/index.md) show how.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Token-Heavy Activities",
+        "Cache Expiration",
+        "Session Cost Breakdown"
+      ],
+      "keywords": [
+        "cost",
+        "token-heavy",
+        "debugging",
+        "cache"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md",
+        "docs/chapters/11-measuring-ai-session/index.md"
+      ],
+      "has_example": true,
+      "word_count": 98
+    },
+    {
+      "id": "faq-061",
+      "category": "Best Practices",
+      "question": "How should I write a specification for a small tool?",
+      "answer": "Start from the job to be done, then list only the behaviors needed for it. Add explicit assumptions, non-goals, and acceptance criteria that can be checked, for example \"After a 5-second delay, the selected region is on the clipboard.\" Keep it short enough to read in minutes.\n\nHave the specification reviewed before building, since reviewing is cheaper than correcting generated code. Look for gaps, such as the specification never saying what happens on cancel. [Chapter 7](chapters/07-requirements-minimal-specs/index.md) works through this for screen capture and the project's own [specification](specification.md) shows a finished one.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Software Specification",
+        "Acceptance Criteria",
+        "Minimal Specification"
+      ],
+      "keywords": [
+        "write specification",
+        "acceptance criteria",
+        "small tool"
+      ],
+      "source_links": [
+        "docs/chapters/07-requirements-minimal-specs/index.md",
+        "docs/specification.md"
+      ],
+      "has_example": true,
+      "word_count": 95
+    },
+    {
+      "id": "faq-062",
+      "category": "Best Practices",
+      "question": "Why should I answer an agent's clarifying questions carefully?",
+      "answer": "Clarifying questions resolve ambiguity before it becomes code. Your answers narrow the requirements, and they prevent wrong assumptions from becoming wrong code. For the first ScreenGrab build, the author gave a short request and answered four multiple-choice questions.\n\nA question like \"Should the image go to a file, the clipboard, or both?\" decides a feature. Treat each answer as a requirement, and write down any assumption the agent made silently so you can check it. [Chapter 5](chapters/05-generative-ai-coding-agents/index.md) and [Chapter 7](chapters/07-requirements-minimal-specs/index.md) cover this.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Clarifying Questions",
+        "Explicit Assumptions",
+        "Human In The Loop"
+      ],
+      "keywords": [
+        "clarifying questions",
+        "assumptions",
+        "agent"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md",
+        "docs/chapters/07-requirements-minimal-specs/index.md"
+      ],
+      "has_example": false,
+      "word_count": 86
+    },
+    {
+      "id": "faq-063",
+      "category": "Best Practices",
+      "question": "How do I decide whether to buy, subscribe, or generate a tool?",
+      "answer": "Name your decision criteria first, such as total cost over a stated horizon, effort, fit to what you use, verification effort, maintenance load, and risk if it fails. Then score each option against each criterion in a decision matrix, weight the criteria by importance, and compare totals.\n\nIn the chapter's illustrative matrix, subscribe scores 56 and generate scores 63 out of 85. A 7-point margin is small, so test it by changing one weight at a time and see whether the winner flips. The matrix does not replace judgment; it forces you to write down your weights. See [Chapter 15](chapters/15-decision-and-capstone/index.md).",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Decision Criteria",
+        "Decision Matrix",
+        "Build-Or-Buy Decision"
+      ],
+      "keywords": [
+        "decision",
+        "criteria",
+        "matrix",
+        "buy or build"
+      ],
+      "source_links": [
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": false,
+      "word_count": 102
+    },
+    {
+      "id": "faq-064",
+      "category": "Best Practices",
+      "question": "How can I avoid fooling myself with a decision matrix?",
+      "answer": "Treat weights and scores as judgments, not facts. Set the weights before you score, write down why each score was given, and check robustness by varying each weight alone. In the chapter's example, changing the weight of just two of the five criteria can flip the winner, so those two deserve the most thought.\n\nAlso check that your criteria are not rigged. If every criterion you listed favors the option you already wanted, add the ones that favor the other, such as verification effort and maintenance load, which favor buying or subscribing. [Chapter 15](chapters/15-decision-and-capstone/index.md) walks through the example.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Decision Matrix",
+        "Decision Criteria"
+      ],
+      "keywords": [
+        "decision matrix",
+        "weights",
+        "robustness",
+        "bias"
+      ],
+      "source_links": [
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": true,
+      "word_count": 100
+    },
+    {
+      "id": "faq-065",
+      "category": "Best Practices",
+      "question": "How should I report what has been verified?",
+      "answer": "Say what was checked, how, and with what result, and say what was not checked. For example, a good status reads \"94 automated tests pass; manual permission flow not yet tried,\" not \"everything works.\"\n\nLink each claim to evidence such as test output or a log line, and mark unchecked items clearly. Clear status prevents overstated claims and tells your future self where the risk remains. [Chapter 13](chapters/13-bugs-evidence-verification/index.md) covers verification status and evidence-based reporting.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Verification Status",
+        "Evidence-Based Reporting",
+        "Verification Plan"
+      ],
+      "keywords": [
+        "verification status",
+        "report",
+        "evidence"
+      ],
+      "source_links": [
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 76
+    },
+    {
+      "id": "faq-066",
+      "category": "Best Practices",
+      "question": "How do I choose which AI model to use for each step?",
+      "answer": "Match the model to the difficulty of the step. Vendors offer several capability tiers, where more capable models generally cost more and run slower. Use a smaller, cheaper tier for routine edits and a stronger tier for design and hard debugging.\n\nFor example, the ScreenGrab session started on the cheaper Sonnet 5.5 tier. Check results as you go: if a cheap tier produces repeated errors, the extra loops can cost more than using the stronger tier once. Prices and models change often, so recheck the rates before you estimate. See [Chapter 10](chapters/10-tokens-caching-pricing/index.md).",
+      "bloom_level": "Evaluate",
+      "difficulty": "medium",
+      "concepts": [
+        "Model Selection",
+        "Model Capability Tiers",
+        "Token Pricing"
+      ],
+      "keywords": [
+        "model selection",
+        "tiers",
+        "price",
+        "capability"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md"
+      ],
+      "has_example": true,
+      "word_count": 95
+    },
+    {
+      "id": "faq-067",
+      "category": "Best Practices",
+      "question": "How can I keep the cost of an AI session down?",
+      "answer": "Four habits help. Keep the front of the prompt stable so the cache keeps matching. Finish a chunk of related work in one sitting so the cache does not expire. Avoid token-heavy activities such as rereading the whole project during debugging. Use a cheaper model for simple steps.\n\nA short specification also helps, because a smaller context is smaller on every turn. Then measure: read the totals reported at the end of a session so you know whether the habits worked. See [Chapter 10](chapters/10-tokens-caching-pricing/index.md) and [Chapter 11](chapters/11-measuring-ai-session/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Prompt Caching",
+        "Token-Heavy Activities",
+        "Model Selection"
+      ],
+      "keywords": [
+        "reduce cost",
+        "session",
+        "caching",
+        "tokens"
+      ],
+      "source_links": [
+        "docs/chapters/10-tokens-caching-pricing/index.md",
+        "docs/chapters/11-measuring-ai-session/index.md"
+      ],
+      "has_example": true,
+      "word_count": 91
+    },
+    {
+      "id": "faq-068",
+      "category": "Best Practices",
+      "question": "What should a verification plan contain?",
+      "answer": "A verification plan is a written outline of how and in what order software will be checked, including automated and manual steps and what counts as passing. For example, it might be a checklist of the automated tests plus three manual trials: grab a region from the menu, grab with the hotkey, and paste the result into a real document.\n\nSeparate what a program can confirm from what a person must run, and record the result of each item. The plan keeps verification complete and reportable. See [Chapter 13](chapters/13-bugs-evidence-verification/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Verification Plan",
+        "Acceptance Test",
+        "Manual Testing"
+      ],
+      "keywords": [
+        "verification plan",
+        "checklist",
+        "manual checks"
+      ],
+      "source_links": [
+        "docs/chapters/13-bugs-evidence-verification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 91
+    },
+    {
+      "id": "faq-069",
+      "category": "Best Practices",
+      "question": "How do I prepare a personal tool to share as open source?",
+      "answer": "Add what a stranger needs to install and use the tool without asking you. That means a README with install steps, a license file such as MIT, a specification of what the tool does, and a design document that explains why. Put the work in a public repository.\n\nDecide what support you promise. It is fine to say in the README that a project is a personal tool with no support promised, because being clear is part of being a good steward. A reader should be able to go from zero to a working install by following the README alone. See [Chapter 14](chapters/14-maintenance-open-source/index.md).",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Sharing A Personal Tool",
+        "README File",
+        "Public Repository"
+      ],
+      "keywords": [
+        "share",
+        "open source",
+        "readme",
+        "repository"
+      ],
+      "source_links": [
+        "docs/chapters/14-maintenance-open-source/index.md"
+      ],
+      "has_example": false,
+      "word_count": 105
+    },
+    {
+      "id": "faq-070",
+      "category": "Best Practices",
+      "question": "What should I record so my cost comparison is credible?",
+      "answer": "Record the assumptions that produce the numbers: the time horizon, number of computers, annual fee, model and token rates, token counts, and what is excluded. A published cost comparison is a public, documented comparison with stated assumptions so others can check it.\n\nInclude your own time and keep the same assumptions on both sides of the comparison. State what you did not count, such as maintenance. Without these, a reader cannot tell a fair comparison from a favorable one. [Chapter 15](chapters/15-decision-and-capstone/index.md) describes the capstone's published comparison, and [Chapter 11](chapters/11-measuring-ai-session/index.md) covers estimation assumptions.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Published Cost Comparison",
+        "Estimation Assumptions",
+        "Cost Comparison"
+      ],
+      "keywords": [
+        "cost comparison",
+        "assumptions",
+        "publish"
+      ],
+      "source_links": [
+        "docs/chapters/11-measuring-ai-session/index.md",
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": false,
+      "word_count": 96
+    },
+    {
+      "id": "faq-071",
+      "category": "Advanced Topics",
+      "question": "How would I design a minimal replacement for a paid tool I use?",
+      "answer": "Follow the capstone sequence. Identify the tool and your actual use, using cost per feature used to see what you pay for each capability that gives value. Write a minimal specification with non-goals and acceptance criteria. Check the platform constraints and design before building. Generate the code with an agent, run automated tests, and finish with a manual verification plan. Measure time and tokens, then publish a cost comparison with its assumptions.\n\nKeep the first version to one or two features, as ScreenGrab did. If you cannot name the job in one sentence, the scope is too big. [Chapter 15](chapters/15-decision-and-capstone/index.md) describes the capstone in detail.",
+      "bloom_level": "Create",
+      "difficulty": "hard",
+      "concepts": [
+        "Replacement Tool Capstone",
+        "Minimal Specification",
+        "Verification Plan"
+      ],
+      "keywords": [
+        "capstone",
+        "replacement",
+        "design",
+        "minimal"
+      ],
+      "source_links": [
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": false,
+      "word_count": 107
+    },
+    {
+      "id": "faq-072",
+      "category": "Advanced Topics",
+      "question": "Is generating a tool always cheaper than buying one?",
+      "answer": "No. Generating won on cost in this case because the need was small and well defined: two features, one platform, and a user who could verify the result. Buying or subscribing wins when the need is large or fuzzy, you need vendor support, a team must share a standard tool, or you cannot verify the result.\n\nGenerated software also shifts risks to you. The owner bears defects, security issues, and the support responsibility that a vendor would otherwise carry. The decision matrix gave subscribing higher scores on verification effort and maintenance load, and that is a fair result, not a flaw. See [Chapter 6](chapters/06-build-or-buy/index.md) and [Chapter 15](chapters/15-decision-and-capstone/index.md).",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Build-Or-Buy Decision",
+        "Risks Of Ownership",
+        "Support Responsibility"
+      ],
+      "keywords": [
+        "when to buy",
+        "risks",
+        "ownership",
+        "tradeoffs"
+      ],
+      "source_links": [
+        "docs/chapters/06-build-or-buy/index.md",
+        "docs/chapters/15-decision-and-capstone/index.md"
+      ],
+      "has_example": false,
+      "word_count": 111
+    },
+    {
+      "id": "faq-073",
+      "category": "Advanced Topics",
+      "question": "How do maintenance and my own time change the cost comparison?",
+      "answer": "They can change the answer. The $14 figure covers the code only; it excludes generating this textbook, the author's own time, and later maintenance. With an illustrative value of $40 an hour, 70 minutes of directing the agent has an opportunity cost of about $46.67, which is more than the $14.\n\nMaintenance continues for as long as the software is used: fixing a hotkey after an operating system update, adapting to toolchain changes, and releasing patches. It often exceeds creation cost over a long life. A fair comparison states the horizon and adds both. The break-even point moves later but may still favor generating over several years and several computers. See [Chapter 4](chapters/04-total-cost-of-ownership/index.md) and [Chapter 14](chapters/14-maintenance-open-source/index.md).",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Maintenance Cost",
+        "Opportunity Cost",
+        "Total Cost Of Ownership"
+      ],
+      "keywords": [
+        "maintenance",
+        "opportunity cost",
+        "time",
+        "tco"
+      ],
+      "source_links": [
+        "docs/chapters/04-total-cost-of-ownership/index.md",
+        "docs/chapters/14-maintenance-open-source/index.md"
+      ],
+      "has_example": false,
+      "word_count": 121
+    },
+    {
+      "id": "faq-074",
+      "category": "Advanced Topics",
+      "question": "Should I open source a tool I generated for myself?",
+      "answer": "Weigh the benefits against the duty it creates. Sharing multiplies the value of a one-time generation, lets others avoid the subscription, and can bring community contributions such as fixes, translations, and documentation. Forking and pull requests let others customize without your help.\n\nBut long-term stewardship is real work: reviewing contributions, making patch releases, and answering issues. You can reduce the burden by saying in the README that the tool is personal with no support promised, keeping the dependency list short, and choosing a permissive license. If you do not want any of that, keeping it private is a valid choice. See [Chapter 14](chapters/14-maintenance-open-source/index.md).",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Long-Term Stewardship",
+        "Sharing A Personal Tool",
+        "Community Contribution"
+      ],
+      "keywords": [
+        "open source",
+        "stewardship",
+        "community",
+        "decision"
+      ],
+      "source_links": [
+        "docs/chapters/14-maintenance-open-source/index.md"
+      ],
+      "has_example": false,
+      "word_count": 105
+    },
+    {
+      "id": "faq-075",
+      "category": "Advanced Topics",
+      "question": "How far can I trust the ScreenGrab cost and time numbers?",
+      "answer": "Treat them as estimates from a single case, not as benchmarks. The costs apply Claude Opus 5.5 API prices of $20 per million output tokens and $0.20 per million cache reads, treat all other new tokens as cache writes at $5 per million, and come from a session that started on Sonnet 5.5 and ran on a subscription. They exclude generating the textbook, the author's time, and later maintenance.\n\nThe course description also admits that the work was not flawless: one early hotkey failure was never explained, several acceptance tests still have to be run by hand, and a later fix was needed for Macs with only the Command Line Tools. Reproduce the method with your own tool before relying on the numbers. See [Chapter 11](chapters/11-measuring-ai-session/index.md) and the [course description](course-description.md).",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Estimation Assumptions",
+        "API Cost Estimate",
+        "Cost Of Generating Software"
+      ],
+      "keywords": [
+        "limits",
+        "estimates",
+        "trust",
+        "assumptions"
+      ],
+      "source_links": [
+        "docs/chapters/11-measuring-ai-session/index.md",
+        "docs/course-description.md"
+      ],
+      "has_example": false,
+      "word_count": 137
+    },
+    {
+      "id": "faq-076",
+      "category": "Advanced Topics",
+      "question": "How could I adapt this method to a different platform or tool?",
+      "answer": "Keep the process and replace the platform details. Run a technical feasibility check first, to confirm that the platform allows what you need and what permissions it requires. Then build a prototype of the one feature that carries the risk, and let its cost and result tell you whether to continue.\n\nNext, write a minimal specification, choose the native language and tools for that platform, ask the agent to justify its choices, and write a verification plan that lists what only a person can confirm on that platform. Agent experiments on a bounded task are a cheap way to learn what the agent can do and how it fails. See [Chapter 8](chapters/08-software-design-platform/index.md) and [Chapter 5](chapters/05-generative-ai-coding-agents/index.md).",
+      "bloom_level": "Create",
+      "difficulty": "hard",
+      "concepts": [
+        "Platform Constraints",
+        "Technical Feasibility Check",
+        "Prototype"
+      ],
+      "keywords": [
+        "adapt",
+        "platform",
+        "feasibility",
+        "prototype"
+      ],
+      "source_links": [
+        "docs/chapters/05-generative-ai-coding-agents/index.md",
+        "docs/chapters/08-software-design-platform/index.md"
+      ],
+      "has_example": false,
+      "word_count": 119
+    }
+  ]
+}
