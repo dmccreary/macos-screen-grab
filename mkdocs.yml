@@ -38,8 +38,21 @@ nav:
 
   - Chapters:
       - List of Chapters: chapters/index.md
-      # Add chapter entries here as content is generated, e.g.:
-      # - 1. Introduction: chapters/01-introduction/index.md
+      - 1. Software Features and the Anatomy of Bloat: chapters/01-software-bloat/index.md
+      - 2. Feature Usage and the 95/5 Rule: chapters/02-feature-usage/index.md
+      - 3. Licenses, Subscriptions, and Vendor Incentives: chapters/03-licenses-subscriptions/index.md
+      - 4. Total Cost of Ownership: chapters/04-total-cost-of-ownership/index.md
+      - 5. Generative AI and Coding Agents: chapters/05-generative-ai-coding-agents/index.md
+      - 6. Build or Buy and the Rise of Personal Software: chapters/06-build-or-buy/index.md
+      - 7. Requirements and Minimal Specifications: chapters/07-requirements-minimal-specs/index.md
+      - 8. Software Design and Platform Constraints: chapters/08-software-design-platform/index.md
+      - 9. Generating, Building, and Installing the Code: chapters/09-generating-building-installing/index.md
+      - 10. Tokens, Prompt Caching, and Token Pricing: chapters/10-tokens-caching-pricing/index.md
+      - "11. Measuring an AI Session: Time and Cost": chapters/11-measuring-ai-session/index.md
+      - "12. Software Testing: Automated and Manual": chapters/12-software-testing/index.md
+      - 13. Bugs, Evidence, and Verification Plans: chapters/13-bugs-evidence-verification/index.md
+      - 14. Maintenance and Open Source Sharing: chapters/14-maintenance-open-source/index.md
+      - 15. The Final Decision and the Capstone Project: chapters/15-decision-and-capstone/index.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -60,6 +73,7 @@ nav:
 
   - Appendices:
       - Snagit Pricing, November 2026: appendices/snagit-pricing-2026-11.md
+      - Snagit Price History, 2010–2026: appendices/snagit-prices-history.md
 
   - License: license.md
   - Contact: contact.md
