@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- microsim-scaffold-stub -->
+    <title>Bug Investigation Workflow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Bug Investigation Workflow</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> bug-investigation-workflow</p>
+            <p><strong>Library:</strong> Mermaid</p>
+            <p><strong>Bloom Level:</strong> Remember</p>
+            <p><strong>Learning Objective:</strong> The learner will identify what each of the seven steps of a bug investigation produces, answering at least 6 of 7 correctly.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: workflow
+    **sim-id:** bug-investigation-workflow<br/>
+    **Library:** Mermaid<br/>
+    **Status:** Specified<br/>
+    **Bloom Level:** Remember<br/>
+    **Bloom Verb:** identify<br/>
+    **Learning Objective:** The learner will identify what each of the seven steps of a bug investigation produces, answering at least 6 of 7 correctly.
+    
+    **Prerequisites:** software bug, bug reproduction, root cause analysis, unexplained failure, regression test (all defined in the chapter above this block).
+    
+    **Evidence of Mastery:** For each step, the learner picks which of three outputs the step produces, before the correct output is shown. A pick is correct when it matches the Output column in Content. Mastery is 6 of 7 correct. Opening a step to read its description is exploration, not evidence.
+    
+    **Misconceptions:** (1) A bug that cannot be reproduced can be closed as fixed. (2) Fixing the visible symptom is the same as fixing the root cause. (3) A fix is finished when the code changes.
+    
+    **Instructional Rationale:** Remember-level recall of the sequence benefits from touching each step and committing an answer. The branch on "can it be reproduced?" shows that the process has an honest exit for unexplained failures.
+    
+    **Content:**
+    
+    The diagram is a flowchart with seven steps and one decision. Each step is clickable. Clicking opens an information box with the step's description and three possible outputs. The learner picks one.
+    
+    | # | Step | Description | Correct output | Wrong outputs shown | Reason |
+    |---|---|---|---|---|---|
+    | 1 | Observe the failure | Notice a difference between expected and actual behavior | A written observation of expected versus actual | A fixed bug; a new feature | You cannot work on a bug nobody has written down. |
+    | 2 | Try to reproduce it | Follow the recipe on the original setup | A recipe that makes the bug happen on demand | A passing test; a release | Reproduction is a recipe, not a fix. |
+    | 3 | Decision: reproducible? | If yes continue to step 4. If no, record an unexplained failure | A yes or no, with the environment noted | A root cause; a regression test | The answer decides whether the investigation can continue. |
+    | 4 | Record an unexplained failure | State what was seen, what was known, and what to capture next time | A written note of known facts and missing facts | A claim that the bug is fixed; a deleted report | Honest reporting beats a false fix. |
+    | 5 | Find the root cause | Ask why until removing the cause makes the bug impossible | A named underlying cause | A workaround; a bigger test suite | The cause, not the symptom, is what you fix. |
+    | 6 | Fix and add a regression test | Change the code and write a test that fails before the fix | A fix plus a test that failed first and now passes | A new bug report; a README change | A fix without a test may silently return. |
+    | 7 | Re-verify and report | Run the full checks and record the evidence | A status report with dated evidence | A guess that it is fixed; a deleted test | A claim needs a receipt. |
+    
+    Edge labels: "reproduced" from step 3 to step 5, "cannot reproduce" from step 3 to step 4. Step 4 leads to a final node "wait for new evidence" whose information box reads "Capture the frontmost app, the log, and the settings the next time it happens".
+    
+    **Provenance:** Steps follow the chapter sections "Bug Reproduction", "Root Cause Analysis", "Regression Tests" and "The Unexplained Failure". The step descriptions are the chapter author's wording.
+    
+    **Rules:** Seven steps, each with exactly one correct output. The score is the number of correct picks. Mastery when score >= 6. The order of the three choices for each step is shuffled once per visit.
+    
+    **Learner Activity:**
+    
+    1. The learner clicks a step. An information box shows the description and three outputs.
+    2. The learner picks one output. The sim marks it correct or incorrect and shows the Reason.
+    3. The learner opens the remaining steps in any order until all seven are answered.
+    4. The learner should notice that step 3 sends the process down one of two paths, and that both paths end in written evidence.
+    
+    **Feedback:** Seven steps, any order, one attempt each. Correct: "Correct" plus the Reason. Incorrect: "Not quite: this step produces [correct output]" plus the Reason. The score "Correct: n of 7" is shown after the last step.
+    
+    **Starting State:** The flowchart is shown with no step answered. The question on screen is "What does each step of a bug investigation produce?"
+    
+    **Chapter Anchors:** The chapter lists reproduction recipes with four parts plus the environment, root cause by asking why, a regression test that must be seen to fail before the fix, and an unexplained failure branch.
+    -->
+</body>
+</html>

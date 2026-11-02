@@ -329,3 +329,5 @@ An edge label on every arrow states what is passed on: "key event", "action", "f
 !!! mascot-celebration "You Can Read a Test Suite"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now name what unit, integration, smoke, and acceptance tests each confirm, and spot the behaviors that automation cannot reach. That is the skill that separates "the tests pass" from "it works".
+
+[See Annotated References](./references.md)

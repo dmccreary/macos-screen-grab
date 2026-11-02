@@ -1,0 +1,23 @@
+{
+  "title": "Bug Investigation Workflow",
+  "description": "The learner will identify what each of the seven steps of a bug investigation produces, answering at least 6 of 7 correctly.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "bug-investigation-workflow",
+  "library": "Mermaid",
+  "bloomLevel": "Remember",
+  "bloomVerb": "identify",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Bugs, Evidence, and Verification Plans",
+  "chapter_dir": "13-bugs-evidence-verification",
+  "chapter_rel_dir": "chapters/13-bugs-evidence-verification"
+}

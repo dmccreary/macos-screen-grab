@@ -1,0 +1,23 @@
+{
+  "title": "Long Tail of Feature Usage Explorer",
+  "description": "The learner will examine an illustrative 20-feature usage distribution and state how many features are used by at least a chosen share of users, correctly for 3 of 3 thresholds.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "usage-long-tail-explorer",
+  "library": "Chart.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "examine",
+  "completion_status": "scaffold",
+  "chapter_number": 2,
+  "chapter_title": "Feature Usage and the 95/5 Rule",
+  "chapter_dir": "02-feature-usage",
+  "chapter_rel_dir": "chapters/02-feature-usage"
+}

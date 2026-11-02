@@ -309,3 +309,5 @@ Challenge cases, in this order:
 - Software maintenance never ends, and its cost can exceed the cost of building the tool.
 - Learning cost is paid up front and again after redesigns.
 - Total cost of ownership adds purchase price, fees, maintenance, and learning over a stated horizon; the break-even point shows when one option overtakes another.
+
+[See Annotated References](./references.md)

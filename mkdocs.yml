@@ -38,21 +38,66 @@ nav:
 
   - Chapters:
       - List of Chapters: chapters/index.md
-      - 1. Software Features and the Anatomy of Bloat: chapters/01-software-bloat/index.md
-      - 2. Feature Usage and the 95/5 Rule: chapters/02-feature-usage/index.md
-      - 3. Licenses, Subscriptions, and Vendor Incentives: chapters/03-licenses-subscriptions/index.md
-      - 4. Total Cost of Ownership: chapters/04-total-cost-of-ownership/index.md
-      - 5. Generative AI and Coding Agents: chapters/05-generative-ai-coding-agents/index.md
-      - 6. Build or Buy and the Rise of Personal Software: chapters/06-build-or-buy/index.md
-      - 7. Requirements and Minimal Specifications: chapters/07-requirements-minimal-specs/index.md
-      - 8. Software Design and Platform Constraints: chapters/08-software-design-platform/index.md
-      - 9. Generating, Building, and Installing the Code: chapters/09-generating-building-installing/index.md
-      - 10. Tokens, Prompt Caching, and Token Pricing: chapters/10-tokens-caching-pricing/index.md
-      - "11. Measuring an AI Session: Time and Cost": chapters/11-measuring-ai-session/index.md
-      - "12. Software Testing: Automated and Manual": chapters/12-software-testing/index.md
-      - 13. Bugs, Evidence, and Verification Plans: chapters/13-bugs-evidence-verification/index.md
-      - 14. Maintenance and Open Source Sharing: chapters/14-maintenance-open-source/index.md
-      - 15. The Final Decision and the Capstone Project: chapters/15-decision-and-capstone/index.md
+      - 1. Software Features and the Anatomy of Bloat:
+          - Content: chapters/01-software-bloat/index.md
+          - Quiz: chapters/01-software-bloat/quiz.md
+          - Annotated References: chapters/01-software-bloat/references.md
+      - 2. Feature Usage and the 95/5 Rule:
+          - Content: chapters/02-feature-usage/index.md
+          - Quiz: chapters/02-feature-usage/quiz.md
+          - Annotated References: chapters/02-feature-usage/references.md
+      - 3. Licenses, Subscriptions, and Vendor Incentives:
+          - Content: chapters/03-licenses-subscriptions/index.md
+          - Quiz: chapters/03-licenses-subscriptions/quiz.md
+          - Annotated References: chapters/03-licenses-subscriptions/references.md
+      - 4. Total Cost of Ownership:
+          - Content: chapters/04-total-cost-of-ownership/index.md
+          - Quiz: chapters/04-total-cost-of-ownership/quiz.md
+          - Annotated References: chapters/04-total-cost-of-ownership/references.md
+      - 5. Generative AI and Coding Agents:
+          - Content: chapters/05-generative-ai-coding-agents/index.md
+          - Quiz: chapters/05-generative-ai-coding-agents/quiz.md
+          - Annotated References: chapters/05-generative-ai-coding-agents/references.md
+      - 6. Build or Buy and the Rise of Personal Software:
+          - Content: chapters/06-build-or-buy/index.md
+          - Quiz: chapters/06-build-or-buy/quiz.md
+          - Annotated References: chapters/06-build-or-buy/references.md
+      - 7. Requirements and Minimal Specifications:
+          - Content: chapters/07-requirements-minimal-specs/index.md
+          - Quiz: chapters/07-requirements-minimal-specs/quiz.md
+          - Annotated References: chapters/07-requirements-minimal-specs/references.md
+      - 8. Software Design and Platform Constraints:
+          - Content: chapters/08-software-design-platform/index.md
+          - Quiz: chapters/08-software-design-platform/quiz.md
+          - Annotated References: chapters/08-software-design-platform/references.md
+      - 9. Generating, Building, and Installing the Code:
+          - Content: chapters/09-generating-building-installing/index.md
+          - Quiz: chapters/09-generating-building-installing/quiz.md
+          - Annotated References: chapters/09-generating-building-installing/references.md
+      - 10. Tokens, Prompt Caching, and Token Pricing:
+          - Content: chapters/10-tokens-caching-pricing/index.md
+          - Quiz: chapters/10-tokens-caching-pricing/quiz.md
+          - Annotated References: chapters/10-tokens-caching-pricing/references.md
+      - "11. Measuring an AI Session: Time and Cost":
+          - Content: chapters/11-measuring-ai-session/index.md
+          - Quiz: chapters/11-measuring-ai-session/quiz.md
+          - Annotated References: chapters/11-measuring-ai-session/references.md
+      - "12. Software Testing: Automated and Manual":
+          - Content: chapters/12-software-testing/index.md
+          - Quiz: chapters/12-software-testing/quiz.md
+          - Annotated References: chapters/12-software-testing/references.md
+      - 13. Bugs, Evidence, and Verification Plans:
+          - Content: chapters/13-bugs-evidence-verification/index.md
+          - Quiz: chapters/13-bugs-evidence-verification/quiz.md
+          - Annotated References: chapters/13-bugs-evidence-verification/references.md
+      - 14. Maintenance and Open Source Sharing:
+          - Content: chapters/14-maintenance-open-source/index.md
+          - Quiz: chapters/14-maintenance-open-source/quiz.md
+          - Annotated References: chapters/14-maintenance-open-source/references.md
+      - 15. The Final Decision and the Capstone Project:
+          - Content: chapters/15-decision-and-capstone/index.md
+          - Quiz: chapters/15-decision-and-capstone/quiz.md
+          - Annotated References: chapters/15-decision-and-capstone/references.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -63,12 +108,46 @@ nav:
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Test: learning-graph/mascot-test.md
+      - Quiz Generation Report: learning-graph/quiz-generation-report.md
       # Generated by faq-generator skill:
       - FAQ Quality Report: learning-graph/faq-quality-report.md
       - FAQ Coverage Gaps: learning-graph/faq-coverage-gaps.md
 
   - MicroSims:
-      - List of MicroSims: sims/index.md
+    - List of MicroSims: sims/index.md
+    - Acceptance Criteria Testability Judge: sims/acceptance-criteria-testability-judge/index.md
+    - AI Coding Agent Loop Stepper: sims/ai-coding-agent-loop-stepper/index.md
+    - AI-Assisted Build Stage Sequencer: sims/ai-assisted-build-stage-sequencer/index.md
+    - Break-Even Chart for a Generated Tool: sims/tco-break-even-chart/index.md
+    - Bug Investigation Workflow: sims/bug-investigation-workflow/index.md
+    - Buy, Subscribe, or Generate Decision Explorer: sims/buy-subscribe-generate-decision-explorer/index.md
+    - Claim and Evidence Checker: sims/agent-claim-evidence-checker/index.md
+    - Design Trade-Off Judge: sims/design-trade-off-judge/index.md
+    - Feature Growth and Usage Explorer: sims/bloat-feature-growth-explorer/index.md
+    - Fork and Pull Request Flow: sims/fork-and-pull-request-flow/index.md
+    - License Offer Sorter: sims/licenses-offer-sorter/index.md
+    - Long Tail of Feature Usage Explorer: sims/usage-long-tail-explorer/index.md
+    - Open Source License Matcher: sims/open-source-license-matcher/index.md
+    - Prompt Cache Cost Calculator: sims/prompt-cache-cost-calculator/index.md
+    - Requirement Type Sorter: sims/requirement-type-sorter/index.md
+    - Resource Footprint Comparison: sims/bloat-footprint-comparison/index.md
+    - ScreenGrab Component Map: sims/screengrab-component-map/index.md
+    - ScreenGrab First Install Size Breakdown: sims/screengrab-first-install-size-breakdown/index.md
+    - ScreenGrab Grab Flow Test Coverage: sims/grab-flow-test-coverage/index.md
+    - Session Cost Estimator: sims/session-cost-estimator/index.md
+    - Software Vocabulary Concept Map: sims/bloat-software-concept-map/index.md
+    - Subscribe or Generate Cost Calculator: sims/subscribe-or-generate-cost-calculator/index.md
+    - Switching Cost Calculator: sims/licenses-switching-cost-calculator/index.md
+    - Token Share Versus Cost Share Chart: sims/token-share-versus-cost-share/index.md
+    - Token Split Explorer: sims/token-split-explorer/index.md
+    - Total Cost of Ownership Calculator: sims/tco-calculator/index.md
+    - Vendor Incentive Explorer: sims/licenses-vendor-incentive-explorer/index.md
+    - Verification Status Classifier: sims/verification-status-classifier/index.md
+    - Weighted Decision Matrix Explorer: sims/weighted-decision-matrix-explorer/index.md
+    - Which Test Can Confirm This: sims/which-test-can-confirm-this/index.md
+    - Why Features Get Added Sorter: sims/usage-feature-driver-sorter/index.md
+
+
 
   - Project Documents:
       - Specification: specification.md
@@ -144,21 +223,25 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  # Currency-safe math: inline is \(...\) only, never single $. Run
-  # book-installer feature 5 (KaTeX) to add the renderer.
+  # Currency-safe math rendered by KaTeX (see extra_javascript below):
+  # inline is \(...\), display is \[...\]. Never use $ or $$ for math,
+  # so dollar amounts like $9 and $30 stay plain text.
   - pymdownx.arithmatex:
       generic: true
       inline_syntax: ['round']
-      block_syntax: ['dollar', 'square']
+      block_syntax: ['square']
 
 # Custom CSS — file is created by init-textbook
 extra_css:
   - css/extra.css
   - css/mascot.css
+  - https://unpkg.com/katex@0.16.11/dist/katex.min.css
 
-# Custom JavaScript — uncomment once a corresponding file exists
-# extra_javascript:
-#   - js/extra.js
+# Custom JavaScript
+extra_javascript:
+  - javascripts/katex-config.js
+  - https://unpkg.com/katex@0.16.11/dist/katex.min.js
+  - https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js
 
 # Exclude prompt scratch files and TODOs from build/search/sitemap
 exclude_docs: |

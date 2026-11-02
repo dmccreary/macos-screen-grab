@@ -296,3 +296,5 @@ An estimate is only as good as its stated assumptions, and a cost figure is only
 !!! mascot-celebration "You Can Audit an AI Bill"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now turn a usage record into a dollar estimate, state the assumptions behind it, and say which activity drove the spending. That is the skill that lets you question any "it only cost" claim, including the ones in this book.
+
+[See Annotated References](./references.md)

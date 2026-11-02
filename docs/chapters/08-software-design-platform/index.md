@@ -338,3 +338,5 @@ Counts: Option 1 is better in 2 decisions (1 and 7), Option 2 is better in 6 dec
 !!! mascot-celebration "You Can Read a Design"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now read a design document, name the trade-off behind each decision, and explain why ScreenGrab is a native, menu bar, zero-dependency app with a global hotkey, a permission check, and freeze-frame selection. Next, you will watch that design become running code.
+
+[See Annotated References](./references.md)

@@ -409,3 +409,5 @@ A worked example: a utility offers free grabs but charges $30 per year to remove
 - Per-computer pricing multiplies the fee by machines; per-user pricing multiplies it by people.
 - Recurring revenue, upgrade revenue, and customer lifetime value shape what a vendor builds.
 - Proprietary file formats raise switching costs, and high switching costs produce vendor lock-in.
+
+[See Annotated References](./references.md)

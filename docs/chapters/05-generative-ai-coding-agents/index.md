@@ -424,3 +424,5 @@ Generative AI produces content from learned patterns. An LLM is the text engine 
 !!! mascot-celebration "You Can Read an Agent Now"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now explain what a coding agent does at each stage, name the points where a person must stay in the loop, and tell a supported claim from an overconfident one. That is the foundation for deciding, in the next chapter, whether to buy, subscribe, or generate.
+
+[See Annotated References](./references.md)

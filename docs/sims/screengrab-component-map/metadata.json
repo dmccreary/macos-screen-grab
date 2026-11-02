@@ -1,0 +1,23 @@
+{
+  "title": "ScreenGrab Component Map",
+  "description": "The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "screengrab-component-map",
+  "library": "vis-network",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "completion_status": "scaffold",
+  "chapter_number": 8,
+  "chapter_title": "Software Design and Platform Constraints",
+  "chapter_dir": "08-software-design-platform",
+  "chapter_rel_dir": "chapters/08-software-design-platform"
+}

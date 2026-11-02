@@ -354,3 +354,5 @@ The pieces in this chapter fit together as a chain, in which each stage leaves s
 !!! mascot-celebration "You Can Direct the Whole Build"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now describe every stage from generated code to a running install: compiling and its errors, build and installer scripts with rollback and uninstall, signing, the README, and the Git commits that record each step. Next, you will learn what all of this cost in tokens.
+
+[See Annotated References](./references.md)

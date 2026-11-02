@@ -1,0 +1,23 @@
+{
+  "title": "ScreenGrab Grab Flow Test Coverage",
+  "description": "The learner will distinguish the steps of a ScreenGrab grab that an automated test can confirm from the steps that only a person can confirm, by marking all 7 steps and matching the Content table on at least 6 of 7.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "grab-flow-test-coverage",
+  "library": "Mermaid",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "distinguish",
+  "completion_status": "scaffold",
+  "chapter_number": 12,
+  "chapter_title": "Software Testing: Automated and Manual",
+  "chapter_dir": "12-software-testing",
+  "chapter_rel_dir": "chapters/12-software-testing"
+}

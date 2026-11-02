@@ -1,0 +1,23 @@
+{
+  "title": "Which Test Can Confirm This",
+  "description": "The learner will classify each of twelve ScreenGrab behaviors as confirmable by a unit test, an integration test, a smoke test, or a manual acceptance test, with at least 10 of 12 correct on the first attempt.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "which-test-can-confirm-this",
+  "library": "p5.js",
+  "bloomLevel": "Understand",
+  "bloomVerb": "classify",
+  "completion_status": "scaffold",
+  "chapter_number": 12,
+  "chapter_title": "Software Testing: Automated and Manual",
+  "chapter_dir": "12-software-testing",
+  "chapter_rel_dir": "chapters/12-software-testing"
+}

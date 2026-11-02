@@ -333,3 +333,5 @@ Challenge scenarios, in order:
 - Prompt caching pays a one-time write and then cheap reads, which saved about 94% in the 40-turn example.
 - Caches expire, so keep related work together and keep the front of the prompt stable.
 - Choose the cheapest model tier that can do the job.
+
+[See Annotated References](./references.md)

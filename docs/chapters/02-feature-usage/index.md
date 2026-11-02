@@ -316,3 +316,5 @@ The 8 situations, in this fixed order:
 - The Pareto principle and the 95/5 rule of thumb describe that unevenness; treat the numbers as hypotheses.
 - Unused features cost cognitive load, add interface complexity, and hurt discoverability.
 - Roadmaps, competitive matching, and checklist marketing keep adding features that usage does not justify.
+
+[See Annotated References](./references.md)

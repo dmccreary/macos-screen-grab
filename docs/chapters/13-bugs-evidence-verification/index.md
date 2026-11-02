@@ -297,3 +297,5 @@ The capstone in Chapter 15 asks you to write one of these for your own tool. Fil
 !!! mascot-celebration "You Can Back Up a Claim"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now investigate a bug from reproduction to regression test, name the limits of automated tests, label a claim's verification status, and write a plan that hands the human checks to a human. Chapter 14 looks at what comes after the first install.
+
+[See Annotated References](./references.md)

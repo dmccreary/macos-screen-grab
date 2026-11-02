@@ -1,0 +1,23 @@
+{
+  "title": "Vendor Incentive Explorer",
+  "description": "The learner will attribute each of 8 vendor decisions to the pricing model, one-time or subscription, whose incentives make it more likely, scoring at least 7 of 8.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "licenses-vendor-incentive-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "attribute",
+  "completion_status": "scaffold",
+  "chapter_number": 3,
+  "chapter_title": "Licenses, Subscriptions, and Vendor Incentives",
+  "chapter_dir": "03-licenses-subscriptions",
+  "chapter_rel_dir": "chapters/03-licenses-subscriptions"
+}

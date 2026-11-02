@@ -1,0 +1,23 @@
+{
+  "title": "Software Vocabulary Concept Map",
+  "description": "The learner will classify six described examples under the correct term among software, software product, software feature, feature set, software version, and software release cycle, scoring at least 5 of 6 on the first attempt.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "bloat-software-concept-map",
+  "library": "vis-network",
+  "bloomLevel": "Understand",
+  "bloomVerb": "classify",
+  "completion_status": "scaffold",
+  "chapter_number": 1,
+  "chapter_title": "Software Features and the Anatomy of Bloat",
+  "chapter_dir": "01-software-bloat",
+  "chapter_rel_dir": "chapters/01-software-bloat"
+}

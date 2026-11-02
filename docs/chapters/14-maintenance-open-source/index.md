@@ -293,3 +293,5 @@ A **community contribution** is any help given to a project by people other than
 !!! mascot-celebration "You Know the Long Game"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now estimate the yearly cost of keeping a tool alive, choose between permissive, copyleft, and Creative Commons licensing, and prepare a repository for strangers. Chapter 15 puts every number in this book to work on a decision of your own.
+
+[See Annotated References](./references.md)

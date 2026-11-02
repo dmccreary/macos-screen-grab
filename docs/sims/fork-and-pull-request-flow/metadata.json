@@ -1,0 +1,23 @@
+{
+  "title": "Fork and Pull Request Flow",
+  "description": "The learner will classify each of the six steps of a contribution by where code changes (the contributor's fork, the original repository, or nowhere), with at least 5 of 6 correct.",
+  "creator": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "author": "Dan McCreary",
+  "date": "2026-11-01",
+  "subject": [
+    "ScreenGrab: Software Bloat and the Generated Alternative"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "fork-and-pull-request-flow",
+  "library": "Mermaid",
+  "bloomLevel": "Understand",
+  "bloomVerb": "classify",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "Maintenance and Open Source Sharing",
+  "chapter_dir": "14-maintenance-open-source",
+  "chapter_rel_dir": "chapters/14-maintenance-open-source"
+}

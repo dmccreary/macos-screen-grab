@@ -299,3 +299,5 @@ A **published cost comparison** is a public write-up of your capstone's costs an
 !!! mascot-celebration "You Finished the Whole Book"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now count what a tool costs per feature used, price a generated alternative honestly, verify it, decide with a weighted matrix, and publish the evidence. You came in knowing that software bloats, and you leave knowing what to do about it. Grab only what you need!
+
+[See Annotated References](./references.md)

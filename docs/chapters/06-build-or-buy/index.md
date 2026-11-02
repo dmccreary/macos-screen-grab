@@ -241,3 +241,5 @@ Counts: Generate is the best option in 4 scenarios (1, 4, 6, 8), Subscribe in 2 
 !!! mascot-celebration "You Can Name Every Door"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now describe buy, subscribe, and generate, say how personal, disposable, and long-lived software differ, and name who answers when a generated tool breaks. Next, you will learn how to write the specification that keeps a generated tool small.
+
+[See Annotated References](./references.md)

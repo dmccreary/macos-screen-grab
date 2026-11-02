@@ -453,3 +453,5 @@ The decision is a good illustration of omission paying off. Saving to a file wou
 !!! mascot-celebration "You Can Write the Short Version"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
     You can now turn a user need into functional and non-functional requirements, draw the scope with non-goals, write testable acceptance criteria, and assemble a minimal specification for a tool like ScreenGrab. Next, you will see how a specification becomes a design that fits a real platform.
+
+[See Annotated References](./references.md)

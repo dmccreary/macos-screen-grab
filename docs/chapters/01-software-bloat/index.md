@@ -458,3 +458,5 @@ You now have the vocabulary for the rest of the book. A product is built from so
 - Software bloat is a gap between a feature set and the job a user needs done. Feature creep is how the gap opens.
 - Resource footprint, including install size and idle resource use, is the measurable side of bloat.
 - A single-purpose utility, guided by the Unix philosophy, is the contrast case.
+
+[See Annotated References](./references.md)
