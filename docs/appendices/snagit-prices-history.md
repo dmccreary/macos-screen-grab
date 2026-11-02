@@ -33,4 +33,6 @@ The earlier prices bought a perpetual license to that version; the recent $39 pr
 
 This is a sourced reconstruction of advertised prices, not a complete archive of every price change. The **2024 subscription price has weaker historical evidence** than the launch prices above; its linked contemporary report is from a user discussion. Research date: November 1, 2026.
 
+Because the table excludes promotions, it doesn't show the author's recollection of buying a one-time macOS license for around $40 on a special sale. No receipt or published sale price has been found to confirm that purchase.
+
 For more detail on current licensing, see [Snagit Pricing, November 2026](snagit-pricing-2026-11.md).

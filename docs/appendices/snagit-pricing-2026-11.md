@@ -37,6 +37,10 @@ device limit, and it says subscriptions use account sign-in rather than product
 keys. Nothing found suggests the limit changed for subscriptions, but no current
 page confirms it either.
 
+The author recalls using one Mac license key from around 2010 on two work computers
+without problems, and doesn't recall the limit being enforced at the time. This is a
+personal recollection and may not apply to current subscriptions.
+
 ## Transfers
 
 Individual subscriptions are non-transferable. TechSmith points anyone who needs to
@@ -46,11 +50,16 @@ move a license between users to a business or multi-seat plan.
 
 The earliest documented price found is from TechSmith's
 [pricing and registration page](https://web.archive.org/web/19971010/http://www.techsmith.com/products/snagit/register.htm),
-captured on October 10, 1997. A single-user copy cost $39.95, and a 10-copy
-multi-user pack cost $200. The price at Snagit's 1990 launch has not been found.
+captured on October 10, 1997. A single-user copy for Windows cost $39.95, and a
+10-copy multi-user pack cost $200. The price at Snagit's 1990 launch has not been found.
 
-The author recalls buying Snagit for about $10 many years ago. This is a personal
-recollection, and no receipt or published price has been found to confirm it.
+Mac versions were first sold in 2010. They were one-time purchases at $49.95 to
+$62.99 until annual subscriptions replaced them in 2024, as the
+[Snagit Price History](snagit-prices-history.md) shows year by year.
+
+The author recalls buying the macOS version of Snagit as a one-time license for
+around $40 on a special sale. This is a personal recollection, and no receipt or
+published sale price has been found to confirm it.
 
 ## Sources
 
