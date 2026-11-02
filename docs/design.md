@@ -542,7 +542,7 @@ The script is written for Bash 3.2, the version macOS ships.
 **Signing and the Screen Recording grant:** macOS identifies an ad-hoc signed app by its
 code hash, which changes on every rebuild, so each rebuild needs the permission granted
 again. Setting `SIGN_IDENTITY` to a stable self-signed certificate avoids this.
-[`src/README.md`](../src/README.md) gives the Keychain Access steps. Because this changes
+[`src/README.md`](https://github.com/dmccreary/macos-screen-grab/blob/main/src/README.md) gives the Keychain Access steps. Because this changes
 the user's keychain, the scripts never create a certificate on their own.
 
 ## 12. Requirements traceability

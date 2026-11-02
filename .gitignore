@@ -2,3 +2,27 @@
 .build/
 .swiftpm/
 dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+
+# MkDocs
+site/
+.cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# OS
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+~$*
