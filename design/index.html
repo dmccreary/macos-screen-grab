@@ -1,0 +1,2453 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/macos-screen-grab/design/">
+      
+      
+        <link rel="prev" href="../specification/">
+      
+      
+        <link rel="next" href="../appendices/snagit-pricing-2026-11/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Design - ScreenGrab: Software Bloat and the Generated Alternative</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/mascot.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#screengrab-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-header__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenGrab: Software Bloat and the Generated Alternative
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/macos-screen-grab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-nav__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ScreenGrab: Software Bloat and the Generated Alternative
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/macos-screen-grab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Project Documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Project Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Key design decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Key design decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-freeze-frame-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Freeze-frame selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-other-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Other decisions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Repository layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-testing-seams" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Testing seams
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-grab-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Grab workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Grab workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 State machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-delayed-grab-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Delayed grab sequence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-coordinate-systems-and-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Coordinate systems and geometry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-component-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Component details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Component details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-screencapturer" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 ScreenCapturer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-regionselector-and-overlay-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 RegionSelector and overlay views
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-countdownhud" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 CountdownHUD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-graboutput-and-imageencoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 GrabOutput and ImageEncoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-hotkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Hotkeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-settings-and-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 Settings and Preferences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-screen-recording-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.7 Screen Recording permission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-status-menu-and-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8 Status menu and feedback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-concurrency-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Concurrency model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Error handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testing strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Testing strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-automated-swift-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Automated (swift test)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-smoke-test-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Smoke test (no permission needed)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-manual-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Manual acceptance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-verification-status-2026-11-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 Verification status (2026-11-01)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-build-packaging-and-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Build, packaging, and signing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-requirements-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Requirements traceability
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../appendices/snagit-pricing-2026-11/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Key design decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Key design decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-freeze-frame-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Freeze-frame selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-other-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Other decisions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Repository layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-testing-seams" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Testing seams
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-grab-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Grab workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Grab workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 State machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-delayed-grab-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Delayed grab sequence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-coordinate-systems-and-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Coordinate systems and geometry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-component-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Component details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Component details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-screencapturer" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 ScreenCapturer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-regionselector-and-overlay-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 RegionSelector and overlay views
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-countdownhud" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 CountdownHUD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-graboutput-and-imageencoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 GrabOutput and ImageEncoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-hotkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Hotkeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-settings-and-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 Settings and Preferences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-screen-recording-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.7 Screen Recording permission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-status-menu-and-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.8 Status menu and feedback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-concurrency-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Concurrency model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Error handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Testing strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Testing strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-automated-swift-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Automated (swift test)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-smoke-test-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Smoke test (no permission needed)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-manual-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Manual acceptance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-verification-status-2026-11-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 Verification status (2026-11-01)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-build-packaging-and-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Build, packaging, and signing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-requirements-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Requirements traceability
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/macos-screen-grab/blob/main/docs/design.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="screengrab-design">ScreenGrab — Design<a class="headerlink" href="#screengrab-design" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Status</strong></td>
+<td>Draft v0.1</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2026-11-01</td>
+</tr>
+<tr>
+<td><strong>Implements</strong></td>
+<td><a href="../specification/">specification.md</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<p>ScreenGrab is a menu bar agent written in Swift with AppKit and ScreenCaptureKit.
+It has no third-party dependencies and builds with the Command Line Tools alone.</p>
+<p>A grab has four stages:</p>
+<ol>
+<li><strong>Trigger:</strong> a global hotkey or a menu item.</li>
+<li><strong>Freeze:</strong> every display is captured to an in-memory still image. For a delayed
+   grab, this happens when the countdown reaches zero.</li>
+<li><strong>Select:</strong> an overlay on each display shows that still image, dimmed. The user
+   drags a rectangle.</li>
+<li><strong>Output:</strong> the rectangle is cropped from the still image, with no second
+   capture, and placed on the clipboard.</li>
+</ol>
+<p>Freezing first is the central design decision. It is explained in
+<a href="#21-freeze-frame-selection">§2.1</a>.</p>
+<h2 id="2-key-design-decisions">2. Key design decisions<a class="headerlink" href="#2-key-design-decisions" title="Permanent link">&para;</a></h2>
+<h3 id="21-freeze-frame-selection">2.1 Freeze-frame selection<a class="headerlink" href="#21-freeze-frame-selection" title="Permanent link">&para;</a></h3>
+<p>The selector has to show a crosshair and receive the Esc key. It also must not
+change what ends up in the image. Two small test programs were run on the target
+machine (macOS 26.6.2) to find out what a background app can do:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-activating panel, <code>NSCursor.crosshair.set()</code></td>
+<td>Frontmost app unchanged and panel became key, but the <strong>system cursor stayed an arrow</strong> (hotspot 5,5)</td>
+</tr>
+<tr>
+<td>Panel plus <code>NSApp.activate</code>, <code>NSCursor.crosshair.set()</code></td>
+<td><strong>System cursor became a crosshair</strong> (hotspot 11,11)</td>
+</tr>
+<tr>
+<td>After that, <code>orderOut</code> and <code>previousApp.activate()</code></td>
+<td>Focus returned to the previous app and the arrow cursor came back</td>
+</tr>
+</tbody>
+</table>
+<p>So a crosshair requires activating ScreenGrab. Activation has side effects: the
+previously frontmost window greys out its title bar and traffic lights, and open
+menus in other apps close. In a live-capture design those changes would appear in
+the grab.</p>
+<p>Capturing <em>before</em> activating removes the conflict:</p>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Live capture on mouse-up</th>
+<th>Freeze-frame (chosen)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crosshair and Esc</td>
+<td>Needs activation, which changes the screen</td>
+<td>Reliable; activation happens after the image is taken</td>
+</tr>
+<tr>
+<td>Active window title bars</td>
+<td>Greyed out in the grab</td>
+<td>Preserved</td>
+</tr>
+<tr>
+<td>Open menus and hover states</td>
+<td>Can close before the capture</td>
+<td>Preserved, which is the main purpose of a delayed grab</td>
+</tr>
+<tr>
+<td>Own overlay in the image</td>
+<td>Must be excluded</td>
+<td>Impossible, because the image predates the overlay</td>
+</tr>
+<tr>
+<td>What you see vs. what you get</td>
+<td>Content can change between selecting and capturing</td>
+<td>Identical pixels</td>
+</tr>
+<tr>
+<td>Animations and video</td>
+<td>Keep moving during selection</td>
+<td>Appear paused (accepted)</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>Small</td>
+<td>One full frame per display while selecting (about 17 MB per Retina display), freed afterwards</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Overlay appears at once</td>
+<td>Overlay waits for the capture (NFR-1 allows 300 ms)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-other-decisions">2.2 Other decisions<a class="headerlink" href="#22-other-decisions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capture API</td>
+<td><code>SCScreenshotManager.captureImage(contentFilter:configuration:)</code>, macOS 14+</td>
+<td>Current supported API. <code>CGWindowListCreateImage</code> is no longer available.</td>
+</tr>
+<tr>
+<td>Global hotkeys</td>
+<td>Carbon <code>RegisterEventHotKey</code></td>
+<td>Needs no Accessibility or Input Monitoring permission (FR-7.2). Registration returned <code>noErr</code> on the target machine in testing. Event taps would need those permissions.</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Always capture in <strong>sRGB</strong></td>
+<td>Tagged sRGB pastes predictably everywhere. Colors outside sRGB clip slightly, which is acceptable for screenshots.</td>
+</tr>
+<tr>
+<td>Pasteboard formats</td>
+<td>PNG <strong>and</strong> LZW-compressed TIFF</td>
+<td>Some apps prefer one or the other.</td>
+</tr>
+<tr>
+<td>Package structure</td>
+<td>Library <code>ScreenGrabKit</code> plus a one-file executable <code>ScreenGrab</code></td>
+<td>Lets tests import everything, including views.</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>Swift Testing (<code>import Testing</code>), run through <code>scripts/test.sh</code></td>
+<td>The Command Line Tools ship <code>Testing.framework</code> but not XCTest. With these tools alone, and depending on the Swift version, SwiftPM may not find the framework, its macro plugin, or the <code>lib_TestingInterop.dylib</code> it loads at run time, so the script passes all three locations.</td>
+</tr>
+<tr>
+<td>Swift language mode</td>
+<td>Swift 5 (<code>swift-tools-version: 5.9</code>)</td>
+<td>Avoids strict-concurrency friction with AppKit and Carbon callbacks. UI types are still annotated <code>@MainActor</code>.</td>
+</tr>
+<tr>
+<td>UI construction</td>
+<td>Programmatic AppKit</td>
+<td>No Xcode means no storyboards or nibs.</td>
+</tr>
+<tr>
+<td>Capture sound</td>
+<td>System <code>Screen Capture.aif</code>, falling back to <code>Pop</code></td>
+<td>The file is present on the target machine, but the path isn't a public API, so the fallback is needed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-repository-layout">3. Repository layout<a class="headerlink" href="#3-repository-layout" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>macos-screen-grab/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── .gitignore
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── docs/
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── specification.md
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── design.md
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── dist/                         Build output, git-ignored
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── ScreenGrab.app
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└── src/
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ├── README.md                 Installation, usage, and troubleshooting
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ├── install.sh                Tests, builds, and installs the app
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    ├── Package.swift
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ├── Info.plist                Bundle metadata (LSUIElement, bundle ID)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    ├── scripts/
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    │   ├── build-app.sh          Builds, bundles, and signs the app
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    │   └── test.sh               Runs the unit tests
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    ├── Sources/
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    │   ├── ScreenGrab/
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    │   │   └── main.swift        Application entry point
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    │   └── ScreenGrabKit/
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    │       ├── AppDelegate.swift
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    │       ├── StatusMenuController.swift
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    │       ├── GrabCoordinator.swift
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    │       ├── ScreenCapturer.swift
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    │       ├── ScreenRecordingPermission.swift
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    │       ├── Alerts.swift
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    │       ├── RegionSelector.swift
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    │       ├── OverlayViews.swift
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    │       ├── SelectionGeometry.swift
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    │       ├── CountdownHUD.swift
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    │       ├── GrabOutput.swift
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    │       ├── ImageEncoder.swift
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    │       ├── FileNaming.swift
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    │       ├── HotKeyCombo.swift
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    │       ├── HotKeyCenter.swift
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    │       ├── AppSettings.swift
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    │       ├── PreferencesWindowController.swift
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    │       └── ShortcutRecorderButton.swift
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    └── Tests/
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        └── ScreenGrabKitTests/
+</span></code></pre></div>
+<h2 id="4-architecture">4. Architecture<a class="headerlink" href="#4-architecture" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flowchart TD
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    HK[HotKeyCenter&lt;br/&gt;Carbon hotkeys] --&gt; GC
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    MENU[StatusMenuController&lt;br/&gt;menu bar item] --&gt; GC
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    GC[GrabCoordinator&lt;br/&gt;state machine]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    GC --&gt; PERM[ScreenRecordingPermission]
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    GC --&gt; HUD[CountdownHUD]
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    GC --&gt; CAP[ScreenCapturer&lt;br/&gt;ScreenCaptureKit]
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    GC --&gt; SEL[RegionSelector&lt;br/&gt;overlay panels]
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    GC --&gt; OUT[GrabOutput]
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    SEL --&gt; GEO[SelectionGeometry]
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    OUT --&gt; GEO
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    OUT --&gt; ENC[ImageEncoder]
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    OUT --&gt; FN[FileNaming]
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    SET[AppSettings&lt;br/&gt;UserDefaults] --&gt; GC
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    SET --&gt; HK
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    SET --&gt; MENU
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    PREF[PreferencesWindowController] --&gt; SET
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    APP[AppDelegate] --&gt; GC
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    APP --&gt; HK
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    APP --&gt; MENU
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AppDelegate</code></td>
+<td>Startup, single-instance check, wiring, display-change notification</td>
+</tr>
+<tr>
+<td><code>StatusMenuController</code></td>
+<td>Status item, menu contents, icon feedback</td>
+</tr>
+<tr>
+<td><code>GrabCoordinator</code></td>
+<td>Owns the grab state machine; the only component that sequences a grab</td>
+</tr>
+<tr>
+<td><code>ScreenCapturer</code></td>
+<td>Captures each display to a <code>FrozenDisplay</code>; the only ScreenCaptureKit user</td>
+</tr>
+<tr>
+<td><code>ScreenRecordingPermission</code></td>
+<td>Preflight, system prompt, explanatory alert</td>
+</tr>
+<tr>
+<td><code>Alerts</code></td>
+<td>Modal alerts from a menu bar app, returning focus to the previous app afterwards</td>
+</tr>
+<tr>
+<td><code>RegionSelector</code></td>
+<td>Creates one overlay panel per display, handles activation and focus handback</td>
+</tr>
+<tr>
+<td><code>OverlayViews</code></td>
+<td>Draws the still image, dimming, border, and label; handles mouse and keyboard</td>
+</tr>
+<tr>
+<td><code>SelectionGeometry</code></td>
+<td>Pure geometry functions; see <a href="#6-coordinate-systems-and-geometry">§6</a></td>
+</tr>
+<tr>
+<td><code>CountdownHUD</code></td>
+<td>Non-activating countdown panel with click-to-cancel</td>
+</tr>
+<tr>
+<td><code>GrabOutput</code></td>
+<td>Crops, encodes, writes the clipboard, optionally saves</td>
+</tr>
+<tr>
+<td><code>ImageEncoder</code></td>
+<td>CGImage to PNG and TIFF data with DPI metadata</td>
+</tr>
+<tr>
+<td><code>FileNaming</code></td>
+<td>Timestamped filenames and collision suffixes</td>
+</tr>
+<tr>
+<td><code>HotKeyCombo</code></td>
+<td>Value type for a shortcut: validation and display strings</td>
+</tr>
+<tr>
+<td><code>HotKeyCenter</code></td>
+<td>Registers and unregisters shortcuts with Carbon</td>
+</tr>
+<tr>
+<td><code>AppSettings</code></td>
+<td>Typed access to <code>UserDefaults</code>, clamping, change callback</td>
+</tr>
+<tr>
+<td><code>PreferencesWindowController</code>, <code>ShortcutRecorderButton</code></td>
+<td>Preferences UI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-testing-seams">4.1 Testing seams<a class="headerlink" href="#41-testing-seams" title="Permanent link">&para;</a></h3>
+<p><code>GrabCoordinator</code> reaches its collaborators through small protocols, so the state
+machine can run in tests with no screen, no permission, and no windows:</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">protocol</span><span class="w"> </span><span class="nc">DisplayCapturing</span><span class="w">     </span><span class="p">{</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">captureAllDisplays</span><span class="p">()</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kr">throws</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">FrozenDisplay</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">protocol</span><span class="w"> </span><span class="nc">PermissionChecking</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">ensureGranted</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Bool</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">protocol</span><span class="w"> </span><span class="nc">CountdownPresenting</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">seconds</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">,</span><span class="w"> </span><span class="n">onFinish</span><span class="p">:</span><span class="w"> </span><span class="p">@</span><span class="n">escaping</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Void</span><span class="p">,</span><span class="w"> </span><span class="n">onCancel</span><span class="p">:</span><span class="w"> </span><span class="p">@</span><span class="n">escaping</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Void</span><span class="p">);</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">protocol</span><span class="w"> </span><span class="nc">SelectionPresenting</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">begin</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">frames</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">FrozenDisplay</span><span class="p">],</span><span class="w"> </span><span class="n">onFinish</span><span class="p">:</span><span class="w"> </span><span class="p">@</span><span class="n">escaping</span><span class="w"> </span><span class="p">(</span><span class="n">GrabSelection</span><span class="p">?)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Void</span><span class="p">);</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">cancel</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">protocol</span><span class="w"> </span><span class="nc">GrabOutputting</span><span class="w">       </span><span class="p">{</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">deliver</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">selection</span><span class="p">:</span><span class="w"> </span><span class="n">GrabSelection</span><span class="p">)</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">GrabOutcome</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">protocol</span><span class="w"> </span><span class="nc">GrabFeedback</span><span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">grabSucceeded</span><span class="p">();</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">grabFailed</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">failure</span><span class="p">:</span><span class="w"> </span><span class="n">GrabFailure</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="5-grab-workflow">5. Grab workflow<a class="headerlink" href="#5-grab-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="51-state-machine">5.1 State machine<a class="headerlink" href="#51-state-machine" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>stateDiagram-v2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    [*] --&gt; idle
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    idle --&gt; countingDown: delayed trigger, permission OK
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    idle --&gt; freezing: immediate trigger, permission OK
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    countingDown --&gt; freezing: countdown reaches zero
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    countingDown --&gt; idle: cancel (HUD click, menu, hotkey again)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    freezing --&gt; selecting: frames captured
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    freezing --&gt; idle: capture error or cancel
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    selecting --&gt; delivering: valid rectangle
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    selecting --&gt; idle: Esc, right-click, tiny selection, display change
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    delivering --&gt; idle: clipboard written, feedback given
+</span></code></pre></div>
+<p>Trigger handling by state (FR-2.10, FR-3.4):</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Grab Region trigger</th>
+<th>Delayed trigger</th>
+<th><code>cancel()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idle</code></td>
+<td>Starts</td>
+<td>Starts</td>
+<td>No effect</td>
+</tr>
+<tr>
+<td><code>countingDown</code></td>
+<td>Ignored</td>
+<td><strong>Cancels</strong></td>
+<td>Cancels</td>
+</tr>
+<tr>
+<td><code>freezing</code></td>
+<td>Ignored</td>
+<td>Ignored</td>
+<td>Cancels; late frames are discarded</td>
+</tr>
+<tr>
+<td><code>selecting</code></td>
+<td>Ignored</td>
+<td>Ignored</td>
+<td>Cancels</td>
+</tr>
+<tr>
+<td><code>delivering</code></td>
+<td>Ignored</td>
+<td>Ignored</td>
+<td>No effect; delivery is nearly complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-delayed-grab-sequence">5.2 Delayed grab sequence<a class="headerlink" href="#52-delayed-grab-sequence" title="Permanent link">&para;</a></h3>
+<p>The immediate grab is the same sequence without the first three steps.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sequenceDiagram
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    actor User
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    participant GC as GrabCoordinator
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    participant HUD as CountdownHUD
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    participant CAP as ScreenCapturer
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    participant SEL as RegionSelector
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    participant OUT as GrabOutput
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    User-&gt;&gt;GC: hotkey (⌃⇧5)
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    GC-&gt;&gt;GC: permission check
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    GC-&gt;&gt;HUD: start(seconds)
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    Note over User,HUD: User opens a menu. The HUD does not take focus.
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    HUD--&gt;&gt;GC: onFinish
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    GC-&gt;&gt;HUD: stop()
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    GC-&gt;&gt;CAP: captureAllDisplays()
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    CAP--&gt;&gt;GC: [FrozenDisplay]
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    GC-&gt;&gt;SEL: begin(frames)
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    SEL-&gt;&gt;SEL: record frontmost app, show panels, activate
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    User-&gt;&gt;SEL: drag and release
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    SEL-&gt;&gt;SEL: close panels, reactivate previous app
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    SEL--&gt;&gt;GC: GrabSelection
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    GC-&gt;&gt;OUT: deliver(selection)
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    OUT--&gt;&gt;User: clipboard updated, sound, ✓ icon
+</span></code></pre></div>
+<h2 id="6-coordinate-systems-and-geometry">6. Coordinate systems and geometry<a class="headerlink" href="#6-coordinate-systems-and-geometry" title="Permanent link">&para;</a></h2>
+<p>Screen capture bugs usually come from mixing origins and units. Freeze-frame reduces
+the problem to one conversion.</p>
+<table>
+<thead>
+<tr>
+<th>Space</th>
+<th>Origin</th>
+<th>Unit</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AppKit global</td>
+<td>Bottom-left of primary display</td>
+<td>Points</td>
+<td><code>NSScreen.frame</code>, panel placement</td>
+</tr>
+<tr>
+<td>View local</td>
+<td><strong>Top-left of the display</strong> (views are flipped)</td>
+<td>Points</td>
+<td>All selection logic</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>Top-left of the frozen image</td>
+<td>Pixels</td>
+<td><code>CGImage.cropping(to:)</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>AppKit global coordinates appear in one place: each panel's frame is set to
+  <code>screen.frame</code>. AppKit handles the placement, and no global math is done by hand.</li>
+<li>The overlay view fills its display and has <code>isFlipped = true</code>, so a view point is
+  already a top-left-origin, display-local position.</li>
+<li>Both view and image coordinates have a top-left origin, so <strong>no Y flip is needed</strong>.
+  Only the scale differs:</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>scale     = frozenImage.pixelWidth / screen.frame.width
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>pixelRect = pointRect × scale, rounded to whole pixels, clamped to the image bounds
+</span></code></pre></div>
+<p>The scale comes from the actual image rather than <code>backingScaleFactor</code>, so a scaled
+display mode can't cause a mismatch between what was highlighted and what is cropped.
+Each <code>FrozenDisplay</code> carries its own scale, which handles mixed-DPI setups (FR-4.3).</p>
+<p>Pure functions in <code>SelectionGeometry</code>, all unit-tested:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>selectionRect(from:to:within:)</code></td>
+<td>Normalizes a drag in any direction and clamps it to the display</td>
+<td>FR-2.3, FR-4.1</td>
+</tr>
+<tr>
+<td><code>pixelRect(forPointRect:scale:imagePixelSize:)</code></td>
+<td>Point-to-pixel conversion with rounding and clamping</td>
+<td>FR-4.3, NFR-6</td>
+</tr>
+<tr>
+<td><code>isAccidental(pixelRect:)</code></td>
+<td>True when either dimension is under 4 pixels</td>
+<td>FR-2.6</td>
+</tr>
+<tr>
+<td><code>labelOrigin(pointer:labelSize:bounds:)</code></td>
+<td>Places the label near the pointer, keeping it on screen</td>
+<td>FR-4.4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-component-details">7. Component details<a class="headerlink" href="#7-component-details" title="Permanent link">&para;</a></h2>
+<h3 id="71-screencapturer">7.1 ScreenCapturer<a class="headerlink" href="#71-screencapturer" title="Permanent link">&para;</a></h3>
+<p>For each <code>NSScreen</code>, the <code>SCDisplay</code> is matched by <code>CGDirectDisplayID</code> (from the
+screen's <code>NSScreenNumber</code>), then captured with:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filter</td>
+<td><code>SCContentFilter(display:excludingApplications:[self],exceptingWindows:[])</code></td>
+<td>Keeps ScreenGrab's Preferences window and the closing HUD out of the frame (FR-2.7)</td>
+</tr>
+<tr>
+<td><code>width</code>, <code>height</code></td>
+<td>Display points × <code>backingScaleFactor</code></td>
+<td>Native pixels (A2, NFR-6)</td>
+</tr>
+<tr>
+<td><code>captureResolution</code></td>
+<td><code>.best</code></td>
+<td>No downsampling</td>
+</tr>
+<tr>
+<td><code>showsCursor</code></td>
+<td><code>false</code></td>
+<td>A1</td>
+</tr>
+<tr>
+<td><code>colorSpaceName</code></td>
+<td>sRGB</td>
+<td><a href="#22-other-decisions">§2.2</a></td>
+</tr>
+</tbody>
+</table>
+<p><code>SCShareableContent</code> is fetched fresh for each grab, so display changes are always
+reflected. Frames are captured concurrently.</p>
+<p>Excluding the whole app also removes ScreenGrab's own menu bar icon from grabs of
+the menu bar. This is a harmless side effect of FR-2.7.</p>
+<p>When a grab starts from the menu rather than a hotkey, the coordinator waits about
+100 ms first so the closing menu isn't in the frame.</p>
+<h3 id="72-regionselector-and-overlay-views">7.2 RegionSelector and overlay views<a class="headerlink" href="#72-regionselector-and-overlay-views" title="Permanent link">&para;</a></h3>
+<p><strong>Panel:</strong> one <code>NSPanel</code> per display, borderless and <code>.nonactivatingPanel</code>, with
+<code>canBecomeKey = true</code>, <code>level = .screenSaver</code> (above the menu bar and Dock), and
+<code>collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary, .ignoresCycle]</code>.</p>
+<p><strong>Start sequence:</strong></p>
+<ol>
+<li>Record <code>NSWorkspace.shared.frontmostApplication</code>.</li>
+<li>Order all panels front; the panel under the pointer becomes key.</li>
+<li>Call <code>NSApp.activate(ignoringOtherApps: true)</code>. This is the call tested in
+   <a href="#21-freeze-frame-selection">§2.1</a>. It is deprecated from macOS 14 but works; the
+   newer <code>activate()</code> is cooperative and could be refused.</li>
+<li>Register <code>.crosshair</code> as the cursor rect across each overlay, and set it again when
+   the app's activation completes, because the pointer may not be moving at that moment.</li>
+</ol>
+<p><strong>View hierarchy</strong> (two layers, so a drag never repaints the image):</p>
+<ul>
+<li><code>FrozenImageView</code> draws the still image once.</li>
+<li><code>SelectionOverlayView</code> is on top and transparent. It draws the dimming (an even-odd
+  fill with the selection as a hole), the border, and the size label, invalidating
+  only the changed area. It receives all mouse and keyboard events.</li>
+</ul>
+<p><strong>Input:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>acceptsFirstMouse</code></td>
+<td>Returns <code>true</code>, so the first click starts the drag</td>
+</tr>
+<tr>
+<td><code>mouseDown</code>, <code>mouseDragged</code></td>
+<td>Updates the selection through <code>selectionRect</code>. AppKit keeps sending drags to the window that got the mouse-down, which is what confines a selection to one display (FR-4.1)</td>
+</tr>
+<tr>
+<td><code>mouseUp</code></td>
+<td>Finishes, or cancels if <code>isAccidental</code></td>
+</tr>
+<tr>
+<td><code>rightMouseDown</code>, Esc (<code>keyCode</code> 53)</td>
+<td>Cancels</td>
+</tr>
+<tr>
+<td><code>mouseMoved</code></td>
+<td>Updates the position label before a drag starts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Teardown</strong> (<code>finish()</code>, single-shot, on every path): order out all panels, release
+frames, reactivate the previous app unless it is ScreenGrab itself (FR-2.12,
+FR-4.6), and call the completion handler once.</p>
+<h3 id="73-countdownhud">7.3 CountdownHUD<a class="headerlink" href="#73-countdownhud" title="Permanent link">&para;</a></h3>
+<p>A borderless, <code>.nonactivatingPanel</code> <code>NSPanel</code> at <code>.screenSaver</code> level. It can't become
+key and is shown with <code>orderFrontRegardless()</code>, so it never takes focus (FR-3.3). It
+sits near the top of the display containing the pointer.</p>
+<ul>
+<li>The timer runs in <code>.common</code> run loop mode so it keeps ticking while the status menu
+  is open. Without this, the <em>Cancel Grab</em> item would freeze the countdown.</li>
+<li>The display is computed from a fixed deadline, <code>ceil(deadline − now)</code>, to avoid drift.</li>
+<li><code>acceptsFirstMouse</code> plus <code>mouseDown</code> provide click-to-cancel.</li>
+</ul>
+<h3 id="74-graboutput-and-imageencoder">7.4 GrabOutput and ImageEncoder<a class="headerlink" href="#74-graboutput-and-imageencoder" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>deliver(selection):
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    pixelRect = SelectionGeometry.pixelRect(...)
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    cropped   = frame.image.cropping(to: pixelRect)
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    encoded   = ImageEncoder.encode(cropped, scale)   // off the main thread
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    write clipboard                                   // on the main thread
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    if settings.saveToFolder: save PNG
+</span></code></pre></div>
+<ul>
+<li><strong>Encoding</strong> uses <code>CGImageDestination</code> with <code>kCGImagePropertyDPIWidth</code> and
+  <code>kCGImagePropertyDPIHeight</code> set to <code>72 × scale</code>. That metadata is what makes a 2×
+  image paste at its on-screen size (FR-5.2).</li>
+<li><strong>Clipboard:</strong> <code>clearContents()</code>, then <code>.png</code> and <code>.tiff</code> data. The pasteboard is an
+  injected parameter, so tests use a private named pasteboard and never touch the
+  user's real clipboard.</li>
+<li><strong>Saving</strong> runs after the clipboard write. A save failure is reported but doesn't undo
+  the copy (FR-5.6). The result is a <code>GrabOutcome</code> that names any failure.</li>
+<li><code>FileNaming</code> uses a fixed POSIX-locale date formatter and an injected "exists" check.</li>
+</ul>
+<h3 id="75-hotkeys">7.5 Hotkeys<a class="headerlink" href="#75-hotkeys" title="Permanent link">&para;</a></h3>
+<p><code>HotKeyCombo</code> is <code>Codable</code> and stores a virtual key code and Carbon modifier mask. It
+provides validation (FR-7.3), a display string such as <code>⌃⇧4</code>, and the menu key
+equivalent. Key names come from a table of ANSI keys and function keys, so labels
+assume a US layout.</p>
+<p><code>HotKeyCenter</code> installs one Carbon event handler and maps <code>EventHotKeyID</code> to an action.
+Shortcuts are registered with <code>kEventHotKeyExclusive</code>, because without it a shortcut
+another app owns may not be reported as a conflict. A failure such as
+<code>eventHotKeyExistsErr</code> (-9878) feeds the warning in FR-7.5. Testing confirmed that a
+second process trying to take a registered shortcut gets this error.</p>
+<p>While a <code>ShortcutRecorderButton</code> is recording, all hotkeys are <strong>suspended</strong> so the
+keys being recorded don't start a grab.</p>
+<h3 id="76-settings-and-preferences">7.6 Settings and Preferences<a class="headerlink" href="#76-settings-and-preferences" title="Permanent link">&para;</a></h3>
+<p><code>AppSettings</code> wraps <code>UserDefaults</code>, clamps delay values to 1–60, and fires an <code>onChange</code>
+callback that re-registers hotkeys and refreshes the menu. Preferences apply immediately.</p>
+<p>The window is an <code>NSGridView</code> laid out per spec §8.4. Accessory apps have no visible main
+menu, so a hidden <code>NSApp.mainMenu</code> supplies ⌘W and the standard Edit commands; without it
+those key equivalents wouldn't work in the custom delay field.</p>
+<p>Opening the app while it's already running shows Preferences (FR-6.7). This gives a way
+in if the menu bar icon is hidden behind the notch.</p>
+<h3 id="77-screen-recording-permission">7.7 Screen Recording permission<a class="headerlink" href="#77-screen-recording-permission" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>flowchart TD
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    A[Grab triggered] --&gt; B{CGPreflightScreenCaptureAccess}
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    B -- granted --&gt; C[Continue grab]
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    B -- not granted --&gt; D[CGRequestScreenCaptureAccess]
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    D --&gt; E[Alert with Open System Settings]
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    E --&gt; F[Grab aborted]
+</span></code></pre></div>
+<p>The check runs before the countdown, so the user doesn't wait through a delay only to
+see an error. If a capture later fails with <code>SCStreamError.userDeclined</code>, the same alert
+is shown. Nothing is ever pasted from a failed capture (FR-8.4).</p>
+<p>The settings pane URL is
+<code>x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture</code>.</p>
+<h3 id="78-status-menu-and-feedback">7.8 Status menu and feedback<a class="headerlink" href="#78-status-menu-and-feedback" title="Permanent link">&para;</a></h3>
+<p><code>NSMenuDelegate.menuNeedsUpdate</code> rebuilds dynamic state: the delay in the title, the
+checkmark in the Delay submenu, shortcut display, and <em>Cancel Grab</em> visibility.</p>
+<p>On success, the icon switches from <code>camera.viewfinder</code> to <code>checkmark.circle</code> for one
+second, using template images so it follows light and dark menu bars.</p>
+<h2 id="8-concurrency-model">8. Concurrency model<a class="headerlink" href="#8-concurrency-model" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All UI types and <code>GrabCoordinator</code> are <code>@MainActor</code>.</li>
+<li>Carbon hotkey callbacks arrive on the main thread through the main run loop.</li>
+<li>Capture is <code>async</code> and suspends without blocking the UI. PNG and TIFF encoding run in
+  a detached task.</li>
+<li><strong>Stale results:</strong> each grab gets a generation number. When <code>captureAllDisplays()</code>
+  returns, its result is discarded if the generation has moved on, for example after a
+  cancel during <code>freezing</code>.</li>
+</ul>
+<h2 id="9-error-handling">9. Error handling<a class="headerlink" href="#9-error-handling" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Detection</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permission missing</td>
+<td>Preflight, or <code>userDeclined</code></td>
+<td>Alert with <em>Open System Settings</em>; abort</td>
+</tr>
+<tr>
+<td>Display missing from <code>SCShareableContent</code></td>
+<td>Display ID lookup</td>
+<td>Skip that display; alert if none remain</td>
+</tr>
+<tr>
+<td>Capture failure</td>
+<td>Thrown error</td>
+<td>Alert; return to <code>idle</code></td>
+</tr>
+<tr>
+<td>Crop failure</td>
+<td><code>cropping(to:)</code> returns nil</td>
+<td>Alert; clipboard untouched</td>
+</tr>
+<tr>
+<td>Encoding failure</td>
+<td><code>CGImageDestinationFinalize</code> returns false</td>
+<td>Alert; clipboard untouched</td>
+</tr>
+<tr>
+<td>Clipboard failure</td>
+<td><code>setData</code> returns false</td>
+<td>Alert</td>
+</tr>
+<tr>
+<td>Save failure</td>
+<td>Thrown error</td>
+<td>Clipboard copy stands; alert describes the save failure</td>
+</tr>
+<tr>
+<td>Display change during a grab</td>
+<td><code>didChangeScreenParametersNotification</code></td>
+<td><code>cancel()</code> (FR-9.5)</td>
+</tr>
+<tr>
+<td>Hotkey conflict</td>
+<td>Non-zero status from <code>RegisterEventHotKey</code></td>
+<td>Warning in Preferences; menu item still works</td>
+</tr>
+<tr>
+<td>Second instance</td>
+<td><code>NSRunningApplication</code> lookup</td>
+<td>New process exits</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-testing-strategy">10. Testing strategy<a class="headerlink" href="#10-testing-strategy" title="Permanent link">&para;</a></h2>
+<h3 id="101-automated-swift-test">10.1 Automated (<code>swift test</code>)<a class="headerlink" href="#101-automated-swift-test" title="Permanent link">&para;</a></h3>
+<p>Automated tests need no permissions, don't touch the real clipboard, and put nothing on
+the visible screen. Most views render without being shown. One test orders a window far
+off-screen, because only a window that is ordered in has real layer backing stores.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What is verified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SelectionGeometry</code></td>
+<td>Drags in all four directions; clamping; 1×, 2×, and fractional scales; rounding; accidental threshold; label flipping at edges</td>
+</tr>
+<tr>
+<td>Crop accuracy</td>
+<td>A synthetic image with known pixel colors is cropped through the real functions, and the exact output pixels are checked, including at 2×</td>
+</tr>
+<tr>
+<td><code>ImageEncoder</code></td>
+<td>PNG and TIFF decode to the expected size; DPI metadata is 144 at 2×</td>
+</tr>
+<tr>
+<td>Clipboard</td>
+<td>Round trip through a private named pasteboard; both types present; previous contents replaced</td>
+</tr>
+<tr>
+<td><code>FileNaming</code>, save</td>
+<td>Format, collision suffixes, folder creation, unwritable-folder error</td>
+</tr>
+<tr>
+<td><code>HotKeyCombo</code></td>
+<td>Validation rules, duplicates, display strings, <code>Codable</code> round trip</td>
+</tr>
+<tr>
+<td><code>HotKeyCenter</code></td>
+<td>Registration, conflict reporting, suspend and resume; a Carbon hotkey event built by hand reaches the handler with the right action (this tests everything after the key press itself)</td>
+</tr>
+<tr>
+<td><code>AppSettings</code></td>
+<td>Defaults, clamping, persistence (with an in-memory <code>UserDefaults</code> subclass, because a real suite leaves a plist behind on every run)</td>
+</tr>
+<tr>
+<td><code>GrabCoordinator</code></td>
+<td>Every cell of the <a href="#51-state-machine">§5.1</a> table using fakes, including stale frames after a cancel and repeated triggers</td>
+</tr>
+<tr>
+<td><code>SelectionOverlayView</code></td>
+<td>Synthesized mouse and key events produce the right selection or cancel; the view hierarchy renders off-screen to a bitmap, with pixels checked for dimming, the undimmed hole, and correct orientation; repeated partial redraws don't accumulate dimming in the layer's backing store</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-smoke-test-no-permission-needed">10.2 Smoke test (no permission needed)<a class="headerlink" href="#102-smoke-test-no-permission-needed" title="Permanent link">&para;</a></h3>
+<p>These checks run against the installed app, and none of them trigger a permission prompt:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runs with no Dock icon</td>
+<td><code>lsappinfo info ScreenGrab</code> reports <code>type="UIElement"</code></td>
+</tr>
+<tr>
+<td>A second launch exits</td>
+<td>Run the binary directly; the first process keeps its ID</td>
+</tr>
+<tr>
+<td>Holds its hotkeys</td>
+<td>A second process making an exclusive <code>RegisterEventHotKey</code> call for ⌃⇧4 gets -9878 with ScreenGrab running, and succeeds with it stopped. A non-exclusive call succeeds either way, so it can't detect a conflict.</td>
+</tr>
+<tr>
+<td>Menu bar icon exists</td>
+<td>A probe status item's x position shifts by the width of one item when ScreenGrab is running compared with stopped</td>
+</tr>
+<tr>
+<td>Idle cost</td>
+<td><code>ps</code> reports CPU and resident memory</td>
+</tr>
+</tbody>
+</table>
+<p>The menu bar icon needs this indirect check. On macOS 26, <code>CGWindowListCopyWindowInfo</code>
+doesn't list third-party status items, even for the process that owns them.</p>
+<p>A real key press can't be simulated from a process without Accessibility access, so hotkey
+delivery has to be tried by hand. The unified log then shows how a grab started: a menu
+grab logs <code>perform action for menu item</code> just before its capture, and a hotkey grab doesn't.
+Scripts should call <code>/usr/bin/log</code> by its full path, because plain <code>log</code> is a zsh builtin in
+non-interactive shells. <code>/etc/zshrc</code> disables that builtin only for interactive ones.</p>
+<h3 id="103-manual-acceptance">10.3 Manual acceptance<a class="headerlink" href="#103-manual-acceptance" title="Permanent link">&para;</a></h3>
+<p>Real capture needs the Screen Recording grant, and real pointer input needs a person, so
+the acceptance tests in <a href="../specification/#10-acceptance-tests">spec §10</a> are run by hand.
+These cover what automation can't reach: actual ScreenCaptureKit output, on-screen overlay
+behavior, the live crosshair, and pasting into real applications.</p>
+<h3 id="104-verification-status-2026-11-01">10.4 Verification status (2026-11-01)<a class="headerlink" href="#104-verification-status-2026-11-01" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>94 automated tests</td>
+<td>Passing</td>
+</tr>
+<tr>
+<td>Installer: fresh install, upgrade, rollback after a failed swap, uninstall, name conflict</td>
+<td>Tested (rollback with a stubbed <code>mv</code>)</td>
+</tr>
+<tr>
+<td>Installer: <code>--reset-permission</code>, <code>--purge</code></td>
+<td>Flow tested with stubbed <code>tccutil</code> and <code>defaults</code>, so no real settings were changed</td>
+</tr>
+<tr>
+<td>Universal build</td>
+<td>Built and signed; contains arm64 and x86_64. The x86_64 slice hasn't been run.</td>
+</tr>
+<tr>
+<td>Smoke checks in <a href="#102-smoke-test-no-permission-needed">§10.2</a></td>
+<td>Passing on macOS 26.6.2: 0.0 % CPU and about 25 MB idle</td>
+</tr>
+<tr>
+<td>Crosshair, activation, and focus handback</td>
+<td>Tested in a prototype (<a href="#21-freeze-frame-selection">§2.1</a>), not yet in the finished app</td>
+</tr>
+<tr>
+<td>Real grab on one Retina display</td>
+<td>Working. A 980×570 grab reached the clipboard as PNG and TIFF, tagged sRGB at 144 DPI, and pasted into another app with correct orientation and colors. Identified from its metadata, as the grab itself was made by hand.</td>
+</tr>
+<tr>
+<td>⌃⇧4 with a real key press</td>
+<td>Worked at 14:48:56 on 2026-11-01, confirmed by the log. <strong>An earlier report of it failing is unexplained.</strong> The earlier processes logged no hotkey activity, with the same code and with the shortcut registered. Secure Input and frontmost app at those moments weren't recorded.</td>
+</tr>
+<tr>
+<td>⌃⇧5 with a real key press, ⌃⇧4 with VS Code in front</td>
+<td><strong>Not yet run</strong></td>
+</tr>
+<tr>
+<td>Countdown HUD, on-screen cancel paths, Preferences recording, NFR-1 and NFR-2 timings, multiple displays</td>
+<td><strong>Not yet run.</strong> These need a person, as in <a href="#103-manual-acceptance">§10.3</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-build-packaging-and-signing">11. Build, packaging, and signing<a class="headerlink" href="#11-build-packaging-and-signing" title="Permanent link">&para;</a></h2>
+<p><code>src/scripts/build-app.sh</code>:</p>
+<ol>
+<li><code>swift build -c release --package-path src</code>. With <code>UNIVERSAL=1</code>, each architecture is
+   built in its own scratch folder and the results are combined with <code>lipo</code>.</li>
+<li>Assembles <code>dist/ScreenGrab.app/Contents/{MacOS/ScreenGrab, Info.plist, PkgInfo}</code> in a
+   staging folder.</li>
+<li><code>codesign --force --sign "${SIGN_IDENTITY:--}"</code>, then verifies the signature.</li>
+<li>Replaces any previous build only once the new one is complete.</li>
+</ol>
+<p><code>src/install.sh</code> wraps this for installation. Its order is chosen so that the installed
+app keeps working if anything goes wrong:</p>
+<ol>
+<li>Checks the OS, the build tools, and the destination. It refuses to replace an app
+   with a different bundle identifier, or to run as root.</li>
+<li>Runs the tests, then builds. A failure here leaves the installed app untouched and
+   still running.</li>
+<li>Copies the build beside the target and verifies the copy.</li>
+<li>Stops the running app, moves the old version aside, and moves the new one into place.
+   An exit trap restores the old version if the swap doesn't complete.</li>
+<li>Removes the old version, registers the new one with LaunchServices, and opens it.</li>
+</ol>
+<p>The script is written for Bash 3.2, the version macOS ships.</p>
+<p><code>Info.plist</code> key values:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CFBundleIdentifier</code></td>
+<td><code>com.dmccreary.screengrab</code></td>
+</tr>
+<tr>
+<td><code>LSUIElement</code></td>
+<td><code>true</code> (no Dock icon)</td>
+</tr>
+<tr>
+<td><code>LSMinimumSystemVersion</code></td>
+<td><code>14.0</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Signing and the Screen Recording grant:</strong> macOS identifies an ad-hoc signed app by its
+code hash, which changes on every rebuild, so each rebuild needs the permission granted
+again. Setting <code>SIGN_IDENTITY</code> to a stable self-signed certificate avoids this.
+<a href="https://github.com/dmccreary/macos-screen-grab/blob/main/src/README.md"><code>src/README.md</code></a> gives the Keychain Access steps. Because this changes
+the user's keychain, the scripts never create a certificate on their own.</p>
+<h2 id="12-requirements-traceability">12. Requirements traceability<a class="headerlink" href="#12-requirements-traceability" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Requirements</th>
+<th>Implemented by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-1.x (menu bar agent)</td>
+<td><code>Info.plist</code>, <code>AppDelegate</code>, <code>StatusMenuController</code></td>
+</tr>
+<tr>
+<td>FR-2.x (Grab Region)</td>
+<td><code>GrabCoordinator</code>, <code>ScreenCapturer</code>, <code>RegionSelector</code>, <code>OverlayViews</code></td>
+</tr>
+<tr>
+<td>FR-3.x (delay)</td>
+<td><code>GrabCoordinator</code>, <code>CountdownHUD</code>, <code>AppSettings</code></td>
+</tr>
+<tr>
+<td>FR-4.x (selection)</td>
+<td><code>RegionSelector</code>, <code>OverlayViews</code>, <code>SelectionGeometry</code></td>
+</tr>
+<tr>
+<td>FR-5.x (output)</td>
+<td><code>GrabOutput</code>, <code>ImageEncoder</code>, <code>FileNaming</code></td>
+</tr>
+<tr>
+<td>FR-6.x (preferences)</td>
+<td><code>PreferencesWindowController</code>, <code>ShortcutRecorderButton</code>, <code>AppSettings</code>, <code>StatusMenuController</code></td>
+</tr>
+<tr>
+<td>FR-7.x (hotkeys)</td>
+<td><code>HotKeyCombo</code>, <code>HotKeyCenter</code>, <code>ShortcutRecorderButton</code></td>
+</tr>
+<tr>
+<td>FR-8.x (permissions)</td>
+<td><code>ScreenRecordingPermission</code>, <code>GrabCoordinator</code></td>
+</tr>
+<tr>
+<td>FR-9.x (feedback, errors)</td>
+<td><code>StatusMenuController</code>, <code>GrabCoordinator</code>, <code>AppDelegate</code></td>
+</tr>
+<tr>
+<td>FR-10.x (installation)</td>
+<td><code>src/install.sh</code>, <code>src/scripts/build-app.sh</code>, <code>src/README.md</code></td>
+</tr>
+<tr>
+<td>NFR-1, NFR-2</td>
+<td><a href="#21-freeze-frame-selection">§2.1</a>, <a href="#8-concurrency-model">§8</a></td>
+</tr>
+<tr>
+<td>NFR-6</td>
+<td><a href="#6-coordinate-systems-and-geometry">§6</a></td>
+</tr>
+<tr>
+<td>NFR-8</td>
+<td><a href="#41-testing-seams">§4.1</a>, <a href="#10-testing-strategy">§10</a></td>
+</tr>
+<tr>
+<td>NFR-10</td>
+<td><a href="#11-build-packaging-and-signing">§11</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../specification/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Specification">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Specification
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../appendices/snagit-pricing-2026-11/" class="md-footer__link md-footer__link--next" aria-label="Next: Snagit Pricing, November 2026">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Snagit Pricing, November 2026
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Code under the MIT License. Book content under <a href="license/">CC BY-NC-SA 4.0</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

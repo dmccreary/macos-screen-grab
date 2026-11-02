@@ -1,0 +1,10 @@
+{
+  "title": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "description": "How software bloats, and how generative AI makes it possible to replace a paid tool with one that has only the features you need, told through the ScreenGrab screen grab utility.",
+  "creator": "Dan McCreary",
+  "date": "2026-11-01",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}
