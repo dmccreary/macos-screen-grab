@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.">
+        <meta name="description" content="How a specification becomes a design that fits a real platform, covering design decisions and trade-offs, prototypes, dependencies, and ScreenGrab's menu bar app, global hotkey, screen recording permission and freeze-frame selection.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>8. Software Design and Platform Constraints - ScreenGrab: Software Bloat and the Generated Alternative</title>
+        <title>Software Design and Platform Constraints - ScreenGrab: Software Bloat and the Generated Alternative</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              8. Software Design and Platform Constraints
+              Software Design and Platform Constraints
             
           </span>
         </div>
@@ -634,6 +634,240 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-design-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Design Is
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Design Is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Document
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-decisions-and-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Decisions and Trade-Offs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-language-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming Language Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Native Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#third-party-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third-Party Dependency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-dependency-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Dependency Design
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-design-before-building-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking the Design Before Building It
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checking the Design Before Building It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prototype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-feasibility-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Feasibility Check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Experiments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screengrabs-design-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ScreenGrab's Design Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ScreenGrab's Design Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-bar-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menu Bar App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-hotkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Hotkey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotkey-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hotkey Conflict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-recording-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Recording Permission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeze-frame-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Freeze-Frame Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-design-by-its-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a Design by Its Trade-Offs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading a Design by Its Trade-Offs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-screengrab-component-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: ScreenGrab Component Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-design-trade-off-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Design Trade-Off Judge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -996,6 +1230,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../license/" class="md-nav__link">
         
   
@@ -1079,6 +1333,240 @@
       Prerequisites
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-design-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Design Is
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Design Is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Document
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-decisions-and-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Decisions and Trade-Offs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-language-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming Language Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Native Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#third-party-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third-Party Dependency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-dependency-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Dependency Design
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-design-before-building-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking the Design Before Building It
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checking the Design Before Building It">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prototype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-feasibility-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Feasibility Check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Experiments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screengrabs-design-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ScreenGrab's Design Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ScreenGrab's Design Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-bar-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menu Bar App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-hotkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Hotkey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotkey-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hotkey Conflict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screen-recording-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Recording Permission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeze-frame-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Freeze-Frame Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-design-by-its-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a Design by Its Trade-Offs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading a Design by Its Trade-Offs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-screengrab-component-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: ScreenGrab Component Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-design-trade-off-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Design Trade-Off Judge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1196,13 +1684,506 @@
 <li><a href="../07-requirements-minimal-specs/">Chapter 7: Requirements and Minimal Specifications</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">From the What to the How</p>
+<p><img alt="Pinch waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+The specification said what the tool does. Now someone has to decide how, and every choice either keeps the shell light or loads it down. By the end of this chapter you will be able to read a design and tell which choices earned their place. Grab only what you need!</p>
+</div>
+<h2 id="what-design-is">What Design Is<a class="headerlink" href="#what-design-is" title="Permanent link">&para;</a></h2>
+<p><strong>Software design</strong> is the stage between the specification and the code where you decide how the software will be organized and built to meet the requirements. The specification says what the tool must do. The design says what pieces it will have, how they fit together, which technologies it will use, and how it will cope with the limits of the machine it runs on.</p>
+<p>An analogy helps. A homeowner's request is "a kitchen where two people can cook at once". That is the specification. The design is the floor plan: where the stove, the sink, and the counters go, and why. Nobody can build a kitchen from the request alone, and nobody wants to discover the floor plan problems after the walls are up. The same holds for software, and it matters even more when an AI agent writes the code, because the agent will make design choices whether or not you do. If you leave the design unstated, the agent picks the common one.</p>
+<p>Design works at three levels, from broad to narrow. At the broadest level, you choose the shape of the product: a menu bar utility, a window application, or a command-line program. In the middle, you choose the main pieces and how they talk to each other. At the narrowest level, you choose details such as the data each piece passes along. For a two-feature tool, most of the value is at the first two levels. A worked example: deciding "this is a menu bar utility with a hotkey, a capture step, and a clipboard step" settles more than any single line of code will, and it can be read and challenged in a minute.</p>
+<h3 id="design-document">Design Document<a class="headerlink" href="#design-document" title="Permanent link">&para;</a></h3>
+<p>A <strong>design document</strong> is a written record of the design: the main pieces, the technology choices, and the reasons behind them. It is read by the builder before coding starts, and by the reviewer afterward. In the ScreenGrab case the specification, design, and README together came to about 1,340 lines, and the design document is the middle piece of that set.</p>
+<p>A short design document for a tool like this might contain a list of components, the decisions made with their reasons, the platform limits that shaped them, and the risks that remain. It is worth writing even for a small tool, because the agent can generate it from the specification in minutes and you can review it in a few more. A design document is also a safeguard: a year from now, it explains why the tool is built the way it is.</p>
+<h3 id="design-decisions-and-trade-offs">Design Decisions and Trade-Offs<a class="headerlink" href="#design-decisions-and-trade-offs" title="Permanent link">&para;</a></h3>
+<p>A <strong>design decision</strong> is a specific choice among alternatives about how the software will be built. Which language will it be written in? Will it have a window or live in the menu bar? Will it use a library or write the feature itself? Each decision should be recorded with the options considered and the reason for the choice.</p>
+<p>A <strong>design trade-off</strong> is the cost that comes with a choice: gaining one quality means giving up another. There is almost never a free option. A worked example is the decision to write the clipboard feature yourself or to rely on a third-party library. The library saves effort now but adds an outside piece that must be kept up to date. Writing it yourself costs a little time now but nothing later.</p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>You gain</th>
+<th>You give up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use a library for a feature</td>
+<td>Less code to write and test</td>
+<td>An outside piece to update and trust</td>
+</tr>
+<tr>
+<td>Write the feature yourself</td>
+<td>Full control, nothing external</td>
+<td>More code in your own tool</td>
+</tr>
+<tr>
+<td>Add a settings window</td>
+<td>User choice</td>
+<td>More code, more tests, more things that can break</td>
+</tr>
+<tr>
+<td>Keep one fixed behavior</td>
+<td>Simplicity</td>
+<td>Flexibility</td>
+</tr>
+</tbody>
+</table>
+<p>A design decision recorded without its trade-off is only half useful. When the reason is lost, a later reader cannot tell whether the choice still makes sense after circumstances change.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Every Choice Has a Price Tag</p>
+<p><img alt="Pinch thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of each design decision as a purchase: what do you get, and what do you pay? A design that lists only the benefits has hidden the bill. When you read a design document, look for the "gives up" half.</p>
+</div>
+<h2 id="platform-constraints">Platform Constraints<a class="headerlink" href="#platform-constraints" title="Permanent link">&para;</a></h2>
+<p><strong>Platform constraints</strong> are the rules and limits that the operating system and its environment impose on any software that runs there. A platform is the base that software is built on, such as macOS, Windows, or a web browser. The platform decides what an application may do on its own, what needs the user's permission, and what the system reserves for itself.</p>
+<p>Platform constraints matter more for a screen grab tool than for most small programs, because capturing the screen touches things the system guards closely. Software that can see everything on your display could also spy on it, so macOS puts several gates in the way. A worked example of the constraints that shaped ScreenGrab, each explained in its own section below:</p>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>What the platform requires</th>
+<th>Effect on the design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Screen recording permission</td>
+<td>The user must grant the app permission before it can capture the screen</td>
+<td>The design must ask for permission and handle a refusal</td>
+</tr>
+<tr>
+<td>Global hotkeys</td>
+<td>The system decides which shortcuts an app may claim</td>
+<td>The design must pick a shortcut and cope with a conflict</td>
+</tr>
+<tr>
+<td>Application packaging</td>
+<td>macOS expects a particular structure for an app and a signature on it</td>
+<td>The design must include a build and install step (Chapter 9)</td>
+</tr>
+<tr>
+<td>Supported system versions</td>
+<td>Newer macOS versions change what is allowed</td>
+<td>The design states which versions it targets</td>
+</tr>
+</tbody>
+</table>
+<p>The lesson is that a specification can be perfectly reasonable and still be hard to build on a particular platform. Design is where that collision is found. It is far cheaper to find it in a document than in a failed build.</p>
+<h3 id="programming-language-choice">Programming Language Choice<a class="headerlink" href="#programming-language-choice" title="Permanent link">&para;</a></h3>
+<p><strong>Programming language choice</strong> is the decision about which language the software will be written in. The choice is shaped by the platform. For a macOS application, the platform's own language is Swift, which gives direct access to every system feature. The case study's app is written in Swift, in about 2,000 lines across 19 files. A good habit is to let the agent propose a language, then ask it to justify the choice against the specification, because a language is hard to change once thousands of lines depend on it. Other options exist, such as wrapping a web page in a cross-platform shell, but they carry more weight and less system integration. You do not need to know Swift to follow this book. You only need to see that the language is a design decision with a reason attached.</p>
+<h3 id="native-application">Native Application<a class="headerlink" href="#native-application" title="Permanent link">&para;</a></h3>
+<p>A <strong>native application</strong> is software built with the platform's own tools and libraries, so that it runs directly on the operating system, not inside another layer such as a web browser. A native macOS app behaves like the other Mac apps: it starts quickly, uses the system's own controls, and can reach system features such as the menu bar and the clipboard without a go-between.</p>
+<p>The alternative is a cross-platform application, which is written once and run on several systems, usually by including a large runtime that brings its own copy of a browser engine. The trade-off is clear. Cross-platform saves work if you need to support many systems, but it makes the application larger and slower to start and gives up some system integration.</p>
+<p>A worked example for ScreenGrab: the tool is for Macs only, as the specification's assumption states. Nothing is gained from supporting other systems, so the native choice costs nothing and wins on size and integration. This ties to the install size and idle resource use that Chapter 1 named as parts of bloat. The case study's generated app came to about 2,000 lines of Swift in 19 files, small enough that the whole program fits in a few files you could read in an afternoon.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Native application</th>
+<th>Cross-platform application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Built with</td>
+<td>The platform's own tools</td>
+<td>A shared runtime plus the app's code</td>
+</tr>
+<tr>
+<td>Size and start-up</td>
+<td>Small and quick</td>
+<td>Larger and slower</td>
+</tr>
+<tr>
+<td>System features</td>
+<td>Direct access</td>
+<td>Through an extra layer</td>
+</tr>
+<tr>
+<td>Best when</td>
+<td>One platform is enough</td>
+<td>Many platforms must be served</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<h3 id="third-party-dependency">Third-Party Dependency<a class="headerlink" href="#third-party-dependency" title="Permanent link">&para;</a></h3>
+<p>A <strong>third-party dependency</strong> is a piece of code written by someone else that your software relies on, such as a library you include so that you do not have to write a feature yourself. Dependencies are normal in modern software and often a good idea. They also carry costs: you must keep them updated, you inherit their bugs, and any security flaw in them becomes a flaw in your tool. A worked example: a library for copying images could save an hour of writing, but it arrives with its own updates, its own bugs, and the chance that its maker stops maintaining it. Each of those becomes your problem on the day you depend on it. Dependencies are a trade-off, not a mistake, and the decision should be made on purpose.</p>
+<h3 id="zero-dependency-design">Zero-Dependency Design<a class="headerlink" href="#zero-dependency-design" title="Permanent link">&para;</a></h3>
+<p>A <strong>zero-dependency design</strong> is a design that uses only what the platform already provides, with no third-party code at all. The ScreenGrab app takes this route: the case study records the generated app as having no third-party dependencies. The benefit is a short list of things that can go wrong. There is nothing to update, nothing for a vendor to abandon, and nothing outside the code that you must trust.</p>
+<p>The cost is that you write, or have the agent write, features a library would have supplied. For a tool with two features this cost is small. That is why the zero-dependency choice fits a minimal specification so well: the smaller the tool, the cheaper it is to own all of it. In Chapter 14 you will see the maintenance payoff.</p>
+<h2 id="checking-the-design-before-building-it">Checking the Design Before Building It<a class="headerlink" href="#checking-the-design-before-building-it" title="Permanent link">&para;</a></h2>
+<p>A design can look sound on paper and still fail on the real platform. Three cheap activities find those failures early.</p>
+<h3 id="prototype">Prototype<a class="headerlink" href="#prototype" title="Permanent link">&para;</a></h3>
+<p>A <strong>prototype</strong> is a quick, rough version of part of the software, built to test an idea, not to be kept. A prototype may have no polish and no tests. Its job is to answer a question. Because an AI agent can write small programs in minutes, prototypes cost very little in this approach, so there is rarely a reason to guess when you can try. A worked example: to test whether a menu bar app can show a menu, a prototype might be a single file that puts an icon in the menu bar with one item that prints a message. If it works, you keep the knowledge and discard the file. The word "throwaway" is the point: do not let a prototype quietly become the product, because it was built without the tests and care the real tool needs.</p>
+<h3 id="technical-feasibility-check">Technical Feasibility Check<a class="headerlink" href="#technical-feasibility-check" title="Permanent link">&para;</a></h3>
+<p>A <strong>technical feasibility check</strong> is a test of whether something the design depends on can actually be done on the target platform. It is the question "can this work at all?" asked before committing to the rest of the build. For ScreenGrab, the riskiest assumptions are that an app living in the menu bar can respond to a global hotkey, and that it can capture the screen once the user grants permission. If either were impossible, the whole design would need to change. The answer is usually yes or no, and either answer is useful. A "no" saves you from building on something that cannot work, and a "yes" lets you proceed with less worry. Feasibility checks should be done in order of risk, starting with the item that would hurt most if it failed.</p>
+<h3 id="agent-experiments">Agent Experiments<a class="headerlink" href="#agent-experiments" title="Permanent link">&para;</a></h3>
+<p><strong>Agent experiments</strong> are small trials that you ask the coding agent to run to answer a design question, such as "write a ten-line program that registers this hotkey and prints a message when it fires, then run it." The agent writes it, runs it, and reports what happened. Because the output is visible, you can see the answer for yourself rather than trust a description. Experiments turn a risky guess into a known result for a few cents of tokens.</p>
+<p>A worked example ties the three together. The author's design depends on a global hotkey. Before building the whole app, the agent builds a tiny prototype that only registers the hotkey and prints a line when it is pressed. Running it is a feasibility check, and the agent doing so is an agent experiment. If nothing prints, the problem is found in minutes, not after the other 1,990 lines exist. The case study is candid that one early hotkey failure was never explained, which is a reminder that even this practice does not remove every surprise.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Test the Scary Part First</p>
+<p><img alt="Pinch giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+List the two or three things in your design that you are least sure the platform allows, and ask the agent to prototype only those. Do it before it writes the rest, so a bad surprise costs minutes, not a rebuild.</p>
+</div>
+<h2 id="screengrabs-design-choices">ScreenGrab's Design Choices<a class="headerlink" href="#screengrabs-design-choices" title="Permanent link">&para;</a></h2>
+<p>The next four sections apply the ideas above to the four features of the platform that shape ScreenGrab. Each is a platform constraint, a design decision, and a trade-off at once.</p>
+<h3 id="menu-bar-app">Menu Bar App<a class="headerlink" href="#menu-bar-app" title="Permanent link">&para;</a></h3>
+<p>A <strong>menu bar app</strong> is an application that lives in the strip of icons at the top of the macOS screen and has no regular window or Dock icon of its own. You click its icon to open a small menu, and otherwise it stays out of sight. Many small Mac utilities work this way, because it keeps them always available and almost invisible.</p>
+<p>The choice fits a screen grab tool for three reasons. The tool is used for seconds at a time, so a full window would be wasted. It must be ready at once, so it should stay running in the background. And it should not clutter the screen it is about to photograph. The case study confirms that grabs from the menu were seen working, which means the menu is one of the two ways to start a capture. The usual trade-off is that a menu bar app can show very little: there is no room for a rich window, so everything must fit in a short menu. For a tool whose whole interface is "start a grab" and perhaps "quit," that limit costs nothing.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Menu bar app</th>
+<th>Regular window app</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visible presence</td>
+<td>A small icon in the menu bar</td>
+<td>A window and a Dock icon</td>
+</tr>
+<tr>
+<td>Good for</td>
+<td>Quick utilities used for seconds</td>
+<td>Tasks that need a workspace</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Cannot show much; settings are cramped</td>
+<td>Takes space and attention</td>
+</tr>
+<tr>
+<td>Fit for ScreenGrab</td>
+<td>Strong: always ready, out of the way</td>
+<td>Poor: nothing to display</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-hotkey">Global Hotkey<a class="headerlink" href="#global-hotkey" title="Permanent link">&para;</a></h3>
+<p>A <strong>global hotkey</strong> is a keyboard shortcut that works no matter which application is in front. Most shortcuts only work inside the program you are using, such as Command-C to copy. A global hotkey is registered with the system, which then reports the key press to your app even when you are working in another one.</p>
+<p>A global hotkey suits a screen grab tool because the moment you want a grab is when another program is on screen, not your tool. The ScreenGrab design uses Control-Shift-4. The case study records grabs from the Control-Shift-4 hotkey as seen working. It also records that an early hotkey failure was never explained, so the hotkey is a good example of a platform feature that is easy to describe and harder to make reliable.</p>
+<p>Global hotkeys connect to platform constraints in two ways. The system controls which shortcuts an app may claim, and some ways of watching the keyboard require the user to grant extra permission. A worked example of the design reasoning: the team wants the shortcut to work from any app, which requires a global registration. They want to avoid a permission prompt that has nothing to do with screen capture, so they prefer a mechanism that does not need one. Each of those is a design decision with a trade-off, and each belongs in the design document.</p>
+<h3 id="hotkey-conflict">Hotkey Conflict<a class="headerlink" href="#hotkey-conflict" title="Permanent link">&para;</a></h3>
+<p>A <strong>hotkey conflict</strong> happens when two programs, or the system and a program, both want the same shortcut. Only one can win, and the other silently does nothing. macOS already uses Command-Shift-3, 4, and 5 for its own built-in screenshots, so a custom tool that claimed Command-Shift-4 would collide with the system.  Choosing a combination the system does not use, such as Control-Shift-4, avoids this. A conflict is a good reason to make the shortcut a recorded design decision and to expect to change it if it clashes with another program on a user's machine. A worked example of the symptom: the user presses the hotkey and nothing happens, with no error message. That silence is typical of a conflict, which is why the troubleshooting list for any hotkey tool should begin with "is another program using this shortcut?" A clear design might also let the user change the shortcut, though that adds a feature, so a minimal tool may simply document the one it chose.</p>
+<h3 id="screen-recording-permission">Screen Recording Permission<a class="headerlink" href="#screen-recording-permission" title="Permanent link">&para;</a></h3>
+<p><strong>Screen recording permission</strong> is the macOS setting that lets an app capture the contents of the screen. By default an app cannot see other programs' windows. The user must open the system's privacy settings and allow the app. Without the permission, a capture may produce an image missing the other windows, so the picture looks wrong while nothing reports an error.</p>
+<p>The permission is a platform constraint that shapes the user's first experience. The design must decide how the app finds out whether it has permission, how it asks, and what it says when the answer is no. A worked example of the experience: the user installs the app, presses the hotkey, and nothing useful appears. Without a design for the permission, the tool seems broken. With one, the app notices that permission is missing and explains the single setting to change.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Blank Picture Is Not a Bug in Your Code</p>
+<p><img alt="Pinch warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+If a first capture shows a wallpaper or only one window, suspect the permission before you suspect the code. The fix is in the system's privacy settings, not in the app. Put that check first in your testing, and put the message in the app so the next user does not have to guess.</p>
+</div>
+<h3 id="freeze-frame-selection">Freeze-Frame Selection<a class="headerlink" href="#freeze-frame-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Freeze-frame selection</strong> is a way of choosing a screen region by first capturing the whole screen as a still picture, then letting the user drag a rectangle over that still picture. The final capture is cut out of the frozen image, not taken from the live screen.</p>
+<p>The design solves three problems that live selection has. The screen can change while the user drags, because a clock ticks, a video plays, or a notification arrives, and the result would differ from what the user saw when they started. The selection outline itself could end up in the picture. And a menu that closes when the mouse moves can be captured only if the picture is taken before the pointer reaches it. Freezing the screen first makes the picture match what the user saw at the instant they started.</p>
+<p>The cost is that the tool must capture the full screen before the user selects anything, which makes the screen recording permission essential, and it must display the frozen picture as an overlay. A worked comparison:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Live selection</th>
+<th>Freeze-frame selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Picture taken</td>
+<td>After the drag, from the live screen</td>
+<td>Before the drag, then cropped</td>
+</tr>
+<tr>
+<td>Moving content</td>
+<td>May change during the drag</td>
+<td>Fixed at the moment of the hotkey</td>
+</tr>
+<tr>
+<td>Selection outline in the picture</td>
+<td>A risk</td>
+<td>Never, since the picture predates the outline</td>
+</tr>
+<tr>
+<td>Needs</td>
+<td>Less</td>
+<td>Full-screen capture first</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Platform Words Are Just Words</p>
+<p><img alt="Pinch encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If terms like "global hotkey" and "permission" feel like a foreign language, remember that you only need the idea behind each one: where it lives, what it asks of the user, and what it costs. You have already used all of them as a user. This chapter just shows you the other side of the screen.</p>
+</div>
+<h2 id="reading-a-design-by-its-trade-offs">Reading a Design by Its Trade-Offs<a class="headerlink" href="#reading-a-design-by-its-trade-offs" title="Permanent link">&para;</a></h2>
+<p>The component map below shows how the choices fit together. Before you use it, here is one more term: a <strong>component</strong> is a distinct part of the software with a single job. Seven components make up the simplified picture, and the map follows one immediate grab from the hotkey press to the clipboard. It is a teaching simplification, not a listing of the actual source files.</p>
+<h4 id="diagram-screengrab-component-map">Diagram: ScreenGrab Component Map<a class="headerlink" href="#diagram-screengrab-component-map" title="Permanent link">&para;</a></h4>
+<details>
+<summary>ScreenGrab Component Map</summary>
+<p>Type: graph-model
+<strong>sim-id:</strong> screengrab-component-map<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> explain<br/>
+<strong>Learning Objective:</strong> The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.</p>
+<p><strong>Prerequisites:</strong> menu bar app, global hotkey, screen recording permission, freeze-frame selection, clipboard output, component (all defined in this chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> At each of six steps the learner commits the next component in the path before it is revealed. A choice is correct when it matches the "Next component" column in Content. Mastery is 5 of 6 correct. Clicking a component to read its description is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The picture is taken after the user finishes dragging. (2) The permission is checked only once at install time and then never matters. (3) The menu bar icon does the capturing.</p>
+<p><strong>Instructional Rationale:</strong> Predicting the next component forces the learner to reason from each component's job to the sequence, which shows the design is understood as a flow and not as a list of parts.</p>
+<p><strong>Content:</strong></p>
+<p>The seven components (the nodes), each with the description shown when the learner opens it. The map is a simplified, illustrative teaching model of the design described in this chapter.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Component</th>
+<th>Description shown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Global hotkey</td>
+<td>Listens for Control-Shift-4 from any application and starts a grab</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Menu bar item</td>
+<td>Shows the icon in the menu bar and offers a menu command that starts a grab; it does not capture anything itself</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Permission check</td>
+<td>Confirms that screen recording permission has been granted; if not, tells the user what to change</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Screen freeze</td>
+<td>Captures the whole screen as a still picture at the moment of the grab</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Selection overlay</td>
+<td>Shows the still picture and lets the user drag a rectangle over it</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Crop</td>
+<td>Cuts the chosen rectangle out of the still picture</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Clipboard</td>
+<td>Receives the cropped image so that it can be pasted</td>
+</tr>
+</tbody>
+</table>
+<p>The connections (the edges), shown as the path of one immediate grab: Global hotkey to Permission check; Menu bar item to Permission check; Permission check to Screen freeze; Screen freeze to Selection overlay; Selection overlay to Crop; Crop to Clipboard.</p>
+<p>Six prediction steps, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Component shown</th>
+<th>Choices</th>
+<th>Next component</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Global hotkey</td>
+<td>Permission check; Crop; Clipboard</td>
+<td>Permission check</td>
+<td>Nothing can be captured until permission is confirmed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Permission check</td>
+<td>Selection overlay; Screen freeze; Clipboard</td>
+<td>Screen freeze</td>
+<td>With permission confirmed, the whole screen is captured as a still</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Screen freeze</td>
+<td>Crop; Selection overlay; Global hotkey</td>
+<td>Selection overlay</td>
+<td>The still picture is displayed so the user can drag over it</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Selection overlay</td>
+<td>Clipboard; Crop; Screen freeze</td>
+<td>Crop</td>
+<td>The chosen rectangle is cut from the still picture</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Crop</td>
+<td>Clipboard; Permission check; Menu bar item</td>
+<td>Clipboard</td>
+<td>The cropped image is delivered to the clipboard</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Menu bar item</td>
+<td>Permission check; Selection overlay; Clipboard</td>
+<td>Permission check</td>
+<td>The menu command starts the same path, so it also goes through the permission check first</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Component names and the order come from this chapter, sections "Menu Bar App", "Global Hotkey", "Screen Recording Permission", "Freeze-Frame Selection" and "Clipboard Output" (Chapter 7). The map is a simplified teaching model, and the sim labels it "simplified and illustrative, not the source code layout".</p>
+<p><strong>Rules:</strong> The path has exactly one correct next component at each step. The two start points (Global hotkey and Menu bar item) merge at Permission check. Choices are shown in the fixed order of the table.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees the seven components and may open any one to read its description.</li>
+<li>The learner starts the six prediction steps. At each step the current component is highlighted and the learner chooses the next one from three choices.</li>
+<li>After each choice the sim reveals the correct next component, draws the connection, and shows the Why text.</li>
+<li>After step 6, the full path is shown, and the learner should notice that two different starts share the same path.</li>
+</ol>
+<p><strong>Feedback:</strong> Six steps, fixed order, one attempt each. Correct: "Correct: <component>" and the Why text. Incorrect: the correct component and the Why text. A running count "Correct: n of 6" is shown. A final score of 5 or 6 shows "You can trace a grab"; a lower score invites a restart.</p>
+<p><strong>Starting State:</strong> The seven components are shown with no connections drawn, and the question is "What happens first when the user presses the hotkey?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states seven components, six prediction steps, mastery at 5 of 6, and the hotkey Control-Shift-4.</p>
+</details>
+<p>The second practice activity moves from structure to judgment. Reading a design well means asking, for each decision, which option best serves what the specification values. The judge below gives eight decisions with a stated priority and two options each.</p>
+<h4 id="diagram-design-trade-off-judge">Diagram: Design Trade-Off Judge<a class="headerlink" href="#diagram-design-trade-off-judge" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Design Trade-Off Judge</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> design-trade-off-judge<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> judge<br/>
+<strong>Learning Objective:</strong> The learner will judge which of two options best serves a stated priority in each of 8 design decisions, with at least 6 correct.</p>
+<p><strong>Prerequisites:</strong> design decision, design trade-off, third-party dependency, zero-dependency design, native application, menu bar app, global hotkey, hotkey conflict, screen recording permission, freeze-frame selection, prototype (all defined in this chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each decision the learner commits one of two options. A choice is correct when it matches the "Better option" column in Content. Mastery is 6 of 8 correct. Reading the trade-off summary of an option before choosing is exploration.</p>
+<p><strong>Misconceptions:</strong> (1) Using a library is always better because it is less work. (2) The most feature-rich option is the best design. (3) A design decision has a right answer apart from the priority it serves.</p>
+<p><strong>Instructional Rationale:</strong> Evaluating means choosing against a criterion. Each decision states its criterion as a priority, so the learner must connect a trade-off to what the specification values instead of picking the option that sounds more impressive.</p>
+<p><strong>Content:</strong></p>
+<p>The eight decisions, in this order. All are illustrative and based on the ScreenGrab design described in the chapter.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Decision</th>
+<th>Stated priority</th>
+<th>Option 1</th>
+<th>Option 2</th>
+<th>Better option</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>How to read the screen's pixels</td>
+<td>No third-party libraries; easy to maintain</td>
+<td>Use the platform's own capture capability</td>
+<td>Add a third-party capture library</td>
+<td>Option 1</td>
+<td>It meets the no-libraries priority and leaves nothing outside to update</td>
+</tr>
+<tr>
+<td>2</td>
+<td>How the tool presents itself</td>
+<td>Always ready; no window clutter</td>
+<td>A regular app with a window and a Dock icon</td>
+<td>A menu bar app</td>
+<td>Option 2</td>
+<td>A menu bar app is always available and stays out of the way</td>
+</tr>
+<tr>
+<td>3</td>
+<td>How to start a capture while another app is in front</td>
+<td>Works from any application</td>
+<td>A shortcut that works only while the tool's own window is in front</td>
+<td>A global hotkey</td>
+<td>Option 2</td>
+<td>Only a global hotkey is reported to the tool when another app is in front</td>
+</tr>
+<tr>
+<td>4</td>
+<td>How to pick the region</td>
+<td>The picture matches what the user saw when starting</td>
+<td>Let the user drag over the live screen</td>
+<td>Freeze the screen first, then drag over the still picture</td>
+<td>Option 2</td>
+<td>A frozen picture cannot change during the drag</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which shortcut to choose</td>
+<td>Avoid clashing with the system</td>
+<td>Reuse Command-Shift-4</td>
+<td>Choose a combination the system does not already use</td>
+<td>Option 2</td>
+<td>Command-Shift-4 is already a built-in macOS screenshot shortcut, which would conflict</td>
+</tr>
+<tr>
+<td>6</td>
+<td>How to learn whether hotkeys work for a background app</td>
+<td>Find problems early and cheaply</td>
+<td>Build the whole app, then test the hotkey</td>
+<td>Write a tiny prototype that only registers the hotkey and prints a message</td>
+<td>Option 2</td>
+<td>A prototype answers the risky question in minutes before the rest is built</td>
+</tr>
+<tr>
+<td>7</td>
+<td>How to build for a Mac-only tool</td>
+<td>Small size; fits the system</td>
+<td>A native application</td>
+<td>A cross-platform shell wrapping a web page</td>
+<td>Option 1</td>
+<td>Native is smaller and integrates directly, and no other platform is needed</td>
+</tr>
+<tr>
+<td>8</td>
+<td>What to do when screen recording permission is missing</td>
+<td>Avoid blank pictures without explanation</td>
+<td>Capture anyway and hope the picture is right</td>
+<td>Detect the missing permission and tell the user what to change</td>
+<td>Option 2</td>
+<td>Without the permission, captures can look wrong with no error, so the user needs a message</td>
+</tr>
+</tbody>
+</table>
+<p>Counts: Option 1 is better in 2 decisions (1 and 7), Option 2 is better in 6 decisions (2, 3, 4, 5, 6, 8).</p>
+<p><strong>Provenance:</strong> Decisions are illustrative and based on this chapter's sections. The Command-Shift-4 system shortcut is a standard macOS feature described in the section "Hotkey Conflict". The sim labels the scenarios "illustrative".</p>
+<p><strong>Rules:</strong> Each decision has exactly one better option given its stated priority. Option order is as in the table. Stating the priority is part of each decision. A decision cannot be re-answered.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads decision 1, its stated priority, and the two options.</li>
+<li>The learner chooses Option 1 or Option 2 and confirms.</li>
+<li>The sim shows whether the choice is correct and the Why text, then moves on.</li>
+<li>After decision 8, the sim shows the score and, for each decision answered wrongly, the priority it served. The learner should notice that the right answer follows the priority.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight decisions, fixed order, one attempt each. Correct: "Correct" and the Why text. Incorrect: the better option and the Why text. A running count "Correct: n of 8" is shown. A final score of 6 or more shows "You can judge a design"; a lower score invites a restart.</p>
+<p><strong>Starting State:</strong> Decision 1 is shown with its priority and two options, and the question "Which option better serves the priority?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that Command-Shift-3, 4 and 5 are macOS's built-in screenshot shortcuts, that ScreenGrab uses Control-Shift-4, and that the app uses no third-party dependencies. The judge has 8 decisions with mastery at 6 of 8.</p>
+</details>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Read a Design</p>
+<p><img alt="Pinch celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now read a design document, name the trade-off behind each decision, and explain why ScreenGrab is a native, menu bar, zero-dependency app with a global hotkey, a permission check, and freeze-frame selection. Next, you will watch that design become running code.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

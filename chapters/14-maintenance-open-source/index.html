@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.">
+        <meta name="description" content="The long-term cost of keeping a personal tool working, and how open source licenses, public repositories, forks, and pull requests let you share it with others.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>14. Maintenance and Open Source Sharing - ScreenGrab: Software Bloat and the Generated Alternative</title>
+        <title>Maintenance and Open Source Sharing - ScreenGrab: Software Bloat and the Generated Alternative</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              14. Maintenance and Open Source Sharing
+              Maintenance and Open Source Sharing
             
           </span>
         </div>
@@ -760,6 +760,246 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Debt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operating System Compatibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toolchain Changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch Releases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Patch Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-year-of-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a year of maintenance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Source Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open Source Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-open-source-does-to-the-cost-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: what open source does to the cost table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Source Licenses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissive-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissive Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissive Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-two-ways-to-license-the-same-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: two ways to license the same tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mit-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MIT License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creative-commons-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creative Commons Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creative Commons Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-open-source-license-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Open Source License Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-pre-publication-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a pre-publication checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-fork-for-a-different-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a fork for a different shortcut
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Requests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pull Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fork-and-pull-request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Fork and Pull Request Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Contribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-term-stewardship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Term Stewardship
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-for-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation for Others
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -996,6 +1236,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../license/" class="md-nav__link">
         
   
@@ -1077,6 +1337,246 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Debt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-system-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operating System Compatibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toolchain Changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch Releases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Patch Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-year-of-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a year of maintenance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Source Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open Source Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-open-source-does-to-the-cost-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: what open source does to the cost table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-source-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Source Licenses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissive-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissive Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissive Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-two-ways-to-license-the-same-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: two ways to license the same tool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mit-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MIT License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creative-commons-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creative Commons Licenses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creative Commons Licenses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-open-source-license-matcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Open Source License Matcher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Repositories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-pre-publication-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a pre-publication checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-fork-for-a-different-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a fork for a different shortcut
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Requests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pull Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fork-and-pull-request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Fork and Pull Request Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Contribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-term-stewardship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Term Stewardship
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-for-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation for Others
     </span>
   </a>
   
@@ -1192,13 +1692,314 @@
 <li><a href="../13-bugs-evidence-verification/">Chapter 13: Bugs, Evidence, and Verification Plans</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">The Shell You Carry Next Year</p>
+<p><img alt="Pinch waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Building a tool is a weekend. Keeping it working is a decade, and a tool you share can have help carrying it. By the end of this chapter you will be able to estimate that decade honestly and publish your tool so others can pick it up. Grab only what you need!</p>
+</div>
+<p>The ScreenGrab story so far has an end that looks like a beginning: the app is installed and working. Chapter 4 taught you that the purchase price is only part of the cost of ownership, and the same is true of a tool you generate. The $6 build is the cheap part. This chapter covers the cost that arrives later, and the option that spreads it across other people: open source.</p>
+<h2 id="technical-debt">Technical Debt<a class="headerlink" href="#technical-debt" title="Permanent link">&para;</a></h2>
+<p><strong>Technical debt</strong> is the future cost created by choosing a quick or incomplete solution now. Like financial debt it accrues interest: every later change takes longer because of the shortcut. In a personal tool, typical debts are undocumented workarounds, code that only the original agent session understood, and dependencies that stop being updated.</p>
+<p>ScreenGrab keeps its debt low on purpose. It has no third-party dependencies, so there are no outside libraries to fall behind. The pure logic is separated from the window code and covered by tests. Screen capture is isolated behind one type, so a change in Apple's capture technology touches one file. These choices cost a little at design time and save more in maintenance.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Debt Has Interest</p>
+<p><img alt="Pinch thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of a shortcut as a loan. The code ships today, and every later change pays a little interest. A tool you will keep for years should borrow less than a throwaway you will delete on Friday.</p>
+</div>
+<h2 id="operating-system-compatibility">Operating System Compatibility<a class="headerlink" href="#operating-system-compatibility" title="Permanent link">&para;</a></h2>
+<p><strong>Operating system compatibility</strong> is the ability of the software to keep working as the operating system changes. A tool that depends on system behavior is at the mercy of each new release. The ScreenGrab specification names two examples.</p>
+<p>First, macOS ties the Screen Recording permission to the app's code signature. An app signed ad hoc gets a new identity whenever its code changes, so the permission must be granted again after such a rebuild. The scripts accept a stable signing identity to avoid this. Second, since macOS 15 the system periodically asks the user to re-confirm Screen Recording access for apps that capture the screen. That is outside the app's control, so the README documents it.</p>
+<h2 id="toolchain-changes">Toolchain Changes<a class="headerlink" href="#toolchain-changes" title="Permanent link">&para;</a></h2>
+<p><strong>Toolchain changes</strong> are updates to the compilers, build tools, and test frameworks that turn your source code into a running app. A toolchain change can break a tool that never changed. ScreenGrab shows this in miniature: it builds with the Swift tools that come with Command Line Tools, and the design document notes that, depending on the Swift version, the build may not find the testing framework, its macro plugin, or a run-time library. The test script passes all three locations, which is a fix for exactly this kind of drift. Managing the risk takes three habits: write down the tool versions you built with, rebuild occasionally rather than only when something breaks, and keep the build in a script rather than in your memory.</p>
+<h2 id="patch-releases">Patch Releases<a class="headerlink" href="#patch-releases" title="Permanent link">&para;</a></h2>
+<p>A <strong>patch release</strong> is a small new version that fixes a defect without adding features. Version numbers often follow the pattern major, minor, patch. A fix for a bug moves the last number, for example from 1.0.0 to 1.0.1 (a hypothetical example). A patch release tells users that updating is low risk. For a personal tool, a patch release is also a record that lets you tell which build is installed on which computer.</p>
+<h4 id="worked-example-a-year-of-maintenance">Worked example: a year of maintenance<a class="headerlink" href="#worked-example-a-year-of-maintenance" title="Permanent link">&para;</a></h4>
+<p>The estimate below is illustrative. It uses invented hours, not measurements, to show how to think about the cost. Suppose one macOS update a year forces a compatibility fix, and one toolchain update a year forces a build fix. The table lists the hours and the cost if an AI session does the work at the ScreenGrab session rate of about $14 per session.</p>
+<table>
+<thead>
+<tr>
+<th>Task per year</th>
+<th>Illustrative hours of your time</th>
+<th>Illustrative AI cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read release notes, test the app on the new macOS</td>
+<td>1</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Compatibility fix with an agent</td>
+<td>1</td>
+<td>$14</td>
+</tr>
+<tr>
+<td>Toolchain fix with an agent</td>
+<td>1</td>
+<td>$14</td>
+</tr>
+<tr>
+<td>Rebuild, reinstall on three computers, re-grant permission</td>
+<td>1</td>
+<td>$0</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>4 hours</strong></td>
+<td><strong>$28</strong></td>
+</tr>
+</tbody>
+</table>
+<p>At a value of $50 an hour for your time, which you should replace with your own, four hours is $200. Added to $28, that is about $228 a year, more than the $90 a year in subscription fees that the tool replaces. The illustration is deliberately not flattering: ownership cost is mostly your time. It also shows why sharing the work matters, which the rest of the chapter explains.</p>
+<h2 id="open-source-software">Open Source Software<a class="headerlink" href="#open-source-software" title="Permanent link">&para;</a></h2>
+<p><strong>Open source software</strong> is software whose source code is available to everyone and whose license gives everyone the right to use, study, change, and share it. The Open Source Initiative's definition adds that an open source license must allow free redistribution, must include the source code, must allow derived works, and must not discriminate against people or fields of use. Open source does not mean free of support or free of effort, only free of permission barriers. Two things must both be true: you can see the code, and the license says you may use it. Code on a public web page with no license is visible but not open source, because nobody is granted permission.</p>
+<p>ScreenGrab is open source. The code is public, and the MIT License grants everyone the right to use, change, and share the app, including commercially. That is how a $0 option exists for anyone who wants the app without the fee or the build.</p>
+<h4 id="worked-example-what-open-source-does-to-the-cost-table">Worked example: what open source does to the cost table<a class="headerlink" href="#worked-example-what-open-source-does-to-the-cost-table" title="Permanent link">&para;</a></h4>
+<p>Return to the $90 a year of fees. For a reader who simply installs the finished open source app, the money cost is $0 and the build time is the time to run the installer. For a reader who wants changes, the cost is the time to fork and edit. For the author, the cost of building was $14 in tokens, and sharing adds the time to prepare and document the project. Open source does not remove the cost of the work. It lets many people share one copy of that cost.</p>
+<h2 id="open-source-licenses">Open Source Licenses<a class="headerlink" href="#open-source-licenses" title="Permanent link">&para;</a></h2>
+<p>An <strong>open source license</strong> is the legal document that gives others permission to use, change, and share your code, and sets any conditions. Without one, the law's default is that nobody except the author may copy or change the work, even if it is posted publicly. The license is what makes sharing real. Most licenses have the same three parts: a <em>grant</em> that says what you may do, <em>conditions</em> that say what you must do in return, and a <em>disclaimer</em> that says the software comes without warranty. Licenses also interact. If your tool includes a library under a copyleft license, that license can apply to your tool as well, which is another reason ScreenGrab's lack of dependencies is convenient.</p>
+<p>Licenses fall into two broad families, defined next, and a few terms help read them. <em>Distribute</em> means to give copies to others. A <em>derivative work</em> is a new work built from the original, such as a changed copy.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">No License Means No Permission</p>
+<p><img alt="Pinch warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A public repository without a license file is not open source, because others have no legal right to reuse your code. Before you announce your tool, add a LICENSE file to the top folder, and check that the copyright line has your name and year.</p>
+</div>
+<h2 id="permissive-licenses">Permissive Licenses<a class="headerlink" href="#permissive-licenses" title="Permanent link">&para;</a></h2>
+<p>A <strong>permissive license</strong> places very few conditions on reuse. Others may use, change, and even sell your code, usually as long as they keep your copyright notice. The other family is the copyleft license, such as the GNU General Public License, which adds a condition: if someone distributes a changed version, they must release it under the same license. Common permissive licenses are MIT, the BSD licenses, and Apache 2.0, which also grants a patent license. Permissive licenses suit tools you want used widely with no strings. Copyleft licenses suit projects whose authors want improvements to stay open.</p>
+<h4 id="worked-example-two-ways-to-license-the-same-tool">Worked example: two ways to license the same tool<a class="headerlink" href="#worked-example-two-ways-to-license-the-same-tool" title="Permanent link">&para;</a></h4>
+<p>Suppose a company wants to put ScreenGrab into a commercial product. Under a permissive license, it may do so if it keeps the copyright and license notice. Under a copyleft license, it would have to publish its changed version's source under the same license. Neither choice is better in general. The author's goal decides: ScreenGrab is meant to give people a free tool with no strings, so a permissive license fits.</p>
+<h2 id="the-mit-license">The MIT License<a class="headerlink" href="#the-mit-license" title="Permanent link">&para;</a></h2>
+<p>The <strong>MIT License</strong> is a short, popular permissive license. It grants everyone permission to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software. It has two conditions: include the copyright notice and the permission notice in all copies, and accept that the software comes with no warranty. ScreenGrab's LICENSE file reads "MIT License, Copyright (c) 2026 Dan McCreary". The whole license is about twenty lines, which is part of why people choose it. Its warranty disclaimer matters to a personal-tool author: if your tool misbehaves on someone else's machine, the license says you are not liable for it.</p>
+<h2 id="creative-commons-licenses">Creative Commons Licenses<a class="headerlink" href="#creative-commons-licenses" title="Permanent link">&para;</a></h2>
+<p>A <strong>Creative Commons license</strong> is one of a family of licenses designed for creative works such as text, images, and music, not for software code. Each license is a combination of conditions: BY means credit the author, NC means non-commercial use only, SA means share adaptations under the same license. This book's text is licensed CC BY-NC-SA 4.0, while its code is MIT.</p>
+<p>Note that a license with the NC condition restricts commercial use, so it is generally not considered an open source license, although it still allows free sharing and adapting. Use Creative Commons for writing and images, and an open source license for code.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">One Folder, Two Licenses</p>
+<p><img alt="Pinch giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+If your project has both code and prose, say so in plain words. Put the code license in a LICENSE file and write one sentence in the README, such as "The text is CC BY-NC-SA 4.0". Readers will not have to guess.</p>
+</div>
+<p>Try matching licenses to scenarios before moving on.</p>
+<h4 id="diagram-open-source-license-matcher">Diagram: Open Source License Matcher<a class="headerlink" href="#diagram-open-source-license-matcher" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Open Source License Matcher</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> open-source-license-matcher<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/search-microsims/tree/main/docs/sims/cc-license-chooser<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply the conditions of five license choices to choose the license that fits each of eight scenarios, with at least 7 of 8 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> open source license, permissive license, copyleft, MIT License, Creative Commons license, the BY, NC and SA conditions (all defined in the chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner assigns one of five license choices to each of eight scenarios. An assignment is correct when it matches the Correct choice in Content. Mastery is 7 of 8 correct on the first attempt per scenario. Reading the reasons is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Any Creative Commons license is also an open source license. (2) A public repository with no license can be reused freely. (3) Copyleft and permissive licenses place the same conditions on reuse.</p>
+<p><strong>Instructional Rationale:</strong> Applying the conditions to concrete scenarios shows that license choice depends on what the author wants others to be able to do. Eight scenarios cover each choice at least once and force the learner to apply the conditions rather than recall names.</p>
+<p><strong>Content:</strong></p>
+<p>The five choices: MIT License, Copyleft license (such as the GNU General Public License), CC BY 4.0, CC BY-NC-SA 4.0, No license (all rights reserved).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Scenario</th>
+<th>Correct choice</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Source code of a small utility. Anyone may use it for any purpose, including commercially. They only need to keep your credit.</td>
+<td>MIT License</td>
+<td>MIT is permissive and asks only for the copyright notice.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Source code where anyone who distributes an improved version must also release its source.</td>
+<td>Copyleft license (such as the GNU General Public License)</td>
+<td>Copyleft requires changed versions to carry the same license.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chapters of a book that may be shared and adapted with credit, not used commercially, with adaptations under the same terms.</td>
+<td>CC BY-NC-SA 4.0</td>
+<td>BY gives credit, NC bars commercial use, SA keeps adaptations under the same terms.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A collection of diagrams that anyone, including companies, may reuse with credit.</td>
+<td>CC BY 4.0</td>
+<td>BY alone requires only credit and allows commercial reuse.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A personal script on your own laptop that you never share.</td>
+<td>No license (all rights reserved)</td>
+<td>Nobody else needs permission, so no license is needed.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Short code samples in a textbook that readers may paste into their own commercial apps.</td>
+<td>MIT License</td>
+<td>Code samples suit a permissive code license.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Photos on a website that may be reused commercially if the photographer is credited.</td>
+<td>CC BY 4.0</td>
+<td>Photos are creative works, and BY allows commercial reuse with credit.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Lesson plans that teachers may remix, provided remixes carry the same terms and are not resold.</td>
+<td>CC BY-NC-SA 4.0</td>
+<td>NC bars resale and SA keeps remixes under the same terms.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The license conditions are from the chapter sections "Permissive Licenses", "The MIT License" and "Creative Commons Licenses". Scenarios are written by the chapter author.</p>
+<p><strong>Rules:</strong> Five answer choices per scenario. A scenario is correct when the chosen license equals the Correct choice. The score counts first answers only. The order is fixed as listed. The sim states that it is an educational exercise and not legal advice.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads scenario 1 and chooses one of five licenses.</li>
+<li>The sim shows correct or incorrect and the Why text. An answered scenario cannot be changed.</li>
+<li>The learner moves through scenarios 2 to 8 in order.</li>
+<li>After scenario 8, the sim shows the score and a table of the eight scenarios grouped by license.</li>
+<li>The learner should notice that the Creative Commons choices are used for text and images, and the other choices for code.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight scenarios, fixed order, one attempt each. Correct: "Correct: [license]." plus the Why text. Incorrect: "Not quite: [Why text]." The score "Correct on first attempt: n of 8" is shown at the end, with "Mastery" when n &gt;= 7.</p>
+<p><strong>Starting State:</strong> Scenario 1 is shown with five unselected license choices. The question on screen is "Which license fits what this author wants?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states ScreenGrab's code is under the MIT License, this book's text is CC BY-NC-SA 4.0, and a license with the NC condition is generally not considered open source.</p>
+</details>
+<h2 id="public-repositories">Public Repositories<a class="headerlink" href="#public-repositories" title="Permanent link">&para;</a></h2>
+<p>A <strong>public repository</strong> is a project folder, with its full change history, hosted where anyone can see it. ScreenGrab lives at <code>github.com/dmccreary/macos-screen-grab</code>. Making it public is what turns a license into something people can use.</p>
+<h4 id="worked-example-a-pre-publication-checklist">Worked example: a pre-publication checklist<a class="headerlink" href="#worked-example-a-pre-publication-checklist" title="Permanent link">&para;</a></h4>
+<p>Before making a repository public, check these items one at a time.</p>
+<ol>
+<li>A <code>LICENSE</code> file is in the top folder.</li>
+<li>A README explains what the tool does and how to install it.</li>
+<li>No passwords, keys, tokens, or personal data are in the files or in the history.</li>
+<li>Paths on your own computer, such as your home folder name, are removed or made generic.</li>
+<li>The build and the tests run on a clean machine from the instructions alone.</li>
+</ol>
+<p>Item 3 is the dangerous one. A secret deleted in a later change is still in the history that anyone can read.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">History Remembers Secrets</p>
+<p><img alt="Pinch warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Removing a password from a file does not remove it from earlier versions, and a public repository exposes all of them. Search the files and the history before you publish, and if a key was ever committed, treat it as leaked and replace it.</p>
+</div>
+<h2 id="forking">Forking<a class="headerlink" href="#forking" title="Permanent link">&para;</a></h2>
+<p><strong>Forking</strong> is making your own copy of someone else's repository under your own account. The copy keeps its link to the original, so you can bring in later updates. A fork is the normal way to change a project you do not own. Over time the original moves on, so a fork has to bring in the original's updates (often called syncing with upstream) or it drifts apart. With a permissive license, the fork keeps the original copyright notice and adds its own changes under its own name. You edit your copy freely, without asking permission and without affecting the original.</p>
+<h4 id="worked-example-a-fork-for-a-different-shortcut">Worked example: a fork for a different shortcut<a class="headerlink" href="#worked-example-a-fork-for-a-different-shortcut" title="Permanent link">&para;</a></h4>
+<p>Suppose a reader prefers Control-Option-S for a grab and wants it as the default. They fork ScreenGrab, change the default in their copy, and build and install their fork. Their fork is now theirs to maintain. Because the license is MIT, they need no permission. If the change would help everyone, they can offer it back to the original, using a pull request.</p>
+<h2 id="pull-requests">Pull Requests<a class="headerlink" href="#pull-requests" title="Permanent link">&para;</a></h2>
+<p>A <strong>pull request</strong> is a proposal to merge changes from one branch or fork into another repository. It shows the differences, collects comments, and lets the owner accept or decline. Owners review pull requests because a change from a stranger, or from an AI agent, needs checking just as any code does. A good pull request is small, explains why, and includes the evidence from Chapter 13. Review matters most when the author is an AI agent, because the reviewer must check that the change does what it claims and nothing more. The owner may also decline, and a declined pull request is not an insult: the proposal may simply not fit the project's purpose.</p>
+<p>The next diagram follows one contribution from discovery to merge, and asks where the code changes at each step.</p>
+<h4 id="diagram-fork-and-pull-request-flow">Diagram: Fork and Pull Request Flow<a class="headerlink" href="#diagram-fork-and-pull-request-flow" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Fork and Pull Request Flow</summary>
+<p>Type: workflow
+<strong>sim-id:</strong> fork-and-pull-request-flow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify each of the six steps of a contribution by where code changes (the contributor's fork, the original repository, or nowhere), with at least 5 of 6 correct.</p>
+<p><strong>Prerequisites:</strong> public repository, forking, pull request, community contribution (all defined in the chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each step, the learner picks one of three places before the answer is shown. A pick is correct when it matches the Answer column in Content. Mastery is 5 of 6 correct. Opening a step to read its description is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Forking changes the original repository. (2) Opening a pull request changes the original code. (3) The contributor can merge their own change into someone else's project.</p>
+<p><strong>Instructional Rationale:</strong> Classifying where code changes at each step corrects the most common confusion, that a fork or a pull request alters the original. Committing an answer before the reveal makes the learner reason about ownership instead of reading it.</p>
+<p><strong>Content:</strong></p>
+<p>The diagram is a flowchart with six steps in order. Each step is clickable. Clicking opens an information box with the description and three choices: "Contributor's fork", "Original repository", "Nowhere (no code changes)".</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Description</th>
+<th>Answer</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Find the public repository</td>
+<td>A contributor reads the code and the LICENSE file of a public repository</td>
+<td>Nowhere (no code changes)</td>
+<td>Reading changes nothing.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fork it</td>
+<td>The contributor makes their own copy under their own account</td>
+<td>Contributor's fork</td>
+<td>The new copy is created in the contributor's account; the original is untouched.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Change and test the fork</td>
+<td>The contributor edits the copy and runs the tests</td>
+<td>Contributor's fork</td>
+<td>All edits happen in the copy.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Open a pull request</td>
+<td>The contributor proposes the changes to the owner</td>
+<td>Nowhere (no code changes)</td>
+<td>A pull request is a proposal; no code moves yet.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The owner reviews</td>
+<td>The owner reads the differences, asks questions, and requests changes</td>
+<td>Nowhere (no code changes)</td>
+<td>Review is discussion; the original code is unchanged.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The owner merges</td>
+<td>The owner accepts the proposal and brings the changes in</td>
+<td>Original repository</td>
+<td>Only the owner's decision changes the original.</td>
+</tr>
+</tbody>
+</table>
+<p>Edge labels: "copy" from step 2 to step 3, "propose" from step 3 to step 4, "feedback" from step 5 back to step 3, "accept" from step 5 to step 6.</p>
+<p><strong>Provenance:</strong> From the chapter sections "Public Repositories", "Forking" and "Pull Requests". Step descriptions are the chapter author's wording.</p>
+<p><strong>Rules:</strong> Six steps, each with one correct answer. The score is the number of correct picks. Mastery when score &gt;= 5. The order of the three choices is the same for every step.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner clicks a step. An information box shows the description and three choices.</li>
+<li>The learner picks one choice. The sim marks it correct or incorrect and shows the Reason.</li>
+<li>The learner opens the remaining steps in any order until all six are answered.</li>
+<li>The learner should notice that only the final step changes the original repository.</li>
+</ol>
+<p><strong>Feedback:</strong> Six steps, any order, one attempt each. Correct: "Correct" plus the Reason. Incorrect: "Not quite: [Answer]" plus the Reason. The score "Correct: n of 6" is shown after the last step.</p>
+<p><strong>Starting State:</strong> The flowchart is shown with no step answered. The question on screen is "At which step does the original project actually change?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states a fork is a copy under the contributor's own account, a pull request is a proposal, and the owner decides whether to merge.</p>
+</details>
+<h2 id="community-contribution">Community Contribution<a class="headerlink" href="#community-contribution" title="Permanent link">&para;</a></h2>
+<p>A <strong>community contribution</strong> is any help given to a project by people other than its original author: a bug report, a fix, a doc improvement, a test on another machine. Contributions are not only code. Bug reports with the reproduction recipe from Chapter 13 are valuable, as are documentation fixes and translations. For a personal tool the most valuable contribution is often a test report from a machine the author does not own, such as the Intel half of ScreenGrab's universal build that nobody has run yet.</p>
+<h2 id="long-term-stewardship">Long-Term Stewardship<a class="headerlink" href="#long-term-stewardship" title="Permanent link">&para;</a></h2>
+<p><strong>Long-term stewardship</strong> is the ongoing responsibility for keeping a shared project healthy: reviewing contributions, making patch releases, answering issues, and, when the time comes, handing it over or retiring it with a clear note. Sharing a tool creates this duty. Typical duties are to reply to issues within a stated time, tag patch releases, and keep the dependency list short. It is fine to say in the README that a project is a personal tool with no support promised. Being clear about it is part of being a good steward.</p>
+<h2 id="documentation-for-others">Documentation for Others<a class="headerlink" href="#documentation-for-others" title="Permanent link">&para;</a></h2>
+<p><strong>Documentation for others</strong> is written material that lets a stranger install, use, and change your tool without asking you. You wrote the tool, so you do not need a README to use it, which is why it gets skipped. For ScreenGrab the set includes a README with install steps, a specification of what it does, and a design document that explains why. A reader should be able to go from zero to a working install by following the README alone.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Know the Long Game</p>
+<p><img alt="Pinch celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now estimate the yearly cost of keeping a tool alive, choose between permissive, copyleft, and Creative Commons licensing, and prepare a repository for strangers. Chapter 15 puts every number in this book to work on a decision of your own.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.">
+        <meta name="description" content="How software verification and testing work, which behaviors automated unit and integration tests can confirm, and which checks a person must run by hand.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>12. Software Testing: Automated and Manual - ScreenGrab: Software Bloat and the Generated Alternative</title>
+        <title>Software Testing: Automated and Manual - ScreenGrab: Software Bloat and the Generated Alternative</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Software Testing: Automated and Manual
+              Software Testing: Automated and Manual
             
           </span>
         </div>
@@ -718,6 +718,231 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#software-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-one-requirement-three-kinds-of-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: one requirement, three kinds of evidence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-screengrabs-94-tests-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: what ScreenGrab's 94 tests cover
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-unit-test-with-a-table-of-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a unit test with a table of cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Coverage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Isolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-side-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Side Effects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stubbed-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stubbed Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-input-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulated Input Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#off-screen-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Off-Screen Rendering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-screengrab-needs-a-person-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: what ScreenGrab needs a person for
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptance Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceptance Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-one-acceptance-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: reading one acceptance test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smoke Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Smoke Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-which-test-can-confirm-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Which Test Can Confirm This
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-screengrab-grab-flow-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: ScreenGrab Grab Flow Test Coverage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -996,6 +1221,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../license/" class="md-nav__link">
         
   
@@ -1079,6 +1324,231 @@
       Prerequisites
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-one-requirement-three-kinds-of-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: one requirement, three kinds of evidence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-screengrabs-94-tests-cover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: what ScreenGrab's 94 tests cover
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-unit-test-with-a-table-of-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a unit test with a table of cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Coverage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Isolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-side-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Side Effects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stubbed-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stubbed Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulated-input-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulated Input Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#off-screen-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Off-Screen Rendering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-screengrab-needs-a-person-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: what ScreenGrab needs a person for
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptance Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceptance Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-one-acceptance-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: reading one acceptance test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smoke Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Smoke Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-which-test-can-confirm-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Which Test Can Confirm This
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-screengrab-grab-flow-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: ScreenGrab Grab Flow Test Coverage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1184,13 +1654,390 @@
 <li><a href="../08-software-design-platform/">Chapter 8: Software Design and Platform Constraints</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Did Anyone Actually Check That?</p>
+<p><img alt="Pinch waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+An AI agent can write 5,200 lines in 36 minutes, and every line looks confident. This chapter teaches you to tell the difference between "the agent says it works" and "something checked that it works". Grab only what you need, and check what you grab!</p>
+</div>
+<p>Chapter 9 ended with ScreenGrab installed and running. That is not the same as ScreenGrab working. Generated code is fast to produce and easy to trust, and the cheapest moment to catch a mistake is before you depend on the tool. This chapter gives you the vocabulary for the checking, using the real test suite from the ScreenGrab project as the running example.</p>
+<h2 id="software-verification">Software Verification<a class="headerlink" href="#software-verification" title="Permanent link">&para;</a></h2>
+<p><strong>Software verification</strong> is the activity of gathering evidence that software meets its stated requirements. It asks one question: did we build the thing we said we would build? The evidence can come from several sources. A program can run automatically and compare results with expected values. A person can use the software and watch what happens. A reviewer can read the code. A script can inspect the installed app.</p>
+<p>Verification differs from asking whether the requirements were the right ones. That second question belongs to the specification work of Chapter 7. Verification takes the requirements as given and checks the software against them.</p>
+<p>Four methods produce evidence, and a project usually needs more than one. <strong>Testing</strong> runs the software and compares results with expectations. <strong>Inspection</strong> reads the code or the configuration without running it. <strong>Demonstration</strong> uses the software by hand and watches. <strong>Analysis</strong> reasons from known facts, such as a timing calculation. This chapter concentrates on testing, but the weak links are usually found by demonstration.</p>
+<p>The word <em>evidence</em> matters. A requirement such as "pressing Esc during a grab cancels it and leaves the clipboard unchanged" is verified only when something has observed that behavior. Saying "the agent wrote the cancel code" is a claim, not evidence. Good evidence has four properties:</p>
+<ul>
+<li>It was <strong>observed</strong>, not assumed from reading code.</li>
+<li>It can be <strong>repeated</strong> by someone else following the same steps.</li>
+<li>It was <strong>recorded</strong>, with the output or log line kept.</li>
+<li>It is <strong>dated</strong> and names the setup it ran on.</li>
+</ul>
+<h4 id="worked-example-one-requirement-three-kinds-of-evidence">Worked example: one requirement, three kinds of evidence<a class="headerlink" href="#worked-example-one-requirement-three-kinds-of-evidence" title="Permanent link">&para;</a></h4>
+<p>Take that Esc requirement. The ScreenGrab project gathers evidence three ways, and each one proves something different.</p>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>What it observes</th>
+<th>What it cannot show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>An automated test of the grab coordinator using fake parts</td>
+<td>After a cancel, no image was delivered and the stored clipboard was untouched</td>
+<td>That the real overlay window receives a real Esc key press</td>
+</tr>
+<tr>
+<td>An automated test of the overlay view with a synthesized key event</td>
+<td>The view reports "cancel" when it is sent an Esc event</td>
+<td>That macOS delivers a physical key press to the view</td>
+</tr>
+<tr>
+<td>Manual acceptance test AC-5: start a grab, press Esc</td>
+<td>The real overlay disappears, and the real clipboard still has its old content</td>
+<td>Anything about a different Mac, a different display, or the next release</td>
+</tr>
+</tbody>
+</table>
+<p>No single row is enough. Together they form a chain from the logic down to the real screen. Verification is the work of building that chain and knowing where its weak links are.</p>
+<p>The table above is also a map of this chapter. The first two rows are automated tests and the third is a manual one. The sections that follow explain each kind, and Chapter 13 explains how to report which links in the chain you actually have.</p>
+<h2 id="software-testing">Software Testing<a class="headerlink" href="#software-testing" title="Permanent link">&para;</a></h2>
+<p><strong>Software testing</strong> is one method of verification: running the software with chosen inputs and comparing what it does with what was expected. Every test has the same three-part shape, often called arrange, act, assert.</p>
+<ol>
+<li><strong>Arrange:</strong> set up the starting situation and the inputs.</li>
+<li><strong>Act:</strong> run the one piece of behavior under test.</li>
+<li><strong>Assert:</strong> state the expected result and fail if the actual result differs.</li>
+</ol>
+<p>The next snippet shows that shape in a real ScreenGrab test. Before you read it, here is what it does. The function <code>selectionRect</code> turns two points, where a drag started and ended, into a rectangle, and it clamps the rectangle so it cannot extend past the edge of the display (<code>bounds</code>). The test arranges a 400 by 300 display, drags from (350, 250) to far past the corner at (900, 900), and asserts that the result stops at the display edge.</p>
+<div class="language-swift highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">private</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">bounds</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">@</span><span class="n">Test</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">clampsToDisplayEdges</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// Act: a drag that runs far past the bottom-right corner</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">rect</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SelectionGeometry</span><span class="p">.</span><span class="n">selectionRect</span><span class="p">(</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="n">CGPoint</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">),</span><span class="w"> </span><span class="n">to</span><span class="p">:</span><span class="w"> </span><span class="n">CGPoint</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">),</span><span class="w"> </span><span class="n">within</span><span class="p">:</span><span class="w"> </span><span class="n">bounds</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="c1">// Assert: the selection stops at the display edge</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">#</span><span class="n">expect</span><span class="p">(</span><span class="n">rect</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">))</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Where does the expected value come from? It must come from the requirement, not from the code. If you ask an agent to write a test by running the code and copying down whatever it prints, the test passes by construction and proves nothing. A useful test fails when the code is wrong, and a failure looks like this (simplified):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Expectation failed: (rect -&gt; CGRect(x: 350, y: 250, width: 550, height: 650))
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  == CGRect(x: 350, y: 250, width: 50, height: 50)
+</span></code></pre></div>
+<p>The message shows that the clamp did not happen: the rectangle ran past the edge of the 400 by 300 display. A reader can see at once which behavior broke. A test is an executable claim about behavior. When it passes, you know that this input produced that output, once, on this machine. It says nothing about inputs the test did not try. That is the central limit of testing: tests show the presence of confirmed behavior, not the absence of mistakes.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Test Is a Claim With a Receipt</p>
+<p><img alt="Pinch thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that a passing test confirms exactly one thing: the one case it ran. When you read "94 tests pass", ask which behaviors those 94 claims are about, and which behaviors have no claim at all.</p>
+</div>
+<p>The next sections define each kind of test, and a sorting exercise at the end of the chapter lets you check that you can tell them apart.</p>
+<h2 id="automated-tests">Automated Tests<a class="headerlink" href="#automated-tests" title="Permanent link">&para;</a></h2>
+<p>An <strong>automated test</strong> is a test that a program runs and judges by itself, with no person watching. You start the whole suite with one command and read a pass or fail result. ScreenGrab's suite runs through <code>swift test</code>, and the project script <code>src/scripts/test.sh</code> wraps it for machines that have only the Command Line Tools.</p>
+<p>Automated tests have three strengths. They are fast, so you can rerun them after every change. They are repeatable, so a failure points at a change, not at a different mood or a different mouse movement. And they are cheap to run again, so a bug fixed once stays fixed (Chapter 13 returns to this).</p>
+<p>They also have a firm limit. An automated test can only confirm what a program can observe. A program cannot easily press a physical key, feel whether a crosshair looks right, or ask the operating system's permission dialog for consent. Those need a person.</p>
+<h4 id="worked-example-what-screengrabs-94-tests-cover">Worked example: what ScreenGrab's 94 tests cover<a class="headerlink" href="#worked-example-what-screengrabs-94-tests-cover" title="Permanent link">&para;</a></h4>
+<p>ScreenGrab has 94 automated tests spread across five test files. They cover the selection geometry, the image encoder, file naming, hotkey records and settings, the grab state machine, and how the overlay view draws and responds. The project's design document lists them by area and says what each verifies. That list shows an important rule: the tests are strongest where behavior is pure logic, and they get weaker as the code gets closer to the real screen and the real keyboard.</p>
+<h2 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h2>
+<p>A <strong>unit test</strong> checks one small piece of logic in isolation, such as a single function or class. The piece under test is the "unit". Unit tests are the fastest and most precise kind. When one fails, you know which function broke.</p>
+<p>ScreenGrab's design deliberately separated its pure logic from its window-handling code so that the logic could be unit tested. Geometry conversion, file naming, delay limits, and hotkey validation are all pure logic. The <code>clampsToDisplayEdges</code> test above is a unit test. Code is easy to unit test when it takes its inputs as parameters and returns a result, and hard when it reaches out to the clock, the disk, or the screen. That is why the file naming function receives an "exists" check as a parameter, rather than looking at the real disk: a test can pass in a check that always says "the name is taken" and verify the " (2)" suffix without creating any file.</p>
+<h4 id="worked-example-a-unit-test-with-a-table-of-cases">Worked example: a unit test with a table of cases<a class="headerlink" href="#worked-example-a-unit-test-with-a-table-of-cases" title="Permanent link">&para;</a></h4>
+<p>One ScreenGrab test checks that a drag in any of the four directions gives the same rectangle. It runs the same assertion on four start and end pairs: down and right, up and left, and the two diagonals. Each pair must produce the rectangle starting at (10, 20) with width 100 and height 50. This is a common unit-testing habit. Choose the cases that could plausibly fail, such as each direction, a minimum size, or an edge, and run them as a list rather than writing one case and hoping.</p>
+<h2 id="integration-tests">Integration Tests<a class="headerlink" href="#integration-tests" title="Permanent link">&para;</a></h2>
+<p>An <strong>integration test</strong> checks that several parts work correctly together. Where a unit test isolates one function, an integration test wires real parts to each other and checks the combined result. For example, ScreenGrab's crop-accuracy test builds an image where each pixel has a known color, passes it through the real geometry and cropping functions, and checks the exact pixels that come out, including at 2 times Retina scale. That test would not catch an error inside one function alone, but it would catch two correct functions that disagree about points versus pixels.</p>
+<h2 id="test-coverage">Test Coverage<a class="headerlink" href="#test-coverage" title="Permanent link">&para;</a></h2>
+<p><strong>Test coverage</strong> is the proportion of the code, or of the requirements, that a test suite exercises. Code coverage is usually reported as the percentage of lines run during the tests. High coverage means few lines are untested. It does not mean the tests are good: a test can run a line without checking its result. Treat coverage as a way to find the code nobody tested, not as proof that the tested code is right.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Coverage Is Not Correctness</p>
+<p><img alt="Pinch warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A suite can run every line and still check nothing, because running a line is not the same as asserting its result. Ask the agent which assertion protects each requirement, and treat a line with no assertion as untested.</p>
+</div>
+<h2 id="test-isolation">Test Isolation<a class="headerlink" href="#test-isolation" title="Permanent link">&para;</a></h2>
+<p><strong>Test isolation</strong> means each test runs independently of the others and of the outside world, so that one test's outcome cannot depend on another's. Isolated tests can run in any order and a failure points at one cause. The usual tools are a fresh setup for each test and private copies of anything shared, such as settings or the clipboard.</p>
+<h2 id="test-side-effects">Test Side Effects<a class="headerlink" href="#test-side-effects" title="Permanent link">&para;</a></h2>
+<p><strong>Test side effects</strong> are changes a test makes outside itself: files written, settings changed, the clipboard overwritten, windows shown. Side effects are a hazard because they make tests depend on each other and can damage the machine under test. ScreenGrab's tests show the care this needs.</p>
+<p>The tests use a private named pasteboard, so they never touch your real clipboard. Preferences are held in an in-memory object, because a real suite leaves a settings file in the user's library after every run, even after cleanup. The automated tests need no permissions and put nothing on the visible screen.</p>
+<h2 id="stubbed-dependencies">Stubbed Dependencies<a class="headerlink" href="#stubbed-dependencies" title="Permanent link">&para;</a></h2>
+<p>A <strong>stubbed dependency</strong> is a stand-in for a part that the code under test relies on, supplied by the test so that the real part is not needed. A stub returns fixed answers. Its more elaborate cousin, a fake, also records what it was asked. The reason to use them is to cut off the parts of the world that are slow, risky, or impossible to automate.</p>
+<p>ScreenGrab's grab coordinator depends on a screen capturer, a permission checker, a countdown, a selector, and an output. The tests replace each with a fake, so every cell of the coordinator's state table can be exercised without a real display or a permission prompt. The installer tests do the same with shell commands: rollback was tested with a stubbed <code>mv</code>, and the permission-reset flow with stubbed <code>tccutil</code> and <code>defaults</code>, so no real settings changed.</p>
+<h2 id="simulated-input-events">Simulated Input Events<a class="headerlink" href="#simulated-input-events" title="Permanent link">&para;</a></h2>
+<p><strong>Simulated input events</strong> are keyboard and mouse events that a test builds by hand and sends to a view, in place of a person's real input. ScreenGrab's overlay tests synthesize mouse drags and Esc presses and check that the view reports the right selection or a cancel. The limit is stated in the design document: a test can send a made-up event to the view, but it cannot prove that macOS delivers a physical key press, because producing a real one from a program needs Accessibility permission. Even the hotkey test builds a Carbon hotkey event by hand and checks everything after the key press itself.</p>
+<h2 id="off-screen-rendering">Off-Screen Rendering<a class="headerlink" href="#off-screen-rendering" title="Permanent link">&para;</a></h2>
+<p><strong>Off-screen rendering</strong> draws a view into a bitmap in memory instead of onto the display, so a test can inspect the pixels. ScreenGrab's tests render the selection overlay this way and check three things: the area outside the selection is dimmed, the selection itself is not, and the image is the right way up. No window appears, and no screen-recording permission is needed. One test does order a window far off-screen, because only a window that is ordered in has real backing stores for its layers. Pixel checks like these catch drawing errors that a logic test cannot see.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Fake the World, Not the Logic</p>
+<p><img alt="Pinch giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+When you ask an agent for tests, tell it to replace the clipboard, the clock, and the screen with stand-ins, and to leave your own logic real. A test that fakes the logic it is supposed to check proves nothing.</p>
+</div>
+<h2 id="manual-testing">Manual Testing<a class="headerlink" href="#manual-testing" title="Permanent link">&para;</a></h2>
+<p><strong>Manual testing</strong> is checking software by using it as a person would, and observing the result yourself. It is the only way to confirm what a program cannot observe: what real hardware and a real operating system do, and what a human can see and feel.</p>
+<p>Automated and manual testing complement each other, as the table below shows.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Automated test</th>
+<th>Manual test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who runs it</td>
+<td>A program, in seconds</td>
+<td>A person, in minutes</td>
+</tr>
+<tr>
+<td>Repeatable on every change</td>
+<td>Yes</td>
+<td>Only if someone does the work</td>
+</tr>
+<tr>
+<td>Can press a real key, or grant a real permission</td>
+<td>No, in general</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Can judge how a screen looks and feels</td>
+<td>Only by pixel checks</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td>Misses what it cannot observe</td>
+<td>Skipped, forgotten, or done differently each time</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-what-screengrab-needs-a-person-for">Worked example: what ScreenGrab needs a person for<a class="headerlink" href="#worked-example-what-screengrab-needs-a-person-for" title="Permanent link">&para;</a></h4>
+<p>The design document says plainly what automation cannot reach: real ScreenCaptureKit output, on-screen overlay behavior, the live crosshair, and pasting into real applications. It adds that a real key press cannot be simulated without Accessibility access, so hotkey delivery has to be tried by hand. Each of these is a manual test, and each needs a note of who ran it and when. A manual test without a record is only a memory. The cost is also real: ScreenGrab's 34 acceptance tests take a person a good while, which is why they get skipped, and why the verification status of Chapter 13 exists to say which have been run.</p>
+<h2 id="acceptance-tests">Acceptance Tests<a class="headerlink" href="#acceptance-tests" title="Permanent link">&para;</a></h2>
+<p>An <strong>acceptance test</strong> is a check, defined in advance from the requirements, that decides whether the software is good enough to accept. Each one has an ID, a scenario, an expected result, and the requirements it covers. They are often run by hand. ScreenGrab's specification lists 34, named AC-1 to AC-34.</p>
+<h4 id="worked-example-reading-one-acceptance-test">Worked example: reading one acceptance test<a class="headerlink" href="#worked-example-reading-one-acceptance-test" title="Permanent link">&para;</a></h4>
+<p>Take AC-5 from the specification: "Start a grab, press Esc. Expected: the overlay disappears and the clipboard still has its previous content. Covers FR-2.5 and FR-9.2." The table row links a scenario to numbered requirements. A table of this kind is called a traceability matrix: it traces each requirement to the tests that cover it. For example, requirement FR-2.5 (cancel a grab with Esc or a right click) is covered by AC-5 and AC-7. That link lets you ask two useful questions: is every requirement covered by at least one acceptance test, and has each acceptance test actually been run? Chapter 13 shows why the second question is the one that gets skipped.</p>
+<h2 id="smoke-tests">Smoke Tests<a class="headerlink" href="#smoke-tests" title="Permanent link">&para;</a></h2>
+<p>A <strong>smoke test</strong> is a quick set of checks that the software starts and its most basic parts are alive. The name comes from hardware: power it on and see whether smoke comes out. A smoke test does not prove the software correct. It proves that it is worth testing further.</p>
+<p>ScreenGrab's smoke checks run against the installed app and trigger no permission prompt. One confirms that the app runs with no Dock icon (<code>lsappinfo</code> reports it as a background app). Another confirms that a second launch exits and leaves the first process running. A third reports idle CPU and memory, which came out at 0.0% CPU and about 25 MB.</p>
+<h4 id="diagram-which-test-can-confirm-this">Diagram: Which Test Can Confirm This<a class="headerlink" href="#diagram-which-test-can-confirm-this" title="Permanent link">&para;</a></h4>
+<p>Now you have the vocabulary. Try classifying twelve real ScreenGrab behaviors.</p>
+<details>
+<summary>Which Test Can Confirm This</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> which-test-can-confirm-this<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify each of twelve ScreenGrab behaviors as confirmable by a unit test, an integration test, a smoke test, or a manual acceptance test, with at least 10 of 12 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> automated test, unit test, integration test, smoke test, manual testing, acceptance test (all defined in the chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner assigns each behavior to one of four test kinds. An assignment is correct when it matches the answer column in Content. Mastery is 10 of 12 correct on the first attempt per item. Reading the reasons after answering is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Automated tests can confirm everything about the software. (2) Passing unit tests mean the real screen behaves correctly. (3) A smoke test proves the software is correct.</p>
+<p><strong>Instructional Rationale:</strong> Classification requires the learner to reason about what a check can observe, which is the Understand-level skill of sorting examples under a concept. Immediate reasons after each answer let the learner repair the wrong rule at once.</p>
+<p><strong>Content:</strong></p>
+<p>The four kinds of test: Unit test, Integration test, Smoke test, Manual acceptance test.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Behavior to confirm</th>
+<th>Correct kind</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A drag from bottom-right to top-left gives the same rectangle as top-left to bottom-right</td>
+<td>Unit test</td>
+<td>It is pure logic in one function, so it can be checked in isolation.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A synthetic image with known pixel colors is cropped through the real geometry and cropping functions, and the output pixels match exactly at 2 times scale</td>
+<td>Integration test</td>
+<td>Several real parts must agree about points and pixels.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Two grabs in the same second are saved with the second named with " (2)"</td>
+<td>Unit test</td>
+<td>File naming is pure logic with an injected "exists" check.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A hotkey that another app has already registered is reported as a conflict</td>
+<td>Integration test</td>
+<td>It calls the real operating system registration and checks the combined result.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pressing the real Control-Shift-4 keys starts a grab while another app is in front</td>
+<td>Manual acceptance test</td>
+<td>A program cannot send a real key press without Accessibility permission.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The pasted image in a Keynote or Pages document is exactly the selected region at the expected size</td>
+<td>Manual acceptance test</td>
+<td>It needs a real other application and a person to judge the result.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The installed app runs with no Dock icon</td>
+<td>Smoke test</td>
+<td>A quick check of the installed app, with no permission prompt.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The selection overlay, rendered off-screen, dims outside the selection and leaves the selection undimmed</td>
+<td>Integration test</td>
+<td>The view and its drawing code are tested together, through pixels.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>After Screen Recording permission is revoked, a grab shows an alert with a button to open System Settings and copies no image</td>
+<td>Manual acceptance test</td>
+<td>It needs the real operating-system permission, which a program cannot grant or revoke.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>A delay of 99 seconds is clamped to the allowed maximum</td>
+<td>Unit test</td>
+<td>Delay clamping is a pure function of its input.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>The app idles at about 0% CPU</td>
+<td>Smoke test</td>
+<td>A quick <code>ps</code> check of the installed app, with no permission prompt.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>With two displays of different pixel density, the captured pixels match the highlighted area on both</td>
+<td>Manual acceptance test</td>
+<td>It needs two real displays and a person to compare.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Items come from the ScreenGrab design document section 10 and specification section 10 (acceptance tests AC-3, AC-4, AC-9, and AC-21), and from the chapter's examples. Item 10's maximum is illustrative; the sim must label item 10 "illustrative value".</p>
+<p><strong>Rules:</strong> Four answer choices per item. An item is correct when the chosen kind equals the Correct kind. The score counts correct first answers only. The order is fixed as listed.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads behavior 1 and chooses one of the four kinds.</li>
+<li>The sim immediately shows correct or incorrect and the Why text.</li>
+<li>The learner moves to the next behavior. An answered item cannot be changed.</li>
+<li>After item 12, the sim shows the score and a table grouping the 12 behaviors by correct kind.</li>
+<li>The learner should notice that the manual group is the one that touches real keys, real permissions, and real displays.</li>
+</ol>
+<p><strong>Feedback:</strong> Twelve items, fixed order, one attempt each. Correct: "Correct: [kind]." plus the Why text. Incorrect: "Not quite: [Why text]." The score "Correct on first attempt: n of 12" is shown at the end, with "Mastery" shown when n &gt;= 10.</p>
+<p><strong>Starting State:</strong> Behavior 1 is shown with four unselected choices. The question on screen is "Which kind of test could confirm this?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states ScreenGrab has 94 automated tests and 34 acceptance tests (AC-1 to AC-34), and that the smoke checks report about 0.0% CPU and about 25 MB at idle.</p>
+</details>
+<h4 id="diagram-screengrab-grab-flow-test-coverage">Diagram: ScreenGrab Grab Flow Test Coverage<a class="headerlink" href="#diagram-screengrab-grab-flow-test-coverage" title="Permanent link">&para;</a></h4>
+<p>The sorter classifies single behaviors. This second diagram follows one whole grab from key press to paste and shows where each kind of check applies.</p>
+<details>
+<summary>ScreenGrab Grab Flow Test Coverage</summary>
+<p>Type: workflow
+<strong>sim-id:</strong> grab-flow-test-coverage<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> distinguish<br/>
+<strong>Learning Objective:</strong> The learner will distinguish the steps of a ScreenGrab grab that an automated test can confirm from the steps that only a person can confirm, by marking all 7 steps and matching the Content table on at least 6 of 7.</p>
+<p><strong>Prerequisites:</strong> automated test, simulated input events, stubbed dependency, off-screen rendering, manual testing (all defined in the chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner opens each step, commits "automated can confirm" or "only a person can confirm" before the answer is shown, and finishes with at least 6 of 7 matching the Content table. Opening a step to read its description is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) If most steps are automated, the whole flow is verified. (2) The key press itself is covered by the hotkey tests.</p>
+<p><strong>Instructional Rationale:</strong> Walking the flow in order shows that automation covers the middle of the chain but not its two ends, the real key press and the real pasted result. Committing a judgment per step makes the learner perform the distinguishing, not just read it.</p>
+<p><strong>Content:</strong></p>
+<p>The flow has 7 steps in this order, shown as a flowchart. Each step is clickable. Clicking opens an information box with the step's description, then two buttons for the learner's judgment, then the answer and reason.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Description</th>
+<th>Answer</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Press the hotkey</td>
+<td>A person presses Control-Shift-4 in another app.</td>
+<td>Only a person can confirm</td>
+<td>A program cannot send a real key press without Accessibility permission.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hotkey reaches the app</td>
+<td>The registered hotkey event is delivered to ScreenGrab's handler.</td>
+<td>Automated can confirm</td>
+<td>A test builds a Carbon hotkey event by hand and checks the handler receives the right action.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Coordinator starts the grab</td>
+<td>The state machine moves from idle to selecting.</td>
+<td>Automated can confirm</td>
+<td>Tested with fakes for every dependency.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Screen is captured</td>
+<td>The real display is captured to a frozen still image.</td>
+<td>Only a person can confirm</td>
+<td>It needs the real Screen Recording permission and a real display.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>User drags a selection</td>
+<td>The overlay shows and the drag chooses a region.</td>
+<td>Automated can confirm</td>
+<td>Synthesized mouse events and off-screen rendering check selection and drawing.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Image is cropped and copied</td>
+<td>The region is cropped, encoded, and written to the clipboard.</td>
+<td>Automated can confirm</td>
+<td>Tested with known pixels and a private named pasteboard.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Image is pasted into another app</td>
+<td>The user pastes into Preview, Keynote, or Pages.</td>
+<td>Only a person can confirm</td>
+<td>It needs a real other application and a person to judge size and orientation.</td>
+</tr>
+</tbody>
+</table>
+<p>An edge label on every arrow states what is passed on: "key event", "action", "frozen image", "selection", "cropped PNG and TIFF", "clipboard contents".</p>
+<p><strong>Provenance:</strong> From the ScreenGrab design document sections 7 and 10 and specification section 10. The step descriptions are the chapter author's summary of those sections.</p>
+<p><strong>Rules:</strong> There are 7 steps and each has one answer. The learner's final score is the number of steps where the committed judgment matches the Answer column. Mastery when score &gt;= 6.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner clicks step 1. The information box shows the description and two buttons.</li>
+<li>The learner chooses a judgment. The answer and reason appear, and the step is marked answered.</li>
+<li>The learner repeats for steps 2 to 7 in any order.</li>
+<li>When all 7 are answered, the sim shows the score and highlights the steps that need a person.</li>
+<li>The learner should notice that the first, fourth, and last steps cannot be fully confirmed by automation.</li>
+</ol>
+<p><strong>Feedback:</strong> Seven steps, any order, one attempt each. Correct: "Correct" plus the Reason. Incorrect: "Not quite" plus the Reason. The score "Matched: n of 7" is shown after step 7, with "Mastery" when n &gt;= 6.</p>
+<p><strong>Starting State:</strong> The flow is shown with no steps answered. The question on screen is "At which steps does a person have to look?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states a real key press, the real screen capture, and the real paste need a person, and that the hotkey test builds the event by hand and checks everything after the key press.</p>
+</details>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Read a Test Suite</p>
+<p><img alt="Pinch celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now name what unit, integration, smoke, and acceptance tests each confirm, and spot the behaviors that automation cannot reach. That is the skill that separates "the tests pass" from "it works".</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

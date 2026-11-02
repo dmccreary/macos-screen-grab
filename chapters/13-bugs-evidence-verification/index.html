@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.">
+        <meta name="description" content="How to investigate a bug, report software status with evidence, and write a verification plan that separates automated tests from checks a person must run.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>13. Bugs, Evidence, and Verification Plans - ScreenGrab: Software Bloat and the Generated Alternative</title>
+        <title>Bugs, Evidence, and Verification Plans - ScreenGrab: Software Bloat and the Generated Alternative</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13. Bugs, Evidence, and Verification Plans
+              Bugs, Evidence, and Verification Plans
             
           </span>
         </div>
@@ -739,6 +739,180 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#software-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Bugs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-hypothetical-retina-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a hypothetical Retina bug
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Reproduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-cause-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Cause Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-specific-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment-Specific Bugs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-unexplained-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Unexplained Failure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Unexplained Failure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bug-investigation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bug Investigation Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-of-automated-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits of Automated Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits of Automated Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-94-passing-tests-and-an-open-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: 94 passing tests and an open question
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-based-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidence-Based Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evidence-Based Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-rewriting-a-vague-claim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: rewriting a vague claim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-screengrabs-status-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: reading ScreenGrab's status table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-verification-status-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Verification Status Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Plans
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -996,6 +1170,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../license/" class="md-nav__link">
         
   
@@ -1077,6 +1271,180 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Bugs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-hypothetical-retina-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: a hypothetical Retina bug
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Reproduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-cause-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Cause Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-specific-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment-Specific Bugs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression Tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-unexplained-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Unexplained Failure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Unexplained Failure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bug-investigation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bug Investigation Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-of-automated-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits of Automated Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits of Automated Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-94-passing-tests-and-an-open-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: 94 passing tests and an open question
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidence-based-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidence-Based Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evidence-Based Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-rewriting-a-vague-claim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: rewriting a vague claim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-screengrabs-status-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Worked example: reading ScreenGrab's status table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-verification-status-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Verification Status Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Plans
     </span>
   </a>
   
@@ -1168,13 +1536,447 @@
 <li><a href="../12-software-testing/">Chapter 12: Software Testing: Automated and Manual</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Honest Software Reports</p>
+<p><img alt="Pinch waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+The most useful sentence in software is "I checked, and here is how". In this chapter you will learn to write status reports that say exactly what was verified, what was not, and what nobody can explain yet. Grab only what you need, including only the claims you can back up!</p>
+</div>
+<p>The ScreenGrab session did not end with a clean sweep. One early hotkey failure was never explained, several acceptance tests still have to be run by hand, and a later fix was needed for Macs that have only the Command Line Tools. This chapter uses those loose ends as teaching material, because real projects always have them. What separates a trustworthy report from a misleading one is not the absence of loose ends but whether they are written down.</p>
+<h2 id="software-bugs">Software Bugs<a class="headerlink" href="#software-bugs" title="Permanent link">&para;</a></h2>
+<p>A <strong>software bug</strong> is a difference between what the software does and what its requirements, or its user's reasonable expectation, say it should do. A bug is not the same as a crash. A tool that runs smoothly and copies the wrong region is buggy. A bug can live in the code, in a missing requirement, in a wrong assumption about the platform, or in the way pieces fit together.</p>
+<p>AI-generated code has bugs for the same reasons human code does, plus one more: the agent may write confident code against a requirement you never actually stated. The cheapest defense is the one from Chapter 7, which is a clear specification. The second defense is the testing in Chapter 12.</p>
+<h4 id="worked-example-a-hypothetical-retina-bug">Worked example: a hypothetical Retina bug<a class="headerlink" href="#worked-example-a-hypothetical-retina-bug" title="Permanent link">&para;</a></h4>
+<p>This example is hypothetical, built from a risk the ScreenGrab specification lists: coordinate conversion between points and pixels. On a Retina display, one point is two pixels. Suppose a grab of a region 490 points wide and 285 points tall came out as an image 490 by 285 pixels, when the correct size is 980 by 570 pixels. Compare expected and actual:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Expected</th>
+<th>Actual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image size</td>
+<td>980 by 570 pixels</td>
+<td>490 by 285 pixels</td>
+</tr>
+<tr>
+<td>Appearance when pasted</td>
+<td>Sharp, at the size on screen</td>
+<td>Blurry or half size</td>
+</tr>
+</tbody>
+</table>
+<p>The difference is the bug. The next sections follow what you do with it.</p>
+<h2 id="bug-reproduction">Bug Reproduction<a class="headerlink" href="#bug-reproduction" title="Permanent link">&para;</a></h2>
+<p><strong>Bug reproduction</strong> is the act of making a bug happen again on demand, using a written recipe. A bug you can reproduce is a bug you can fix and test. A bug you cannot reproduce can only be guessed at. A good recipe has four parts: the starting state, the exact steps, the expected result, and the actual result, plus the environment (operating system version, hardware, and app version).</p>
+<p>For the hypothetical Retina bug the recipe reads: start on a 2 times display; press Control-Shift-4; drag over a region 490 by 285 points; release; paste into Preview using File, New from Clipboard; expect 980 by 570 pixels; actually get 490 by 285. Anyone with a Retina display can follow it.</p>
+<h2 id="root-cause-analysis">Root Cause Analysis<a class="headerlink" href="#root-cause-analysis" title="Permanent link">&para;</a></h2>
+<p><strong>Root cause analysis</strong> is the search for the underlying reason a bug happens, rather than the nearest visible symptom. Fixing the symptom, for example by doubling the output size, can hide the problem and break other cases. The usual method is to keep asking why until you reach a cause that, if removed, makes the bug impossible.</p>
+<p>For the Retina example: why was the image half size? Because the crop used point values as pixel values. Why? Because the scale factor was not applied. Why not? Because that conversion was done in two places and one place skipped it. The root cause is the duplicated conversion, and the fix is a single tested conversion function, which is exactly what the ScreenGrab design records as its mitigation for this risk.</p>
+<h2 id="environment-specific-bugs">Environment-Specific Bugs<a class="headerlink" href="#environment-specific-bugs" title="Permanent link">&para;</a></h2>
+<p>An <strong>environment-specific bug</strong> appears only on some setups, such as a particular operating system version, hardware, tool installation, or shell. These bugs are the reason "it works on my machine" is not evidence. The ScreenGrab project recorded two real ones.</p>
+<p>The first was the Command Line Tools issue. A later fix was needed for Macs with only the Command Line Tools and no full Xcode. The design document explains the cause: the Command Line Tools ship the Swift Testing framework but not XCTest, and, depending on the Swift version, the build tool may not find the framework, its macro plugin, or a library loaded at run time. The test script therefore passes all three locations explicitly.</p>
+<p>The second was a shell quirk. In non-interactive zsh scripts, plain <code>log</code> runs a shell built-in, not the system log command, because <code>/etc/zshrc</code> disables that built-in only for interactive shells. Scripts must call <code>/usr/bin/log</code> by its full path.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">It Worked on My Machine Is Not a Report</p>
+<p><img alt="Pinch warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Software that passes on the machine that built it can fail on a clean one. Whenever you report a result, record the operating system version and the tools installed, and test the install on a machine that has only what a real user would have.</p>
+</div>
+<h2 id="regression-tests">Regression Tests<a class="headerlink" href="#regression-tests" title="Permanent link">&para;</a></h2>
+<p>A <strong>regression test</strong> is a test added after a bug is fixed, which fails if the bug ever returns. The word regression means going backwards: a fixed behavior breaking again after a later change. AI agents change code often and quickly, so a fix without a regression test is a fix that may quietly undo itself.</p>
+<p>The steps are simple. Write the test from the reproduction recipe. Run it against the broken code and watch it fail. Apply the fix. Watch the test pass. The first step, seeing it fail, matters, because a test that never failed has not shown that it can catch the bug. ScreenGrab's test that repeated partial redraws do not stack up dimming in the overlay layer is the kind of check that is normally added once such a bug has been seen.</p>
+<h2 id="the-unexplained-failure">The Unexplained Failure<a class="headerlink" href="#the-unexplained-failure" title="Permanent link">&para;</a></h2>
+<p>An <strong>unexplained failure</strong> is a failure that was observed but that nobody can account for, usually because it could not be reproduced and not enough evidence was captured when it happened. ScreenGrab has one. An early report said the Control-Shift-4 hotkey did nothing. Later a real key press worked at 14:48:56 on 2026-11-01, confirmed by the log. The design document does not claim the earlier problem is fixed. It says the earlier failure is unexplained: the earlier processes logged no hotkey activity, with the same code and the shortcut registered, and neither Secure Input nor the frontmost app was recorded at those moments.</p>
+<p>The right response is to leave it open and write down what to capture next time. Calling it fixed because it later worked would be a false claim, since nothing was changed that could account for the difference.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Unexplained Is a Valid Status</p>
+<p><img alt="Pinch thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that "I do not know why it failed" is more useful than "it must have been a glitch". The first tells the next person what to measure. The second hides the risk.</p>
+</div>
+<h4 id="diagram-bug-investigation-workflow">Diagram: Bug Investigation Workflow<a class="headerlink" href="#diagram-bug-investigation-workflow" title="Permanent link">&para;</a></h4>
+<p>The steps in this chapter form a sequence with one important branch: what happens when the bug cannot be reproduced. The next diagram lets you walk it.</p>
+<details>
+<summary>Bug Investigation Workflow</summary>
+<p>Type: workflow
+<strong>sim-id:</strong> bug-investigation-workflow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify what each of the seven steps of a bug investigation produces, answering at least 6 of 7 correctly.</p>
+<p><strong>Prerequisites:</strong> software bug, bug reproduction, root cause analysis, unexplained failure, regression test (all defined in the chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> For each step, the learner picks which of three outputs the step produces, before the correct output is shown. A pick is correct when it matches the Output column in Content. Mastery is 6 of 7 correct. Opening a step to read its description is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A bug that cannot be reproduced can be closed as fixed. (2) Fixing the visible symptom is the same as fixing the root cause. (3) A fix is finished when the code changes.</p>
+<p><strong>Instructional Rationale:</strong> Remember-level recall of the sequence benefits from touching each step and committing an answer. The branch on "can it be reproduced?" shows that the process has an honest exit for unexplained failures.</p>
+<p><strong>Content:</strong></p>
+<p>The diagram is a flowchart with seven steps and one decision. Each step is clickable. Clicking opens an information box with the step's description and three possible outputs. The learner picks one.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Description</th>
+<th>Correct output</th>
+<th>Wrong outputs shown</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Observe the failure</td>
+<td>Notice a difference between expected and actual behavior</td>
+<td>A written observation of expected versus actual</td>
+<td>A fixed bug; a new feature</td>
+<td>You cannot work on a bug nobody has written down.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Try to reproduce it</td>
+<td>Follow the recipe on the original setup</td>
+<td>A recipe that makes the bug happen on demand</td>
+<td>A passing test; a release</td>
+<td>Reproduction is a recipe, not a fix.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Decision: reproducible?</td>
+<td>If yes continue to step 4. If no, record an unexplained failure</td>
+<td>A yes or no, with the environment noted</td>
+<td>A root cause; a regression test</td>
+<td>The answer decides whether the investigation can continue.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Record an unexplained failure</td>
+<td>State what was seen, what was known, and what to capture next time</td>
+<td>A written note of known facts and missing facts</td>
+<td>A claim that the bug is fixed; a deleted report</td>
+<td>Honest reporting beats a false fix.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Find the root cause</td>
+<td>Ask why until removing the cause makes the bug impossible</td>
+<td>A named underlying cause</td>
+<td>A workaround; a bigger test suite</td>
+<td>The cause, not the symptom, is what you fix.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fix and add a regression test</td>
+<td>Change the code and write a test that fails before the fix</td>
+<td>A fix plus a test that failed first and now passes</td>
+<td>A new bug report; a README change</td>
+<td>A fix without a test may silently return.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Re-verify and report</td>
+<td>Run the full checks and record the evidence</td>
+<td>A status report with dated evidence</td>
+<td>A guess that it is fixed; a deleted test</td>
+<td>A claim needs a receipt.</td>
+</tr>
+</tbody>
+</table>
+<p>Edge labels: "reproduced" from step 3 to step 5, "cannot reproduce" from step 3 to step 4. Step 4 leads to a final node "wait for new evidence" whose information box reads "Capture the frontmost app, the log, and the settings the next time it happens".</p>
+<p><strong>Provenance:</strong> Steps follow the chapter sections "Bug Reproduction", "Root Cause Analysis", "Regression Tests" and "The Unexplained Failure". The step descriptions are the chapter author's wording.</p>
+<p><strong>Rules:</strong> Seven steps, each with exactly one correct output. The score is the number of correct picks. Mastery when score &gt;= 6. The order of the three choices for each step is shuffled once per visit.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner clicks a step. An information box shows the description and three outputs.</li>
+<li>The learner picks one output. The sim marks it correct or incorrect and shows the Reason.</li>
+<li>The learner opens the remaining steps in any order until all seven are answered.</li>
+<li>The learner should notice that step 3 sends the process down one of two paths, and that both paths end in written evidence.</li>
+</ol>
+<p><strong>Feedback:</strong> Seven steps, any order, one attempt each. Correct: "Correct" plus the Reason. Incorrect: "Not quite: this step produces [correct output]" plus the Reason. The score "Correct: n of 7" is shown after the last step.</p>
+<p><strong>Starting State:</strong> The flowchart is shown with no step answered. The question on screen is "What does each step of a bug investigation produce?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter lists reproduction recipes with four parts plus the environment, root cause by asking why, a regression test that must be seen to fail before the fix, and an unexplained failure branch.</p>
+</details>
+<h2 id="limits-of-automated-tests">Limits of Automated Tests<a class="headerlink" href="#limits-of-automated-tests" title="Permanent link">&para;</a></h2>
+<p>The <strong>limits of automated tests</strong> are the kinds of fact that a program cannot confirm, no matter how many tests it runs. Chapter 12 covered what tests can see. These limits are the other side of that coin, and the ScreenGrab record names several.</p>
+<ul>
+<li>A real physical key press needs Accessibility permission to simulate, so hotkey delivery has to be tried by hand.</li>
+<li>Real screen capture needs the Screen Recording permission, which a person grants.</li>
+<li>Pasting into real applications, and judging how the result looks, needs a person.</li>
+<li>Behavior on hardware the author does not own, such as the Intel half of the universal build, cannot be seen from one machine.</li>
+<li>A stubbed test shows the code handles the stub's answers, not what the real tool does.</li>
+<li>A test only covers the cases its author thought of, and a generated test suite shares the blind spots of the generated code.</li>
+</ul>
+<h4 id="worked-example-94-passing-tests-and-an-open-question">Worked example: 94 passing tests and an open question<a class="headerlink" href="#worked-example-94-passing-tests-and-an-open-question" title="Permanent link">&para;</a></h4>
+<p>With all 94 automated tests passing, ScreenGrab's hotkey still had an open question, since a program could not press the key. The tests exercised everything after the press, including a hand-built hotkey event reaching the handler. They could not show that the keyboard produced that event. The gap was closed only when a person pressed the keys and the log showed the result. A test result and a verification result are different things.</p>
+<h2 id="evidence-based-reporting">Evidence-Based Reporting<a class="headerlink" href="#evidence-based-reporting" title="Permanent link">&para;</a></h2>
+<p><strong>Evidence-based reporting</strong> is the practice of stating each claim about software together with the evidence for it, so a reader can judge how far to trust it. A claim without evidence is an opinion. A good evidence note includes what was checked, how, when, on what setup, and what was not checked. The last item is the one most often missing, and it is the one that stops a reader from over-trusting the rest.</p>
+<h4 id="worked-example-rewriting-a-vague-claim">Worked example: rewriting a vague claim<a class="headerlink" href="#worked-example-rewriting-a-vague-claim" title="Permanent link">&para;</a></h4>
+<p>The vague claim: "Hotkeys work." Here is the same claim rewritten to the standard of the ScreenGrab design document:</p>
+<ul>
+<li>Control-Shift-4 with a real key press worked at 14:48:56 on 2026-11-01, confirmed by the log.</li>
+<li>An earlier report of it failing is unexplained.</li>
+<li>Control-Shift-5 with a real key press, and Control-Shift-4 with VS Code in front, have not yet been run.</li>
+</ul>
+<p>The second version is longer and less comforting, and far more useful. A reader knows what is safe to rely on, what is risky, and what to check next.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Add a Date, a Setup, and a Source</p>
+<p><img alt="Pinch giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+When an agent says "verified", ask three things: when, on what setup, and what output proves it. If it cannot give all three, change the claim to "not yet verified".</p>
+</div>
+<h2 id="verification-status">Verification Status<a class="headerlink" href="#verification-status" title="Permanent link">&para;</a></h2>
+<p>A <strong>verification status</strong> is a label attached to one claim that says how well it has been verified. Using a small fixed set of labels keeps reports honest and quick to scan. This book uses four.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verified automatically</td>
+<td>A test or script confirmed it, with output on record</td>
+</tr>
+<tr>
+<td>Verified by hand</td>
+<td>A person confirmed it, with a dated note or log line</td>
+</tr>
+<tr>
+<td>Not yet run</td>
+<td>No check has been done</td>
+</tr>
+<tr>
+<td>Claim exceeds evidence</td>
+<td>The claim says more than the evidence shows</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-reading-screengrabs-status-table">Worked example: reading ScreenGrab's status table<a class="headerlink" href="#worked-example-reading-screengrabs-status-table" title="Permanent link">&para;</a></h4>
+<p>The design document ends its testing chapter with a status table. Read through the labels above, its rows sort like this.</p>
+<table>
+<thead>
+<tr>
+<th>Claim from the design document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>94 automated tests pass</td>
+<td>Verified automatically</td>
+</tr>
+<tr>
+<td>Installer rollback after a failed swap works (with a stubbed move command)</td>
+<td>Verified automatically</td>
+</tr>
+<tr>
+<td>Smoke checks pass, with 0.0% CPU and about 25 MB at idle</td>
+<td>Verified automatically</td>
+</tr>
+<tr>
+<td>A real 980 by 570 grab pasted into another app with correct orientation and colors</td>
+<td>Verified by hand</td>
+</tr>
+<tr>
+<td>Control-Shift-4 works with a real key press</td>
+<td>Verified by hand</td>
+</tr>
+<tr>
+<td>The x86_64 half of the universal build works</td>
+<td>Not yet run</td>
+</tr>
+<tr>
+<td>Control-Shift-5 works with a real key press</td>
+<td>Not yet run</td>
+</tr>
+<tr>
+<td>Countdown cancel paths, Preferences recording, timings, multiple displays</td>
+<td>Not yet run</td>
+</tr>
+</tbody>
+</table>
+<p>The fourth label, "claim exceeds evidence", has no rows in the real table, because the author wrote the claims carefully. It is the label you apply when you meet a sentence such as "ScreenGrab works" resting on 94 passing tests.</p>
+<p>Now judge ten claims yourself.</p>
+<h4 id="diagram-verification-status-classifier">Diagram: Verification Status Classifier<a class="headerlink" href="#diagram-verification-status-classifier" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Verification Status Classifier</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> verification-status-classifier<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Template:</strong> https://github.com/dmccreary/unicorns/tree/main/docs/sims/claim-verification-tree<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> judge<br/>
+<strong>Learning Objective:</strong> The learner will judge the verification status of each of ten ScreenGrab claims from the evidence offered for it, with at least 8 of 10 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> automated test, manual testing, evidence-based reporting, verification status, the four status labels (all defined in the chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner assigns one of the four status labels to each claim. An assignment is correct when it matches the Correct status in Content. Mastery is 8 of 10 correct on the first attempt per item. Reading the reasons after answering is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Passing automated tests verify the whole product. (2) A later success explains an earlier failure. (3) A claim with no evidence is false rather than unverified.</p>
+<p><strong>Instructional Rationale:</strong> Judging requires applying criteria to evidence, which is the Evaluate-level skill. Ten mixed cases make the learner apply the same four criteria repeatedly, and each reason models the correct justification.</p>
+<p><strong>Content:</strong></p>
+<p>The four labels: Verified automatically, Verified by hand, Not yet run, Claim exceeds evidence.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Claim</th>
+<th>Evidence offered</th>
+<th>Correct status</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>94 automated tests pass</td>
+<td>A test run reports 94 of 94 passing</td>
+<td>Verified automatically</td>
+<td>A program ran the tests and the output is on record.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ScreenGrab works</td>
+<td>The 94 automated tests pass</td>
+<td>Claim exceeds evidence</td>
+<td>The tests cover logic, not the real key press, capture permission, or paste.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Control-Shift-4 starts a grab</td>
+<td>A real key press at 14:48:56 on 2026-11-01, confirmed in the log</td>
+<td>Verified by hand</td>
+<td>A person pressed the keys and the log recorded the result.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Control-Shift-5 starts a delayed grab</td>
+<td>None yet</td>
+<td>Not yet run</td>
+<td>No check has been done.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The earlier Control-Shift-4 failure is fixed</td>
+<td>The key later worked, and nothing was changed</td>
+<td>Claim exceeds evidence</td>
+<td>The cause is unknown, so a later success does not show it is fixed.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The Intel (x86_64) half of the universal app works</td>
+<td>The build contains the x86_64 slice, but it was never run</td>
+<td>Not yet run</td>
+<td>Containing the code is not the same as running it.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The app idles at about 0.0% CPU and 25 MB</td>
+<td>A smoke check using <code>ps</code> on macOS 26.6.2</td>
+<td>Verified automatically</td>
+<td>A script measured it and the output is on record.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The installer rolls back after a failed swap</td>
+<td>A test with a stubbed move command</td>
+<td>Verified automatically</td>
+<td>A test confirmed the flow, with the stub noted.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>A real grab pastes with correct orientation and colors</td>
+<td>A 980 by 570 grab was pasted into another app and checked</td>
+<td>Verified by hand</td>
+<td>A person made the grab and looked at the pasted result.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>The countdown cancel paths work</td>
+<td>None yet</td>
+<td>Not yet run</td>
+<td>These need a person and have not been run.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Claims and evidence are from section 10.4 "Verification status" of the ScreenGrab design document. Items 2 and 5 are claims the chapter author wrote to illustrate the fourth label; the sim must label them "constructed example".</p>
+<p><strong>Rules:</strong> Four answer choices per item. An item is correct when the chosen label equals the Correct status. The score counts first answers only. The order is fixed as listed.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads claim 1 and the evidence offered.</li>
+<li>The learner chooses one of the four labels.</li>
+<li>The sim shows correct or incorrect and the Why text. An answered item cannot be changed.</li>
+<li>After claim 10, the sim shows the score and a table of the ten claims grouped by status.</li>
+<li>The learner should notice that "Not yet run" is a different label from "Claim exceeds evidence".</li>
+</ol>
+<p><strong>Feedback:</strong> Ten items, fixed order, one attempt each. Correct: "Correct: [status]." plus the Why text. Incorrect: "Not quite: [Why text]." The score "Correct on first attempt: n of 10" is shown at the end, with "Mastery" when n &gt;= 8.</p>
+<p><strong>Starting State:</strong> Claim 1 is shown with its evidence and four unselected labels. The question on screen is "How well is this claim verified?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter's status table lists these labels and states that the Intel half has not been run, Control-Shift-5 has not been run, Control-Shift-4 worked at 14:48:56 on 2026-11-01, and the earlier failure is unexplained.</p>
+</details>
+<h2 id="verification-plans">Verification Plans<a class="headerlink" href="#verification-plans" title="Permanent link">&para;</a></h2>
+<p>A <strong>verification plan</strong> is a written list of the checks that will establish a piece of software's status, naming for each one the requirement it covers, who or what runs it, and how it is judged. Its main job is to separate the checks a program can run from the checks a person must run, so that nothing falls into the gap between them.</p>
+<p>A plan for ScreenGrab's hotkey requirements might look like this.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Check</th>
+<th>Run by</th>
+<th>Pass rule</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hotkey is registered and conflicts are reported</td>
+<td>Registration and conflict tests</td>
+<td>Automated</td>
+<td>Tests pass</td>
+<td>Verified automatically</td>
+</tr>
+<tr>
+<td>Hotkey event reaches the handler with the right action</td>
+<td>Hand-built Carbon event test</td>
+<td>Automated</td>
+<td>Tests pass</td>
+<td>Verified automatically</td>
+</tr>
+<tr>
+<td>A real Control-Shift-4 press starts a grab</td>
+<td>AC-3 with the log checked</td>
+<td>Person</td>
+<td>Log shows the grab started</td>
+<td>Verified by hand</td>
+</tr>
+<tr>
+<td>A real Control-Shift-5 press starts a delayed grab</td>
+<td>AC-11</td>
+<td>Person</td>
+<td>HUD counts down, grab completes</td>
+<td>Not yet run</td>
+</tr>
+<tr>
+<td>Hotkey works with VS Code in front</td>
+<td>AC-3 with VS Code frontmost</td>
+<td>Person</td>
+<td>Grab starts</td>
+<td>Not yet run</td>
+</tr>
+</tbody>
+</table>
+<p>The capstone in Chapter 15 asks you to write one of these for your own tool. Fill the "Run by" column first. Anything that says Person is work that no agent can do for you.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Back Up a Claim</p>
+<p><img alt="Pinch celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now investigate a bug from reproduction to regression test, name the limits of automated tests, label a claim's verification status, and write a plan that hands the human checks to a human. Chapter 14 looks at what comes after the first install.</p>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 
