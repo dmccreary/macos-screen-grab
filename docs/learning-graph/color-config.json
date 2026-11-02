@@ -1,0 +1,14 @@
+{
+  "BLOAT": "SteelBlue",
+  "LIC": "Gold",
+  "TCO": "DarkGoldenrod",
+  "BUILD": "Teal",
+  "GENAI": "Orange",
+  "REQ": "MediumPurple",
+  "DESGN": "DarkOrchid",
+  "CODE": "DarkGreen",
+  "CASE": "DeepPink",
+  "MEAS": "Khaki",
+  "TEST": "Crimson",
+  "OSS": "DodgerBlue"
+}

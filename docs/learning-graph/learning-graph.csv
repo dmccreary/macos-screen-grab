@@ -1,0 +1,207 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Software,,BLOAT
+2,Software Product,1,BLOAT
+3,Software Feature,2,BLOAT
+4,Feature Set,3,BLOAT
+5,Software Version,2,BLOAT
+6,Software Release Cycle,5,BLOAT
+7,Software Bloat,4|6,BLOAT
+8,Feature Creep,4|6,BLOAT
+9,Bloatware,7,BLOAT
+10,Job To Be Done,2,BLOAT
+11,Single-Purpose Utility,10|4,BLOAT
+12,Unix Philosophy,11,BLOAT
+13,Feature Usage,3,BLOAT
+14,Usage Telemetry,13,BLOAT
+15,Power Users,13,BLOAT
+16,Casual Users,13,BLOAT
+17,Long Tail Of Features,13|4,BLOAT
+18,95/5 Rule Of Thumb,19|17|15|16,BLOAT
+19,Pareto Principle,,BLOAT
+20,Unused Features,18|7,BLOAT
+21,Feature Discoverability,4|22,BLOAT
+22,Interface Complexity,4|23,BLOAT
+23,Cognitive Load,,BLOAT
+24,Resource Footprint,7,BLOAT
+25,Install Size,24,BLOAT
+26,Idle Resource Use,24,BLOAT
+27,Upgrade Treadmill,6|8,BLOAT
+28,Product Roadmap,6,BLOAT
+29,Competitive Feature Matching,28|8,BLOAT
+30,Feature Checklist Marketing,29,BLOAT
+31,Software License,196|1,LIC
+32,End User License Agreement,31,LIC
+33,One-Time License,31,LIC
+34,Perpetual License,33,LIC
+35,Subscription License,31,LIC
+36,Annual Fee,35,LIC
+37,Per-Computer Licensing,31,LIC
+38,Per-User Licensing,31,LIC
+39,Recurring Revenue,35|36,LIC
+40,Vendor Incentives,39|41|28,LIC
+41,Upgrade Revenue,33|5,LIC
+42,Customer Lifetime Value,39,LIC
+43,Switching Costs,2,LIC
+44,Vendor Lock-In,43|45,LIC
+45,Proprietary File Format,2,LIC
+46,Software As A Service,35,LIC
+47,Price Increase,35|40,LIC
+48,Freemium Model,3|35,LIC
+49,Free Alternatives,43,LIC
+50,Total Cost Of Ownership,51|57|58|36,TCO
+51,Purchase Price,31,TCO
+52,Multi-Year Cost,36|53,TCO
+53,Cost Per Computer,37|51,TCO
+54,Cost Per Feature Used,50|20,TCO
+55,Break-Even Point,52|51,TCO
+56,Opportunity Cost,,TCO
+57,Maintenance Cost,188,TCO
+58,Learning Cost,23|4,TCO
+59,Cost Comparison,50|52,TCO
+60,Build-Or-Buy Decision,50|56,BUILD
+61,Buy Option,60|33,BUILD
+62,Subscribe Option,60|35,BUILD
+63,Generate Option,60|74|64,BUILD
+64,Personal Software,11,BUILD
+65,Disposable Software,64,BUILD
+66,Long-Lived Software,64|188,BUILD
+67,Cost Of Generating Software,63|155,BUILD
+68,Risks Of Ownership,64|188,BUILD
+69,Support Responsibility,68,BUILD
+70,Decision Criteria,60|68|67|44|163,BUILD
+71,Decision Matrix,70|61|62|63,BUILD
+72,Generative AI,1,GENAI
+73,Large Language Model,72,GENAI
+74,AI Coding Agent,73|117,GENAI
+75,Claude Code,74,GENAI
+76,Prompt,73,GENAI
+77,Natural Language Request,76,GENAI
+78,Context Window,73|147,GENAI
+79,Model Selection,80|154,GENAI
+80,Model Capability Tiers,73,GENAI
+81,Agent Tool Use,74,GENAI
+82,Agent Planning,74,GENAI
+83,Clarifying Questions,77|74,GENAI
+84,Human In The Loop,74,GENAI
+85,Human Review,84,GENAI
+86,AI Hallucination,73,GENAI
+87,Overconfident Reporting,86|74,GENAI
+88,AI Session,74|76,GENAI
+89,Session Log,88,GENAI
+90,Prompt Iteration,88,GENAI
+91,Agent Instructions File,74|76,GENAI
+92,Agent Permissions,81|84,GENAI
+93,Agent Experiments,81|110,GENAI
+94,Requirements,101,REQ
+95,Functional Requirement,94|3,REQ
+96,Non-Functional Requirement,94|24,REQ
+97,Software Specification,95|96,REQ
+98,Minimal Specification,97|99|18,REQ
+99,Non-Goals,100,REQ
+100,Scope Boundaries,94,REQ
+101,User Need,10,REQ
+102,Explicit Assumptions,94,REQ
+103,Acceptance Criteria,95,REQ
+104,Default Behavior,95,REQ
+105,Specification Review,97|85,REQ
+106,Software Design,97,DESGN
+107,Design Document,106,DESGN
+108,Design Decision,106,DESGN
+109,Design Trade-Off,108,DESGN
+110,Prototype,106,DESGN
+111,Technical Feasibility Check,110|112,DESGN
+112,Platform Constraints,106,DESGN
+113,Native Application,2|112,DESGN
+114,Programming Language Choice,108|112,DESGN
+115,Third-Party Dependency,108|117,DESGN
+116,Zero-Dependency Design,115|109,DESGN
+117,Source Code,1,CODE
+118,Lines Of Code,117,CODE
+119,Code Generation,74|97,CODE
+120,Compiler Errors,117,CODE
+121,Build Script,117,CODE
+122,Installer Script,121,CODE
+123,Install Rollback,122,CODE
+124,Uninstall Process,122,CODE
+125,README File,117,CODE
+126,Version Control,117,CODE
+127,Git Repository,126,CODE
+128,Git Commit,127,CODE
+129,Git Push And Pull,128,CODE
+130,Code Signing,121,CODE
+131,Ad-Hoc Signing,130,CODE
+132,Developer Toolchain,120|121,CODE
+133,Screen Capture,3,CASE
+134,Screen Grab Tool,133|11,CASE
+135,Region Selection,134,CASE
+136,Delayed Capture,135,CASE
+137,Clipboard Output,134,CASE
+138,Menu Bar App,113|134,CASE
+139,Global Hotkey,138,CASE
+140,Hotkey Conflict,139,CASE
+141,Screen Recording Permission,133|113,CASE
+142,Freeze-Frame Selection,135|108,CASE
+143,ScreenGrab Case Study,136|137|139|141|142|98|75,CASE
+144,Wall-Clock Time,88,MEAS
+145,Active Working Time,144,MEAS
+146,Time To First Install,144|122,MEAS
+147,Token,73,MEAS
+148,Input Tokens,147,MEAS
+149,Output Tokens,147,MEAS
+150,Prompt Caching,148|78,MEAS
+151,Cache Write Tokens,150,MEAS
+152,Cache Read Tokens,150,MEAS
+153,Cache Expiration,150,MEAS
+154,Token Pricing,148|149|151|152,MEAS
+155,API Cost Estimate,154|158,MEAS
+156,Subscription Usage Window,147|35|88,MEAS
+157,Cost-Weighted Tokens,154|156,MEAS
+158,Estimation Assumptions,162,MEAS
+159,Cost Per Line Of Code,155|118,MEAS
+160,Session Cost Breakdown,155|89,MEAS
+161,Token-Heavy Activities,160|153,MEAS
+162,Usage Measurement,88|147,MEAS
+163,Software Verification,117|103,TEST
+164,Software Testing,163,TEST
+165,Automated Test,164,TEST
+166,Unit Test,165,TEST
+167,Integration Test,166,TEST
+168,Test Coverage,165,TEST
+169,Test Isolation,166,TEST
+170,Test Side Effects,169,TEST
+171,Simulated Input Events,165,TEST
+172,Off-Screen Rendering,165,TEST
+173,Stubbed Dependency,169|115,TEST
+174,Manual Testing,164,TEST
+175,Acceptance Test,103|174,TEST
+176,Smoke Test,174,TEST
+177,Verification Plan,178|179,TEST
+178,Limits Of Automated Tests,165|174,TEST
+179,Verification Status,175|186,TEST
+180,Software Bug,164,TEST
+181,Bug Reproduction,180,TEST
+182,Root Cause Analysis,181,TEST
+183,Unexplained Failure,182,TEST
+184,Environment-Specific Bug,180|132,TEST
+185,Regression Test,180|165,TEST
+186,Evidence-Based Reporting,87|164,TEST
+187,Technical Debt,188|117,OSS
+188,Software Maintenance,5,OSS
+189,Operating System Compatibility,188|112,OSS
+190,Toolchain Changes,188|132,OSS
+191,Patch Release,188|180,OSS
+192,Open Source Software,117|31,OSS
+193,Open Source License,192,OSS
+194,MIT License,197,OSS
+195,Creative Commons License,196,OSS
+196,Copyright,,OSS
+197,Permissive License,193,OSS
+198,Public Repository,127|192,OSS
+199,Forking,198,OSS
+200,Pull Request,199|129,OSS
+201,Community Contribution,200,OSS
+202,Long-Term Stewardship,201|188,OSS
+203,Documentation For Others,125|64,OSS
+204,Sharing A Personal Tool,194|198|203,OSS
+205,Replacement Tool Capstone,143|71|177|119|59,OSS
+206,Published Cost Comparison,205|160|204,OSS

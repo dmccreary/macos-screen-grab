@@ -26,6 +26,7 @@ and the [design](../docs/design.md).
 - [Troubleshooting](#troubleshooting)
 - [Privacy](#privacy)
 - [Developing](#developing)
+- [License](#license)
 
 ## Requirements
 
@@ -367,3 +368,7 @@ countdown, and Preferences window for review.
 Real screen capture needs the Screen Recording permission and a person moving the
 pointer, so it's checked by hand with the acceptance tests in
 [the specification](../docs/specification.md#10-acceptance-tests).
+
+## License
+
+ScreenGrab is free and open source under the [MIT License](../LICENSE).

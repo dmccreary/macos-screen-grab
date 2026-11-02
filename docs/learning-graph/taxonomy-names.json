@@ -1,0 +1,14 @@
+{
+  "BLOAT": "Software Bloat And Feature Usage",
+  "LIC": "Licensing And Vendor Economics",
+  "TCO": "Total Cost Of Ownership",
+  "BUILD": "Build-Or-Buy Decisions",
+  "GENAI": "Generative AI And Coding Agents",
+  "REQ": "Requirements And Specifications",
+  "DESGN": "Software Design",
+  "CODE": "Code, Build, And Version Control",
+  "CASE": "ScreenGrab Case Study",
+  "MEAS": "Measuring AI Work",
+  "TEST": "Verification And Testing",
+  "OSS": "Maintenance And Open Source"
+}

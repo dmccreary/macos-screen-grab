@@ -30,7 +30,7 @@ inconsistent student experience.
 
 | | |
 |---|---|
-| Book title | ScreenGrab |
+| Book title | ScreenGrab: Software Bloat and the Generated Alternative |
 | Published site | https://dmccreary.github.io/macos-screen-grab/ |
 | Repository | https://github.com/dmccreary/macos-screen-grab |
 | Site generator | MkDocs Material |

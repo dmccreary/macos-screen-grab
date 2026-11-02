@@ -1,0 +1,2607 @@
+{
+  "metadata": {
+    "title": "ScreenGrab: Software Bloat and the Generated Alternative",
+    "description": "How software bloats, and how generative AI makes it possible to replace a paid tool with one that has only the features you need, told through the ScreenGrab screen grab utility.",
+    "creator": "Dan McCreary",
+    "date": "2026-11-01",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "BLOAT": {
+      "classifierName": "Software Bloat And Feature Usage",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "LIC": {
+      "classifierName": "Licensing And Vendor Economics",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "TCO": {
+      "classifierName": "Total Cost Of Ownership",
+      "color": "DarkGoldenrod",
+      "font": {
+        "color": "white"
+      }
+    },
+    "BUILD": {
+      "classifierName": "Build-Or-Buy Decisions",
+      "color": "Teal",
+      "font": {
+        "color": "white"
+      }
+    },
+    "GENAI": {
+      "classifierName": "Generative AI And Coding Agents",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    },
+    "REQ": {
+      "classifierName": "Requirements And Specifications",
+      "color": "MediumPurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "DESGN": {
+      "classifierName": "Software Design",
+      "color": "DarkOrchid",
+      "font": {
+        "color": "white"
+      }
+    },
+    "CODE": {
+      "classifierName": "Code, Build, And Version Control",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "CASE": {
+      "classifierName": "ScreenGrab Case Study",
+      "color": "DeepPink",
+      "font": {
+        "color": "white"
+      }
+    },
+    "MEAS": {
+      "classifierName": "Measuring AI Work",
+      "color": "Khaki",
+      "font": {
+        "color": "black"
+      }
+    },
+    "TEST": {
+      "classifierName": "Verification And Testing",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
+    "OSS": {
+      "classifierName": "Maintenance And Open Source",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Software",
+      "group": "BLOAT",
+      "shape": "box",
+      "cis": 1095
+    },
+    {
+      "id": 2,
+      "label": "Software Product",
+      "group": "BLOAT",
+      "cis": 593
+    },
+    {
+      "id": 3,
+      "label": "Software Feature",
+      "group": "BLOAT",
+      "cis": 279
+    },
+    {
+      "id": 4,
+      "label": "Feature Set",
+      "group": "BLOAT",
+      "cis": 135
+    },
+    {
+      "id": 5,
+      "label": "Software Version",
+      "group": "BLOAT",
+      "cis": 104
+    },
+    {
+      "id": 6,
+      "label": "Software Release Cycle",
+      "group": "BLOAT",
+      "cis": 59
+    },
+    {
+      "id": 7,
+      "label": "Software Bloat",
+      "group": "BLOAT",
+      "cis": 48
+    },
+    {
+      "id": 8,
+      "label": "Feature Creep",
+      "group": "BLOAT",
+      "cis": 4
+    },
+    {
+      "id": 9,
+      "label": "Bloatware",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 10,
+      "label": "Job To Be Done",
+      "group": "BLOAT",
+      "cis": 185
+    },
+    {
+      "id": 11,
+      "label": "Single-Purpose Utility",
+      "group": "BLOAT",
+      "cis": 43
+    },
+    {
+      "id": 12,
+      "label": "Unix Philosophy",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 13,
+      "label": "Feature Usage",
+      "group": "BLOAT",
+      "cis": 26
+    },
+    {
+      "id": 14,
+      "label": "Usage Telemetry",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 15,
+      "label": "Power Users",
+      "group": "BLOAT",
+      "cis": 8
+    },
+    {
+      "id": 16,
+      "label": "Casual Users",
+      "group": "BLOAT",
+      "cis": 8
+    },
+    {
+      "id": 17,
+      "label": "Long Tail Of Features",
+      "group": "BLOAT",
+      "cis": 8
+    },
+    {
+      "id": 18,
+      "label": "95/5 Rule Of Thumb",
+      "group": "BLOAT",
+      "cis": 7
+    },
+    {
+      "id": 19,
+      "label": "Pareto Principle",
+      "group": "BLOAT",
+      "shape": "box",
+      "cis": 8
+    },
+    {
+      "id": 20,
+      "label": "Unused Features",
+      "group": "BLOAT",
+      "cis": 2
+    },
+    {
+      "id": 21,
+      "label": "Feature Discoverability",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 22,
+      "label": "Interface Complexity",
+      "group": "BLOAT",
+      "cis": 2
+    },
+    {
+      "id": 23,
+      "label": "Cognitive Load",
+      "group": "BLOAT",
+      "shape": "box",
+      "cis": 31
+    },
+    {
+      "id": 24,
+      "label": "Resource Footprint",
+      "group": "BLOAT",
+      "cis": 44
+    },
+    {
+      "id": 25,
+      "label": "Install Size",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 26,
+      "label": "Idle Resource Use",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 27,
+      "label": "Upgrade Treadmill",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 28,
+      "label": "Product Roadmap",
+      "group": "BLOAT",
+      "cis": 5
+    },
+    {
+      "id": 29,
+      "label": "Competitive Feature Matching",
+      "group": "BLOAT",
+      "cis": 2
+    },
+    {
+      "id": 30,
+      "label": "Feature Checklist Marketing",
+      "group": "BLOAT",
+      "cis": 1
+    },
+    {
+      "id": 31,
+      "label": "Software License",
+      "group": "LIC",
+      "cis": 118
+    },
+    {
+      "id": 32,
+      "label": "End User License Agreement",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 33,
+      "label": "One-Time License",
+      "group": "LIC",
+      "cis": 9
+    },
+    {
+      "id": 34,
+      "label": "Perpetual License",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 35,
+      "label": "Subscription License",
+      "group": "LIC",
+      "cis": 51
+    },
+    {
+      "id": 36,
+      "label": "Annual Fee",
+      "group": "LIC",
+      "cis": 37
+    },
+    {
+      "id": 37,
+      "label": "Per-Computer Licensing",
+      "group": "LIC",
+      "cis": 7
+    },
+    {
+      "id": 38,
+      "label": "Per-User Licensing",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 39,
+      "label": "Recurring Revenue",
+      "group": "LIC",
+      "cis": 4
+    },
+    {
+      "id": 40,
+      "label": "Vendor Incentives",
+      "group": "LIC",
+      "cis": 2
+    },
+    {
+      "id": 41,
+      "label": "Upgrade Revenue",
+      "group": "LIC",
+      "cis": 3
+    },
+    {
+      "id": 42,
+      "label": "Customer Lifetime Value",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 43,
+      "label": "Switching Costs",
+      "group": "LIC",
+      "cis": 7
+    },
+    {
+      "id": 44,
+      "label": "Vendor Lock-In",
+      "group": "LIC",
+      "cis": 5
+    },
+    {
+      "id": 45,
+      "label": "Proprietary File Format",
+      "group": "LIC",
+      "cis": 6
+    },
+    {
+      "id": 46,
+      "label": "Software As A Service",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 47,
+      "label": "Price Increase",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 48,
+      "label": "Freemium Model",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 49,
+      "label": "Free Alternatives",
+      "group": "LIC",
+      "cis": 1
+    },
+    {
+      "id": 50,
+      "label": "Total Cost Of Ownership",
+      "group": "TCO",
+      "cis": 27
+    },
+    {
+      "id": 51,
+      "label": "Purchase Price",
+      "group": "TCO",
+      "cis": 35
+    },
+    {
+      "id": 52,
+      "label": "Multi-Year Cost",
+      "group": "TCO",
+      "cis": 5
+    },
+    {
+      "id": 53,
+      "label": "Cost Per Computer",
+      "group": "TCO",
+      "cis": 6
+    },
+    {
+      "id": 54,
+      "label": "Cost Per Feature Used",
+      "group": "TCO",
+      "cis": 1
+    },
+    {
+      "id": 55,
+      "label": "Break-Even Point",
+      "group": "TCO",
+      "cis": 1
+    },
+    {
+      "id": 56,
+      "label": "Opportunity Cost",
+      "group": "TCO",
+      "shape": "box",
+      "cis": 23
+    },
+    {
+      "id": 57,
+      "label": "Maintenance Cost",
+      "group": "TCO",
+      "cis": 28
+    },
+    {
+      "id": 58,
+      "label": "Learning Cost",
+      "group": "TCO",
+      "cis": 28
+    },
+    {
+      "id": 59,
+      "label": "Cost Comparison",
+      "group": "TCO",
+      "cis": 3
+    },
+    {
+      "id": 60,
+      "label": "Build-Or-Buy Decision",
+      "group": "BUILD",
+      "cis": 22
+    },
+    {
+      "id": 61,
+      "label": "Buy Option",
+      "group": "BUILD",
+      "cis": 4
+    },
+    {
+      "id": 62,
+      "label": "Subscribe Option",
+      "group": "BUILD",
+      "cis": 4
+    },
+    {
+      "id": 63,
+      "label": "Generate Option",
+      "group": "BUILD",
+      "cis": 9
+    },
+    {
+      "id": 64,
+      "label": "Personal Software",
+      "group": "BUILD",
+      "cis": 21
+    },
+    {
+      "id": 65,
+      "label": "Disposable Software",
+      "group": "BUILD",
+      "cis": 1
+    },
+    {
+      "id": 66,
+      "label": "Long-Lived Software",
+      "group": "BUILD",
+      "cis": 1
+    },
+    {
+      "id": 67,
+      "label": "Cost Of Generating Software",
+      "group": "BUILD",
+      "cis": 5
+    },
+    {
+      "id": 68,
+      "label": "Risks Of Ownership",
+      "group": "BUILD",
+      "cis": 6
+    },
+    {
+      "id": 69,
+      "label": "Support Responsibility",
+      "group": "BUILD",
+      "cis": 1
+    },
+    {
+      "id": 70,
+      "label": "Decision Criteria",
+      "group": "BUILD",
+      "cis": 4
+    },
+    {
+      "id": 71,
+      "label": "Decision Matrix",
+      "group": "BUILD",
+      "cis": 3
+    },
+    {
+      "id": 72,
+      "label": "Generative AI",
+      "group": "GENAI",
+      "cis": 232
+    },
+    {
+      "id": 73,
+      "label": "Large Language Model",
+      "group": "GENAI",
+      "cis": 231
+    },
+    {
+      "id": 74,
+      "label": "AI Coding Agent",
+      "group": "GENAI",
+      "cis": 56
+    },
+    {
+      "id": 75,
+      "label": "Claude Code",
+      "group": "GENAI",
+      "cis": 4
+    },
+    {
+      "id": 76,
+      "label": "Prompt",
+      "group": "GENAI",
+      "cis": 27
+    },
+    {
+      "id": 77,
+      "label": "Natural Language Request",
+      "group": "GENAI",
+      "cis": 2
+    },
+    {
+      "id": 78,
+      "label": "Context Window",
+      "group": "GENAI",
+      "cis": 32
+    },
+    {
+      "id": 79,
+      "label": "Model Selection",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 80,
+      "label": "Model Capability Tiers",
+      "group": "GENAI",
+      "cis": 2
+    },
+    {
+      "id": 81,
+      "label": "Agent Tool Use",
+      "group": "GENAI",
+      "cis": 3
+    },
+    {
+      "id": 82,
+      "label": "Agent Planning",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 83,
+      "label": "Clarifying Questions",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 84,
+      "label": "Human In The Loop",
+      "group": "GENAI",
+      "cis": 4
+    },
+    {
+      "id": 85,
+      "label": "Human Review",
+      "group": "GENAI",
+      "cis": 2
+    },
+    {
+      "id": 86,
+      "label": "AI Hallucination",
+      "group": "GENAI",
+      "cis": 7
+    },
+    {
+      "id": 87,
+      "label": "Overconfident Reporting",
+      "group": "GENAI",
+      "cis": 6
+    },
+    {
+      "id": 88,
+      "label": "AI Session",
+      "group": "GENAI",
+      "cis": 23
+    },
+    {
+      "id": 89,
+      "label": "Session Log",
+      "group": "GENAI",
+      "cis": 4
+    },
+    {
+      "id": 90,
+      "label": "Prompt Iteration",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 91,
+      "label": "Agent Instructions File",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 92,
+      "label": "Agent Permissions",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 93,
+      "label": "Agent Experiments",
+      "group": "GENAI",
+      "cis": 1
+    },
+    {
+      "id": 94,
+      "label": "Requirements",
+      "group": "REQ",
+      "cis": 140
+    },
+    {
+      "id": 95,
+      "label": "Functional Requirement",
+      "group": "REQ",
+      "cis": 91
+    },
+    {
+      "id": 96,
+      "label": "Non-Functional Requirement",
+      "group": "REQ",
+      "cis": 41
+    },
+    {
+      "id": 97,
+      "label": "Software Specification",
+      "group": "REQ",
+      "cis": 40
+    },
+    {
+      "id": 98,
+      "label": "Minimal Specification",
+      "group": "REQ",
+      "cis": 4
+    },
+    {
+      "id": 99,
+      "label": "Non-Goals",
+      "group": "REQ",
+      "cis": 5
+    },
+    {
+      "id": 100,
+      "label": "Scope Boundaries",
+      "group": "REQ",
+      "cis": 6
+    },
+    {
+      "id": 101,
+      "label": "User Need",
+      "group": "REQ",
+      "cis": 141
+    },
+    {
+      "id": 102,
+      "label": "Explicit Assumptions",
+      "group": "REQ",
+      "cis": 1
+    },
+    {
+      "id": 103,
+      "label": "Acceptance Criteria",
+      "group": "REQ",
+      "cis": 49
+    },
+    {
+      "id": 104,
+      "label": "Default Behavior",
+      "group": "REQ",
+      "cis": 1
+    },
+    {
+      "id": 105,
+      "label": "Specification Review",
+      "group": "REQ",
+      "cis": 1
+    },
+    {
+      "id": 106,
+      "label": "Software Design",
+      "group": "DESGN",
+      "cis": 31
+    },
+    {
+      "id": 107,
+      "label": "Design Document",
+      "group": "DESGN",
+      "cis": 1
+    },
+    {
+      "id": 108,
+      "label": "Design Decision",
+      "group": "DESGN",
+      "cis": 11
+    },
+    {
+      "id": 109,
+      "label": "Design Trade-Off",
+      "group": "DESGN",
+      "cis": 2
+    },
+    {
+      "id": 110,
+      "label": "Prototype",
+      "group": "DESGN",
+      "cis": 3
+    },
+    {
+      "id": 111,
+      "label": "Technical Feasibility Check",
+      "group": "DESGN",
+      "cis": 1
+    },
+    {
+      "id": 112,
+      "label": "Platform Constraints",
+      "group": "DESGN",
+      "cis": 15
+    },
+    {
+      "id": 113,
+      "label": "Native Application",
+      "group": "DESGN",
+      "cis": 11
+    },
+    {
+      "id": 114,
+      "label": "Programming Language Choice",
+      "group": "DESGN",
+      "cis": 1
+    },
+    {
+      "id": 115,
+      "label": "Third-Party Dependency",
+      "group": "DESGN",
+      "cis": 3
+    },
+    {
+      "id": 116,
+      "label": "Zero-Dependency Design",
+      "group": "DESGN",
+      "cis": 1
+    },
+    {
+      "id": 117,
+      "label": "Source Code",
+      "group": "CODE",
+      "cis": 151
+    },
+    {
+      "id": 118,
+      "label": "Lines Of Code",
+      "group": "CODE",
+      "cis": 2
+    },
+    {
+      "id": 119,
+      "label": "Code Generation",
+      "group": "CODE",
+      "cis": 3
+    },
+    {
+      "id": 120,
+      "label": "Compiler Errors",
+      "group": "CODE",
+      "cis": 4
+    },
+    {
+      "id": 121,
+      "label": "Build Script",
+      "group": "CODE",
+      "cis": 10
+    },
+    {
+      "id": 122,
+      "label": "Installer Script",
+      "group": "CODE",
+      "cis": 4
+    },
+    {
+      "id": 123,
+      "label": "Install Rollback",
+      "group": "CODE",
+      "cis": 1
+    },
+    {
+      "id": 124,
+      "label": "Uninstall Process",
+      "group": "CODE",
+      "cis": 1
+    },
+    {
+      "id": 125,
+      "label": "README File",
+      "group": "CODE",
+      "cis": 4
+    },
+    {
+      "id": 126,
+      "label": "Version Control",
+      "group": "CODE",
+      "cis": 14
+    },
+    {
+      "id": 127,
+      "label": "Git Repository",
+      "group": "CODE",
+      "cis": 13
+    },
+    {
+      "id": 128,
+      "label": "Git Commit",
+      "group": "CODE",
+      "cis": 5
+    },
+    {
+      "id": 129,
+      "label": "Git Push And Pull",
+      "group": "CODE",
+      "cis": 4
+    },
+    {
+      "id": 130,
+      "label": "Code Signing",
+      "group": "CODE",
+      "cis": 2
+    },
+    {
+      "id": 131,
+      "label": "Ad-Hoc Signing",
+      "group": "CODE",
+      "cis": 1
+    },
+    {
+      "id": 132,
+      "label": "Developer Toolchain",
+      "group": "CODE",
+      "cis": 3
+    },
+    {
+      "id": 133,
+      "label": "Screen Capture",
+      "group": "CASE",
+      "cis": 25
+    },
+    {
+      "id": 134,
+      "label": "Screen Grab Tool",
+      "group": "CASE",
+      "cis": 20
+    },
+    {
+      "id": 135,
+      "label": "Region Selection",
+      "group": "CASE",
+      "cis": 9
+    },
+    {
+      "id": 136,
+      "label": "Delayed Capture",
+      "group": "CASE",
+      "cis": 4
+    },
+    {
+      "id": 137,
+      "label": "Clipboard Output",
+      "group": "CASE",
+      "cis": 4
+    },
+    {
+      "id": 138,
+      "label": "Menu Bar App",
+      "group": "CASE",
+      "cis": 6
+    },
+    {
+      "id": 139,
+      "label": "Global Hotkey",
+      "group": "CASE",
+      "cis": 5
+    },
+    {
+      "id": 140,
+      "label": "Hotkey Conflict",
+      "group": "CASE",
+      "cis": 1
+    },
+    {
+      "id": 141,
+      "label": "Screen Recording Permission",
+      "group": "CASE",
+      "cis": 4
+    },
+    {
+      "id": 142,
+      "label": "Freeze-Frame Selection",
+      "group": "CASE",
+      "cis": 4
+    },
+    {
+      "id": 143,
+      "label": "ScreenGrab Case Study",
+      "group": "CASE",
+      "cis": 3
+    },
+    {
+      "id": 144,
+      "label": "Wall-Clock Time",
+      "group": "MEAS",
+      "cis": 3
+    },
+    {
+      "id": 145,
+      "label": "Active Working Time",
+      "group": "MEAS",
+      "cis": 1
+    },
+    {
+      "id": 146,
+      "label": "Time To First Install",
+      "group": "MEAS",
+      "cis": 1
+    },
+    {
+      "id": 147,
+      "label": "Token",
+      "group": "MEAS",
+      "cis": 106
+    },
+    {
+      "id": 148,
+      "label": "Input Tokens",
+      "group": "MEAS",
+      "cis": 45
+    },
+    {
+      "id": 149,
+      "label": "Output Tokens",
+      "group": "MEAS",
+      "cis": 14
+    },
+    {
+      "id": 150,
+      "label": "Prompt Caching",
+      "group": "MEAS",
+      "cis": 31
+    },
+    {
+      "id": 151,
+      "label": "Cache Write Tokens",
+      "group": "MEAS",
+      "cis": 14
+    },
+    {
+      "id": 152,
+      "label": "Cache Read Tokens",
+      "group": "MEAS",
+      "cis": 14
+    },
+    {
+      "id": 153,
+      "label": "Cache Expiration",
+      "group": "MEAS",
+      "cis": 2
+    },
+    {
+      "id": 154,
+      "label": "Token Pricing",
+      "group": "MEAS",
+      "cis": 13
+    },
+    {
+      "id": 155,
+      "label": "API Cost Estimate",
+      "group": "MEAS",
+      "cis": 10
+    },
+    {
+      "id": 156,
+      "label": "Subscription Usage Window",
+      "group": "MEAS",
+      "cis": 2
+    },
+    {
+      "id": 157,
+      "label": "Cost-Weighted Tokens",
+      "group": "MEAS",
+      "cis": 1
+    },
+    {
+      "id": 158,
+      "label": "Estimation Assumptions",
+      "group": "MEAS",
+      "cis": 11
+    },
+    {
+      "id": 159,
+      "label": "Cost Per Line Of Code",
+      "group": "MEAS",
+      "cis": 1
+    },
+    {
+      "id": 160,
+      "label": "Session Cost Breakdown",
+      "group": "MEAS",
+      "cis": 3
+    },
+    {
+      "id": 161,
+      "label": "Token-Heavy Activities",
+      "group": "MEAS",
+      "cis": 1
+    },
+    {
+      "id": 162,
+      "label": "Usage Measurement",
+      "group": "MEAS",
+      "cis": 12
+    },
+    {
+      "id": 163,
+      "label": "Software Verification",
+      "group": "TEST",
+      "cis": 43
+    },
+    {
+      "id": 164,
+      "label": "Software Testing",
+      "group": "TEST",
+      "cis": 38
+    },
+    {
+      "id": 165,
+      "label": "Automated Test",
+      "group": "TEST",
+      "cis": 14
+    },
+    {
+      "id": 166,
+      "label": "Unit Test",
+      "group": "TEST",
+      "cis": 5
+    },
+    {
+      "id": 167,
+      "label": "Integration Test",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 168,
+      "label": "Test Coverage",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 169,
+      "label": "Test Isolation",
+      "group": "TEST",
+      "cis": 3
+    },
+    {
+      "id": 170,
+      "label": "Test Side Effects",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 171,
+      "label": "Simulated Input Events",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 172,
+      "label": "Off-Screen Rendering",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 173,
+      "label": "Stubbed Dependency",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 174,
+      "label": "Manual Testing",
+      "group": "TEST",
+      "cis": 11
+    },
+    {
+      "id": 175,
+      "label": "Acceptance Test",
+      "group": "TEST",
+      "cis": 5
+    },
+    {
+      "id": 176,
+      "label": "Smoke Test",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 177,
+      "label": "Verification Plan",
+      "group": "TEST",
+      "cis": 3
+    },
+    {
+      "id": 178,
+      "label": "Limits Of Automated Tests",
+      "group": "TEST",
+      "cis": 4
+    },
+    {
+      "id": 179,
+      "label": "Verification Status",
+      "group": "TEST",
+      "cis": 4
+    },
+    {
+      "id": 180,
+      "label": "Software Bug",
+      "group": "TEST",
+      "cis": 7
+    },
+    {
+      "id": 181,
+      "label": "Bug Reproduction",
+      "group": "TEST",
+      "cis": 3
+    },
+    {
+      "id": 182,
+      "label": "Root Cause Analysis",
+      "group": "TEST",
+      "cis": 2
+    },
+    {
+      "id": 183,
+      "label": "Unexplained Failure",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 184,
+      "label": "Environment-Specific Bug",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 185,
+      "label": "Regression Test",
+      "group": "TEST",
+      "cis": 1
+    },
+    {
+      "id": 186,
+      "label": "Evidence-Based Reporting",
+      "group": "TEST",
+      "cis": 5
+    },
+    {
+      "id": 187,
+      "label": "Technical Debt",
+      "group": "OSS",
+      "cis": 1
+    },
+    {
+      "id": 188,
+      "label": "Software Maintenance",
+      "group": "OSS",
+      "cis": 41
+    },
+    {
+      "id": 189,
+      "label": "Operating System Compatibility",
+      "group": "OSS",
+      "cis": 1
+    },
+    {
+      "id": 190,
+      "label": "Toolchain Changes",
+      "group": "OSS",
+      "cis": 1
+    },
+    {
+      "id": 191,
+      "label": "Patch Release",
+      "group": "OSS",
+      "cis": 1
+    },
+    {
+      "id": 192,
+      "label": "Open Source Software",
+      "group": "OSS",
+      "cis": 13
+    },
+    {
+      "id": 193,
+      "label": "Open Source License",
+      "group": "OSS",
+      "cis": 5
+    },
+    {
+      "id": 194,
+      "label": "MIT License",
+      "group": "OSS",
+      "cis": 3
+    },
+    {
+      "id": 195,
+      "label": "Creative Commons License",
+      "group": "OSS",
+      "cis": 1
+    },
+    {
+      "id": 196,
+      "label": "Copyright",
+      "group": "OSS",
+      "shape": "box",
+      "cis": 120
+    },
+    {
+      "id": 197,
+      "label": "Permissive License",
+      "group": "OSS",
+      "cis": 4
+    },
+    {
+      "id": 198,
+      "label": "Public Repository",
+      "group": "OSS",
+      "cis": 7
+    },
+    {
+      "id": 199,
+      "label": "Forking",
+      "group": "OSS",
+      "cis": 4
+    },
+    {
+      "id": 200,
+      "label": "Pull Request",
+      "group": "OSS",
+      "cis": 3
+    },
+    {
+      "id": 201,
+      "label": "Community Contribution",
+      "group": "OSS",
+      "cis": 2
+    },
+    {
+      "id": 202,
+      "label": "Long-Term Stewardship",
+      "group": "OSS",
+      "cis": 1
+    },
+    {
+      "id": 203,
+      "label": "Documentation For Others",
+      "group": "OSS",
+      "cis": 3
+    },
+    {
+      "id": 204,
+      "label": "Sharing A Personal Tool",
+      "group": "OSS",
+      "cis": 2
+    },
+    {
+      "id": 205,
+      "label": "Replacement Tool Capstone",
+      "group": "OSS",
+      "cis": 2
+    },
+    {
+      "id": 206,
+      "label": "Published Cost Comparison",
+      "group": "OSS",
+      "cis": 1
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 2
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 4
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 4
+    },
+    {
+      "from": 8,
+      "to": 6
+    },
+    {
+      "from": 9,
+      "to": 7
+    },
+    {
+      "from": 10,
+      "to": 2
+    },
+    {
+      "from": 11,
+      "to": 10
+    },
+    {
+      "from": 11,
+      "to": 4
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 3
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 13
+    },
+    {
+      "from": 16,
+      "to": 13
+    },
+    {
+      "from": 17,
+      "to": 13
+    },
+    {
+      "from": 17,
+      "to": 4
+    },
+    {
+      "from": 18,
+      "to": 19
+    },
+    {
+      "from": 18,
+      "to": 17
+    },
+    {
+      "from": 18,
+      "to": 15
+    },
+    {
+      "from": 18,
+      "to": 16
+    },
+    {
+      "from": 20,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 7
+    },
+    {
+      "from": 21,
+      "to": 4
+    },
+    {
+      "from": 21,
+      "to": 22
+    },
+    {
+      "from": 22,
+      "to": 4
+    },
+    {
+      "from": 22,
+      "to": 23
+    },
+    {
+      "from": 24,
+      "to": 7
+    },
+    {
+      "from": 25,
+      "to": 24
+    },
+    {
+      "from": 26,
+      "to": 24
+    },
+    {
+      "from": 27,
+      "to": 6
+    },
+    {
+      "from": 27,
+      "to": 8
+    },
+    {
+      "from": 28,
+      "to": 6
+    },
+    {
+      "from": 29,
+      "to": 28
+    },
+    {
+      "from": 29,
+      "to": 8
+    },
+    {
+      "from": 30,
+      "to": 29
+    },
+    {
+      "from": 31,
+      "to": 196
+    },
+    {
+      "from": 31,
+      "to": 1
+    },
+    {
+      "from": 32,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 31
+    },
+    {
+      "from": 34,
+      "to": 33
+    },
+    {
+      "from": 35,
+      "to": 31
+    },
+    {
+      "from": 36,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 31
+    },
+    {
+      "from": 38,
+      "to": 31
+    },
+    {
+      "from": 39,
+      "to": 35
+    },
+    {
+      "from": 39,
+      "to": 36
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 40,
+      "to": 41
+    },
+    {
+      "from": 40,
+      "to": 28
+    },
+    {
+      "from": 41,
+      "to": 33
+    },
+    {
+      "from": 41,
+      "to": 5
+    },
+    {
+      "from": 42,
+      "to": 39
+    },
+    {
+      "from": 43,
+      "to": 2
+    },
+    {
+      "from": 44,
+      "to": 43
+    },
+    {
+      "from": 44,
+      "to": 45
+    },
+    {
+      "from": 45,
+      "to": 2
+    },
+    {
+      "from": 46,
+      "to": 35
+    },
+    {
+      "from": 47,
+      "to": 35
+    },
+    {
+      "from": 47,
+      "to": 40
+    },
+    {
+      "from": 48,
+      "to": 3
+    },
+    {
+      "from": 48,
+      "to": 35
+    },
+    {
+      "from": 49,
+      "to": 43
+    },
+    {
+      "from": 50,
+      "to": 51
+    },
+    {
+      "from": 50,
+      "to": 57
+    },
+    {
+      "from": 50,
+      "to": 58
+    },
+    {
+      "from": 50,
+      "to": 36
+    },
+    {
+      "from": 51,
+      "to": 31
+    },
+    {
+      "from": 52,
+      "to": 36
+    },
+    {
+      "from": 52,
+      "to": 53
+    },
+    {
+      "from": 53,
+      "to": 37
+    },
+    {
+      "from": 53,
+      "to": 51
+    },
+    {
+      "from": 54,
+      "to": 50
+    },
+    {
+      "from": 54,
+      "to": 20
+    },
+    {
+      "from": 55,
+      "to": 52
+    },
+    {
+      "from": 55,
+      "to": 51
+    },
+    {
+      "from": 57,
+      "to": 188
+    },
+    {
+      "from": 58,
+      "to": 23
+    },
+    {
+      "from": 58,
+      "to": 4
+    },
+    {
+      "from": 59,
+      "to": 50
+    },
+    {
+      "from": 59,
+      "to": 52
+    },
+    {
+      "from": 60,
+      "to": 50
+    },
+    {
+      "from": 60,
+      "to": 56
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 61,
+      "to": 33
+    },
+    {
+      "from": 62,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 35
+    },
+    {
+      "from": 63,
+      "to": 60
+    },
+    {
+      "from": 63,
+      "to": 74
+    },
+    {
+      "from": 63,
+      "to": 64
+    },
+    {
+      "from": 64,
+      "to": 11
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 188
+    },
+    {
+      "from": 67,
+      "to": 63
+    },
+    {
+      "from": 67,
+      "to": 155
+    },
+    {
+      "from": 68,
+      "to": 64
+    },
+    {
+      "from": 68,
+      "to": 188
+    },
+    {
+      "from": 69,
+      "to": 68
+    },
+    {
+      "from": 70,
+      "to": 60
+    },
+    {
+      "from": 70,
+      "to": 68
+    },
+    {
+      "from": 70,
+      "to": 67
+    },
+    {
+      "from": 70,
+      "to": 44
+    },
+    {
+      "from": 70,
+      "to": 163
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 71,
+      "to": 61
+    },
+    {
+      "from": 71,
+      "to": 62
+    },
+    {
+      "from": 71,
+      "to": 63
+    },
+    {
+      "from": 72,
+      "to": 1
+    },
+    {
+      "from": 73,
+      "to": 72
+    },
+    {
+      "from": 74,
+      "to": 73
+    },
+    {
+      "from": 74,
+      "to": 117
+    },
+    {
+      "from": 75,
+      "to": 74
+    },
+    {
+      "from": 76,
+      "to": 73
+    },
+    {
+      "from": 77,
+      "to": 76
+    },
+    {
+      "from": 78,
+      "to": 73
+    },
+    {
+      "from": 78,
+      "to": 147
+    },
+    {
+      "from": 79,
+      "to": 80
+    },
+    {
+      "from": 79,
+      "to": 154
+    },
+    {
+      "from": 80,
+      "to": 73
+    },
+    {
+      "from": 81,
+      "to": 74
+    },
+    {
+      "from": 82,
+      "to": 74
+    },
+    {
+      "from": 83,
+      "to": 77
+    },
+    {
+      "from": 83,
+      "to": 74
+    },
+    {
+      "from": 84,
+      "to": 74
+    },
+    {
+      "from": 85,
+      "to": 84
+    },
+    {
+      "from": 86,
+      "to": 73
+    },
+    {
+      "from": 87,
+      "to": 86
+    },
+    {
+      "from": 87,
+      "to": 74
+    },
+    {
+      "from": 88,
+      "to": 74
+    },
+    {
+      "from": 88,
+      "to": 76
+    },
+    {
+      "from": 89,
+      "to": 88
+    },
+    {
+      "from": 90,
+      "to": 88
+    },
+    {
+      "from": 91,
+      "to": 74
+    },
+    {
+      "from": 91,
+      "to": 76
+    },
+    {
+      "from": 92,
+      "to": 81
+    },
+    {
+      "from": 92,
+      "to": 84
+    },
+    {
+      "from": 93,
+      "to": 81
+    },
+    {
+      "from": 93,
+      "to": 110
+    },
+    {
+      "from": 94,
+      "to": 101
+    },
+    {
+      "from": 95,
+      "to": 94
+    },
+    {
+      "from": 95,
+      "to": 3
+    },
+    {
+      "from": 96,
+      "to": 94
+    },
+    {
+      "from": 96,
+      "to": 24
+    },
+    {
+      "from": 97,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 96
+    },
+    {
+      "from": 98,
+      "to": 97
+    },
+    {
+      "from": 98,
+      "to": 99
+    },
+    {
+      "from": 98,
+      "to": 18
+    },
+    {
+      "from": 99,
+      "to": 100
+    },
+    {
+      "from": 100,
+      "to": 94
+    },
+    {
+      "from": 101,
+      "to": 10
+    },
+    {
+      "from": 102,
+      "to": 94
+    },
+    {
+      "from": 103,
+      "to": 95
+    },
+    {
+      "from": 104,
+      "to": 95
+    },
+    {
+      "from": 105,
+      "to": 97
+    },
+    {
+      "from": 105,
+      "to": 85
+    },
+    {
+      "from": 106,
+      "to": 97
+    },
+    {
+      "from": 107,
+      "to": 106
+    },
+    {
+      "from": 108,
+      "to": 106
+    },
+    {
+      "from": 109,
+      "to": 108
+    },
+    {
+      "from": 110,
+      "to": 106
+    },
+    {
+      "from": 111,
+      "to": 110
+    },
+    {
+      "from": 111,
+      "to": 112
+    },
+    {
+      "from": 112,
+      "to": 106
+    },
+    {
+      "from": 113,
+      "to": 2
+    },
+    {
+      "from": 113,
+      "to": 112
+    },
+    {
+      "from": 114,
+      "to": 108
+    },
+    {
+      "from": 114,
+      "to": 112
+    },
+    {
+      "from": 115,
+      "to": 108
+    },
+    {
+      "from": 115,
+      "to": 117
+    },
+    {
+      "from": 116,
+      "to": 115
+    },
+    {
+      "from": 116,
+      "to": 109
+    },
+    {
+      "from": 117,
+      "to": 1
+    },
+    {
+      "from": 118,
+      "to": 117
+    },
+    {
+      "from": 119,
+      "to": 74
+    },
+    {
+      "from": 119,
+      "to": 97
+    },
+    {
+      "from": 120,
+      "to": 117
+    },
+    {
+      "from": 121,
+      "to": 117
+    },
+    {
+      "from": 122,
+      "to": 121
+    },
+    {
+      "from": 123,
+      "to": 122
+    },
+    {
+      "from": 124,
+      "to": 122
+    },
+    {
+      "from": 125,
+      "to": 117
+    },
+    {
+      "from": 126,
+      "to": 117
+    },
+    {
+      "from": 127,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 127
+    },
+    {
+      "from": 129,
+      "to": 128
+    },
+    {
+      "from": 130,
+      "to": 121
+    },
+    {
+      "from": 131,
+      "to": 130
+    },
+    {
+      "from": 132,
+      "to": 120
+    },
+    {
+      "from": 132,
+      "to": 121
+    },
+    {
+      "from": 133,
+      "to": 3
+    },
+    {
+      "from": 134,
+      "to": 133
+    },
+    {
+      "from": 134,
+      "to": 11
+    },
+    {
+      "from": 135,
+      "to": 134
+    },
+    {
+      "from": 136,
+      "to": 135
+    },
+    {
+      "from": 137,
+      "to": 134
+    },
+    {
+      "from": 138,
+      "to": 113
+    },
+    {
+      "from": 138,
+      "to": 134
+    },
+    {
+      "from": 139,
+      "to": 138
+    },
+    {
+      "from": 140,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 133
+    },
+    {
+      "from": 141,
+      "to": 113
+    },
+    {
+      "from": 142,
+      "to": 135
+    },
+    {
+      "from": 142,
+      "to": 108
+    },
+    {
+      "from": 143,
+      "to": 136
+    },
+    {
+      "from": 143,
+      "to": 137
+    },
+    {
+      "from": 143,
+      "to": 139
+    },
+    {
+      "from": 143,
+      "to": 141
+    },
+    {
+      "from": 143,
+      "to": 142
+    },
+    {
+      "from": 143,
+      "to": 98
+    },
+    {
+      "from": 143,
+      "to": 75
+    },
+    {
+      "from": 144,
+      "to": 88
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 122
+    },
+    {
+      "from": 147,
+      "to": 73
+    },
+    {
+      "from": 148,
+      "to": 147
+    },
+    {
+      "from": 149,
+      "to": 147
+    },
+    {
+      "from": 150,
+      "to": 148
+    },
+    {
+      "from": 150,
+      "to": 78
+    },
+    {
+      "from": 151,
+      "to": 150
+    },
+    {
+      "from": 152,
+      "to": 150
+    },
+    {
+      "from": 153,
+      "to": 150
+    },
+    {
+      "from": 154,
+      "to": 148
+    },
+    {
+      "from": 154,
+      "to": 149
+    },
+    {
+      "from": 154,
+      "to": 151
+    },
+    {
+      "from": 154,
+      "to": 152
+    },
+    {
+      "from": 155,
+      "to": 154
+    },
+    {
+      "from": 155,
+      "to": 158
+    },
+    {
+      "from": 156,
+      "to": 147
+    },
+    {
+      "from": 156,
+      "to": 35
+    },
+    {
+      "from": 156,
+      "to": 88
+    },
+    {
+      "from": 157,
+      "to": 154
+    },
+    {
+      "from": 157,
+      "to": 156
+    },
+    {
+      "from": 158,
+      "to": 162
+    },
+    {
+      "from": 159,
+      "to": 155
+    },
+    {
+      "from": 159,
+      "to": 118
+    },
+    {
+      "from": 160,
+      "to": 155
+    },
+    {
+      "from": 160,
+      "to": 89
+    },
+    {
+      "from": 161,
+      "to": 160
+    },
+    {
+      "from": 161,
+      "to": 153
+    },
+    {
+      "from": 162,
+      "to": 88
+    },
+    {
+      "from": 162,
+      "to": 147
+    },
+    {
+      "from": 163,
+      "to": 117
+    },
+    {
+      "from": 163,
+      "to": 103
+    },
+    {
+      "from": 164,
+      "to": 163
+    },
+    {
+      "from": 165,
+      "to": 164
+    },
+    {
+      "from": 166,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 166
+    },
+    {
+      "from": 168,
+      "to": 165
+    },
+    {
+      "from": 169,
+      "to": 166
+    },
+    {
+      "from": 170,
+      "to": 169
+    },
+    {
+      "from": 171,
+      "to": 165
+    },
+    {
+      "from": 172,
+      "to": 165
+    },
+    {
+      "from": 173,
+      "to": 169
+    },
+    {
+      "from": 173,
+      "to": 115
+    },
+    {
+      "from": 174,
+      "to": 164
+    },
+    {
+      "from": 175,
+      "to": 103
+    },
+    {
+      "from": 175,
+      "to": 174
+    },
+    {
+      "from": 176,
+      "to": 174
+    },
+    {
+      "from": 177,
+      "to": 178
+    },
+    {
+      "from": 177,
+      "to": 179
+    },
+    {
+      "from": 178,
+      "to": 165
+    },
+    {
+      "from": 178,
+      "to": 174
+    },
+    {
+      "from": 179,
+      "to": 175
+    },
+    {
+      "from": 179,
+      "to": 186
+    },
+    {
+      "from": 180,
+      "to": 164
+    },
+    {
+      "from": 181,
+      "to": 180
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 182
+    },
+    {
+      "from": 184,
+      "to": 180
+    },
+    {
+      "from": 184,
+      "to": 132
+    },
+    {
+      "from": 185,
+      "to": 180
+    },
+    {
+      "from": 185,
+      "to": 165
+    },
+    {
+      "from": 186,
+      "to": 87
+    },
+    {
+      "from": 186,
+      "to": 164
+    },
+    {
+      "from": 187,
+      "to": 188
+    },
+    {
+      "from": 187,
+      "to": 117
+    },
+    {
+      "from": 188,
+      "to": 5
+    },
+    {
+      "from": 189,
+      "to": 188
+    },
+    {
+      "from": 189,
+      "to": 112
+    },
+    {
+      "from": 190,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 132
+    },
+    {
+      "from": 191,
+      "to": 188
+    },
+    {
+      "from": 191,
+      "to": 180
+    },
+    {
+      "from": 192,
+      "to": 117
+    },
+    {
+      "from": 192,
+      "to": 31
+    },
+    {
+      "from": 193,
+      "to": 192
+    },
+    {
+      "from": 194,
+      "to": 197
+    },
+    {
+      "from": 195,
+      "to": 196
+    },
+    {
+      "from": 197,
+      "to": 193
+    },
+    {
+      "from": 198,
+      "to": 127
+    },
+    {
+      "from": 198,
+      "to": 192
+    },
+    {
+      "from": 199,
+      "to": 198
+    },
+    {
+      "from": 200,
+      "to": 199
+    },
+    {
+      "from": 200,
+      "to": 129
+    },
+    {
+      "from": 201,
+      "to": 200
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 202,
+      "to": 188
+    },
+    {
+      "from": 203,
+      "to": 125
+    },
+    {
+      "from": 203,
+      "to": 64
+    },
+    {
+      "from": 204,
+      "to": 194
+    },
+    {
+      "from": 204,
+      "to": 198
+    },
+    {
+      "from": 204,
+      "to": 203
+    },
+    {
+      "from": 205,
+      "to": 143
+    },
+    {
+      "from": 205,
+      "to": 71
+    },
+    {
+      "from": 205,
+      "to": 177
+    },
+    {
+      "from": 205,
+      "to": 119
+    },
+    {
+      "from": 205,
+      "to": 59
+    },
+    {
+      "from": 206,
+      "to": 205
+    },
+    {
+      "from": 206,
+      "to": 160
+    },
+    {
+      "from": 206,
+      "to": 204
+    }
+  ]
+}

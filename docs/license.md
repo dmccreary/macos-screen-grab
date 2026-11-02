@@ -1,8 +1,16 @@
-# Creative Commons License
+# License
+
+The ScreenGrab source code is licensed under the
+[MIT License](https://github.com/dmccreary/macos-screen-grab/blob/main/LICENSE), so
+anyone can use, change, and share the app without any fee, including commercially.
+
+The rest of this page covers the book's written content.
+
+## Creative Commons License
 
 ![License](./img/license.png)
 
-All content in this repository is governed by the following license agreement:
+The content of this book is governed by the following license agreement:
 
 ## License Type
 
@@ -37,4 +45,4 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 
 ## Commercial Licensing
 
-Commercial rights are reserved by the copyright holder. For commercial licensing, publication inquiries, or permission to use this work in commercial contexts, please contact [Dan McCreary](https://www.linkedin.com/in/danmccreary/).
+Commercial rights to the book's content are reserved by the copyright holder. For commercial licensing, publication inquiries, or permission to use this work in commercial contexts, please contact [Dan McCreary](https://www.linkedin.com/in/danmccreary/).

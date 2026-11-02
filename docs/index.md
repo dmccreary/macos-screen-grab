@@ -1,17 +1,17 @@
 ---
-title: 'ScreenGrab'
+title: 'ScreenGrab: Software Bloat and the Generated Alternative'
 description: 'A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.'
 image: img/cover.png
 ---
 
-# ScreenGrab
+# ScreenGrab: Software Bloat and the Generated Alternative
 
 <!-- Once docs/img/cover.png is the real cover and shows the book title, hide
      this duplicate h1 and start the image's alt text with the title. See the
      "Landing Page Title Rule" in book-installer/references/home-page-template.md. -->
 
 <figure markdown>
-  ![ScreenGrab cover](./img/cover.png){ width="100%" }
+  ![ScreenGrab: Software Bloat and the Generated Alternative cover](./img/cover.png){ width="100%" }
 </figure>
 
 A free, single-purpose macOS menu bar app that copies a dragged region of the screen to the clipboard, with no subscription and no network access.
