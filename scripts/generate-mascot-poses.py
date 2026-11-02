@@ -4,16 +4,24 @@
 Every pose is built from the same parts, so the character stays consistent.
 Colors and proportions match docs/img/mascot/character-sheet.md.
 
-Run from the project root in the `mkdocs` conda env (needs cairosvg), then trim
-each pose with $BK_HOME/src/image-utils/trim-padding-from-image.py.
+A white outline around each silhouette keeps the dark lines readable on black
+backgrounds. The output folder is required, because docs/img/mascot may hold
+images made with another tool that this script should not replace by accident.
 
-    python scripts/generate-mascot-poses.py
+Run in the `mkdocs` conda env (needs cairosvg and Pillow), then trim each pose
+with $BK_HOME/src/image-utils/trim-padding-from-image.py.
+
+    python scripts/generate-mascot-poses.py path/to/output-folder
 """
+import argparse
+import io
 from pathlib import Path
 
 import cairosvg
+from PIL import Image, ImageFilter
 
-OUT_DIR = Path("docs/img/mascot")
+OUTPUT_WIDTH = 480
+OUTLINE_WIDTH = 4  # white outline width, in output pixels
 
 CORAL = "#FF7043"
 CORAL_DARK = "#BF360C"
@@ -219,11 +227,25 @@ def draw(name):
     </svg>"""
 
 
+def render(name):
+    """Render a pose at double size, add the white outline, and scale it down."""
+    png = cairosvg.svg2png(bytestring=draw(name).encode(), output_width=OUTPUT_WIDTH * 2)
+    pose_img = Image.open(io.BytesIO(png)).convert("RGBA")
+    grown = pose_img.getchannel("A").filter(ImageFilter.MaxFilter(OUTLINE_WIDTH * 4 + 1))
+    outline = Image.new("RGBA", pose_img.size, (255, 255, 255, 0))
+    outline.putalpha(grown.filter(ImageFilter.GaussianBlur(1)))
+    outline.alpha_composite(pose_img)
+    return outline.resize((pose_img.width // 2, pose_img.height // 2), Image.LANCZOS)
+
+
 def main():
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("out_dir", type=Path, help="folder to write the seven PNGs into")
+    out_dir = parser.parse_args().out_dir
+    out_dir.mkdir(parents=True, exist_ok=True)
     for name in ["neutral", "welcome", "thinking", "tip", "warning", "encouraging", "celebration"]:
-        cairosvg.svg2png(bytestring=draw(name).encode(), write_to=str(OUT_DIR / f"{name}.png"), output_width=480)
-        print(f"wrote {OUT_DIR / name}.png")
+        render(name).save(out_dir / f"{name}.png")
+        print(f"wrote {out_dir / name}.png")
 
 
 if __name__ == "__main__":
