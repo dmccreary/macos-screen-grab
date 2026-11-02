@@ -65,7 +65,7 @@ Capturing *before* activating removes the conflict:
 | Color | Always capture in **sRGB** | Tagged sRGB pastes predictably everywhere. Colors outside sRGB clip slightly, which is acceptable for screenshots. |
 | Pasteboard formats | PNG **and** LZW-compressed TIFF | Some apps prefer one or the other. |
 | Package structure | Library `ScreenGrabKit` plus a one-file executable `ScreenGrab` | Lets tests import everything, including views. |
-| Tests | Swift Testing (`import Testing`), run through `scripts/test.sh` | The Command Line Tools ship `Testing.framework` but not XCTest. SwiftPM doesn't find the framework's macro plugin with these tools alone, so the script passes its path. |
+| Tests | Swift Testing (`import Testing`), run through `scripts/test.sh` | The Command Line Tools ship `Testing.framework` but not XCTest. With these tools alone, and depending on the Swift version, SwiftPM may not find the framework, its macro plugin, or the `lib_TestingInterop.dylib` it loads at run time, so the script passes all three locations. |
 | Swift language mode | Swift 5 (`swift-tools-version: 5.9`) | Avoids strict-concurrency friction with AppKit and Carbon callbacks. UI types are still annotated `@MainActor`. |
 | UI construction | Programmatic AppKit | No Xcode means no storyboards or nibs. |
 | Capture sound | System `Screen Capture.aif`, falling back to `Pop` | The file is present on the target machine, but the path isn't a public API, so the fallback is needed. |
@@ -458,6 +458,7 @@ off-screen, because only a window that is ordered in has real layer backing stor
 | Clipboard | Round trip through a private named pasteboard; both types present; previous contents replaced |
 | `FileNaming`, save | Format, collision suffixes, folder creation, unwritable-folder error |
 | `HotKeyCombo` | Validation rules, duplicates, display strings, `Codable` round trip |
+| `HotKeyCenter` | Registration, conflict reporting, suspend and resume; a Carbon hotkey event built by hand reaches the handler with the right action (this tests everything after the key press itself) |
 | `AppSettings` | Defaults, clamping, persistence (with an in-memory `UserDefaults` subclass, because a real suite leaves a plist behind on every run) |
 | `GrabCoordinator` | Every cell of the [§5.1](#51-state-machine) table using fakes, including stale frames after a cancel and repeated triggers |
 | `SelectionOverlayView` | Synthesized mouse and key events produce the right selection or cancel; the view hierarchy renders off-screen to a bitmap, with pixels checked for dimming, the undimmed hole, and correct orientation; repeated partial redraws don't accumulate dimming in the layer's backing store |
@@ -470,12 +471,18 @@ These checks run against the installed app, and none of them trigger a permissio
 |---|---|
 | Runs with no Dock icon | `lsappinfo info ScreenGrab` reports `type="UIElement"` |
 | A second launch exits | Run the binary directly; the first process keeps its ID |
-| Holds its hotkeys | A second process calling `RegisterEventHotKey` for ⌃⇧4 gets -9878, while an unused control combination succeeds |
+| Holds its hotkeys | A second process making an exclusive `RegisterEventHotKey` call for ⌃⇧4 gets -9878 with ScreenGrab running, and succeeds with it stopped. A non-exclusive call succeeds either way, so it can't detect a conflict. |
 | Menu bar icon exists | A probe status item's x position shifts by the width of one item when ScreenGrab is running compared with stopped |
 | Idle cost | `ps` reports CPU and resident memory |
 
 The menu bar icon needs this indirect check. On macOS 26, `CGWindowListCopyWindowInfo`
 doesn't list third-party status items, even for the process that owns them.
+
+A real key press can't be simulated from a process without Accessibility access, so hotkey
+delivery has to be tried by hand. The unified log then shows how a grab started: a menu
+grab logs `perform action for menu item` just before its capture, and a hotkey grab doesn't.
+Scripts should call `/usr/bin/log` by its full path, because plain `log` is a zsh builtin in
+non-interactive shells. `/etc/zshrc` disables that builtin only for interactive ones.
 
 ### 10.3 Manual acceptance
 
@@ -488,13 +495,15 @@ behavior, the live crosshair, and pasting into real applications.
 
 | Area | Status |
 |---|---|
-| 93 automated tests | Passing |
+| 94 automated tests | Passing |
 | Installer: fresh install, upgrade, rollback after a failed swap, uninstall, name conflict | Tested (rollback with a stubbed `mv`) |
 | Installer: `--reset-permission`, `--purge` | Flow tested with stubbed `tccutil` and `defaults`, so no real settings were changed |
 | Universal build | Built and signed; contains arm64 and x86_64. The x86_64 slice hasn't been run. |
 | Smoke checks in [§10.2](#102-smoke-test-no-permission-needed) | Passing on macOS 26.6.2: 0.0 % CPU and about 25 MB idle |
 | Crosshair, activation, and focus handback | Tested in a prototype ([§2.1](#21-freeze-frame-selection)), not yet in the finished app |
 | Real grab on one Retina display | Working. A 980×570 grab reached the clipboard as PNG and TIFF, tagged sRGB at 144 DPI, and pasted into another app with correct orientation and colors. Identified from its metadata, as the grab itself was made by hand. |
+| ⌃⇧4 with a real key press | Worked at 14:48:56 on 2026-11-01, confirmed by the log. **An earlier report of it failing is unexplained.** The earlier processes logged no hotkey activity, with the same code and with the shortcut registered. Secure Input and frontmost app at those moments weren't recorded. |
+| ⌃⇧5 with a real key press, ⌃⇧4 with VS Code in front | **Not yet run** |
 | Countdown HUD, on-screen cancel paths, Preferences recording, NFR-1 and NFR-2 timings, multiple displays | **Not yet run.** These need a person, as in [§10.3](#103-manual-acceptance) |
 
 ## 11. Build, packaging, and signing

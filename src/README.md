@@ -257,9 +257,23 @@ Opening ScreenGrab from the Applications folder while it's running shows Prefere
 
 ### A hotkey does nothing
 
-Another app may own the shortcut. Open Preferences and look for a red warning beside
-it, then choose a different shortcut. The menu items work regardless. Also confirm
-that ScreenGrab is running: its icon should be in the menu bar, or check Activity Monitor.
+Work through these in order. The menu items keep working either way.
+
+1. **Check that ScreenGrab is running.** Its icon should be in the menu bar, or look for
+   it in Activity Monitor.
+2. **Look for a red warning** beside the shortcut in Preferences. A warning means another
+   app owns the shortcut, so choose a different one.
+3. **Try from a different app.** macOS can block global shortcuts while some apps are in
+   front. A focused password field and Terminal's **Secure Keyboard Entry** setting can
+   both do this. To see whether anything is holding this mode on, run the following
+   command. A line of output gives the ID of the process holding it, and no output means
+   nothing is.
+
+   ```bash
+   ioreg -l -w 0 | grep -a kCGSSessionSecureInputPID
+   ```
+
+4. **Quit and reopen ScreenGrab.**
 
 ### The image pastes larger or smaller than expected
 
