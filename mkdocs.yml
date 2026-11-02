@@ -49,6 +49,7 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Mascot Test: learning-graph/mascot-test.md
 
   - MicroSims:
       - List of MicroSims: sims/index.md
@@ -134,6 +135,7 @@ markdown_extensions:
 # Custom CSS — file is created by init-textbook
 extra_css:
   - css/extra.css
+  - css/mascot.css
 
 # Custom JavaScript — uncomment once a corresponding file exists
 # extra_javascript:
@@ -145,6 +147,7 @@ exclude_docs: |
   **/image-prompts*.md
   **/cover-prompt.md
   **/cover-image-prompt.md
+  **/character-sheet.md
   **/TODO.md
 
 # Rebuild on changes during `mkdocs serve`

@@ -24,7 +24,8 @@ CONTENT-GENERATION-GUIDE.md
 It defines the concept-depth and word-count targets, the anti-padding and
 writing-style rules, the MicroSim expectations, and the Markdown formatting
 rules for this book. Content that ignores it produces broken layouts and an
-inconsistent student experience.
+inconsistent student experience. The teacher guide, instructor guide, and other
+instructor-facing content don't use the mascot described in that file.
 
 ## Project facts
 
