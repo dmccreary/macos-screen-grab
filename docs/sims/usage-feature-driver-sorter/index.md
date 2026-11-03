@@ -8,7 +8,7 @@ bloom_level: Analyze
 
 # Why Features Get Added Sorter
 
-<iframe src="main.html" width="100%" height="552" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="554px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

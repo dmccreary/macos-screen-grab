@@ -1,4 +1,5 @@
 // Break-Even Chart for a Generated Tool MicroSim (Chart.js)
+// CANVAS_HEIGHT: 610
 // Cumulative cost = K + S * t for a paid subscription and a generated tool.
 // The learner calculates the break-even time for three maintenance values.
 // All values are illustrative.

@@ -1,4 +1,5 @@
 // Acceptance Criteria Testability Judge
+// CANVAS_HEIGHT: 494
 // Evaluate level: the learner judges whether each of 8 acceptance criteria is
 // testable, using the test "would two people running the same check agree?"
 // Eight criteria, fixed order, one attempt each. Mastery is 7 of 8.

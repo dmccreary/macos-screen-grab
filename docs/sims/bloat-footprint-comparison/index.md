@@ -10,7 +10,7 @@ bloom_level: Analyze
 
 Two illustrative programs are compared on three measures: install size, idle memory, and background helper processes. You rank the measures by how many times larger the full-featured product is before any numbers appear.
 
-<iframe src="main.html" width="100%" height="700" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="716px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

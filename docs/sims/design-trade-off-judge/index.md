@@ -8,7 +8,7 @@ bloom_level: Evaluate
 
 # Design Trade-Off Judge
 
-<iframe src="main.html" width="100%" height="520" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="525px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

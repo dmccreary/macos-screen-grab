@@ -8,7 +8,7 @@ bloom_level: Evaluate
 
 # Weighted Decision Matrix Explorer
 
-<iframe src="main.html" width="100%" height="722" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="723px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

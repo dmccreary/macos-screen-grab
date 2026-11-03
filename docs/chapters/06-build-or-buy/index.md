@@ -176,7 +176,7 @@ The decision explorer below gives you eight short scenarios. For each, you choos
 
 #### Diagram: Buy, Subscribe, or Generate Decision Explorer
 
-<iframe src="../../sims/buy-subscribe-generate-decision-explorer/main.html" height="632px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/buy-subscribe-generate-decision-explorer/main.html" height="633px" width="100%" scrolling="no"></iframe>
 
 [Run the Buy, Subscribe, or Generate Decision Explorer MicroSim Fullscreen](../../sims/buy-subscribe-generate-decision-explorer/main.html){ .md-button .md-button--primary }
 

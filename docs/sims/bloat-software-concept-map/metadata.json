@@ -21,5 +21,6 @@
   "chapter_dir": "01-software-bloat",
   "chapter_rel_dir": "chapters/01-software-bloat",
   "library_version": "vis-network 9.1.9",
-  "iframe_height": 800
+  "iframe_height": 800,
+  "canvasHeight": 800
 }

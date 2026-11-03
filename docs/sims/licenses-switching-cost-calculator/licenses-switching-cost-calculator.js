@@ -1,4 +1,5 @@
 // Switching Cost Calculator
+// CANVAS_HEIGHT: 666
 // Conversion cost = files x minutes / 60 x time value
 // Learning cost   = learning hours x time value
 // Switching cost  = conversion cost + learning cost

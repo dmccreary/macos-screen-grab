@@ -110,7 +110,7 @@ The tail is not worthless. A feature used by 2% of 100,000 users still serves 2,
 
 #### Diagram: Long Tail of Feature Usage Explorer
 
-<iframe src="../../sims/usage-long-tail-explorer/main.html" height="730px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/usage-long-tail-explorer/main.html" height="738px" width="100%" scrolling="no"></iframe>
 
 [Run the Long Tail of Feature Usage Explorer MicroSim Fullscreen](../../sims/usage-long-tail-explorer/main.html){ .md-button .md-button--primary }
 
@@ -249,7 +249,7 @@ The sorter below presents eight situations and asks you to name the force behind
 
 #### Diagram: Why Features Get Added Sorter
 
-<iframe src="../../sims/usage-feature-driver-sorter/main.html" height="552px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/usage-feature-driver-sorter/main.html" height="554px" width="100%" scrolling="no"></iframe>
 
 [Run the Why Features Get Added Sorter MicroSim Fullscreen](../../sims/usage-feature-driver-sorter/main.html){ .md-button .md-button--primary }
 

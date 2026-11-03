@@ -1,4 +1,5 @@
 // License Offer Sorter MicroSim
+// CANVAS_HEIGHT: 550
 // Classify six software offers on two separate dimensions: when the money is
 // paid (one time or recurring) and what is counted (per computer or per user).
 // An offer is correct only when both choices are right. Mastery is 5 of 6.

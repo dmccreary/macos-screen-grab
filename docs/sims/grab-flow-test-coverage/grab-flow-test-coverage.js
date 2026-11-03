@@ -1,4 +1,5 @@
 /*
+// CANVAS_HEIGHT: 690
  * ScreenGrab Grab Flow Test Coverage (Mermaid MicroSim)
  * Bloom: Analyze (distinguish). The learner opens each of the seven steps of a
  * grab and commits "Automated can confirm" or "Only a person can confirm"

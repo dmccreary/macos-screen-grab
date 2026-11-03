@@ -10,7 +10,7 @@ bloom_level: Understand
 
 # Fork and Pull Request Flow
 
-<iframe src="main.html" width="100%" height="580" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="584px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

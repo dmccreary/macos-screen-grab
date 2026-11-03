@@ -138,7 +138,7 @@ Try matching licenses to scenarios before moving on.
 
 #### Diagram: Open Source License Matcher
 
-<iframe src="../../sims/open-source-license-matcher/main.html" height="579px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/open-source-license-matcher/main.html" height="581px" width="100%" scrolling="no"></iframe>
 
 [Run the Open Source License Matcher MicroSim Fullscreen](../../sims/open-source-license-matcher/main.html){ .md-button .md-button--primary }
 
@@ -231,7 +231,7 @@ The next diagram follows one contribution from discovery to merge, and asks wher
 
 #### Diagram: Fork and Pull Request Flow
 
-<iframe src="../../sims/fork-and-pull-request-flow/main.html" height="580px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/fork-and-pull-request-flow/main.html" height="584px" width="100%" scrolling="no"></iframe>
 
 [Run the Fork and Pull Request Flow MicroSim Fullscreen](../../sims/fork-and-pull-request-flow/main.html){ .md-button .md-button--primary }
 

@@ -10,7 +10,7 @@ bloom_level: Understand
 
 # Software Vocabulary Concept Map
 
-<iframe src="main.html" width="100%" height="800" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="804px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

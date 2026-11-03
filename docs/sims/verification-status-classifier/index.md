@@ -8,7 +8,7 @@ bloom_level: Evaluate
 
 # Verification Status Classifier
 
-<iframe src="main.html" width="100%" height="590" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="592px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

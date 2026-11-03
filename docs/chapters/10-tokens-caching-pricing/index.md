@@ -76,7 +76,7 @@ Try the estimate yourself before the sim reveals the answers.
 
 #### Diagram: Token Split Explorer
 
-<iframe src="../../sims/token-split-explorer/main.html" height="662px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/token-split-explorer/main.html" height="663px" width="100%" scrolling="no"></iframe>
 
 [Run the Token Split Explorer MicroSim Fullscreen](../../sims/token-split-explorer/main.html){ .md-button .md-button--primary }
 
@@ -261,7 +261,7 @@ The next sim lets you change the context size and number of turns and see how th
 
 #### Diagram: Prompt Cache Cost Calculator
 
-<iframe src="../../sims/prompt-cache-cost-calculator/main.html" height="622px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/prompt-cache-cost-calculator/main.html" height="624px" width="100%" scrolling="no"></iframe>
 
 [Run the Prompt Cache Cost Calculator MicroSim Fullscreen](../../sims/prompt-cache-cost-calculator/main.html){ .md-button .md-button--primary }
 

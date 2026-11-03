@@ -10,7 +10,7 @@ bloom_level: Analyze
 
 Twenty illustrative screen-capture features are sorted from most to least used. A threshold line marks the features that at least a chosen share of users touch, so you can see how quickly the count falls.
 
-<iframe src="main.html" width="100%" height="730" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="738px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

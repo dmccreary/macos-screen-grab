@@ -10,7 +10,7 @@ bloom_level: Analyze
 
 A whole ScreenGrab build session used about 20 million tokens of three types. This sim asks you to predict which type is the largest by count and which is the largest by cost, then shows both shares side by side.
 
-<iframe src="main.html" width="100%" height="695" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="628px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

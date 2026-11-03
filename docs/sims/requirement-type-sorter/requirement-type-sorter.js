@@ -1,4 +1,5 @@
 // Requirement Type Sorter MicroSim
+// CANVAS_HEIGHT: 537
 // Classify twelve illustrative specification statements as a functional
 // requirement, a non-functional requirement, a non-goal, or an assumption.
 // One attempt per statement, fixed order. Mastery is 10 of 12.

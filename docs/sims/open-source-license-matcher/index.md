@@ -8,7 +8,7 @@ bloom_level: Apply
 
 # Open Source License Matcher
 
-<iframe src="main.html" width="100%" height="579" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="581px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

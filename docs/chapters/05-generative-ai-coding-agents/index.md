@@ -179,7 +179,7 @@ The loop is the key idea. An agent receives a request, works out a plan, takes a
 
 #### Diagram: AI Coding Agent Loop Stepper
 
-<iframe src="../../sims/ai-coding-agent-loop-stepper/main.html" height="664px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/ai-coding-agent-loop-stepper/main.html" height="644px" width="100%" scrolling="no"></iframe>
 
 [Run the AI Coding Agent Loop Stepper MicroSim Fullscreen](../../sims/ai-coding-agent-loop-stepper/main.html){ .md-button .md-button--primary }
 
@@ -356,7 +356,7 @@ The following MicroSim lets you practice the habit this chapter recommends: sepa
 
 #### Diagram: Claim and Evidence Checker
 
-<iframe src="../../sims/agent-claim-evidence-checker/main.html" height="532px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/agent-claim-evidence-checker/main.html" height="538px" width="100%" scrolling="no"></iframe>
 
 [Run the Claim and Evidence Checker MicroSim Fullscreen](../../sims/agent-claim-evidence-checker/main.html){ .md-button .md-button--primary }
 

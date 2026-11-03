@@ -175,7 +175,7 @@ The two sorting dimensions, how often the money is paid and what is counted, com
 
 #### Diagram: License Offer Sorter
 
-<iframe src="../../sims/licenses-offer-sorter/main.html" height="552px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/licenses-offer-sorter/main.html" height="554px" width="100%" scrolling="no"></iframe>
 
 [Run the License Offer Sorter MicroSim Fullscreen](../../sims/licenses-offer-sorter/main.html){ .md-button .md-button--primary }
 
@@ -247,7 +247,7 @@ The explorer below lists eight vendor decisions and asks you to predict which pr
 
 #### Diagram: Vendor Incentive Explorer
 
-<iframe src="../../sims/licenses-vendor-incentive-explorer/main.html" height="592px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/licenses-vendor-incentive-explorer/main.html" height="593px" width="100%" scrolling="no"></iframe>
 
 [Run the Vendor Incentive Explorer MicroSim Fullscreen](../../sims/licenses-vendor-incentive-explorer/main.html){ .md-button .md-button--primary }
 
@@ -340,7 +340,7 @@ The calculator below lets you change the inputs and compute the years needed to 
 
 #### Diagram: Switching Cost Calculator
 
-<iframe src="../../sims/licenses-switching-cost-calculator/main.html" height="668px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/licenses-switching-cost-calculator/main.html" height="670px" width="100%" scrolling="no"></iframe>
 
 [Run the Switching Cost Calculator MicroSim Fullscreen](../../sims/licenses-switching-cost-calculator/main.html){ .md-button .md-button--primary }
 

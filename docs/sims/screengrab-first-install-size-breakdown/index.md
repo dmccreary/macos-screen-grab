@@ -10,7 +10,7 @@ bloom_level: Analyze
 
 The first ScreenGrab install has four parts: app code, tests, install and build scripts, and the specification, design, and README. This chart compares them by line count and by share of the 5,210-line total.
 
-<iframe src="main.html" width="100%" height="620" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="556px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

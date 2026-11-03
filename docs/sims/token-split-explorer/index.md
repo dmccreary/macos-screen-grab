@@ -8,7 +8,7 @@ bloom_level: Understand
 
 # Token Split Explorer
 
-<iframe src="main.html" width="100%" height="662" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="663px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

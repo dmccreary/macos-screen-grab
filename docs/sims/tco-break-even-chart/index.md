@@ -10,7 +10,7 @@ bloom_level: Apply
 
 Two cumulative cost lines start at their upfront costs and climb at their yearly costs. Where they cross is the break-even point, and that point moves a lot when one input, the generated tool's yearly maintenance time, changes.
 
-<iframe src="main.html" width="100%" height="635" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="614px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

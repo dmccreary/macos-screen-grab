@@ -108,7 +108,7 @@ Before looking at the diagram below, here are the relationships it shows. A prod
 
 #### Diagram: Software Vocabulary Concept Map
 
-<iframe src="../../sims/bloat-software-concept-map/main.html" height="800px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/bloat-software-concept-map/main.html" height="804px" width="100%" scrolling="no"></iframe>
 
 [Run the Software Vocabulary Concept Map MicroSim Fullscreen](../../sims/bloat-software-concept-map/main.html){ .md-button .md-button--primary }
 
@@ -235,7 +235,7 @@ Now consider what a single user needs across those ten versions. If the author n
 
 #### Diagram: Feature Growth and Usage Explorer
 
-<iframe src="../../sims/bloat-feature-growth-explorer/main.html" height="602px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/bloat-feature-growth-explorer/main.html" height="603px" width="100%" scrolling="no"></iframe>
 
 [Run the Feature Growth and Usage Explorer MicroSim Fullscreen](../../sims/bloat-feature-growth-explorer/main.html){ .md-button .md-button--primary }
 
@@ -403,7 +403,7 @@ Use the comparison chart below to see the three measures side by side and to tes
 
 #### Diagram: Resource Footprint Comparison
 
-<iframe src="../../sims/bloat-footprint-comparison/main.html" height="700px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/bloat-footprint-comparison/main.html" height="716px" width="100%" scrolling="no"></iframe>
 
 [Run the Resource Footprint Comparison MicroSim Fullscreen](../../sims/bloat-footprint-comparison/main.html){ .md-button .md-button--primary }
 

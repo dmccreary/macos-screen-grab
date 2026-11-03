@@ -8,7 +8,7 @@ bloom_level: Evaluate
 
 # Claim and Evidence Checker
 
-<iframe src="main.html" width="100%" height="532" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="538px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

@@ -167,7 +167,7 @@ The calculator below lets you set the inputs for each path and read off the TCO.
 
 #### Diagram: Total Cost of Ownership Calculator
 
-<iframe src="../../sims/tco-calculator/main.html" height="678px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/tco-calculator/main.html" height="680px" width="100%" scrolling="no"></iframe>
 
 [Run the Total Cost of Ownership Calculator MicroSim Fullscreen](../../sims/tco-calculator/main.html){ .md-button .md-button--primary }
 
@@ -243,7 +243,7 @@ The calculator shows what each path costs in total. The chart below shows when t
 
 #### Diagram: Break-Even Chart for a Generated Tool
 
-<iframe src="../../sims/tco-break-even-chart/main.html" height="635px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/tco-break-even-chart/main.html" height="614px" width="100%" scrolling="no"></iframe>
 
 [Run the Break-Even Chart for a Generated Tool MicroSim Fullscreen](../../sims/tco-break-even-chart/main.html){ .md-button .md-button--primary }
 

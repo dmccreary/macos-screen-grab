@@ -28,7 +28,7 @@
       "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
     }
   ],
-  "canvasHeight": 546,
+  "canvasHeight": 550,
   "educational": {
     "gradeLevel": "Undergraduate",
     "learningObjective": "The learner will distinguish four reasons a vendor adds a feature by assigning each of 8 described situations to the correct reason, scoring at least 7 of 8.",

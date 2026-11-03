@@ -120,7 +120,7 @@ Use the next sim to check your own arithmetic against these rows and then try di
 
 #### Diagram: Session Cost Estimator
 
-<iframe src="../../sims/session-cost-estimator/main.html" height="694px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/session-cost-estimator/main.html" height="696px" width="100%" scrolling="no"></iframe>
 
 [Run the Session Cost Estimator MicroSim Fullscreen](../../sims/session-cost-estimator/main.html){ .md-button .md-button--primary }
 
@@ -227,7 +227,7 @@ Try the comparison yourself before the chart reveals it.
 
 #### Diagram: Token Share Versus Cost Share Chart
 
-<iframe src="../../sims/token-share-versus-cost-share/main.html" height="695px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/token-share-versus-cost-share/main.html" height="628px" width="100%" scrolling="no"></iframe>
 
 [Run the Token Share Versus Cost Share Chart MicroSim Fullscreen](../../sims/token-share-versus-cost-share/main.html){ .md-button .md-button--primary }
 

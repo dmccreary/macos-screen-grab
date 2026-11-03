@@ -215,7 +215,7 @@ The component map below shows how the choices fit together. Before you use it, h
 
 #### Diagram: ScreenGrab Component Map
 
-<iframe src="../../sims/screengrab-component-map/main.html" height="762px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/screengrab-component-map/main.html" height="764px" width="100%" scrolling="no"></iframe>
 
 [Run the ScreenGrab Component Map MicroSim Fullscreen](../../sims/screengrab-component-map/main.html){ .md-button .md-button--primary }
 
@@ -288,7 +288,7 @@ The second practice activity moves from structure to judgment. Reading a design 
 
 #### Diagram: Design Trade-Off Judge
 
-<iframe src="../../sims/design-trade-off-judge/main.html" height="520px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/design-trade-off-judge/main.html" height="525px" width="100%" scrolling="no"></iframe>
 
 [Run the Design Trade-Off Judge MicroSim Fullscreen](../../sims/design-trade-off-judge/main.html){ .md-button .md-button--primary }
 

@@ -210,7 +210,7 @@ The **ScreenGrab case study** is the real build that this book follows: a paid s
 
 #### Diagram: AI-Assisted Build Stage Sequencer
 
-<iframe src="../../sims/ai-assisted-build-stage-sequencer/main.html" height="600px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/ai-assisted-build-stage-sequencer/main.html" height="626px" width="100%" scrolling="no"></iframe>
 
 [Run the AI-Assisted Build Stage Sequencer MicroSim Fullscreen](../../sims/ai-assisted-build-stage-sequencer/main.html){ .md-button .md-button--primary }
 
@@ -279,7 +279,7 @@ One observation deserves attention: the app code is less than half of the total.
 
 #### Diagram: ScreenGrab First Install Size Breakdown
 
-<iframe src="../../sims/screengrab-first-install-size-breakdown/main.html" height="620px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/screengrab-first-install-size-breakdown/main.html" height="556px" width="100%" scrolling="no"></iframe>
 
 [Run the ScreenGrab First Install Size Breakdown MicroSim Fullscreen](../../sims/screengrab-first-install-size-breakdown/main.html){ .md-button .md-button--primary }
 

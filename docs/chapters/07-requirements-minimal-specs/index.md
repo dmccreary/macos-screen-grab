@@ -216,7 +216,7 @@ The sorter below lets you practice telling these four kinds of statement apart. 
 
 #### Diagram: Requirement Type Sorter
 
-<iframe src="../../sims/requirement-type-sorter/main.html" height="539px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/requirement-type-sorter/main.html" height="541px" width="100%" scrolling="no"></iframe>
 
 [Run the Requirement Type Sorter MicroSim Fullscreen](../../sims/requirement-type-sorter/main.html){ .md-button .md-button--primary }
 
@@ -308,7 +308,7 @@ Not every criterion is testable, and the difference is the point of the next Mic
 
 #### Diagram: Acceptance Criteria Testability Judge
 
-<iframe src="../../sims/acceptance-criteria-testability-judge/main.html" height="492px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/acceptance-criteria-testability-judge/main.html" height="498px" width="100%" scrolling="no"></iframe>
 
 [Run the Acceptance Criteria Testability Judge MicroSim Fullscreen](../../sims/acceptance-criteria-testability-judge/main.html){ .md-button .md-button--primary }
 

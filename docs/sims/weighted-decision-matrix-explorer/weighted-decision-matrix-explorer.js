@@ -1,4 +1,5 @@
 // Weighted Decision Matrix Explorer
+// CANVAS_HEIGHT: 719
 // Two options (Subscribe, Generate) scored 1-5 on five criteria.
 // The learner changes one weight at a time to see which criteria can flip
 // the winner, then answers two evaluation questions (two attempts each).

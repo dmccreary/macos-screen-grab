@@ -1,4 +1,5 @@
 // Claim and Evidence Checker
+// CANVAS_HEIGHT: 534
 // Evaluate level: the learner judges whether each of 8 claims in an
 // illustrative agent report is supported by the evidence shown with it.
 // Eight claims, fixed order, one attempt each. Mastery is 7 of 8.

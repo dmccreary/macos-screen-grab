@@ -22,5 +22,5 @@
   "chapter_rel_dir": "chapters/11-measuring-ai-session",
   "libraryVersion": "Chart.js 4.4.0",
   "libraryUrl": "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js",
-  "canvasHeight": 695
+  "canvasHeight": 624
 }

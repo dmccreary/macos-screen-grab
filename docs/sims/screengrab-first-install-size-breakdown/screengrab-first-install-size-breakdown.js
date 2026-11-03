@@ -1,4 +1,5 @@
 // ScreenGrab First Install Size Breakdown MicroSim (Chart.js)
+// CANVAS_HEIGHT: 552
 // Four parts of the first install by line count and share of total,
 // followed by four fixed comparison questions (one attempt each).
 

@@ -1,4 +1,5 @@
 // Open Source License Matcher MicroSim
+// CANVAS_HEIGHT: 577
 // Choose the license that fits what the author wants in each of eight
 // scenarios. One attempt per scenario, fixed order. Mastery is 7 of 8.
 // An educational exercise, not legal advice.

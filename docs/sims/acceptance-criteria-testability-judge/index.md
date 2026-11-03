@@ -8,7 +8,7 @@ bloom_level: Evaluate
 
 # Acceptance Criteria Testability Judge
 
-<iframe src="main.html" width="100%" height="492" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="498px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

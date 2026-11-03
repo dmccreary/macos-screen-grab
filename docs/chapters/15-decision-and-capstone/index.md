@@ -89,7 +89,7 @@ Check your arithmetic with the calculator before moving on.
 
 #### Diagram: Subscribe or Generate Cost Calculator
 
-<iframe src="../../sims/subscribe-or-generate-cost-calculator/main.html" height="750px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/subscribe-or-generate-cost-calculator/main.html" height="752px" width="100%" scrolling="no"></iframe>
 
 [Run the Subscribe or Generate Cost Calculator MicroSim Fullscreen](../../sims/subscribe-or-generate-cost-calculator/main.html){ .md-button .md-button--primary }
 
@@ -191,7 +191,7 @@ Subscribe: \( 5 \times 2 + 4 \times 2 + 3 \times 5 + 3 \times 5 + 2 \times 4 = 5
 
 #### Diagram: Weighted Decision Matrix Explorer
 
-<iframe src="../../sims/weighted-decision-matrix-explorer/main.html" height="722px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/weighted-decision-matrix-explorer/main.html" height="723px" width="100%" scrolling="no"></iframe>
 
 [Run the Weighted Decision Matrix Explorer MicroSim Fullscreen](../../sims/weighted-decision-matrix-explorer/main.html){ .md-button .md-button--primary }
 

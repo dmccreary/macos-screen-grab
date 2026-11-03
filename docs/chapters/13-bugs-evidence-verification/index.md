@@ -106,7 +106,7 @@ The right response is to leave it open and write down what to capture next time.
 
 The steps in this chapter form a sequence with one important branch: what happens when the bug cannot be reproduced. The next diagram lets you walk it.
 
-<iframe src="../../sims/bug-investigation-workflow/main.html" height="680px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/bug-investigation-workflow/main.html" height="684px" width="100%" scrolling="no"></iframe>
 
 [Run the Bug Investigation Workflow MicroSim Fullscreen](../../sims/bug-investigation-workflow/main.html){ .md-button .md-button--primary }
 
@@ -227,7 +227,7 @@ Now judge ten claims yourself.
 
 #### Diagram: Verification Status Classifier
 
-<iframe src="../../sims/verification-status-classifier/main.html" height="590px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/verification-status-classifier/main.html" height="592px" width="100%" scrolling="no"></iframe>
 
 [Run the Verification Status Classifier MicroSim Fullscreen](../../sims/verification-status-classifier/main.html){ .md-button .md-button--primary }
 

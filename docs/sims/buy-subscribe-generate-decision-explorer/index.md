@@ -8,7 +8,7 @@ bloom_level: Evaluate
 
 # Buy, Subscribe, or Generate Decision Explorer
 
-<iframe src="main.html" width="100%" height="632" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="633px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

@@ -8,7 +8,7 @@ bloom_level: Remember
 
 # AI-Assisted Build Stage Sequencer
 
-<iframe src="main.html" width="100%" height="600" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="626px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

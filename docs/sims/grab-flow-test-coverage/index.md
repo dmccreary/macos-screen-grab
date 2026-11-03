@@ -10,7 +10,7 @@ bloom_level: Analyze
 
 # ScreenGrab Grab Flow Test Coverage
 
-<iframe src="main.html" width="100%" height="690" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="694px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 

@@ -1,4 +1,5 @@
 /*
+// CANVAS_HEIGHT: 580
  * Fork and Pull Request Flow (Mermaid MicroSim)
  * Bloom: Understand (classify). The learner clicks each of the six steps of a
  * contribution and classifies where code changes: the contributor's fork, the

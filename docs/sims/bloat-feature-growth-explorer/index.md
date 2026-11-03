@@ -8,7 +8,7 @@ bloom_level: Apply
 
 # Feature Growth and Usage Explorer
 
-<iframe src="main.html" width="100%" height="602" scrolling="no"></iframe>
+<iframe src="main.html" width="100%" height="603px" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
 
