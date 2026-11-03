@@ -210,6 +210,10 @@ The **ScreenGrab case study** is the real build that this book follows: a paid s
 
 #### Diagram: AI-Assisted Build Stage Sequencer
 
+<iframe src="../../sims/ai-assisted-build-stage-sequencer/main.html" height="600px" width="100%" scrolling="no"></iframe>
+
+[Run the AI-Assisted Build Stage Sequencer MicroSim Fullscreen](../../sims/ai-assisted-build-stage-sequencer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>AI-Assisted Build Stage Sequencer</summary>
 Type: microsim
@@ -274,6 +278,10 @@ The timeline matters as much as the size. The app was built and installed about 
 One observation deserves attention: the app code is less than half of the total. The tests are more than two-thirds as long as the app, and the documents and scripts together are longer than the tests. That proportion is typical of software that is meant to be relied on. The chart below lets you work with it directly.
 
 #### Diagram: ScreenGrab First Install Size Breakdown
+
+<iframe src="../../sims/screengrab-first-install-size-breakdown/main.html" height="620px" width="100%" scrolling="no"></iframe>
+
+[Run the ScreenGrab First Install Size Breakdown MicroSim Fullscreen](../../sims/screengrab-first-install-size-breakdown/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>ScreenGrab First Install Size Breakdown</summary>

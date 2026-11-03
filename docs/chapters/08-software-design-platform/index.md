@@ -215,6 +215,10 @@ The component map below shows how the choices fit together. Before you use it, h
 
 #### Diagram: ScreenGrab Component Map
 
+<iframe src="../../sims/screengrab-component-map/main.html" height="762px" width="100%" scrolling="no"></iframe>
+
+[Run the ScreenGrab Component Map MicroSim Fullscreen](../../sims/screengrab-component-map/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>ScreenGrab Component Map</summary>
 Type: infographic-overlay
@@ -283,6 +287,10 @@ Six prediction steps, in this order:
 The second practice activity moves from structure to judgment. Reading a design well means asking, for each decision, which option best serves what the specification values. The judge below gives eight decisions with a stated priority and two options each.
 
 #### Diagram: Design Trade-Off Judge
+
+<iframe src="../../sims/design-trade-off-judge/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Design Trade-Off Judge MicroSim Fullscreen](../../sims/design-trade-off-judge/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Design Trade-Off Judge</summary>

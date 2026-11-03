@@ -138,6 +138,10 @@ Try matching licenses to scenarios before moving on.
 
 #### Diagram: Open Source License Matcher
 
+<iframe src="../../sims/open-source-license-matcher/main.html" height="579px" width="100%" scrolling="no"></iframe>
+
+[Run the Open Source License Matcher MicroSim Fullscreen](../../sims/open-source-license-matcher/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Open Source License Matcher</summary>
 Type: microsim
@@ -226,6 +230,10 @@ A **pull request** is a proposal to merge changes from one branch or fork into a
 The next diagram follows one contribution from discovery to merge, and asks where the code changes at each step.
 
 #### Diagram: Fork and Pull Request Flow
+
+<iframe src="../../sims/fork-and-pull-request-flow/main.html" height="580px" width="100%" scrolling="no"></iframe>
+
+[Run the Fork and Pull Request Flow MicroSim Fullscreen](../../sims/fork-and-pull-request-flow/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Fork and Pull Request Flow</summary>

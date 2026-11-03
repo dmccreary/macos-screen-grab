@@ -1,18 +1,36 @@
 ---
 title: "Fork and Pull Request Flow"
 description: "The learner will classify each of the six steps of a contribution by where code changes (the contributor's fork, the original repository, or nowhere), with at least 5 of 6 correct."
-status: scaffold
+status: built
+hide:
+  - toc
 library: Mermaid
 bloom_level: Understand
 ---
 
 # Fork and Pull Request Flow
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="580" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** click any of the six steps in the flowchart to read what happens at that step.
+- **Classify:** for each step, choose where code changes: *Contributor's fork*, *Original repository*, or *Nowhere (no code changes)*. The three choices are always in the same order. You get one attempt per step.
+- **Read the feedback:** a correct pick shows the reason. A wrong pick names the right place. Answered steps turn green or red and carry a badge.
+- **Score:** after the sixth answer the panel shows *Correct: n of 6*. Mastery is 5 of 6. Press **Reset** to start again.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 10 minutes.
+
+1. **Predict (2 min).** Read the question on screen aloud: at which step does the original project actually change? Ask each learner to write down a step number.
+2. **Classify (5 min).** Learners classify all six steps in any order. Mastery is 5 of 6.
+3. **Compare (2 min).** Learners check their prediction against the result. Only step 6, the merge, changes the original repository.
+4. **Discuss (1 min).** Follow the *feedback* arrow from step 5 back to step 3. Ask where the requested changes are made, and who decides when the loop ends.
+
+**Misconceptions to watch for:** forking changes the original repository; opening a pull request changes the original code; a contributor can merge their own change into someone else's project.
 
 ## Specification
 

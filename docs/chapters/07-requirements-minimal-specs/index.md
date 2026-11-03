@@ -216,6 +216,10 @@ The sorter below lets you practice telling these four kinds of statement apart. 
 
 #### Diagram: Requirement Type Sorter
 
+<iframe src="../../sims/requirement-type-sorter/main.html" height="539px" width="100%" scrolling="no"></iframe>
+
+[Run the Requirement Type Sorter MicroSim Fullscreen](../../sims/requirement-type-sorter/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Requirement Type Sorter</summary>
 Type: microsim
@@ -303,6 +307,10 @@ Notice that each criterion names something a person can see or measure. They als
 Not every criterion is testable, and the difference is the point of the next MicroSim. Before using it, recall the test of testability: could two different people run the check and agree on the result? "It should be fast" fails that test, while "completes within 1 second" passes.
 
 #### Diagram: Acceptance Criteria Testability Judge
+
+<iframe src="../../sims/acceptance-criteria-testability-judge/main.html" height="492px" width="100%" scrolling="no"></iframe>
+
+[Run the Acceptance Criteria Testability Judge MicroSim Fullscreen](../../sims/acceptance-criteria-testability-judge/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Acceptance Criteria Testability Judge</summary>

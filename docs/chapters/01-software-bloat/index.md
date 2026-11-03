@@ -108,6 +108,10 @@ Before looking at the diagram below, here are the relationships it shows. A prod
 
 #### Diagram: Software Vocabulary Concept Map
 
+<iframe src="../../sims/bloat-software-concept-map/main.html" height="800px" width="100%" scrolling="no"></iframe>
+
+[Run the Software Vocabulary Concept Map MicroSim Fullscreen](../../sims/bloat-software-concept-map/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Software Vocabulary Concept Map</summary>
 Type: graph-model
@@ -230,6 +234,10 @@ Consider an illustrative product that follows an annual cycle. Version 1 ships w
 Now consider what a single user needs across those ten versions. If the author needs only two of the features, a grab and a delayed grab, then every version after the first delivers the same value to that user while the product grows around them. The explorer below lets you pick a version and a kind of user, and then calculate how much of the product that user actually touches.
 
 #### Diagram: Feature Growth and Usage Explorer
+
+<iframe src="../../sims/bloat-feature-growth-explorer/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+[Run the Feature Growth and Usage Explorer MicroSim Fullscreen](../../sims/bloat-feature-growth-explorer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Feature Growth and Usage Explorer</summary>
@@ -394,6 +402,10 @@ Looking at that table, a reader might guess that every measure differs by the sa
 Use the comparison chart below to see the three measures side by side and to test your intuition about which ratio is largest before the numbers are revealed.
 
 #### Diagram: Resource Footprint Comparison
+
+<iframe src="../../sims/bloat-footprint-comparison/main.html" height="700px" width="100%" scrolling="no"></iframe>
+
+[Run the Resource Footprint Comparison MicroSim Fullscreen](../../sims/bloat-footprint-comparison/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Resource Footprint Comparison</summary>

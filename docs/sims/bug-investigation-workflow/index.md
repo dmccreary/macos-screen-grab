@@ -1,18 +1,36 @@
 ---
 title: "Bug Investigation Workflow"
 description: "The learner will identify what each of the seven steps of a bug investigation produces, answering at least 6 of 7 correctly."
-status: scaffold
+status: built
+hide:
+  - toc
 library: Mermaid
 bloom_level: Remember
 ---
 
 # Bug Investigation Workflow
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="680" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** click any step in the flowchart. The panel on the right shows what the step involves. The grey end point, *Wait for new evidence*, is not scored.
+- **Answer:** for each of the seven numbered steps, choose which of three outputs that step produces. You get one attempt per step, and the choices are shuffled each visit.
+- **Read the feedback:** a correct pick shows the reason. A wrong pick names the output the step really produces. Answered steps turn green or red and carry a badge.
+- **Score:** after the seventh answer the panel shows *Correct: n of 7*. Mastery is 6 of 7. Press **Reset** to start again.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 10 minutes.
+
+1. **Predict (2 min).** Before opening the sim, ask learners what should happen when a bug cannot be reproduced. Note their answers.
+2. **Answer (5 min).** Learners click all seven steps in any order and commit an output for each one. Mastery is 6 of 7.
+3. **Trace the branch (2 min).** Point at step 3. Ask what each path ends in. Both end in writing: a status report with dated evidence, or a note of known and missing facts.
+4. **Discuss (1 min).** Ask why step 6 needs a test that failed before the fix, not just a code change.
+
+**Misconceptions to watch for:** a bug that cannot be reproduced can be closed as fixed; fixing the visible symptom is the same as fixing the root cause; a fix is finished when the code changes.
 
 ## Specification
 

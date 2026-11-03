@@ -15,9 +15,11 @@
   "library": "vis-network",
   "bloomLevel": "Understand",
   "bloomVerb": "classify",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 1,
   "chapter_title": "Software Features and the Anatomy of Bloat",
   "chapter_dir": "01-software-bloat",
-  "chapter_rel_dir": "chapters/01-software-bloat"
+  "chapter_rel_dir": "chapters/01-software-bloat",
+  "library_version": "vis-network 9.1.9",
+  "iframe_height": 800
 }

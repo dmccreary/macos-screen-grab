@@ -1,18 +1,36 @@
 ---
 title: "Software Vocabulary Concept Map"
 description: "The learner will classify six described examples under the correct term among software, software product, software feature, feature set, software version, and software release cycle, scoring at least 5 of 6 on the first attempt."
-status: scaffold
+status: built
+hide:
+  - toc
 library: vis-network
 bloom_level: Understand
 ---
 
 # Software Vocabulary Concept Map
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="800" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** click any node on the map. The *Definitions* card shows its definition and lists its connections, and the connected edges are highlighted. Exploring is not scored.
+- **Quiz:** press **Start the quiz**. Each of the six items describes an example. Choose the term it is an example of from the six buttons. You get one attempt per item. Items 4 and 6 are marked *illustrative*.
+- **Read the feedback:** a correct answer shows *Correct* and the reason. A wrong answer shows the reason and highlights the correct node on the map in yellow.
+- **Score:** after item 6 the card shows *n of 6*, with *Mastery reached* at 5 or more on the first attempt. You can take the quiz again for practice.
+- In fullscreen mode you can also drag and scroll to pan and zoom. In the textbook page, use the navigation buttons.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 10 minutes.
+
+1. **Explore (3 min).** Learners click each of the eight nodes and read the definitions. Ask them to read one edge aloud as a sentence, such as "Software Version is a snapshot of Software Product".
+2. **Quiz (5 min).** Learners take the six-item matching quiz once. Mastery is 5 of 6 on the first attempt.
+3. **Discuss (2 min).** Ask what separates software from a software product, and a single feature from a feature set. Then ask where bloat and a single-purpose utility sit on the map, and why both point at Feature Set.
+
+**Misconceptions to watch for:** software and a software product are the same thing; a feature set is the same as a feature; a version is the same as a release cycle.
 
 ## Specification
 

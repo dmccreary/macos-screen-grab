@@ -1,18 +1,36 @@
 ---
 title: "ScreenGrab Grab Flow Test Coverage"
 description: "The learner will distinguish the steps of a ScreenGrab grab that an automated test can confirm from the steps that only a person can confirm, by marking all 7 steps and matching the Content table on at least 6 of 7."
-status: scaffold
+status: built
+hide:
+  - toc
 library: Mermaid
 bloom_level: Analyze
 ---
 
 # ScreenGrab Grab Flow Test Coverage
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="690" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** click any of the seven steps of a grab to read what happens. The label on each arrow says what that step hands to the next one.
+- **Judge:** for each step, choose *Automated can confirm* or *Only a person can confirm*. You get one attempt per step, in any order.
+- **Read the feedback:** each judgment shows the answer and the reason. Answered steps turn green when you matched and red when you did not.
+- **Score:** after the seventh judgment the panel shows *Matched: n of 7*, with *Mastery* at 6 or more. The fills switch to show the answer: orange steps need a person, blue steps can be automated. The badges still show which ones you matched. Press **Reset** to start again.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 12 minutes.
+
+1. **Predict (2 min).** Ask learners whether a test suite that covers most steps of a grab proves the whole grab works.
+2. **Judge (6 min).** Learners judge all seven steps. Mastery is 6 of 7.
+3. **Look at the pattern (2 min).** After scoring, the orange steps are the first, fourth, and last. Automation covers the middle of the chain, not its two ends or the real capture.
+4. **Discuss (2 min).** Ask what a person must actually do to confirm steps 1, 4, and 7, and why the hotkey test does not cover the real key press.
+
+**Misconceptions to watch for:** if most steps are automated, the whole flow is verified; the key press itself is covered by the hotkey tests.
 
 ## Specification
 

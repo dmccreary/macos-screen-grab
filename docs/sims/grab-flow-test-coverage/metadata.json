@@ -15,9 +15,11 @@
   "library": "Mermaid",
   "bloomLevel": "Analyze",
   "bloomVerb": "distinguish",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 12,
   "chapter_title": "Software Testing: Automated and Manual",
   "chapter_dir": "12-software-testing",
-  "chapter_rel_dir": "chapters/12-software-testing"
+  "chapter_rel_dir": "chapters/12-software-testing",
+  "library_version": "mermaid 11.4.1",
+  "iframe_height": 690
 }

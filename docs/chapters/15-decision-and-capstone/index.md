@@ -89,6 +89,10 @@ Check your arithmetic with the calculator before moving on.
 
 #### Diagram: Subscribe or Generate Cost Calculator
 
+<iframe src="../../sims/subscribe-or-generate-cost-calculator/main.html" height="750px" width="100%" scrolling="no"></iframe>
+
+[Run the Subscribe or Generate Cost Calculator MicroSim Fullscreen](../../sims/subscribe-or-generate-cost-calculator/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Subscribe or Generate Cost Calculator</summary>
 Type: microsim
@@ -186,6 +190,10 @@ Scores run from 1 (poor) to 5 (good), and weights from 1 (minor) to 5 (critical)
 Subscribe: \( 5 \times 2 + 4 \times 2 + 3 \times 5 + 3 \times 5 + 2 \times 4 = 56 \). Generate: \( 5 \times 5 + 4 \times 5 + 3 \times 2 + 3 \times 2 + 2 \times 3 = 63 \). Generating leads by 7 points. A margin that small deserves a robustness check, which is what the sim below does.
 
 #### Diagram: Weighted Decision Matrix Explorer
+
+<iframe src="../../sims/weighted-decision-matrix-explorer/main.html" height="722px" width="100%" scrolling="no"></iframe>
+
+[Run the Weighted Decision Matrix Explorer MicroSim Fullscreen](../../sims/weighted-decision-matrix-explorer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Weighted Decision Matrix Explorer</summary>

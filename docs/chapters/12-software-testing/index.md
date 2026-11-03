@@ -213,6 +213,10 @@ ScreenGrab's smoke checks run against the installed app and trigger no permissio
 
 Now you have the vocabulary. Try classifying twelve real ScreenGrab behaviors.
 
+<iframe src="../../sims/which-test-can-confirm-this/main.html" height="600px" width="100%" scrolling="no"></iframe>
+
+[Run the Which Test Can Confirm This MicroSim Fullscreen](../../sims/which-test-can-confirm-this/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Which Test Can Confirm This</summary>
 Type: microsim
@@ -272,6 +276,10 @@ The four kinds of test: Unit test, Integration test, Smoke test, Manual acceptan
 #### Diagram: ScreenGrab Grab Flow Test Coverage
 
 The sorter classifies single behaviors. This second diagram follows one whole grab from key press to paste and shows where each kind of check applies.
+
+<iframe src="../../sims/grab-flow-test-coverage/main.html" height="690px" width="100%" scrolling="no"></iframe>
+
+[Run the ScreenGrab Grab Flow Test Coverage MicroSim Fullscreen](../../sims/grab-flow-test-coverage/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>ScreenGrab Grab Flow Test Coverage</summary>

@@ -12,7 +12,7 @@ hide:
 # ScreenGrab: Software Bloat and the Generated Alternative
 
 <figure markdown>
-  ![ScreenGrab: Software Bloat and the Generated Alternative. Cover image of Pinch the hermit crab surrounded by a crowded toolbar, a price tag rising from $9 to $30 per year, a 95% and 5% usage bar, a screen region selection, a prompt turning into Swift code, and a $14 cost gauge on an indigo background](./img/cover.png){ width="100%" }
+  ![ScreenGrab: Software Bloat and the Generated Alternative. Cover image of Pinch the hermit crab surrounded by a crowded toolbar, a price tag rising from $9 to $30 per year, an 80% and 20% usage bar, a screen region selection, a prompt turning into Swift code, and a $14 cost gauge on an indigo background](./img/cover.png){ width="100%" }
 </figure>
 
 **A $9 screen grab tool became a $30-per-year subscription. A custom replacement took about $14 of AI work.**

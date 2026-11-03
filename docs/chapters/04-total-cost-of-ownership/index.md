@@ -167,6 +167,10 @@ The calculator below lets you set the inputs for each path and read off the TCO.
 
 #### Diagram: Total Cost of Ownership Calculator
 
+<iframe src="../../sims/tco-calculator/main.html" height="678px" width="100%" scrolling="no"></iframe>
+
+[Run the Total Cost of Ownership Calculator MicroSim Fullscreen](../../sims/tco-calculator/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Total Cost of Ownership Calculator</summary>
 Type: microsim
@@ -238,6 +242,10 @@ Challenge cases, in this order:
 The calculator shows what each path costs in total. The chart below shows when the paths cross, which is the break-even point. The most important input here is the maintenance time of the generated tool, because it decides whether the generated tool is ever cheaper.
 
 #### Diagram: Break-Even Chart for a Generated Tool
+
+<iframe src="../../sims/tco-break-even-chart/main.html" height="635px" width="100%" scrolling="no"></iframe>
+
+[Run the Break-Even Chart for a Generated Tool MicroSim Fullscreen](../../sims/tco-break-even-chart/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Break-Even Chart for a Generated Tool</summary>

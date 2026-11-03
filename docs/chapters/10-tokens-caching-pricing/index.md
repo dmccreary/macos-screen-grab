@@ -76,6 +76,10 @@ Try the estimate yourself before the sim reveals the answers.
 
 #### Diagram: Token Split Explorer
 
+<iframe src="../../sims/token-split-explorer/main.html" height="662px" width="100%" scrolling="no"></iframe>
+
+[Run the Token Split Explorer MicroSim Fullscreen](../../sims/token-split-explorer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Token Split Explorer</summary>
 Type: microsim
@@ -256,6 +260,10 @@ The ScreenGrab session had 325,000 output tokens, 825,000 other new tokens (1.15
 The next sim lets you change the context size and number of turns and see how the totals move.
 
 #### Diagram: Prompt Cache Cost Calculator
+
+<iframe src="../../sims/prompt-cache-cost-calculator/main.html" height="622px" width="100%" scrolling="no"></iframe>
+
+[Run the Prompt Cache Cost Calculator MicroSim Fullscreen](../../sims/prompt-cache-cost-calculator/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Prompt Cache Cost Calculator</summary>

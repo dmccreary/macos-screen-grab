@@ -83,6 +83,9 @@ html, body {
 .feedback.ok { background: #dcfce7; color: #14532d; }
 .feedback.bad { background: #fee2e2; color: #7f1d1d; }
 
+.note { background: #fef9c3; border: 1px solid #ca8a04; border-radius: 6px; padding: 8px 10px; font-size: 15px; line-height: 1.4; color: #422006; }
+.note[hidden] { display: none; }
+
 .footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 #score { font-size: 15px; font-weight: bold; color: #1f2937; }
 #reset {

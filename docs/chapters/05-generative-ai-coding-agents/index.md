@@ -179,6 +179,10 @@ The loop is the key idea. An agent receives a request, works out a plan, takes a
 
 #### Diagram: AI Coding Agent Loop Stepper
 
+<iframe src="../../sims/ai-coding-agent-loop-stepper/main.html" height="664px" width="100%" scrolling="no"></iframe>
+
+[Run the AI Coding Agent Loop Stepper MicroSim Fullscreen](../../sims/ai-coding-agent-loop-stepper/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>AI Coding Agent Loop Stepper</summary>
 Type: microsim
@@ -351,6 +355,10 @@ A worked example: an agent writes a delay feature and reports, "Delayed capture 
 The following MicroSim lets you practice the habit this chapter recommends: separating what an agent claims from what it showed. Each claim in a short report comes with the evidence the agent provided, and you decide whether the claim is supported.
 
 #### Diagram: Claim and Evidence Checker
+
+<iframe src="../../sims/agent-claim-evidence-checker/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Claim and Evidence Checker MicroSim Fullscreen](../../sims/agent-claim-evidence-checker/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Claim and Evidence Checker</summary>

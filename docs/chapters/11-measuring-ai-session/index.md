@@ -120,6 +120,10 @@ Use the next sim to check your own arithmetic against these rows and then try di
 
 #### Diagram: Session Cost Estimator
 
+<iframe src="../../sims/session-cost-estimator/main.html" height="694px" width="100%" scrolling="no"></iframe>
+
+[Run the Session Cost Estimator MicroSim Fullscreen](../../sims/session-cost-estimator/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Session Cost Estimator</summary>
 Type: microsim
@@ -222,6 +226,10 @@ Cache reads are 94% of the tokens but only 26% of the cost. Output is under 2% o
 Try the comparison yourself before the chart reveals it.
 
 #### Diagram: Token Share Versus Cost Share Chart
+
+<iframe src="../../sims/token-share-versus-cost-share/main.html" height="695px" width="100%" scrolling="no"></iframe>
+
+[Run the Token Share Versus Cost Share Chart MicroSim Fullscreen](../../sims/token-share-versus-cost-share/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Token Share Versus Cost Share Chart</summary>

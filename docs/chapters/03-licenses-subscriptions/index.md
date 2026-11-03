@@ -175,6 +175,10 @@ The two sorting dimensions, how often the money is paid and what is counted, com
 
 #### Diagram: License Offer Sorter
 
+<iframe src="../../sims/licenses-offer-sorter/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the License Offer Sorter MicroSim Fullscreen](../../sims/licenses-offer-sorter/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>License Offer Sorter</summary>
 Type: microsim
@@ -242,6 +246,10 @@ Pricing models differ in who gets the money and when, and that determines what a
 The explorer below lists eight vendor decisions and asks you to predict which pricing model makes each one more likely. There is no trick here. The goal is to see that the incentive follows from the way the money flows.
 
 #### Diagram: Vendor Incentive Explorer
+
+<iframe src="../../sims/licenses-vendor-incentive-explorer/main.html" height="592px" width="100%" scrolling="no"></iframe>
+
+[Run the Vendor Incentive Explorer MicroSim Fullscreen](../../sims/licenses-vendor-incentive-explorer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Vendor Incentive Explorer</summary>
@@ -331,6 +339,10 @@ A worked example shows the calculation. Suppose a user has 200 files in a vendor
 The calculator below lets you change the inputs and compute the years needed to recover a switching cost. It also includes the open-format case, where the conversion cost is zero.
 
 #### Diagram: Switching Cost Calculator
+
+<iframe src="../../sims/licenses-switching-cost-calculator/main.html" height="668px" width="100%" scrolling="no"></iframe>
+
+[Run the Switching Cost Calculator MicroSim Fullscreen](../../sims/licenses-switching-cost-calculator/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Switching Cost Calculator</summary>
