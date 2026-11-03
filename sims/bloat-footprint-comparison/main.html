@@ -1,136 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>Resource Footprint Comparison</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Footprint Comparison</title>
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .rank-row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+    .rank-row label { display: flex; align-items: center; gap: 6px; }
+    .rank-row select { min-width: 230px; }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Resource Footprint Comparison</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> bloat-footprint-comparison</p>
-            <p><strong>Library:</strong> Chart.js</p>
-            <p><strong>Bloom Level:</strong> Analyze</p>
-            <p><strong>Learning Objective:</strong> The learner will compare the resource footprint of an illustrative full-featured product and an illustrative single-purpose utility on three measures, correctly ranking which measure differs most between them.</p>
-        </div>
+  <header>
+    <h1>Resource Footprint Comparison</h1>
+    <span class="badge">Illustrative values, not measurements of any real product</span>
+  </header>
+
+  <p class="prompt">Which measure differs most between the two programs?</p>
+
+  <div class="panel">
+    <p style="font-size:15px;margin-bottom:6px;">Rank the three measures by the ratio <em>full-featured product ÷ single-purpose utility</em>, largest first.</p>
+    <div class="rank-row">
+      <label>1st (largest ratio) <select id="rank0"></select></label>
+      <label>2nd <select id="rank1"></select></label>
+      <label>3rd (smallest ratio) <select id="rank2"></select></label>
     </div>
+    <div class="row" style="margin-top:8px;">
+      <button id="reveal-btn" disabled>Reveal</button>
+      <button id="restart-btn" class="secondary hidden">Start over</button>
+      <span class="score" id="score">One attempt</span>
+    </div>
+  </div>
 
-    <!--
-    SPECIFICATION (from chapter index.md):
+  <div class="feedback" id="feedback">Choose a different measure for each place, then press Reveal.</div>
 
-    Type: chart
-    **sim-id:** bloat-footprint-comparison<br/>
-    **Library:** Chart.js<br/>
-    **Status:** Specified<br/>
-    **Bloom Level:** Analyze<br/>
-    **Bloom Verb:** compare<br/>
-    **Learning Objective:** The learner will compare the resource footprint of an illustrative full-featured product and an illustrative single-purpose utility on three measures, correctly ranking which measure differs most between them.
-    
-    **Prerequisites:** resource footprint, install size, idle resource use, single-purpose utility (defined in the chapter section "Resource Footprint" above).
-    
-    **Evidence of Mastery:** Before the values are revealed, the learner ranks the three measures from the largest to the smallest ratio between the two programs. The ranking is correct when it equals install size, idle memory, background helper processes. Mastery is a correct ranking in one attempt. Hovering bars after the reveal is exploration.
-    
-    **Misconceptions:** (1) A smaller program is smaller by the same factor on every measure. (2) Install size is the only footprint that matters.
-    
-    **Instructional Rationale:** Predicting a ranking before the reveal forces the learner to reason about why storage differs more than running cost, which is comparison rather than reading numbers off a chart.
-    
-    **Content:**
-    
-    All values are illustrative and the sim labels them illustrative.
-    
-    | Measure | Unit | Full-featured product | Single-purpose utility | Ratio | Why the ratio is what it is (shown on hover) |
-    |---|---|---|---|---|---|
-    | Install size | MB | 1200 | 15 | 80 | Storage holds every feature, used or not. |
-    | Idle memory | MB | 450 | 30 | 15 | Both programs must keep something running to catch a hotkey, so the gap is smaller than for storage. |
-    | Background helper processes | count | 3 | 1 | 3 | Both need one helper for the hotkey. The full product adds an update checker and a sync agent. |
-    
-    Ratio = full-featured value divided by single-purpose value.
-    
-    **Provenance:** Illustrative numbers invented for this chapter. They are not measurements of any real product.
-    
-    **Rules:** The ratio for each measure is the full-featured value divided by the utility value. Measures are ranked from the largest ratio to the smallest. Ties, if the values were changed, keep the table order.
-    
-    **Learner Activity:**
-    
-    1. The learner sees the three measure names with the values hidden and orders them from largest to smallest ratio.
-    2. The learner presses Reveal and sees the grouped bars and the ratios.
-    3. The learner hovers over a bar and reads the Why text for that measure.
-    4. The learner should notice that the largest ratio belongs to the measure that costs the user the least each day.
-    
-    **Feedback:** One attempt at the ranking. Correct: "Correct: storage differs most, helpers least." Incorrect: the correct order is shown with the Why text for the measure the learner placed wrongly. The reveal always happens after the ranking.
-    
-    **Starting State:** Three measure names are shown with no values. The question on screen is "Which measure differs most between the two programs?"
-    
-    **Chapter Anchors:** The chapter states the six illustrative values 1,200 and 15 MB, 450 and 30 MB, 3 and 1 helpers, and the ratios 80, 15 and 3 times.
-    -->
+  <div class="chart-box" style="height:330px;">
+    <canvas id="chart" aria-label="Grouped bar chart of install size, idle memory, and background helper processes for both programs"></canvas>
+    <div class="chart-placeholder" id="placeholder">The values stay hidden until you commit to a ranking.</div>
+  </div>
+
+  <script src="bloat-footprint-comparison.js"></script>
 </body>
 </html>

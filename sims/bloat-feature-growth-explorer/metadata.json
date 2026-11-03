@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Apply",
   "bloomVerb": "calculate",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 1,
   "chapter_title": "Software Features and the Anatomy of Bloat",
   "chapter_dir": "01-software-bloat",
-  "chapter_rel_dir": "chapters/01-software-bloat"
+  "chapter_rel_dir": "chapters/01-software-bloat",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }

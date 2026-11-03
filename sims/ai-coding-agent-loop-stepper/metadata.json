@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Understand",
   "bloomVerb": "explain",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 5,
   "chapter_title": "Generative AI and Coding Agents",
   "chapter_dir": "05-generative-ai-coding-agents",
-  "chapter_rel_dir": "chapters/05-generative-ai-coding-agents"
+  "chapter_rel_dir": "chapters/05-generative-ai-coding-agents",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }

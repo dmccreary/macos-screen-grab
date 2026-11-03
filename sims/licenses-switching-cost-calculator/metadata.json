@@ -15,9 +15,27 @@
   "library": "p5.js",
   "bloomLevel": "Apply",
   "bloomVerb": "calculate",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 3,
   "chapter_title": "Licenses, Subscriptions, and Vendor Incentives",
   "chapter_dir": "03-licenses-subscriptions",
-  "chapter_rel_dir": "chapters/03-licenses-subscriptions"
+  "chapter_rel_dir": "chapters/03-licenses-subscriptions",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ],
+  "canvasHeight": 666,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will calculate the years needed to recover a switching cost from the annual fee saved, to within 0.1 years, for 3 challenge cases.",
+    "bloomLevel": "Apply"
+  },
+  "pedagogical": {
+    "interactionType": "Calculate and explore",
+    "estimatedTime": "15 minutes"
+  }
 }

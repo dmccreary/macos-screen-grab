@@ -16,7 +16,7 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 15,Power Users,13,BLOAT
 16,Casual Users,13,BLOAT
 17,Long Tail Of Features,13|4,BLOAT
-18,95/5 Rule Of Thumb,19|17|15|16,BLOAT
+18,80% Rule Of Thumb,19|17|15|16,BLOAT
 19,Pareto Principle,,BLOAT
 20,Unused Features,18|7,BLOAT
 21,Feature Discoverability,4|22,BLOAT

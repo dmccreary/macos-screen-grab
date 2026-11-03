@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Evaluate",
   "bloomVerb": "assess",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 7,
   "chapter_title": "Requirements and Minimal Specifications",
   "chapter_dir": "07-requirements-minimal-specs",
-  "chapter_rel_dir": "chapters/07-requirements-minimal-specs"
+  "chapter_rel_dir": "chapters/07-requirements-minimal-specs",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }

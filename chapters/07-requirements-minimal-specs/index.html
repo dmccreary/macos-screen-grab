@@ -472,7 +472,7 @@
       
   
   <span class="md-ellipsis">
-    2. Feature Usage and the 95/5 Rule
+    2. Feature Usage and the 80% Rule
   </span>
   
 
@@ -2013,7 +2013,7 @@
 <p>This chapter builds on concepts from:</p>
 <ul>
 <li><a href="../01-software-bloat/">Chapter 1: Software Features and the Anatomy of Bloat</a></li>
-<li><a href="../02-feature-usage/">Chapter 2: Feature Usage and the 95/5 Rule</a></li>
+<li><a href="../02-feature-usage/">Chapter 2: Feature Usage and the 80% Rule</a></li>
 <li><a href="../05-generative-ai-coding-agents/">Chapter 5: Generative AI and Coding Agents</a></li>
 </ul>
 <hr />
@@ -2314,7 +2314,7 @@ Words like "fast," "simple," and "secure" feel like requirements but carry none,
 <li>The tool will not save captures to files or upload them anywhere.</li>
 <li>The tool will not record video.</li>
 </ol>
-<p>Each of these cuts directly against the typical commercial feature list in the table at the start of the chapter. This is the 95/5 rule from Chapter 2 put to use: the features most users never open are the ones to name as non-goals.</p>
+<p>Each of these cuts directly against the typical commercial feature list in the table at the start of the chapter. This is the 80% rule from Chapter 2 put to use: the features most users never open are the ones to name as non-goals.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Write the 'No' Lines First</p>
 <p><img alt="Pinch giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
@@ -2643,7 +2643,7 @@ Before you list a single feature, write three or four non-goals for the features
 </table>
 <h3 id="minimal-specification">Minimal Specification<a class="headerlink" href="#minimal-specification" title="Permanent link">&para;</a></h3>
 <p>A <strong>minimal specification</strong> is a software specification that includes only what the user needs and states what is left out. It is short by design, because every line in it creates work for the agent and every omission removes work. It is not a vague specification: a minimal specification is exact about the few things it contains, and just as exact about the things it excludes.</p>
-<p>The case study shows how this pays. The generated app came to about 2,000 lines of Swift in 19 files. A more generous specification would have produced more code, more tests, and more places for bugs. Chapter 2's 95/5 rule predicted this: if 95% of users use only 5% of the features, a tool built for one user's 5% can be a small fraction of the size.</p>
+<p>The case study shows how this pays. The generated app came to about 2,000 lines of Swift in 19 files. A more generous specification would have produced more code, more tests, and more places for bugs. Chapter 2's 80% rule predicted this: if about 80% of a product's features are rarely or never used, a tool built for only the features one user needs can be a small fraction of the size.</p>
 <p>Here is a complete minimal specification for a ScreenGrab-style tool, short enough to read in a minute. It is illustrative of the form; the precise numbers marked "illustrative" are examples of how to state a limit.</p>
 <table>
 <thead>

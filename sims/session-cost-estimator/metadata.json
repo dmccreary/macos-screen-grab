@@ -15,9 +15,27 @@
   "library": "p5.js",
   "bloomLevel": "Apply",
   "bloomVerb": "calculate",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 11,
   "chapter_title": "Measuring an AI Session: Time and Cost",
   "chapter_dir": "11-measuring-ai-session",
-  "chapter_rel_dir": "chapters/11-measuring-ai-session"
+  "chapter_rel_dir": "chapters/11-measuring-ai-session",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ],
+  "canvasHeight": 692,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will calculate the estimated API cost of each of the three ScreenGrab session stages from its token counts and the stated prices, to within $0.02.",
+    "bloomLevel": "Apply"
+  },
+  "pedagogical": {
+    "interactionType": "Calculate then explore",
+    "estimatedTime": "15 minutes"
+  }
 }

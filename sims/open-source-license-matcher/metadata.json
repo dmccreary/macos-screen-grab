@@ -15,9 +15,27 @@
   "library": "p5.js",
   "bloomLevel": "Apply",
   "bloomVerb": "apply",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 14,
   "chapter_title": "Maintenance and Open Source Sharing",
   "chapter_dir": "14-maintenance-open-source",
-  "chapter_rel_dir": "chapters/14-maintenance-open-source"
+  "chapter_rel_dir": "chapters/14-maintenance-open-source",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ],
+  "canvasHeight": 573,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will apply the conditions of five license choices to choose the license that fits each of eight scenarios, with at least 7 of 8 correct on the first attempt.",
+    "bloomLevel": "Apply"
+  },
+  "pedagogical": {
+    "interactionType": "Single-category matching with feedback",
+    "estimatedTime": "15 minutes"
+  }
 }

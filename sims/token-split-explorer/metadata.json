@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Understand",
   "bloomVerb": "compare",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 10,
   "chapter_title": "Tokens, Prompt Caching, and Token Pricing",
   "chapter_dir": "10-tokens-caching-pricing",
-  "chapter_rel_dir": "chapters/10-tokens-caching-pricing"
+  "chapter_rel_dir": "chapters/10-tokens-caching-pricing",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }

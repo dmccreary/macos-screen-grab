@@ -15,9 +15,27 @@
   "library": "p5.js",
   "bloomLevel": "Understand",
   "bloomVerb": "classify",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 3,
   "chapter_title": "Licenses, Subscriptions, and Vendor Incentives",
   "chapter_dir": "03-licenses-subscriptions",
-  "chapter_rel_dir": "chapters/03-licenses-subscriptions"
+  "chapter_rel_dir": "chapters/03-licenses-subscriptions",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ],
+  "canvasHeight": 546,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will classify six described software offers by when payment is made (one time or recurring) and by what is counted (per computer or per user), getting both answers right for at least 5 of 6 offers.",
+    "bloomLevel": "Understand"
+  },
+  "pedagogical": {
+    "interactionType": "Two-dimension sort with feedback",
+    "estimatedTime": "10 minutes"
+  }
 }

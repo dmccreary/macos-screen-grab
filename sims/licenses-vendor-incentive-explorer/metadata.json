@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Analyze",
   "bloomVerb": "attribute",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 3,
   "chapter_title": "Licenses, Subscriptions, and Vendor Incentives",
   "chapter_dir": "03-licenses-subscriptions",
-  "chapter_rel_dir": "chapters/03-licenses-subscriptions"
+  "chapter_rel_dir": "chapters/03-licenses-subscriptions",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }

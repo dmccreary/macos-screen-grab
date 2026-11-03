@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Evaluate",
   "bloomVerb": "judge",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 15,
   "chapter_title": "The Final Decision and the Capstone Project",
   "chapter_dir": "15-decision-and-capstone",
-  "chapter_rel_dir": "chapters/15-decision-and-capstone"
+  "chapter_rel_dir": "chapters/15-decision-and-capstone",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }
