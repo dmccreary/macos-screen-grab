@@ -333,6 +333,31 @@ A worked example shows the mechanism. A screen grab tool begins as "grab a regio
     ![Pinch warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
     Feature creep hides because each step looks small. Write the product's one-sentence purpose down first, and test every proposed addition against it: if the sentence has to change, say so out loud.
 
+Feature creep is not only a string of small decisions. It is driven by feedback loops, in which a rise in the feature count causes changes that come back around and raise it again. A *causal loop diagram* draws those loops. In the diagram below, each arrow is a causal link: a **+** means the two variables move in the same direction, and a **−** means they move in opposite directions. A loop with an even number of **−** links is *reinforcing* (R) and amplifies growth. A loop with an odd number is *balancing* (B) and resists it. Press each loop button and trace a rise in Feature Count around the loop. As you go, notice which of the balancing loops are slow, weak, or felt by someone other than the team that adds the features.
+
+#### Diagram: Feature Count Causal Loop Diagram
+
+<iframe src="../../sims/feature-count-causal-loop/main.html" height="764px" width="100%" scrolling="no"></iframe>
+
+[Run the Feature Count Causal Loop Diagram MicroSim Fullscreen](../../sims/feature-count-causal-loop/main.html){ .md-button .md-button--primary }
+
+<details markdown="1">
+<summary>Feature Count Causal Loop Diagram</summary>
+Type: causal-loop-diagram
+**sim-id:** feature-count-causal-loop<br/>
+**Library:** vis-network<br/>
+**Status:** Built<br/>
+**Bloom Level:** Analyze<br/>
+**Bloom Verb:** trace<br/>
+**Learning Objective:** The learner will analyze the causal loop diagram of software bloat by tracing each reinforcing and balancing loop through Feature Count and explaining, from the edge polarities, why each loop amplifies or limits feature growth.
+
+**Content:** Feature Count is the central stock. Three reinforcing loops: R1 Feature Checklist Sales, R2 Competitive Feature Race, R3 Niche Requests. Four balancing loops: B1 Complexity Drag, B2 Clutter Dissatisfaction, B3 Exit to Lean Alternatives, B4 Feature Pruning. The variables, links, and loops are stored in `feature-count-cld.json`.
+
+**Learner Activity:** The learner presses a loop button. The loop stays bright while the rest of the diagram fades, and the panel traces a rise in Feature Count link by link and states whether it returns as a rise (reinforcing) or a fall (balancing). Clicking a box, arrow, or R/B marker shows its description.
+
+**Authoring:** Adding `?edit=true` to the URL unlocks dragging of nodes and R/B markers, adds edge-curve tools, and exports the updated JSON.
+</details>
+
 **Bloatware** is software that has become noticeably bloated, or software bundled onto a device that most users never asked for and cannot easily remove. In everyday use, it names the symptom, a product so large and slow that the size is the main thing people notice. Chapters later in this book use "bloat" for the growth itself and "bloatware" for the resulting product.
 
 ## The Job To Be Done
