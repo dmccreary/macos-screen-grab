@@ -154,8 +154,10 @@ nav:
       - Design: design.md
 
   - Appendices:
+      - Overview: appendices/index.md
       - Snagit Pricing, November 2026: appendices/snagit-pricing-2026-11.md
       - Snagit Price History, 2010–2026: appendices/snagit-prices-history.md
+      - macOS API Disruption Risk: appendices/macos-api-disruption-risk.md
 
   - FAQ: faq.md
   - Glossary: glossary.md
