@@ -5,7 +5,7 @@ This textbook is organized into 15 chapters covering 206 concepts.
 ## Chapter Overview
 
 1. [Software Features and the Anatomy of Bloat](01-software-bloat/index.md) - Defines software, features, versions, and release cycles, then shows how bloat, feature creep, and growing resource footprints arise, contrasted with the single-purpose utility.
-2. [Feature Usage and the 95/5 Rule](02-feature-usage/index.md) - Examines how people actually use software, covering power and casual users, the long tail of features, interface complexity, and the roadmap pressures that keep adding features.
+2. [Feature Usage and the 80% Rule](02-feature-usage/index.md) - Examines how people actually use software, covering power and casual users, the long tail of features, interface complexity, and the roadmap pressures that keep adding features.
 3. [Licenses, Subscriptions, and Vendor Incentives](03-licenses-subscriptions/index.md) - Compares one-time licenses with subscriptions, starting from copyright, and explains how recurring revenue, switching costs, and lock-in change what vendors choose to build and charge.
 4. [Total Cost of Ownership](04-total-cost-of-ownership/index.md) - Teaches readers to calculate per-computer and multi-year costs, break-even points, and the hidden maintenance, learning, and opportunity costs behind a software choice.
 5. [Generative AI and Coding Agents](05-generative-ai-coding-agents/index.md) - Introduces generative AI, source code, and coding agents such as Claude Code, covering prompts, sessions, permissions, human review, hallucination, and overconfident reporting.

@@ -1,18 +1,37 @@
 ---
 title: "Feature Growth and Usage Explorer"
 description: "The learner will calculate the percentage of an illustrative product's features that a given user never uses, for a given version, to within 1 percentage point."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
 
 # Feature Growth and Usage Explorer
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="602" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** move the **Version** slider and pick a **User** type. The grid shows every feature in that version, with the ones this user needs in green. The panel shows F(v), the features used, and the used and unused shares. The chart tracks the unused share for all three user types across versions 1 to 10.
+- **Challenge:** press **Start Challenges**. Each of three challenges names a user type and a version. Type the unused percentage as a whole number and press **Check**. An answer within 1 point of the model value is correct. You get two attempts, and a hint comes after the first miss. Mastery is 3 of 3.
+- All numbers are illustrative. No real product is measured.
+
+## Lesson Plan
+
+**Grade level:** Adult continuing education and professional development. **Time:** 15 minutes.
+
+1. **Predict (2 min).** Before anyone touches the sim, ask: "If a product grows from 6 to 42 features, does the Author get more value?" Collect a few answers.
+2. **Explore (5 min).** Learners move the slider from version 1 to version 10 for each user type and read the unused share. They note the version where the Power user first leaves features unused (version 5).
+3. **Challenge (5 min).** Learners complete the three challenges by hand: compute F(v), then Used, then the unused percentage. They should write down the steps, not just the answer.
+4. **Discuss (3 min).** Ask why the Author's line rises so fast while the Power user's rises slowly. Connect the answer to the chapter's point that bloat is measured from the user's side, not the vendor's.
+
+**Misconceptions to watch for:**
+
+- A product that adds features gives every user more value. The Author gets the same 2 features at every version while the unused share climbs to 95%.
+- The share of unused features stays the same as the product grows. The chart shows it rising with every version for every user type.
+- Learners who divide used by total report the used share instead of the unused share. Point them to the subtraction step in the formula.
 
 ## Specification
 

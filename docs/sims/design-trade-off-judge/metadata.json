@@ -15,9 +15,17 @@
   "library": "p5.js",
   "bloomLevel": "Evaluate",
   "bloomVerb": "judge",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 8,
   "chapter_title": "Software Design and Platform Constraints",
   "chapter_dir": "08-software-design-platform",
-  "chapter_rel_dir": "chapters/08-software-design-platform"
+  "chapter_rel_dir": "chapters/08-software-design-platform",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ]
 }

@@ -1,0 +1,119 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { overflow: hidden; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  background: aliceblue;
+  color: #1a1a1a;
+  padding: 10px 12px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 6px;
+}
+
+h1 { font-size: 22px; color: #1a3a6c; }
+
+.badge {
+  display: inline-block;
+  background: #fff4d6;
+  border: 1px solid #c79a1e;
+  color: #5c4300;
+  border-radius: 12px;
+  padding: 1px 10px;
+  font-size: 14px;
+}
+
+.prompt {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 8px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #c9d6e3;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+label { font-size: 15px; }
+
+select, input[type="number"] {
+  font-size: 15px;
+  padding: 4px 6px;
+  border: 1px solid #8a9bb0;
+  border-radius: 6px;
+  background: white;
+}
+
+input[type="number"] { width: 90px; }
+
+button {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 2px solid #1a3a6c;
+  background: #1a3a6c;
+  color: white;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { background: #24508f; }
+button:disabled { opacity: 0.45; cursor: default; }
+button.secondary { background: white; color: #1a3a6c; }
+button.secondary:hover:not(:disabled) { background: #e8f0fa; }
+button.toggle.active { background: #1a3a6c; color: white; }
+
+.feedback {
+  font-size: 15px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #eef3f8;
+}
+.feedback.good { background: #e3f3e6; border-left: 5px solid #1e7a3a; }
+.feedback.bad  { background: #fbe9e6; border-left: 5px solid #b03a2e; }
+.feedback p + p { margin-top: 4px; }
+
+.score { font-size: 15px; font-weight: 600; margin-left: auto; }
+
+.chart-box {
+  position: relative;
+  width: 100%;
+  background: white;
+  border: 1px solid #c9d6e3;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.chart-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #4a5a6c;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.note { font-size: 14px; color: #44505c; margin-top: 6px; }
+.hidden { display: none !important; }

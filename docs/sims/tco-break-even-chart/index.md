@@ -1,18 +1,35 @@
 ---
 title: "Break-Even Chart for a Generated Tool"
 description: "The learner will calculate the break-even time between a paid subscription and a generated tool, to within 0.1 year, for 3 values of the generated tool's yearly maintenance time."
-status: scaffold
+status: built
 library: Chart.js
 bloom_level: Apply
 ---
 
 # Break-Even Chart for a Generated Tool
 
+Two cumulative cost lines start at their upfront costs and climb at their yearly costs. Where they cross is the break-even point, and that point moves a lot when one input, the generated tool's yearly maintenance time, changes.
 
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="635" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** drag the **maintenance** slider (0 to 4 hours per year, steps of 0.5). The generated tool's line changes slope and the crossing point and break-even readout appear. Use **View** to zoom to years 0 to 2, where the early crossings are easier to see.
+- **Challenge:** press **Start challenges**. For each of three cases the sim sets the maintenance value and hides the crossing point. Type the break-even time in years and press **Check**. Answers within 0.1 year of the model value count. You get two attempts per case.
+- **Return to exploring:** after case 3, set the slider to 3 hours or more and watch the generated line stay above the subscription line: never cheaper.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 15 minutes.
+
+1. **Set up (3 min).** Walk through the two lines: the subscription starts at $40 and climbs $110 a year; the generated tool starts at $54 and climbs $40 for each hour of yearly maintenance. Ask where each number comes from.
+2. **Explore (3 min).** Learners drag the maintenance slider and describe what happens to the crossing point as maintenance grows.
+3. **Calculate (6 min).** Learners run the three challenges, computing (difference in upfront costs) ÷ (difference in yearly costs) by hand. Mastery is 3 of 3.
+4. **Discuss (3 min).** Learners set maintenance to 3 hours or more and see that the lines never cross. Ask what this says about any claim that a generated tool is always cheaper.
+
+**Misconceptions to watch for:** a generated tool is always cheaper than a subscription; break-even depends only on the purchase price; a break-even of 0.2 years means the tool is free after that (the lines keep climbing).
 
 ## Specification
 

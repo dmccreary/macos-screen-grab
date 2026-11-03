@@ -1,18 +1,34 @@
 ---
 title: "License Offer Sorter"
 description: "The learner will classify six described software offers by when payment is made (one time or recurring) and by what is counted (per computer or per user), getting both answers right for at least 5 of 6 offers."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Understand
 ---
 
 # License Offer Sorter
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="552" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read the offer.** Each offer card says how the price is paid and what it is tied to. All six offers and prices are illustrative.
+- **Choose twice.** Pick a payment pattern (**One time** or **Recurring**) and a counting unit (**Per computer** or **Per user**). You can change either choice until you press **Check**.
+- **Check.** Each choice is marked right or wrong, and the reason appears. You get one attempt per offer.
+- **Look up a term.** Tick **Show definitions** at any time to read the four terms. Reading them is not scored.
+- **Finish.** After offer 6 the sim shows your score out of 6 and the correct pair for every offer. Mastery is 5 of 6.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 10 minutes.
+
+1. **Warm up (2 min).** Ask learners how they paid for the last app they bought. Was it once, or every month? Was it for one machine or for them as a person?
+2. **Sort (5 min).** Learners work through the six offers alone. Encourage them to decide each dimension separately before pressing Check.
+3. **Discuss (3 min).** Compare offers 1 and 6, which are both one-time payments but count different things. Then compare offers 2 and 5, which are both recurring. Ask what the book's $30-per-computer-per-year fee costs for three computers ($90 per year).
+
+**Misconceptions to watch for:** a one-time price means the license is per computer; a subscription always counts users rather than machines.
 
 ## Specification
 

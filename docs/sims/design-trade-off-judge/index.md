@@ -1,18 +1,34 @@
 ---
 title: "Design Trade-Off Judge"
 description: "The learner will judge which of two options best serves a stated priority in each of 8 design decisions, with at least 6 correct."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---
 
 # Design Trade-Off Judge
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="520" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the decision, its stated priority (in orange), and the two options. All decisions are illustrative and based on the ScreenGrab design.
+- **Choose** **Option 1** or **Option 2**, then press **Confirm**. You get one attempt per decision.
+- **Check** the feedback. The better option is outlined in green, and the reason is shown under it.
+- **Continue** with **Next decision**. After decision 8 the score appears, with the priority behind each decision you missed. Mastery is 6 of 8.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 to 15 minutes.
+
+1. **Frame (2 min).** Point out that each decision states a priority. The better option is the one that serves that priority, not the one that sounds more impressive.
+2. **Judge (6 min).** Learners work through all eight decisions on their own.
+3. **Flip the priority (4 min).** Pick decision 7 and ask: if the tool had to run on Windows too, which option would win? Learners should see that the answer moves with the priority.
+4. **Connect (2 min).** Link decision 5 to the hotkey conflict section: Command-Shift-4 is a built-in macOS shortcut, so ScreenGrab uses Control-Shift-4.
+
+**Misconceptions to watch for:** a library is always better because it is less work; the option with the most features is the best design; a design decision has a right answer apart from the priority it serves.
 
 ## Specification
 

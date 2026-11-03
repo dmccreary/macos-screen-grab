@@ -1,18 +1,36 @@
 ---
 title: "Open Source License Matcher"
 description: "The learner will apply the conditions of five license choices to choose the license that fits each of eight scenarios, with at least 7 of 8 correct on the first attempt."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
 
 # Open Source License Matcher
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="579" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read the scenario.** Each card says what an author wants other people to be able to do with a piece of work.
+- **Choose a license.** Click one of the five choices. Your first click is your answer.
+- **Read the reason.** A correct answer shows the license and the reason. A wrong answer shows "Not quite" with the reason, and the correct button is outlined in green.
+- **Move on.** Press **Next**. An answered scenario cannot be changed.
+- **Review.** After scenario 8 the sim shows your first-attempt score and the eight scenarios grouped by license. Mastery is 7 of 8.
+
+This is an educational exercise, not legal advice.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 15 minutes.
+
+1. **Review the conditions (4 min).** Recap what MIT asks for, what copyleft requires, and what the BY, NC, and SA conditions each add.
+2. **Match (6 min).** Learners match the eight scenarios alone. Ask them to underline the words in each scenario that decide the license, such as "commercially" or "same terms".
+3. **Discuss (5 min).** Use the grouped table. Point out that the Creative Commons choices cover text and images and the other choices cover code. Ask why this book's text uses CC BY-NC-SA 4.0 while ScreenGrab's code uses MIT, and why a license with NC is generally not considered open source.
+
+**Misconceptions to watch for:** any Creative Commons license is also an open source license; a public repository with no license can be reused freely; copyleft and permissive licenses place the same conditions on reuse.
 
 ## Specification
 

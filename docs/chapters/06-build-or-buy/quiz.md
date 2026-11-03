@@ -86,7 +86,7 @@ Test your understanding of the buy, subscribe, and generate options, personal an
 </div>
 
 ??? question "Show Answer"
-    The correct answer is **A**. A bought product arrives with the vendor's full feature set, including the 95% of features most users never touch. A one-time license may not cover major new versions, and a vendor that depends on new sales has a reason to keep adding features so you upgrade. Some products have also stopped offering one-time purchases. Option B describes the subscribe option, and options C and D are false.
+    The correct answer is **A**. A bought product arrives with the vendor's full feature set, including the roughly 80% of features that are rarely or never used. A one-time license may not cover major new versions, and a vendor that depends on new sales has a reason to keep adding features so you upgrade. Some products have also stopped offering one-time purchases. Option B describes the subscribe option, and options C and D are false.
 
     **Concept Tested:** Buy Option
 

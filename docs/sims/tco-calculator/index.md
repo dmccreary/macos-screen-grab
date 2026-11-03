@@ -1,7 +1,7 @@
 ---
 title: "Total Cost of Ownership Calculator"
 description: "The learner will calculate the total cost of ownership of a software path over a chosen number of years, to within $1, for 3 challenge cases."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
@@ -10,9 +10,25 @@ bloom_level: Apply
 
 
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="678" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** pick a preset or move any of the seven sliders. Each cost item and the total update at once. The sim opens on the Generated tool preset, $254 over five years.
+- **Challenge:** press **Start challenges**. The sim sets the inputs for each of three cases and hides the costs. Type the total cost of ownership and press **Check** (or Enter). You get two attempts per case, and an answer within $1 counts. Mastery is 3 of 3.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 15 minutes.
+
+1. **Predict (2 min).** Before touching anything, ask learners which preset is cheapest over five years on three computers, and why.
+2. **Explore (4 min).** Learners step through the three presets and read each cost item. The original one-time license costs $9; the subscription costs $590 even though it has no purchase price.
+3. **Challenge (6 min).** Learners run the three cases. A miss after two attempts shows the itemized sum.
+4. **Discuss (3 min).** Return to the Generated tool preset. Move maintenance time from 1 to 2 hours a year, then move the build cost from $14 to $28. Which one moved the total more, and why?
+
+**Misconceptions to watch for:** the purchase price is the cost of owning a tool; a tool with no fee after purchase has no ownership cost; time spent on setup or upkeep is free.
 
 ## Specification
 

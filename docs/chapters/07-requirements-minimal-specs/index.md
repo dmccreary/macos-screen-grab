@@ -41,7 +41,7 @@ This chapter covers the following 17 concepts from the learning graph:
 This chapter builds on concepts from:
 
 - [Chapter 1: Software Features and the Anatomy of Bloat](../01-software-bloat/index.md)
-- [Chapter 2: Feature Usage and the 95/5 Rule](../02-feature-usage/index.md)
+- [Chapter 2: Feature Usage and the 80% Rule](../02-feature-usage/index.md)
 - [Chapter 5: Generative AI and Coding Agents](../05-generative-ai-coding-agents/index.md)
 
 ---
@@ -198,7 +198,7 @@ Writing a non-goal costs one line, and it prevents an entire feature from being 
 2. The tool will not save captures to files or upload them anywhere.
 3. The tool will not record video.
 
-Each of these cuts directly against the typical commercial feature list in the table at the start of the chapter. This is the 95/5 rule from Chapter 2 put to use: the features most users never open are the ones to name as non-goals.
+Each of these cuts directly against the typical commercial feature list in the table at the start of the chapter. This is the 80% rule from Chapter 2 put to use: the features most users never open are the ones to name as non-goals.
 
 !!! mascot-tip "Write the 'No' Lines First"
     ![Pinch giving a tip](../../img/mascot/tip.png){ class="mascot-admonition-img" }
@@ -382,7 +382,7 @@ The parts fit together in a simple order, and each answers one question. The tab
 
 A **minimal specification** is a software specification that includes only what the user needs and states what is left out. It is short by design, because every line in it creates work for the agent and every omission removes work. It is not a vague specification: a minimal specification is exact about the few things it contains, and just as exact about the things it excludes.
 
-The case study shows how this pays. The generated app came to about 2,000 lines of Swift in 19 files. A more generous specification would have produced more code, more tests, and more places for bugs. Chapter 2's 95/5 rule predicted this: if 95% of users use only 5% of the features, a tool built for one user's 5% can be a small fraction of the size.
+The case study shows how this pays. The generated app came to about 2,000 lines of Swift in 19 files. A more generous specification would have produced more code, more tests, and more places for bugs. Chapter 2's 80% rule predicted this: if about 80% of a product's features are rarely or never used, a tool built for only the features one user needs can be a small fraction of the size.
 
 Here is a complete minimal specification for a ScreenGrab-style tool, short enough to read in a minute. It is illustrative of the form; the precise numbers marked "illustrative" are examples of how to state a limit.
 

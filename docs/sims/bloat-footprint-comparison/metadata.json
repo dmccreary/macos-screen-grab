@@ -15,9 +15,12 @@
   "library": "Chart.js",
   "bloomLevel": "Analyze",
   "bloomVerb": "compare",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 1,
   "chapter_title": "Software Features and the Anatomy of Bloat",
   "chapter_dir": "01-software-bloat",
-  "chapter_rel_dir": "chapters/01-software-bloat"
+  "chapter_rel_dir": "chapters/01-software-bloat",
+  "libraryVersion": "Chart.js 4.4.0",
+  "libraryUrl": "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js",
+  "canvasHeight": 700
 }

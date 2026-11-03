@@ -2,7 +2,7 @@
   "sim_id": "usage-feature-driver-sorter",
   "diagram_name": "Why Features Get Added Sorter",
   "chapter_number": 2,
-  "chapter_title": "Feature Usage and the 95/5 Rule",
+  "chapter_title": "Feature Usage and the 80% Rule",
   "chapter_dir": "02-feature-usage",
   "chapter_rel_dir": "chapters/02-feature-usage",
   "library": "p5.js",

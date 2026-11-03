@@ -42,7 +42,7 @@ nav:
           - Content: chapters/01-software-bloat/index.md
           - Quiz: chapters/01-software-bloat/quiz.md
           - Annotated References: chapters/01-software-bloat/references.md
-      - 2. Feature Usage and the 95/5 Rule:
+      - 2. Feature Usage and the 80% Rule:
           - Content: chapters/02-feature-usage/index.md
           - Quiz: chapters/02-feature-usage/quiz.md
           - Annotated References: chapters/02-feature-usage/references.md

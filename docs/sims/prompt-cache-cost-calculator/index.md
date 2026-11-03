@@ -1,7 +1,7 @@
 ---
 title: "Prompt Cache Cost Calculator"
 description: "The learner will calculate the cost of repeating a fixed context over several turns with and without prompt caching, to within $0.01."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
@@ -10,9 +10,27 @@ bloom_level: Apply
 
 
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="622" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Challenge first:** the sim opens on scenario 1. Type the cost without caching and the cost with caching, then press **Check** (or Enter). Answers within $0.01 count, and you get two attempts per scenario. Mastery is 3 of 3 scenarios with both answers right.
+- **Then explore:** after scenario 3 the two sliders unlock. Change the context size and the number of turns to see both costs, the saving, and the cost of each turn update. Press **Restart scenarios** to try the challenge again.
+
+The prices are the book's assumptions. Check current vendor pricing before using these numbers for a real budget.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 15 minutes.
+
+1. **Predict (2 min).** Ask learners whether caching makes the first request cheaper. Collect a show of hands.
+2. **Challenge (7 min).** Learners work the three scenarios with a calculator. Scenario 3 has one turn and no saving.
+3. **Explore (4 min).** Learners set turns to 1, then raise it step by step and watch the saving climb toward 96%. The per-turn strip shows why: only the first turn pays the full price.
+4. **Discuss (2 min).** Why can the saving never reach 100%? Where does the 96% limit come from?
+
+**Misconceptions to watch for:** caching makes every request cheaper, including the first; cache reads cost the same as plain input; a single-turn request benefits from caching.
 
 ## Specification
 

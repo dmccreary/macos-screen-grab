@@ -1,18 +1,33 @@
 ---
 title: "Acceptance Criteria Testability Judge"
 description: "The learner will assess whether each of 8 acceptance criteria is testable, by deciding if two people running the same check would reach the same verdict, with at least 7 correct."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---
 
 # Acceptance Criteria Testability Judge
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="492" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the criterion on the card. All eight criteria are illustrative.
+- **Judge** it with **Testable** or **Not testable**, then press **Confirm**. You get one attempt per criterion.
+- **Check** the feedback. It gives the reason, and for an untestable criterion it shows a repaired version that two people could check and agree on.
+- **Continue** with **Next criterion**. After criterion 8 the score appears. Mastery is 7 of 8.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Set the test (2 min).** State the rule before learners start: a criterion is testable when two people running the same check would agree on the result.
+2. **Judge (5 min).** Learners judge all eight criteria on their own. Ask them to read each repair before moving on.
+3. **Discuss (3 min).** Ask why criterion 5 is testable even though it has no number. Then have learners rewrite "The tool should be fast" in their own words.
+
+**Misconceptions to watch for:** a criterion that sounds positive and professional must be testable; words like "all" or "gracefully" make a criterion stricter and so better; only a number makes a criterion testable.
 
 ## Specification
 

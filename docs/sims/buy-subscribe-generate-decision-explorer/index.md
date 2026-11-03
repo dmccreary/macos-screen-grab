@@ -1,18 +1,39 @@
 ---
 title: "Buy, Subscribe, or Generate Decision Explorer"
 description: "The learner will recommend buy, subscribe, or generate for each of 8 scenarios, justified by how long the tool will be used and who supports it, with at least 6 correct."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---
 
 # Buy, Subscribe, or Generate Decision Explorer
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="632" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the scenario card. Tick **Show option summaries** at any time to see what Buy, Subscribe, and Generate each mean.
+- **Choose** Buy, Subscribe, or Generate, then press **Confirm**. You get one attempt per scenario.
+- **Read the feedback.** The sim shows whether you chose the best option and why. Press **Next Scenario** to continue.
+- After scenario 8, the sim shows your score and lists the scenarios you missed with their reasons. Mastery is 6 of 8. Press **Restart** to try again.
+- All eight scenarios are illustrative.
+
+## Lesson Plan
+
+**Grade level:** Adult continuing education and professional development. **Time:** 15 minutes.
+
+1. **Warm up (2 min).** Ask learners to name one tool they bought, one they subscribe to, and one they could describe in two sentences.
+2. **Decide (8 min).** Learners work through the eight scenarios alone. Before confirming each choice, they say out loud how long the tool will be used and who will support it.
+3. **Review (3 min).** Learners read the list of missed scenarios. Pairs compare which criterion they overlooked: duration, support, regulation, or the time to verify the result.
+4. **Discuss (2 min).** Ask why Generate wins four scenarios but loses the clinic scenario even though it would be cheaper.
+
+**Misconceptions to watch for:**
+
+- Generating is always the cheapest choice. Scenarios 2 and 5 show that compliance and support can outweigh token costs.
+- A subscription is always a bad deal. When outside rules change every year, the vendor's updates are the product.
+- A one-time purchase never needs any further thought. Buying fits only while the tool stays stable and keeps doing the job.
 
 ## Specification
 

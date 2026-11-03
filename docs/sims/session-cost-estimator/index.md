@@ -1,7 +1,7 @@
 ---
 title: "Session Cost Estimator"
 description: "The learner will calculate the estimated API cost of each of the three ScreenGrab session stages from its token counts and the stated prices, to within $0.02."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
@@ -10,9 +10,28 @@ bloom_level: Apply
 
 
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="694" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Challenge first:** the sim opens on stage 1 with its token counts. Type the total estimated cost and press **Check** (or Enter). Answers within $0.02 count, and you get two attempts per stage. Mastery is 3 of 3.
+- **Read the bars:** each stage has a *tokens* bar and a *cost* bar, split by output, other new tokens, and cache reads. The cost bar appears once you answer.
+- **Then explore:** after stage 3 the three price sliders unlock, and all three stage totals update together. Press **Restart stages** to try the challenge again.
+
+The prices are the book's assumptions. Check current vendor pricing before using these numbers for a real budget.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 15 minutes.
+
+1. **Predict (2 min).** Point at the stage 1 tokens bar, where cache reads are 88% of the tokens. Ask learners what share of the cost they expect cache reads to be.
+2. **Challenge (7 min).** Learners compute the three totals. Remind them that "new tokens" includes output, so they must subtract output first.
+3. **Explore (4 min).** Learners move the output price, then the cache read price, and compare how far each moves the totals.
+4. **Discuss (2 min).** Compare each tokens bar with its cost bar. Why is the token count a poor guide to cost?
+
+**Misconceptions to watch for:** the "new tokens" figure excludes output; cache reads, being most of the tokens, must be most of the cost; all tokens in a session are priced the same.
 
 ## Specification
 

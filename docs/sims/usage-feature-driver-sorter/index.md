@@ -1,23 +1,39 @@
 ---
 title: "Why Features Get Added Sorter"
 description: "The learner will distinguish four reasons a vendor adds a feature by assigning each of 8 described situations to the correct reason, scoring at least 7 of 8."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Analyze
 ---
 
 # Why Features Get Added Sorter
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="552" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read the four reasons.** Each answer button shows a reason and its definition. On a narrow screen only the reason names fit on the buttons.
+- **Read the situation.** All eight situations are illustrative.
+- **Choose one reason.** Your first click is your answer. The sim marks it right or wrong at once and gives the reason.
+- **Move on.** Press **Next** for the next situation. An answered situation cannot be changed.
+- **Review.** After situation 8 the sim shows your score out of 8, the reasons you confused most often, and the correct reason for every situation. Mastery is 7 of 8.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 10 minutes.
+
+1. **Predict (2 min).** Ask learners to guess what fraction of the features in a big app exist because users asked for them.
+2. **Sort (5 min).** Learners assign the eight situations alone. Remind them to look for the trigger: data, a plan, a rival, or a comparison chart.
+3. **Discuss (3 min).** Use the confusion list. Situations 6 and 7 both involve a plug-in interface but have different causes. Ask which of the four reasons is the healthy one, and why the other three keep adding features that most people never use.
+
+**Misconceptions to watch for:** every feature exists because customers asked for it; a longer feature list always means a better product.
 
 ## Specification
 
 The full specification below is extracted from
-[Chapter 2: Feature Usage and the 95/5 Rule](../../chapters/02-feature-usage/index.md).
+[Chapter 2: Feature Usage and the 80% Rule](../../chapters/02-feature-usage/index.md).
 
 ```text
 Type: microsim
@@ -80,4 +96,4 @@ The 8 situations, in this fixed order:
 
 ## Related Resources
 
-- [Chapter 2: Feature Usage and the 95/5 Rule](../../chapters/02-feature-usage/index.md)
+- [Chapter 2: Feature Usage and the 80% Rule](../../chapters/02-feature-usage/index.md)

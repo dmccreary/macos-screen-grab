@@ -1,18 +1,34 @@
 ---
 title: "Verification Status Classifier"
 description: "The learner will judge the verification status of each of ten ScreenGrab claims from the evidence offered for it, with at least 8 of 10 correct on the first attempt."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---
 
 # Verification Status Classifier
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="590" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read the claim and its evidence.** Each card shows one ScreenGrab claim and the evidence offered for it. Claims 2 and 5 are marked as constructed examples.
+- **Choose a status.** Click **Verified automatically**, **Verified by hand**, **Not yet run**, or **Claim exceeds evidence**. Your first click is your answer.
+- **Read the reason.** A correct answer shows the status and the reason. A wrong answer shows "Not quite" with the reason, and the correct button is outlined in green.
+- **Move on.** Press **Next**. An answered claim cannot be changed.
+- **Review.** After claim 10 the sim shows your first-attempt score and all ten claims grouped by status. Mastery is 8 of 10.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 15 minutes.
+
+1. **Set the criteria (3 min).** Review the four labels. Ask: who or what ran the check, and does the check cover the whole claim?
+2. **Judge (7 min).** Learners classify the ten claims alone.
+3. **Discuss (5 min).** Use the grouped table. Contrast claim 4 (no check at all) with claim 2 (a check that does not cover the claim). Then ask why claim 5 is not verified even though the key works now.
+
+**Misconceptions to watch for:** passing automated tests verify the whole product; a later success explains an earlier failure; a claim with no evidence is false rather than unverified.
 
 ## Specification
 

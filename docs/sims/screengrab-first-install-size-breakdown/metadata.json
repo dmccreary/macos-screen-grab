@@ -15,9 +15,12 @@
   "library": "Chart.js",
   "bloomLevel": "Analyze",
   "bloomVerb": "compare",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 9,
   "chapter_title": "Generating, Building, and Installing the Code",
   "chapter_dir": "09-generating-building-installing",
-  "chapter_rel_dir": "chapters/09-generating-building-installing"
+  "chapter_rel_dir": "chapters/09-generating-building-installing",
+  "libraryVersion": "Chart.js 4.4.0",
+  "libraryUrl": "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js",
+  "canvasHeight": 620
 }

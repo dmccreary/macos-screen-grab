@@ -1,18 +1,34 @@
 ---
 title: "Which Test Can Confirm This"
 description: "The learner will classify each of twelve ScreenGrab behaviors as confirmable by a unit test, an integration test, a smoke test, or a manual acceptance test, with at least 10 of 12 correct on the first attempt."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Understand
 ---
 
 # Which Test Can Confirm This
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="600" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read the behavior.** Each card describes one ScreenGrab behavior to confirm. Item 10 uses an illustrative maximum delay.
+- **Choose a kind of test.** Click **Unit test**, **Integration test**, **Smoke test**, or **Manual acceptance test**. Your first click is your answer.
+- **Read the reason.** A correct answer shows the kind and the reason. A wrong answer shows "Not quite" with the reason, and the correct button is outlined in green.
+- **Move on.** Press **Next**. An answered behavior cannot be changed.
+- **Review.** After behavior 12 the sim shows your first-attempt score and the twelve behaviors grouped by kind of test. Mastery is 10 of 12.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 15 minutes.
+
+1. **Frame the question (3 min).** Ask what each kind of test can observe: one function, several real parts together, the installed app, or the real screen and a person.
+2. **Classify (7 min).** Learners sort the twelve behaviors alone.
+3. **Discuss (5 min).** Use the grouped table. The manual group is the one that touches real keys, real permissions, and real displays. Ask why ScreenGrab's 94 automated tests still leave 34 acceptance tests for a person.
+
+**Misconceptions to watch for:** automated tests can confirm everything about the software; passing unit tests mean the real screen behaves correctly; a smoke test proves the software is correct.
 
 ## Specification
 

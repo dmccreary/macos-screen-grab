@@ -299,7 +299,7 @@ A user uses the smaller of the features wanted and F(v).
 
 Bloat is therefore a statement about the *gap* between what a product contains and what a given user needs. A video editor with 400 features is not bloated for a professional editor who uses most of them. The same editor is bloated for someone who wants to trim one clip. Bloat is relative to a job, which is why the next section introduces the job to be done as the measuring stick.
 
-The book's central case shows the pattern. The author's screen grab utility cost $9 and did its job well. Over the years it gained many more features, and it now costs $30 per year for each computer. The author uses a grab and a delayed grab. A common rule of thumb says that 95% of users use only 5% of a product's features, which Chapter 2 examines closely. If that holds even loosely, the other 95% of the feature set is bloat from that user's point of view, and the user pays for all of it.
+The book's central case shows the pattern. The author's screen grab utility cost $9 and did its job well. Over the years it gained many more features, and it now costs $30 per year for each computer. The author uses a grab and a delayed grab. Product-analytics research by Pendo found that about 80% of the features in a typical software product are rarely or never used, a figure Chapter 2 examines closely. For the author the share is even higher: 2 features out of dozens. Everything else is bloat from that user's point of view, and the user pays for all of it.
 
 !!! mascot-thinking "Bloat is about the gap"
     ![Pinch thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }

@@ -15,9 +15,27 @@
   "library": "p5.js",
   "bloomLevel": "Evaluate",
   "bloomVerb": "judge",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 13,
   "chapter_title": "Bugs, Evidence, and Verification Plans",
   "chapter_dir": "13-bugs-evidence-verification",
-  "chapter_rel_dir": "chapters/13-bugs-evidence-verification"
+  "chapter_rel_dir": "chapters/13-bugs-evidence-verification",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ],
+  "canvasHeight": 584,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will judge the verification status of each of ten ScreenGrab claims from the evidence offered for it, with at least 8 of 10 correct on the first attempt.",
+    "bloomLevel": "Evaluate"
+  },
+  "pedagogical": {
+    "interactionType": "Single-category judgment with feedback",
+    "estimatedTime": "15 minutes"
+  }
 }

@@ -1,18 +1,39 @@
 ---
 title: "Weighted Decision Matrix Explorer"
 description: "The learner will judge how robust the winner of a weighted decision matrix is by finding which single-criterion weight changes flip the winner, answering both evaluation questions correctly."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---
 
 # Weighted Decision Matrix Explorer
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="722" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the matrix at default weights. Each cell shows score × weight, and the totals row sums them. The bars and the Leader line show who is ahead and by how much.
+- **Explore:** drag one **Weight** slider at a time (1 to 5). Changed rows turn amber. Watch whether the leader changes. Press **Reset Weights** to return all five weights to their defaults before trying the next criterion.
+- **Answer:** type a whole number in the **Answer** box and press **Check**. Question 1 asks for the margin at default weights; question 2 asks how many criteria can flip the winner on their own. You get two attempts per question.
+- The scores and weights are illustrative judgments.
+
+## Lesson Plan
+
+**Grade level:** Adult continuing education and professional development. **Time:** 15 minutes.
+
+1. **Predict (2 min).** Ask learners whether a 7-point lead out of 85 feels safe, and which criterion they think matters most.
+2. **Explore (7 min).** Learners test every weight from 1 to 5 for each criterion in turn, resetting between criteria. They keep a tally of the settings that flip the winner.
+3. **Answer (3 min).** Learners answer both questions from their tally.
+4. **Discuss (3 min).** Ask: "Cost and Fit carry the result. If you are unsure how much you value them, how confident should you be in Generate?" Connect this to the chapter's point that weights are judgments.
+
+**Misconceptions to watch for:**
+
+- The option with the higher total is obviously right. The result depends on weights that a different person could set differently.
+- Every criterion can change the outcome equally. Only Cost and Fit can flip the winner alone; Verification, Maintenance, and Risk cannot.
+- Weights are facts rather than judgments. Learners should be able to say why they chose each weight.
+- Learners sometimes change two weights at once and count a flip. Question 2 asks about one weight at a time with the others at default.
 
 ## Specification
 

@@ -19,7 +19,7 @@ This book makes that choice concrete with one documented case, drawn from the au
 
 - The original tool cost **$9** and ran on all of the author's computers. It now requires an annual fee of **$30 per computer**.
 - With three main computers, the same job costs **$90 a year**, or **$450 over five years**.
-- As a rule of thumb, **95% of users use only 5% of the features**, yet everyone pays for the rest.
+- About **80% of the features in a typical product are rarely or never used** ([Pendo, 2019](https://www.pendo.io/resources/the-2019-feature-adoption-report/)), yet everyone pays for them.
 - The replacement app is about **5,200 lines** in total, including roughly **2,000 lines of Swift** and **94 automated tests**.
 - The first version was built and installed in about **36 minutes** for an estimated **$6** in API cost, and the whole session cost about **$14**.[^2]
 
@@ -124,5 +124,5 @@ and share your adaptations under the same license.
 
 ## References
 
-[^1]: McCreary, D. (2026). *Course Description: ScreenGrab: Software Bloat and the Generated Alternative*. [The Story](course-description.md). Prices, fees, and the 95/5 rule of thumb are the author's own figures and a common rule of thumb, not independently audited statistics.
+[^1]: McCreary, D. (2026). *Course Description: ScreenGrab: Software Bloat and the Generated Alternative*. [The Story](course-description.md). Prices and fees are the author's own figures, not independently audited statistics. The 80% rule of thumb comes from Pendo's 2019 Feature Adoption Report, a vendor study of 615 products.
 [^2]: McCreary, D. (2026). *Course Description*, "How the first version was built." Costs are estimates using Claude Opus 5.5 API prices of $20 per million output tokens, $0.20 per million cache reads, and $5 per million cache writes. They exclude generating this textbook, the author's time, and later maintenance. See [Tokens, Caching, and Pricing](chapters/10-tokens-caching-pricing/index.md).  I should note that I didn't actually pay Anthropic an additional $14.  This was done under my Anthropic Max monthly subscription and it only uses a small fraction (5%) of my weekly token quota. See the [session log](https://github.com/dmccreary/macos-screen-grab/blob/main/logs/01-initial-session.md) file for precise details.

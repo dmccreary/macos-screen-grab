@@ -1,18 +1,33 @@
 ---
 title: "AI Coding Agent Loop Stepper"
 description: "The learner will explain the order of the seven stages an AI coding agent moves through, by predicting the next stage correctly in at least 5 of 6 steps."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Understand
 ---
 
 # AI Coding Agent Loop Stepper
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="664" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the current stage in the yellow chip and the card below it, which shows what happens and the ScreenGrab example.
+- **Predict** the next stage: pick one of the three buttons, then press **Lock in**. You get one attempt per step, and the next stage is revealed only after you lock in.
+- **Step** forward with **Next**, or go back with **Previous** to review an earlier step and its feedback.
+- **Finish** after step 6 to see the full loop, the two permission checks, the final human review, and your score. Mastery is 5 of 6.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Warm up (2 min).** Ask learners what an agent does right after it receives a request. Collect a few answers.
+2. **Predict (5 min).** Learners step through the six predictions on their own.
+3. **Discuss (3 min).** Ask why the two tool-use stages each need a permission check, and why the loop ends with a person checking the report instead of with the report itself.
+
+**Misconceptions to watch for:** the agent writes all the code in one step and then stops; the agent never needs the person after the request; the agent's report that work is done proves the work is done.
 
 ## Specification
 

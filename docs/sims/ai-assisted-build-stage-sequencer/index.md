@@ -1,18 +1,34 @@
 ---
 title: "AI-Assisted Build Stage Sequencer"
 description: "The learner will list the five stages of the ScreenGrab build in their correct order, given five unordered cards that each show a stage and its output, within two attempts."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Remember
 ---
 
 # AI-Assisted Build Stage Sequencer
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="600" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the five cards. Each one shows a stage of the ScreenGrab build and what that stage produced.
+- **Arrange** the cards so position 1 is the stage that came first. Drag a card to a new position, or click a card and use **Move up** and **Move down**.
+- **Submit** the order. If it is wrong, the sim tells you how many cards are in the right position, and you get one more attempt.
+- **Review** the correct order and the reason each stage comes where it does. This appears after a correct order or after the second attempt.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 5 to 10 minutes.
+
+1. **Recall (1 min).** Before opening the sim, ask learners to name the first stage of the build from memory.
+2. **Arrange (3 min).** Learners order the cards and submit. Encourage them to use the output on each card as a clue.
+3. **Review (2 min).** Read the reasons on the answer screen together, especially why tests come before the installer.
+4. **Discuss (2 min).** Ask what would go wrong if code were written before the specification.
+
+**Misconceptions to watch for:** code is written first and the specification describes it afterward; tests are optional extras added at the end; the installer comes before the code it installs.
 
 ## Specification
 

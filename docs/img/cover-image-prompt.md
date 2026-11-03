@@ -42,8 +42,8 @@ one image rather than a collage of unrelated styles:
 
 1. **Bloated toolbar** — a cluttered app window crammed with dozens of tiny
    unlabeled icons and menus, with a single highlighted button standing out.
-2. **95/5 usage bar** — a horizontal bar chart where a tiny 5% slice glows in
-   amber and the remaining 95% is dimmed gray, labeled "5%" only.
+2. **80/20 usage bar** — a horizontal bar chart where a 20% slice glows in
+   amber and the remaining 80% is dimmed gray, labeled "80% unused" only.
 3. **Price tag stack** — a "$9" tag on the left and a larger "$30 / yr" tag
    on the right, with a small arrow rising between them.
 4. **Three computers** — a laptop, an iMac, and a Mac mini in a row, each with

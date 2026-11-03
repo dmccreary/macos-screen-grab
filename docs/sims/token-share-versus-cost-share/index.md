@@ -1,18 +1,35 @@
 ---
 title: "Token Share Versus Cost Share Chart"
 description: "The learner will distinguish the token type that has the largest share of tokens from the token type that has the largest share of cost in the whole ScreenGrab session, and select each correctly on the first attempt."
-status: scaffold
+status: built
 library: Chart.js
 bloom_level: Analyze
 ---
 
 # Token Share Versus Cost Share Chart
 
+A whole ScreenGrab build session used about 20 million tokens of three types. This sim asks you to predict which type is the largest by count and which is the largest by cost, then shows both shares side by side.
 
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="695" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Predict:** choose an answer for both questions before any chart is shown. **Reveal** is enabled once both are answered.
+- **Reveal:** press **Reveal** to commit. Each question has one attempt. Your answers are marked, the correct answers are shown, and the score reads "Questions correct: n of 2".
+- **Explore:** hover each segment of the two 100% bars to read its tokens, cost and share. **Start over** clears the answers for another learner.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Predict (2 min).** Learners answer both questions on their own before the chart is shown. Ask a few to say why they chose their answer.
+2. **Reveal (3 min).** Learners press Reveal and hover each segment, writing down the token share and cost share for each type.
+3. **Explain (3 min).** Ask learners to explain, using the prices in the note, how 1.6% of the tokens can be 45.1% of the cost.
+4. **Discuss (2 min).** Cache reads are the largest segment in the token bar and the smallest in the cost bar. Ask what this means for anyone who tries to cut session cost by cutting token count alone.
+
+**Misconceptions to watch for:** the type with the most tokens must cost the most; output is a small part of a session's cost because there is little of it; shares of tokens and shares of cost should match.
 
 ## Specification
 

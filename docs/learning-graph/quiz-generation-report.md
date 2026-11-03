@@ -18,7 +18,7 @@ Every chapter has more than 2,000 words, so each scored in the "excellent" band 
 | Chapter | Questions | Chapter Type | Bloom's (R/U/Ap/An/E/C) | Answers (A/B/C/D) |
 |---------|-----------|--------------|--------------------------|--------------------|
 | 1. Software Features and the Anatomy of Bloat | 10 | Introductory | 4/3/2/1/0/0 | 2/3/3/2 |
-| 2. Feature Usage and the 95/5 Rule | 10 | Introductory | 4/3/2/1/0/0 | 2/3/3/2 |
+| 2. Feature Usage and the 80% Rule | 10 | Introductory | 4/3/2/1/0/0 | 2/3/3/2 |
 | 3. Licenses, Subscriptions, and Vendor Incentives | 10 | Introductory | 4/3/2/1/0/0 | 2/3/2/3 |
 | 4. Total Cost of Ownership | 10 | Intermediate | 3/3/3/1/0/0 | 3/2/2/3 |
 | 5. Generative AI and Coding Agents | 10 | Intermediate | 3/3/3/1/0/0 | 3/2/3/2 |
@@ -58,7 +58,7 @@ Every chapter has between 2 and 3 correct answers per letter, and no letter is c
 ## Validation Notes
 
 - All questions use the `upper-alpha` wrapper, a `??? question "Show Answer"` admonition, a **Concept Tested** label, and a **See** link.
-- **See** links point to section anchors in the same chapter's `index.md`. For the section "The Pareto Principle and the 95/5 Rule" the link goes to the page without an anchor, because the generated heading anchor contains the slash from "95/5".
+- **See** links point to section anchors in the same chapter's `index.md`. For the section "The Pareto Principle and the 80% Rule" the link goes to the page without an anchor, because the original heading anchor contained the slash from "95/5" (the rule has since been renamed the 80% rule).
 - No question uses "All of the above" or "None of the above."
 - Calculation questions (Chapters 3, 4, 10, 11, 15) were checked against the chapter's own worked examples.
 - Concept coverage was judged from each chapter's concept list. Each quiz tests the headline concepts of its chapter, and no formal percentage was computed.

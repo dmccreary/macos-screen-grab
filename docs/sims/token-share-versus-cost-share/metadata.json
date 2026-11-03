@@ -15,9 +15,12 @@
   "library": "Chart.js",
   "bloomLevel": "Analyze",
   "bloomVerb": "distinguish",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 11,
   "chapter_title": "Measuring an AI Session: Time and Cost",
   "chapter_dir": "11-measuring-ai-session",
-  "chapter_rel_dir": "chapters/11-measuring-ai-session"
+  "chapter_rel_dir": "chapters/11-measuring-ai-session",
+  "libraryVersion": "Chart.js 4.4.0",
+  "libraryUrl": "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js",
+  "canvasHeight": 695
 }

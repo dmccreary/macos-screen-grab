@@ -1,18 +1,35 @@
 ---
 title: "Resource Footprint Comparison"
 description: "The learner will compare the resource footprint of an illustrative full-featured product and an illustrative single-purpose utility on three measures, correctly ranking which measure differs most between them."
-status: scaffold
+status: built
 library: Chart.js
 bloom_level: Analyze
 ---
 
 # Resource Footprint Comparison
 
+Two illustrative programs are compared on three measures: install size, idle memory, and background helper processes. You rank the measures by how many times larger the full-featured product is before any numbers appear.
 
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="700" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Rank:** choose a different measure for 1st, 2nd and 3rd place, ordered by the ratio *full-featured value ÷ utility value*, largest first. Reveal stays disabled until all three places hold different measures.
+- **Reveal:** press **Reveal** to commit. You get one attempt. The feedback names the correct order and, if you misplaced a measure, explains why its ratio is what it is.
+- **Explore:** the grouped bars use a logarithmic axis, so the gap between a pair of bars shows the ratio. Hover a bar to read its value, the ratio and the reason.
+- **Start over** clears the ranking so another learner can try.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Predict (3 min).** Before anyone touches the sim, ask learners whether a program that is 80 times smaller on disk is also 80 times lighter in memory. Each learner then commits a ranking in the sim.
+2. **Reveal and explore (4 min).** Learners press Reveal and hover each pair of bars. Ask them to state, in one sentence each, why the memory and helper ratios are so much smaller than the storage ratio.
+3. **Discuss (3 min).** The largest ratio belongs to install size, the measure that costs the user least each day. Ask which measure a laptop user on battery would care about most, and why.
+
+**Misconceptions to watch for:** a smaller program is smaller by the same factor on every measure; install size is the only footprint that matters; a log axis hides differences (point out that equal-looking gaps on a log axis mean equal ratios).
 
 ## Specification
 

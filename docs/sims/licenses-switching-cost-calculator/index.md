@@ -1,7 +1,7 @@
 ---
 title: "Switching Cost Calculator"
 description: "The learner will calculate the years needed to recover a switching cost from the annual fee saved, to within 0.1 years, for 3 challenge cases."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
@@ -10,9 +10,25 @@ bloom_level: Apply
 
 
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="668" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** move the five sliders. The conversion cost, learning cost, switching cost, and years to recover update at once. The strip at the bottom shows each year of saved fees as a block, with a red line at the switching cost.
+- **Challenge:** press **Start challenges**. The sim sets the inputs for each of three cases and hides the results. Type the years to recover to one decimal place and press **Check** (or Enter). You get two attempts per case, and an answer within 0.1 years counts. Mastery is 3 of 3.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 15 minutes.
+
+1. **Predict (2 min).** Ask learners whether switching to a free tool is free. Have them guess how long the default case takes to pay back.
+2. **Explore (4 min).** Starting from the defaults (3.3 years), learners set the file count to 0, then to 1,000, and watch the payback strip.
+3. **Challenge (6 min).** Learners run the three cases. A first miss shows the calculation up to the division; a second miss shows the full calculation and the model value.
+4. **Discuss (3 min).** Double the file count from 200 to 400. Which cost doubled and which stayed the same? What does this say about tools that store your work in a proprietary format?
+
+**Misconceptions to watch for:** switching is free if the new tool is free; the format your files are stored in has nothing to do with lock-in.
 
 ## Specification
 

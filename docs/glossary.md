@@ -4,13 +4,13 @@ title: Glossary of Terms
 
 # Glossary of Terms
 
-#### 95/5 Rule Of Thumb
+#### 80% Rule Of Thumb
 
-A heuristic stating that about 95 percent of users rely on about 5 percent of a product's features. It is an approximation used to illustrate uneven usage, not a measured law.
+A heuristic stating that about 80 percent of the features in a typical software product are rarely or never used, based on Pendo's 2019 Feature Adoption Report. It is an average across many products, not a measured law for any single one.
 
 The rule frames the book's case that most buyers pay for capabilities they never use.
 
-**Example:** Of 40 features in a capture suite, about two cover the needs of nearly every user.
+**Example:** Of 40 features in a capture suite, about eight see regular use and the other 32 rarely or never do.
 
 **See also:** Pareto Principle, Unused Features
 
@@ -262,7 +262,7 @@ The book focuses on casual users, whose needs a minimal tool can fully meet.
 
 **Example:** A person who grabs a screen region a few times a month to paste into an email.
 
-**See also:** Power Users, 95/5 Rule Of Thumb
+**See also:** Power Users, 80% Rule Of Thumb
 
 #### Clarifying Questions
 
@@ -648,11 +648,11 @@ Vendors often compare feature sets in marketing, even when most buyers use only 
 
 The extent to which users actually invoke each feature of a software product, measured by frequency, number of users, or time spent. It describes real behavior, not what a product offers.
 
-Feature usage data shows how small a portion of a product most people use, which underlies the 95/5 rule.
+Feature usage data shows how small a portion of a product most people use, which underlies the 80% rule.
 
-**Example:** Usage data may show that 95 percent of captures use only region selection.
+**Example:** Usage data may show that most captures use only region selection.
 
-**See also:** Usage Telemetry, 95/5 Rule Of Thumb
+**See also:** Usage Telemetry, 80% Rule Of Thumb
 
 #### Forking
 
@@ -1148,11 +1148,11 @@ Recognizing it motivates evidence-based reporting.
 
 The observation that a small share of causes often produces a large share of effects, commonly stated as 80 percent of results from 20 percent of inputs. The specific percentages vary by context.
 
-The Pareto principle gives general support for the more extreme 95/5 rule of thumb applied to software features.
+The Pareto principle gives general support for the 80% rule of thumb applied to software features.
 
 **Example:** A small number of features generate most of a product's real use.
 
-**See also:** 95/5 Rule Of Thumb, Long Tail Of Features
+**See also:** 80% Rule Of Thumb, Long Tail Of Features
 
 #### Patch Release
 

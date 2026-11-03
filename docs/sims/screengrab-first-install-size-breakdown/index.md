@@ -1,18 +1,35 @@
 ---
 title: "ScreenGrab First Install Size Breakdown"
 description: "The learner will compare the four parts of the ScreenGrab first install by line count and share of the total, answering at least 3 of 4 comparison questions correctly."
-status: scaffold
+status: built
 library: Chart.js
 bloom_level: Analyze
 ---
 
 # ScreenGrab First Install Size Breakdown
 
+The first ScreenGrab install has four parts: app code, tests, install and build scripts, and the specification, design, and README. This chart compares them by line count and by share of the 5,210-line total.
 
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="620" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** hover each bar to read its line count and share. Switch between **Lines** and **Share of total (%)**; the bar order never changes, only the axis and labels.
+- **Answer:** press **Start questions** and answer four comparison questions in order. Each has one attempt. A running count shows "Correct: n of 4".
+- **Review:** after question 4 the sim shows your score and the explanation for any question you missed. Mastery is 3 of 4. **Restart questions** begins again.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Predict (2 min).** Ask learners to guess what share of the project is app code before they look at the chart.
+2. **Explore (3 min).** Learners hover each bar in Lines mode, then switch to Share of total and note the four percentages.
+3. **Answer (3 min).** Learners answer the four questions in order. Mastery is 3 of 4.
+4. **Discuss (2 min).** The app code is the largest part but under 40% of the whole. Ask why a generated project might carry almost as many lines of tests and documents as code.
+
+**Misconceptions to watch for:** most of the project is the app code; tests are a small add-on; specifications and documents are negligible in size.
 
 ## Specification
 

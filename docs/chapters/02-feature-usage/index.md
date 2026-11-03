@@ -1,16 +1,16 @@
 ---
-title: "Feature Usage and the 95/5 Rule"
+title: "Feature Usage and the 80% Rule"
 description: "Compares a product's feature list with how it is actually used, covering telemetry, power and casual users, the long tail, the Pareto principle, cognitive load, and the forces that keep adding features."
 generated_by: claude skill chapter-content-generator
 date: "2026-11-01 20:08:43"
 version: 1.11
 ---
 
-# Feature Usage and the 95/5 Rule
+# Feature Usage and the 80% Rule
 
 ## Summary
 
-Having seen how products grow, this chapter asks who uses what they gain. It covers usage telemetry, power and casual users, the long tail of features, and the 95/5 rule of thumb alongside the Pareto Principle, along with the cognitive load that unused features impose. It closes with the roadmaps, competitive matching, and checklist marketing that keep features coming. After this chapter, you will be able to compare a product's feature list with how it is actually used.
+Having seen how products grow, this chapter asks who uses what they gain. It covers usage telemetry, power and casual users, the long tail of features, and the 80% rule of thumb alongside the Pareto Principle, along with the cognitive load that unused features impose. It closes with the roadmaps, competitive matching, and checklist marketing that keep features coming. After this chapter, you will be able to compare a product's feature list with how it is actually used.
 
 ## Concepts Covered
 
@@ -24,7 +24,7 @@ This chapter covers the following 14 concepts from the learning graph:
 | Casual Users | 8 |
 | Long Tail Of Features | 8 |
 | Pareto Principle | 8 |
-| 95/5 Rule Of Thumb | 7 |
+| 80% Rule Of Thumb | 7 |
 | Unused Features | 2 |
 | Cognitive Load | 31 |
 | Interface Complexity | 2 |
@@ -191,7 +191,7 @@ Challenges, in this order:
     ![Pinch thinking](../../img/mascot/thinking.png){ class="mascot-admonition-img" }
     Notice who carries what: the head users need almost nothing from the tail, yet they download, update, and pay for all of it. Whenever a feature list is long, ask who it is long for.
 
-## The Pareto Principle and the 95/5 Rule
+## The Pareto Principle and the 80% Rule
 
 The **Pareto principle** is the observation that a small share of causes produces a large share of effects. It is named for the economist Vilfredo Pareto and is usually summarized as the 80/20 rule: roughly 80% of results come from 20% of causes. Software offers many examples. A small share of the code causes most of the bugs, a small share of customers produces most of the revenue, and a small share of features gets most of the use.
 
@@ -207,11 +207,11 @@ The cumulative view makes the Pareto shape easy to read. Each row adds the next-
 
 The 80/20 figures are a pattern, not a law, and the real split varies. Our illustrative data can be tested. The total of all 20 feature shares is 332 percentage points. The top four features account for 92 + 55 + 48 + 30 = 225 of them, which is 68%. The top 20% of the features (4 of 20) therefore carry about 68% of the use. That is the Pareto shape, but a softer version than 80/20.
 
-The **95/5 rule of thumb** is the claim, used throughout this book, that about 95% of users use only about 5% of a product's features. It is a sharper version of the Pareto idea, applied to people rather than to causes, and it is a rough guide rather than a measurement. For a product with 40 features, 5% is 2 features, exactly what the author uses. For a product with 100 features, it is 5.
+The **80% rule of thumb** is the claim, used throughout this book, that about 80% of the features in a typical software product are rarely or never used. It comes from Pendo's [2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/), which measured feature use across 615 software products over three months. The same report found that about 12% of features produced 80% of daily usage. For a product with 40 features, the rule leaves about 8 features in regular use; for a product with 100 features, about 20. The author uses only 2 of 40, which shows that one person's share can be far smaller than the product-wide average.
 
 !!! mascot-warning "Rule of thumb, not a law"
     ![Pinch warning](../../img/mascot/warning.png){ class="mascot-admonition-img" }
-    The 95/5 figure is easy to repeat and hard to prove for any single product. Treat it as a hypothesis to test, and check your own tool's usage before you quote it: a product's true split might be 90/10 or 99/1.
+    The 80% figure is an average across hundreds of products measured by one analytics vendor. It is easy to repeat and says little about any single product. Treat it as a hypothesis to test, and check your own tool's usage before you quote it: a given product might leave 60% or 95% of its features unused.
 
 **Unused features** are features that a given user never uses, or that almost no one uses. The phrase has two meanings, and it is worth keeping them apart. For one person, every feature outside their own use is unused, which is nearly the whole feature set. For the product as a whole, a feature is unused when telemetry shows that essentially no one opens it. The second kind is the strongest evidence of bloat, since no user receives value from it, yet it remains in the code, the menu, and the documentation.
 
@@ -307,13 +307,13 @@ The 8 situations, in this fixed order:
 
 !!! mascot-celebration "You can read a feature list critically"
     ![Pinch celebrating](../../img/mascot/celebration.png){ class="mascot-admonition-img" }
-    You can now compare a feature list with real usage, explain the long tail and the 95/5 rule, and say why unused features cost attention. Next stop: the money behind it all.
+    You can now compare a feature list with real usage, explain the long tail and the 80% rule, and say why unused features cost attention. Next stop: the money behind it all.
 
 ## Key Takeaways
 
 - Feature usage measures what a feature list cannot: who uses what, and how often.
 - Usage is uneven. A few features serve almost everyone, and a long tail serves few.
-- The Pareto principle and the 95/5 rule of thumb describe that unevenness; treat the numbers as hypotheses.
+- The Pareto principle and the 80% rule of thumb describe that unevenness; treat the numbers as hypotheses.
 - Unused features cost cognitive load, add interface complexity, and hurt discoverability.
 - Roadmaps, competitive matching, and checklist marketing keep adding features that usage does not justify.
 

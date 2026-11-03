@@ -44,7 +44,7 @@ This chapter covers the following 20 concepts from the learning graph:
 This chapter builds on concepts from:
 
 - [Chapter 1: Software Features and the Anatomy of Bloat](../01-software-bloat/index.md)
-- [Chapter 2: Feature Usage and the 95/5 Rule](../02-feature-usage/index.md)
+- [Chapter 2: Feature Usage and the 80% Rule](../02-feature-usage/index.md)
 
 ---
 

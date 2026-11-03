@@ -19,7 +19,7 @@ These are the 206 concepts in the learning graph for this book. Each number is t
 15. Power Users
 16. Casual Users
 17. Long Tail Of Features
-18. 95/5 Rule Of Thumb
+18. 80% Rule Of Thumb
 19. Pareto Principle
 20. Unused Features
 21. Feature Discoverability

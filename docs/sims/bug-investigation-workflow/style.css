@@ -1,0 +1,108 @@
+/* Bug Investigation Workflow - Mermaid MicroSim
+   Layout: diagram panel (left) + question/answer panel (right).
+   Fixed height so the iframe never shows a scrollbar. */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #1f2937;
+    background: #ffffff;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 680px;
+}
+
+.diagram-panel {
+    flex: 3 1 0;
+    min-width: 0;
+    height: 100%;
+    background-color: aliceblue;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#diagram { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+#diagram svg { max-width: 100%; max-height: 100%; height: auto; }
+
+.info-panel {
+    flex: 2 1 0;
+    min-width: 260px;
+    height: 100%;
+    background-color: #f8fafc;
+    border-left: 1px solid #cbd5e1;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question { font-size: 17px; font-weight: bold; color: #1e3a8a; line-height: 1.3; }
+.hint { font-size: 14px; color: #475569; line-height: 1.4; }
+
+.card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+.card h3 { font-size: 16px; color: #1e3a8a; margin-bottom: 6px; }
+.card p { margin-bottom: 8px; }
+.card .prompt { font-weight: bold; margin-top: 4px; }
+
+.choice {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 6px 0;
+    padding: 7px 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    background: #f1f5f9;
+    color: #1f2937;
+    cursor: pointer;
+}
+.choice:hover:enabled { background: #e0e7ff; border-color: #4338ca; }
+.choice:disabled { cursor: default; opacity: 1; }
+.choice.picked-wrong { background: #fee2e2; border-color: #b91c1c; }
+.choice.is-correct { background: #dcfce7; border-color: #15803d; font-weight: bold; }
+
+.feedback { margin-top: 8px; padding: 8px 10px; border-radius: 5px; font-size: 15px; }
+.feedback.ok { background: #dcfce7; color: #14532d; }
+.feedback.bad { background: #fee2e2; color: #7f1d1d; }
+
+.footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+#score { font-size: 15px; font-weight: bold; color: #1f2937; }
+#reset {
+    font-family: inherit; font-size: 15px; padding: 6px 14px;
+    border: 1px solid #475569; border-radius: 5px; background: #ffffff; cursor: pointer;
+}
+#reset:hover { background: #e2e8f0; }
+
+/* Node states are painted inline by the script (Mermaid uses inline !important) */
+#diagram .node { cursor: pointer; }
+#diagram .node:hover rect, #diagram .node:hover polygon { filter: brightness(0.93); }
+#diagram .node.st-selected rect, #diagram .node.st-selected polygon { stroke: #111827 !important; stroke-width: 4px !important; }
+#diagram .node.st-correct rect, #diagram .node.st-correct polygon { fill: #bbf7d0 !important; stroke: #15803d !important; }
+#diagram .node.st-wrong rect, #diagram .node.st-wrong polygon { fill: #fecaca !important; stroke: #b91c1c !important; }
+#diagram .mark { font-size: 16px; font-weight: bold; pointer-events: none; }
+
+.error { color: #b91c1c; font-size: 15px; padding: 12px; }
+
+@media (max-width: 640px) {
+    .container { flex-direction: column; height: auto; }
+    .diagram-panel { height: 520px; }
+    .info-panel { border-left: none; border-top: 1px solid #cbd5e1; min-height: 420px; }
+}

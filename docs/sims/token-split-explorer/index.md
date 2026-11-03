@@ -1,18 +1,40 @@
 ---
 title: "Token Split Explorer"
 description: "The learner will compare their predicted token count with the illustrative split for each of five short texts, and identify the one text that the four-characters-per-token rule underestimates by more than 50%."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Understand
 ---
 
 # Token Split Explorer
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="662" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Predict:** read the text and the character count, set **Your prediction** with the slider, and press **Reveal**. Each text gets one prediction.
+- **Compare:** the sim splits the text into pieces, shows the true token count next to the four-character estimate, and says "Close" (within 2 tokens) or how far off you were. Hover over any piece to see its exact characters. A dot (·) marks a leading space.
+- **Repeat** for all five texts. The table keeps every revealed split.
+- **Final question:** after the fifth text, pick the row the four-character rule underestimates by more than 50% and press **Check**. You get two attempts.
+- The splits are illustrative: real tokenizers differ.
+
+## Lesson Plan
+
+**Grade level:** Adult continuing education and professional development. **Time:** 12 minutes.
+
+1. **Recall (1 min).** Ask learners to state the rule of thumb: one token is about four characters, or three-quarters of a word.
+2. **Predict and reveal (6 min).** Learners predict each of the five texts before revealing it. They write their prediction on paper first so they cannot adjust it after the reveal.
+3. **Compare (3 min).** Using the table, learners compute 1.5 times the estimate for each row and find the one row where the tokens exceed it. They answer the final question.
+4. **Discuss (2 min).** Ask which kinds of text in a real prompt (code, numbers, logs, plain English) would make the four-character rule least reliable for estimating cost.
+
+**Misconceptions to watch for:**
+
+- One word is always one token. The long word in row 3 becomes 10 pieces.
+- The four-character rule works equally well for every kind of text. It fits row 1 exactly and badly underestimates the number in row 5.
+- Every tokenizer splits text the same way. The splits shown are illustrative, and real tokenizers split differently.
+- Learners often pick row 3 because it has the most tokens. The question asks about the gap between tokens and the estimate, not the largest count.
 
 ## Specification
 

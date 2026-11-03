@@ -1,23 +1,40 @@
 ---
 title: "Long Tail of Feature Usage Explorer"
 description: "The learner will examine an illustrative 20-feature usage distribution and state how many features are used by at least a chosen share of users, correctly for 3 of 3 thresholds."
-status: scaffold
+status: built
 library: Chart.js
 bloom_level: Analyze
 ---
 
 # Long Tail of Feature Usage Explorer
 
+Twenty illustrative screen-capture features are sorted from most to least used. A threshold line marks the features that at least a chosen share of users touch, so you can see how quickly the count falls.
 
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="730" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Explore:** drag the **usage threshold** slider (1% to 100%). Bars at or above the red threshold line turn dark blue and the count updates as "n of 20". Hover a bar to read its share of users.
+- **Challenge:** press **Start challenges**. The sim sets a threshold and greys out every bar so you have to count them yourself. Type a count and press **Check**. You get two attempts per challenge.
+- **Return to exploring:** after challenge 3, drag the threshold from 1 to 10 to 50 and watch how steeply the count drops.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Predict (2 min).** Ask learners how many of the 20 features they think most users really use.
+2. **Explore (3 min).** Learners drag the threshold and watch the counted bars and the count change.
+3. **Count (3 min).** Learners run the three challenges, counting the bars that reach each threshold before the sim highlights them. Mastery is 3 of 3 on the first attempt.
+4. **Discuss (2 min).** The count falls from 20 to 8 between thresholds 1 and 10, then from 8 to 2 between 10 and 50. Ask why a vendor might still build the features in the long tail.
+
+**Misconceptions to watch for:** most features are used by most users; a feature used by few users is unimportant to the vendor's revenue; a bar exactly at the threshold is not counted (it is: the rule is "at least").
 
 ## Specification
 
 The full specification below is extracted from
-[Chapter 2: Feature Usage and the 95/5 Rule](../../chapters/02-feature-usage/index.md).
+[Chapter 2: Feature Usage and the 80% Rule](../../chapters/02-feature-usage/index.md).
 
 ```text
 Type: chart
@@ -97,4 +114,4 @@ Challenges, in this order:
 
 ## Related Resources
 
-- [Chapter 2: Feature Usage and the 95/5 Rule](../../chapters/02-feature-usage/index.md)
+- [Chapter 2: Feature Usage and the 80% Rule](../../chapters/02-feature-usage/index.md)

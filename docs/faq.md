@@ -11,7 +11,7 @@ question_count: 76
 
 ### What is this course about?
 
-*ScreenGrab: Software Bloat and the Generated Alternative* is a short course built around one real case. A screen grab utility that cost $9 once now charges $30 per computer per year, which is $90 a year on the author's three Macs. The course uses that story to explain how software bloats, why about 95% of users rely on only about 5% of the features, and what generative AI changes: a person can describe the two features they actually use and generate a small custom tool for about $14 in estimated API cost.
+*ScreenGrab: Software Bloat and the Generated Alternative* is a short course built around one real case. A screen grab utility that cost $9 once now charges $30 per computer per year, which is $90 a year on the author's three Macs. The course uses that story to explain how software bloats, why about 80% of a product's features are rarely or never used, and what generative AI changes: a person can describe the two features they actually use and generate a small custom tool for about $14 in estimated API cost.
 
 You learn to calculate total cost of ownership, write a minimal specification, direct an AI coding agent, measure tokens and cost, verify the result, and decide whether to buy, subscribe, or generate. See the [course description](course-description.md) for the full outline and [Chapter 1](chapters/01-software-bloat/index.md) to begin.
 
@@ -83,11 +83,11 @@ Software bloat is the growth of a product in features, size, and resource demand
 
 Bloat shows up in several places: an interface with thirty menu items, an install that occupies hundreds of megabytes, a background process that uses memory while it waits for a hotkey, and a price that rose because of features you never open. [Chapter 1](chapters/01-software-bloat/index.md) defines the vocabulary.
 
-### What is the 95/5 rule of thumb?
+### What is the 80% rule of thumb?
 
-The 95/5 rule says that about 95% of users rely on about 5% of a product's features. It is an approximation used to show that usage is very uneven, not a measured law. It is a more extreme cousin of the Pareto principle, which says a small share of causes often produces a large share of effects, usually stated as 80% of results from 20% of inputs.
+The 80% rule says that about 80% of the features in a typical software product are rarely or never used. It comes from Pendo's [2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/), which measured 615 products and also found that about 12% of features produced 80% of daily usage. It is an average across many products, not a law for any single one, and it echoes the Pareto principle, which says a small share of causes often produces a large share of effects, usually stated as 80% of results from 20% of inputs.
 
-For example, of 40 features in a capture suite, about two cover the needs of nearly every user. The rest are the long tail of features, each valuable to only a few people. [Chapter 2](chapters/02-feature-usage/index.md) works through the idea, including why the exact percentages should not be quoted as fact.
+For example, of 40 features in a capture suite, the rule leaves about eight in regular use, and the author needs only two. The rest are the long tail of features, each valuable to only a few people. [Chapter 2](chapters/02-feature-usage/index.md) works through the idea, including why the exact percentages should not be quoted as fact.
 
 ### How is feature creep different from software bloat?
 

@@ -8,7 +8,7 @@ This file contains chapter-by-chapter metrics for student-facing content.
 | Chapter | Name | Sections | Diagrams | Equations | Words | Reading Level | Links | Quiz | Refs |
 |---------|------|----------|----------|-----------|-------|---------------|-------|------|------|
 | 1 | [Software Features and the Anatomy of Bloat](../chapters/01-software-bloat/index.md) | 10 | 3 | 0 | 9,021 | 7.9 | 27 | 10 | 10 |
-| 2 | [Feature Usage and the 95/5 Rule](../chapters/02-feature-usage/index.md) | 9 | 2 | 0 | 6,139 | 7.6 | 26 | 10 | 10 |
+| 2 | [Feature Usage and the 80% Rule](../chapters/02-feature-usage/index.md) | 9 | 2 | 0 | 6,139 | 7.6 | 26 | 10 | 10 |
 | 3 | [Licenses, Subscriptions, and Vendor Incentives](../chapters/03-licenses-subscriptions/index.md) | 11 | 3 | 11 | 7,616 | 7.9 | 28 | 10 | 10 |
 | 4 | [Total Cost of Ownership](../chapters/04-total-cost-of-ownership/index.md) | 10 | 2 | 27 | 5,894 | 7.4 | 27 | 10 | 10 |
 | 5 | [Generative AI and Coding Agents](../chapters/05-generative-ai-coding-agents/index.md) | 23 | 2 | 0 | 8,815 | 8.0 | 27 | 10 | 10 |

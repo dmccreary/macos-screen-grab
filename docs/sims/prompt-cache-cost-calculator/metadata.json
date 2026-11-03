@@ -15,9 +15,27 @@
   "library": "p5.js",
   "bloomLevel": "Apply",
   "bloomVerb": "calculate",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 10,
   "chapter_title": "Tokens, Prompt Caching, and Token Pricing",
   "chapter_dir": "10-tokens-caching-pricing",
-  "chapter_rel_dir": "chapters/10-tokens-caching-pricing"
+  "chapter_rel_dir": "chapters/10-tokens-caching-pricing",
+  "libraryVersion": "2.3.4",
+  "dependencies": [
+    {
+      "name": "p5.js",
+      "version": "2.3.4",
+      "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
+    }
+  ],
+  "canvasHeight": 620,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will calculate the cost of repeating a fixed context over several turns with and without prompt caching, to within $0.01.",
+    "bloomLevel": "Apply"
+  },
+  "pedagogical": {
+    "interactionType": "Calculate then explore",
+    "estimatedTime": "15 minutes"
+  }
 }

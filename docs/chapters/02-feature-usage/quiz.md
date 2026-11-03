@@ -1,4 +1,4 @@
-# Quiz: Feature Usage and the 95/5 Rule
+# Quiz: Feature Usage and the 80% Rule
 
 Test your understanding of usage telemetry, power and casual users, the long tail, the Pareto principle, cognitive load, and the forces that keep features arriving with these review questions.
 
@@ -43,18 +43,18 @@ Test your understanding of usage telemetry, power and casual users, the long tai
 #### 3. Which statement best defines the Pareto principle?
 
 <div class="upper-alpha" markdown>
-1. Exactly 95% of users use exactly 5% of features in every product
+1. Exactly 80% of features go unused in every product
 2. Every cause contributes equally to a result
 3. Software defects are always spread evenly across the code
 4. A small share of causes produces a large share of effects, commonly summarized as 80/20
 </div>
 
 ??? question "Show Answer"
-    The correct answer is **D**. The Pareto principle, named for the economist Vilfredo Pareto, observes that roughly 80% of results come from 20% of causes. In software, a small share of the code causes most bugs, a small share of customers produces most revenue, and a small share of features gets most of the use. The chapter calls it a pattern, not a law. Option A overstates the 95/5 rule of thumb, and options B and C describe the opposite of Pareto.
+    The correct answer is **D**. The Pareto principle, named for the economist Vilfredo Pareto, observes that roughly 80% of results come from 20% of causes. In software, a small share of the code causes most bugs, a small share of customers produces most revenue, and a small share of features gets most of the use. The chapter calls it a pattern, not a law. Option A overstates the 80% rule of thumb, and options B and C describe the opposite of Pareto.
 
     **Concept Tested:** Pareto Principle
 
-    **See:** [The Pareto Principle and the 95/5 Rule](index.md)
+    **See:** [The Pareto Principle and the 80% Rule](index.md)
 
 ---
 
@@ -112,21 +112,21 @@ Test your understanding of usage telemetry, power and casual users, the long tai
 
 ---
 
-#### 7. Under the 95/5 rule of thumb, roughly how many features would a typical user of a 100-feature product use?
+#### 7. Under the 80% rule of thumb, roughly how many features of a 100-feature product would see regular use?
 
 <div class="upper-alpha" markdown>
-1. 1
-2. 5
+1. 2
+2. 20
 3. 50
-4. 95
+4. 80
 </div>
 
 ??? question "Show Answer"
-    The correct answer is **B**. The 95/5 rule of thumb says about 95% of users use only about 5% of a product's features, and 5% of 100 features is 5. For a 40-feature product the same rule gives 2, which is exactly what the author uses. The chapter stresses that this is a rough guide, not a measurement, so a product's true split might be 90/10 or 99/1 and you should check your own tool's usage.
+    The correct answer is **B**. The 80% rule of thumb, based on Pendo's 2019 Feature Adoption Report, says about 80% of a product's features are rarely or never used, which leaves about 20 of 100 in regular use. Option D confuses the unused share with the used share. The author uses only 2 of 40 features, far fewer than the average. The chapter stresses that 80% is an average across many products, so a given product might differ and you should check your own tool's usage.
 
-    **Concept Tested:** 95/5 Rule Of Thumb
+    **Concept Tested:** 80% Rule Of Thumb
 
-    **See:** [The Pareto Principle and the 95/5 Rule](index.md)
+    **See:** [The Pareto Principle and the 80% Rule](index.md)
 
 ---
 
@@ -144,7 +144,7 @@ Test your understanding of usage telemetry, power and casual users, the long tai
 
     **Concept Tested:** Pareto Principle
 
-    **See:** [The Pareto Principle and the 95/5 Rule](index.md)
+    **See:** [The Pareto Principle and the 80% Rule](index.md)
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Subscribe or Generate Cost Calculator"
 description: "The learner will calculate the five-year cost of a three-computer subscription and of three generated-tool scenarios, each to within $1."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Apply
 ---
@@ -10,9 +10,27 @@ bloom_level: Apply
 
 
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="750" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Challenge first:** the sim opens on row 1, the subscription. Type each row's five-year cost and press **Check** (or Enter). Answers within $1 count, and you get two attempts per row. Mastery is 4 of 4.
+- **Then explore:** after row 4 the eight sliders unlock. Two bars compare the subscription with the generated tool, split into build, upkeep time, and agent sessions. The sim states which option is cheaper and the break-even upkeep in hours per year. Press **Restart rows** to try the challenge again.
+
+Upkeep hours, time value, and sessions per year are illustrative.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 20 minutes.
+
+1. **Predict (3 min).** Ask learners whether generating a tool is always cheaper than a $30-a-year subscription on three computers.
+2. **Challenge (8 min).** Learners compute the four rows. The hobbyist row values time at $0; the Chapter 14 row is the most expensive of the four.
+3. **Explore (6 min).** At the default inputs, Generate is cheaper by $116 and the break-even upkeep is 1.46 hours a year. Learners raise the upkeep hours past 1.5 and watch the winner change, then change the years from 5 to 2.
+4. **Discuss (3 min).** Which input decides the comparison most often: the token bill, the upkeep time, or the time horizon?
+
+**Misconceptions to watch for:** generating is always cheaper than subscribing; the token bill is the whole cost of a generated tool; the time horizon does not change the comparison.
 
 ## Specification
 

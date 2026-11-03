@@ -15,9 +15,12 @@
   "library": "Chart.js",
   "bloomLevel": "Apply",
   "bloomVerb": "calculate",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 4,
   "chapter_title": "Total Cost of Ownership",
   "chapter_dir": "04-total-cost-of-ownership",
-  "chapter_rel_dir": "chapters/04-total-cost-of-ownership"
+  "chapter_rel_dir": "chapters/04-total-cost-of-ownership",
+  "libraryVersion": "Chart.js 4.4.0",
+  "libraryUrl": "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js",
+  "canvasHeight": 635
 }

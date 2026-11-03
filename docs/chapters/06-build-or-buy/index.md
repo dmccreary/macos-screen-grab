@@ -65,7 +65,7 @@ The **buy option** means paying a one-time price for software and then using tha
 
 Buying has real strengths. The cost is known in advance and does not recur. Someone else wrote, tested, and packaged the product, so you receive something that has been exercised by many users. If the tool is stable and does what you need, the cost per year of use falls every year you keep it.
 
-The weaknesses are the ones this book has been tracing. A bought product still arrives with the vendor's full feature set, including the 95% of features most users never touch. A one-time license may not cover major new versions, and a vendor that depends on new sales has a reason to keep adding features so that you upgrade. Some products have also stopped offering one-time purchases at all.
+The weaknesses are the ones this book has been tracing. A bought product still arrives with the vendor's full feature set, including the roughly 80% of features that are rarely or never used. A one-time license may not cover major new versions, and a vendor that depends on new sales has a reason to keep adding features so that you upgrade. Some products have also stopped offering one-time purchases at all.
 
 A worked example from the case: the original utility at $9 was an excellent buy. It did its job, it ran on every computer the author owned, and it cost less than a coffee for several years of use. The buy option worked well until the product changed its pricing model.
 

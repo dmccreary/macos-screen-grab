@@ -33,7 +33,7 @@ the few features you actually use and generate your own tool.
 |---|---|
 | Original price of the paid tool | $9 - one time perpetual license of $30  |
 | Current price | $30 per computer per year, or $90 a year on three Macs |
-| Features most people use | about 5% (the 95/5 rule of thumb) |
+| Features rarely or never used | about 80% ([Pendo, 2019](https://www.pendo.io/resources/the-2019-feature-adoption-report/)) |
 | ScreenGrab at first install | about 2,000 lines of Swift, 94 automated tests, no third-party dependencies |
 | Estimated AI cost to build and install | about $6 |
 | Estimated cost of the whole session | about $14 |
@@ -53,7 +53,7 @@ macOS programming experience is required.
 
 ## What You Will Learn
 
-1. How software bloat develops and why 95% of users use 5% of the features
+1. How software bloat develops and why about 80% of features are rarely or never used
 2. How one-time licenses, subscriptions, and vendor incentives differ
 3. How to calculate total cost of ownership across several computers
 4. When to buy, subscribe, or generate

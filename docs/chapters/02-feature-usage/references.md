@@ -1,6 +1,6 @@
-# References: Feature Usage and the 95/5 Rule
+# References: Feature Usage and the 80% Rule
 
-1. [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle) - Wikipedia - Covers the 80/20 observation that a small share of causes drives most effects, with its history and limits. Frames the chapter's advice to treat 95/5 figures as hypotheses, not laws.
+1. [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle) - Wikipedia - Covers the 80/20 observation that a small share of causes drives most effects, with its history and limits. Frames the chapter's advice to treat 80% figures as hypotheses, not laws.
 
 2. [Cognitive load](https://en.wikipedia.org/wiki/Cognitive_load) - Wikipedia - Describes intrinsic, extraneous, and germane load in learning and working memory. Explains why unused features still tax users by adding menus and choices they must scan past.
 
@@ -16,6 +16,6 @@
 
 8. [Hick's Law](https://lawsofux.com/hicks-law/) - Laws of UX - States that decision time grows with the number and complexity of choices. Gives a quantified reason why each extra feature or menu item slows every user, used or not.
 
-9. [Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/) - Pendo - Presents product-analytics data on how many shipped features are rarely or never used. Shows how vendors measure feature usage and why such vendor-supplied figures need careful reading.
+9. [Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/) - Pendo - Source of the book's 80% rule of thumb: across 615 products, about 80% of features were rarely or never used, and 12% of features produced 80% of daily usage. Shows how vendors measure feature usage and why such vendor-supplied figures need careful reading.
 
 10. [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) - Nielsen Norman Group - Includes the heuristic of aesthetic and minimalist design, warning that extra information competes with what matters. Offers a widely taught checklist for judging whether an interface carries unused weight.

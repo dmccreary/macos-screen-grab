@@ -27,8 +27,9 @@ requires an annual fee of $30 per computer.
 The author has three main computers, so the same job now costs $90 a year, or $450
 over five years, compared with the original $9.
 
-This is the core pattern of software bloat. As a rule of thumb, 95% of users use only
-5% of the features. Everyone still pays for the rest, including people who never open
+This is the core pattern of software bloat. Product-analytics research found that about 80% of the features
+in a typical software product are rarely or never used
+([Pendo, 2019](https://www.pendo.io/resources/the-2019-feature-adoption-report/)). Everyone still pays for the rest, including people who never open
 them.
 
 ### The alternative: generate only what you need
@@ -92,7 +93,7 @@ use, and who want to judge when generating a tool is a better choice than buying
 ## Topics
 
 1. Software bloat and how it develops
-2. Feature usage and the 95/5 rule of thumb
+2. Feature usage and the 80% rule of thumb
 3. One-time licenses compared with subscriptions
 4. Total cost of ownership across several computers
 5. Build-or-buy decisions in the age of generative AI

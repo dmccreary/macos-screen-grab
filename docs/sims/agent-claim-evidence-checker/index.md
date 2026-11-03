@@ -1,18 +1,34 @@
 ---
 title: "Claim and Evidence Checker"
 description: "The learner will judge whether each of 8 claims in an illustrative agent report is supported or unsupported by the evidence shown with it, with at least 7 correct."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---
 
 # Claim and Evidence Checker
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="532" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the agent's claim and the evidence panel under it. The reports are illustrative, not from a real session.
+- **Judge** the claim with **Supported** or **Unsupported**, then press **Confirm**. You get one attempt per claim.
+- **Check** the feedback, which gives the correct judgment and the reason.
+- **Continue** with **Next claim**. After claim 8 a summary lists the claims you judged wrongly and two rules of thumb. Mastery is 7 of 8.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 to 15 minutes.
+
+1. **Frame (2 min).** Remind learners that an agent's report is a claim. The question for each case is whether the evidence tests that same claim.
+2. **Judge (6 min).** Learners work through all eight claims on their own.
+3. **Compare (3 min).** Put claims 1 and 2 side by side. Both say the tests pass, but only one comes with evidence.
+4. **Discuss (3 min).** Use claims 5 and 7 to draw out the two rules of thumb: evidence must test the same claim, and written is not run.
+
+**Misconceptions to watch for:** a confident, detailed report is a verified report; code that was written has also been run; a passing test of one thing confirms a different claim.
 
 ## Specification
 

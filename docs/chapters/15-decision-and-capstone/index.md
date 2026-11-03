@@ -31,7 +31,7 @@ This chapter covers the following 8 concepts from the learning graph:
 
 This chapter builds on concepts from:
 
-- [Chapter 2: Feature Usage and the 95/5 Rule](../02-feature-usage/index.md)
+- [Chapter 2: Feature Usage and the 80% Rule](../02-feature-usage/index.md)
 - [Chapter 3: Licenses, Subscriptions, and Vendor Incentives](../03-licenses-subscriptions/index.md)
 - [Chapter 4: Total Cost of Ownership](../04-total-cost-of-ownership/index.md)
 - [Chapter 6: Build or Buy and the Rise of Personal Software](../06-build-or-buy/index.md)
@@ -45,7 +45,7 @@ This chapter builds on concepts from:
 
 !!! mascot-welcome "Your Turn to Pick the Shell"
     ![Pinch waving welcome](../../img/mascot/welcome.png){ class="mascot-admonition-img" }
-    You have the whole toolkit now: the 95/5 rule, token arithmetic, tests, evidence, and licenses. In this chapter you use it on a tool you pay for, and decide with numbers whether to keep paying. Grab only what you need!
+    You have the whole toolkit now: the 80% rule, token arithmetic, tests, evidence, and licenses. In this chapter you use it on a tool you pay for, and decide with numbers whether to keep paying. Grab only what you need!
 
 The book has followed one case. A utility that cost $9 grew into a $30 per computer per year subscription, and a custom replacement was generated for about $6 to build and about $14 for the whole session. This chapter turns that story into a method you can run on your own tools, and ends with a project that makes you run it.
 
@@ -155,7 +155,7 @@ Challenge rows, in order, with years = 5, computers = 3, fee = 30, and build cos
 **Decision criteria** are the factors you use to choose, written down before you compare options so that the numbers do not pick for you. Cost is only one. For a buy, subscribe, or generate choice, these are the criteria this book supports:
 
 - **Cost over your horizon:** the cost comparison above, with its assumptions stated.
-- **Fit:** how much of the product you actually use (the 95/5 rule).
+- **Fit:** how much of the product you actually use (the 80% rule).
 - **Verification effort:** how much checking you must do yourself.
 - **Maintenance load:** the upkeep you will carry.
 - **Risk if it fails:** what breaks, or what data is lost, when the tool is wrong.
@@ -270,7 +270,7 @@ Question feedback:
 The **replacement tool capstone** is the course project: pick a paid tool you use, build your own minimal replacement, test it, and publish what it cost. You do the same work that this book followed, in your own domain. The steps are:
 
 1. **Choose a paid tool** whose price bothers you, and record what you pay today.
-2. **Log the features you use** for a week, and list them. Expect the 95/5 rule.
+2. **Log the features you use** for a week, and list them. Expect the 80% rule.
 3. **Write a minimal specification** with an explicit list of what is left out (Chapter 7).
 4. **Design within platform limits** (Chapter 8), then **generate, build, and install** (Chapter 9).
 5. **Measure the session:** wall-clock time, active time, tokens by type, and an estimated cost (Chapter 11).

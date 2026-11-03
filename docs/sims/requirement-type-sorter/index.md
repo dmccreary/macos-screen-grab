@@ -1,18 +1,34 @@
 ---
 title: "Requirement Type Sorter"
 description: "The learner will classify each of 12 specification statements as a functional requirement, a non-functional requirement, a non-goal, or an assumption, with at least 10 correct."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Understand
 ---
 
 # Requirement Type Sorter
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="539" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read the statement.** All twelve statements are illustrative lines from a ScreenGrab-style specification.
+- **Choose a category.** Click **Functional requirement**, **Non-functional requirement**, **Non-goal**, or **Assumption**. You can change your choice until you press **Confirm**.
+- **Confirm.** The sim tells you whether you were right and why. An answered statement cannot be changed, and the running count shows how many you have right.
+- **Look up a category.** Tick **Show definitions** at any time to read the four definitions. Reading them is not scored.
+- **Review.** After statement 12 the sim lists every statement you missed, with its correct category and reason. If the list is long, press **More results** to page through it. Mastery is 10 of 12.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate or adult learners. **Time:** 15 minutes.
+
+1. **Recall (3 min).** Ask learners to name the defining property of each category: a behavior, a quality or limit, an exclusion, or a condition.
+2. **Sort (7 min).** Learners classify the twelve statements alone and note any they found hard.
+3. **Discuss (5 min).** Use the summary list. Ask why "The tool shall not include image editing" is not a functional requirement even though it starts with "The tool shall". Then ask what goes wrong if an assumption, such as one display at a time, is treated as a requirement the tool must enforce.
+
+**Misconceptions to watch for:** a statement about what the tool will not do is a functional requirement; a quality such as speed or size is a feature; an assumption is a requirement the tool must satisfy.
 
 ## Specification
 

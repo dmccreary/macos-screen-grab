@@ -1,18 +1,39 @@
 ---
 title: "Vendor Incentive Explorer"
 description: "The learner will attribute each of 8 vendor decisions to the pricing model, one-time or subscription, whose incentives make it more likely, scoring at least 7 of 8."
-status: scaffold
+status: built
 library: p5.js
 bloom_level: Analyze
 ---
 
 # Vendor Incentive Explorer
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="592" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+- **Read** the two revenue summaries at the top. They show where each model's next dollar comes from and the vendor's strongest incentive.
+- **Attribute** each vendor decision by pressing **One-time license** or **Subscription license**. You get one attempt per decision.
+- **Read the feedback**, then press **Next Decision**. The dots track your right and wrong answers.
+- After decision 8, the sim shows your score out of 8 and lists any decisions to review. Mastery is 7 of 8. Press **Restart** to try again.
+- All eight decisions are illustrative.
+
+## Lesson Plan
+
+**Grade level:** Adult continuing education and professional development. **Time:** 12 minutes.
+
+1. **Frame (2 min).** Ask: "If a vendor earns money only when you buy a new version, what would they want to build?" Then ask the same question for a vendor who earns money only when you renew.
+2. **Attribute (6 min).** Learners work through the eight decisions. For each one they name the next dollar the decision protects before pressing a button.
+3. **Review (2 min).** Learners reread the Why text for any decision they missed and match it to a row of the revenue summaries.
+4. **Discuss (2 min).** Ask which decisions help the customer and which work against the customer, and whether the same company might make both kinds.
+
+**Misconceptions to watch for:**
+
+- Vendors behave the same way under every pricing model. The decisions split four and four because the next dollar comes from a different place.
+- Subscription pricing only changes how customers pay and not what vendors build. Decisions 4, 6, and 8 change the product itself.
+- Learners sometimes treat customer satisfaction as belonging to one model only. Point out that decision 2 is about renewal, which is the subscription vendor's revenue event.
 
 ## Specification
 
