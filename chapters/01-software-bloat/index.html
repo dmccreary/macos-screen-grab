@@ -1736,6 +1736,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="What Software Bloat Is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feature-count-causal-loop-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feature Count Causal Loop Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2490,6 +2505,24 @@ The same product can be bloated for me and just right for you. Before you call a
 <p><img alt="Pinch warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
 Feature creep hides because each step looks small. Write the product's one-sentence purpose down first, and test every proposed addition against it: if the sentence has to change, say so out loud.</p>
 </div>
+<p>Feature creep is not only a string of small decisions. It is driven by feedback loops, in which a rise in the feature count causes changes that come back around and raise it again. A <em>causal loop diagram</em> draws those loops. In the diagram below, each arrow is a causal link: a <strong>+</strong> means the two variables move in the same direction, and a <strong>−</strong> means they move in opposite directions. A loop with an even number of <strong>−</strong> links is <em>reinforcing</em> (R) and amplifies growth. A loop with an odd number is <em>balancing</em> (B) and resists it. Press each loop button and trace a rise in Feature Count around the loop. As you go, notice which of the balancing loops are slow, weak, or felt by someone other than the team that adds the features.</p>
+<h4 id="diagram-feature-count-causal-loop-diagram">Diagram: Feature Count Causal Loop Diagram<a class="headerlink" href="#diagram-feature-count-causal-loop-diagram" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/feature-count-causal-loop/main.html" height="764px" width="100%" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/feature-count-causal-loop/main.html">Run the Feature Count Causal Loop Diagram MicroSim Fullscreen</a></p>
+<details>
+<summary>Feature Count Causal Loop Diagram</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> feature-count-causal-loop<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Built<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> trace<br/>
+<strong>Learning Objective:</strong> The learner will analyze the causal loop diagram of software bloat by tracing each reinforcing and balancing loop through Feature Count and explaining, from the edge polarities, why each loop amplifies or limits feature growth.</p>
+<p><strong>Content:</strong> Feature Count is the central stock. Three reinforcing loops: R1 Feature Checklist Sales, R2 Competitive Feature Race, R3 Niche Requests. Four balancing loops: B1 Complexity Drag, B2 Clutter Dissatisfaction, B3 Exit to Lean Alternatives, B4 Feature Pruning. The variables, links, and loops are stored in <code>feature-count-cld.json</code>.</p>
+<p><strong>Learner Activity:</strong> The learner presses a loop button. The loop stays bright while the rest of the diagram fades, and the panel traces a rise in Feature Count link by link and states whether it returns as a rise (reinforcing) or a fall (balancing). Clicking a box, arrow, or R/B marker shows its description.</p>
+<p><strong>Authoring:</strong> Adding <code>?edit=true</code> to the URL unlocks dragging of nodes and R/B markers, adds edge-curve tools, and exports the updated JSON.</p>
+</details>
 <p><strong>Bloatware</strong> is software that has become noticeably bloated, or software bundled onto a device that most users never asked for and cannot easily remove. In everyday use, it names the symptom, a product so large and slow that the size is the main thing people notice. Chapters later in this book use "bloat" for the growth itself and "bloatware" for the resulting product.</p>
 <h2 id="the-job-to-be-done">The Job To Be Done<a class="headerlink" href="#the-job-to-be-done" title="Permanent link">&para;</a></h2>
 <p>A <strong>job to be done</strong> is the specific task a person hires a product to accomplish. The phrase comes from product design, where it replaces the question "what features does this product have?" with "what is the customer actually trying to get done?" A person who buys a drill does not want a drill; they want a hole. Someone who installs a screen grab utility wants an image of part of the screen, in the clipboard, so that it can be pasted into a message.</p>
