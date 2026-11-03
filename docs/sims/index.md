@@ -61,6 +61,12 @@ Interactive Micro Simulations to help students learn screengrab: software bloat 
 
     The learner will judge which of two options best serves a stated priority in each of 8 design decisions, with at least 6 correct.
 
+-   **[Feature Count Causal Loop Diagram](./feature-count-causal-loop/index.md)**
+
+    ![Feature Count Causal Loop Diagram](./feature-count-causal-loop/feature-count-causal-loop.png)
+
+    The learner will analyze the causal loop diagram of software bloat by tracing each reinforcing and balancing loop through Feature Count and explaining, from the edge polarities, why each loop amplifies or limits feature growth.
+
 -   **[Feature Growth and Usage Explorer](./bloat-feature-growth-explorer/index.md)**
 
     ![Feature Growth and Usage Explorer](./bloat-feature-growth-explorer/bloat-feature-growth-explorer.png)

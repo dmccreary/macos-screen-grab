@@ -1,0 +1,67 @@
+{
+  "title": "Feature Count Causal Loop Diagram",
+  "creator": "Dan McCreary",
+  "subject": "ScreenGrab: Software Bloat and the Generated Alternative",
+  "description": "A causal loop diagram with Feature Count as the central stock, three reinforcing loops that push feature growth, and four balancing loops that limit it. Learners trace each loop and read why it amplifies or limits growth.",
+  "date": "2026-11-03",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "feature-count-causal-loop",
+  "educational": {
+    "gradeLevel": [
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Causal loop model of software bloat",
+    "learningObjectives": [
+      "Analyze the causal loop diagram of software bloat by tracing each reinforcing and balancing loop through Feature Count and explaining, from the edge polarities, why each loop amplifies or limits feature growth."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "trace",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "software feature",
+      "feature set",
+      "software bloat",
+      "feature creep"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "vis-network",
+    "version": "9.1.9",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 760
+    },
+    "responsive": true,
+    "dependencies": [
+      "vis-network 9.1.9",
+      "feature-count-cld.json"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Guided loop tracing: the learner selects a loop and follows a rise in Feature Count around it, link by link.",
+    "keyQuestions": [
+      "Does a rise in Feature Count come back around this loop as a rise or a fall?",
+      "Why do the reinforcing loops usually overpower the balancing loops?",
+      "What would make the Exit to Lean Alternatives loop stronger?"
+    ],
+    "commonMisconceptions": [
+      "A negative link is a bad thing, rather than a statement about direction.",
+      "Any loop with a negative link is balancing, rather than only loops with an odd count.",
+      "Balancing loops stop growth right away, despite delays and weak links."
+    ],
+    "assessmentOpportunities": [
+      "Before pressing a loop button, the learner predicts the loop type from its negative-link count and checks the verdict."
+    ]
+  },
+  "chapter": "01-software-bloat",
+  "canvasHeight": 760
+}
