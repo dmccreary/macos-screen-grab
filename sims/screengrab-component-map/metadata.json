@@ -12,12 +12,13 @@
   "language": "en",
   "rights": "CC BY-NC-SA 4.0",
   "identifier": "screengrab-component-map",
-  "library": "vis-network",
+  "library": "Infographic Overlay",
   "bloomLevel": "Understand",
   "bloomVerb": "explain",
   "completion_status": "scaffold",
   "chapter_number": 8,
   "chapter_title": "Software Design and Platform Constraints",
   "chapter_dir": "08-software-design-platform",
-  "chapter_rel_dir": "chapters/08-software-design-platform"
+  "chapter_rel_dir": "chapters/08-software-design-platform",
+  "canvasHeight": 760
 }

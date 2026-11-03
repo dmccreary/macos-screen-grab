@@ -21,7 +21,7 @@
         <link rel="next" href="../screengrab-first-install-size-breakdown/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
@@ -61,6 +61,16 @@
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-VS8ZY281P0"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-VS8ZY281P0",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-VS8ZY281P0",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -82,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#screengrab-component-map" class="md-skip">
+        <a href="#how-to-use-this-microsim" class="md-skip">
           Skip to content
         </a>
       
@@ -100,8 +110,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-header__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../img/mascot/neutral.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -203,6 +212,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -214,8 +225,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-nav__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../img/mascot/neutral.png" alt="logo">
 
     </a>
     ScreenGrab: Software Bloat and the Generated Alternative
@@ -1089,8 +1099,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1135,14 +1143,30 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-seven-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Seven Components
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#specification" class="md-nav__link">
@@ -1762,7 +1786,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1771,14 +1797,30 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-seven-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Seven Components
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#specification" class="md-nav__link">
@@ -1821,72 +1863,95 @@
   
 
 
-<h1 id="screengrab-component-map">ScreenGrab Component Map<a class="headerlink" href="#screengrab-component-map" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" width="100%" height="600"></iframe>
+  <h1>ScreenGrab Component Map</h1>
+
+<iframe src="main.html" width="100%" height="762" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run MicroSim in Fullscreen</a></p>
+<h2 id="how-to-use-this-microsim">How to Use This MicroSim<a class="headerlink" href="#how-to-use-this-microsim" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Illustration needed</p>
+<p>This sim needs <code>component-map-illustration.png</code> before its markers appear. Render it from <code>image-prompt.md</code> in this directory.</p>
+</div>
+<ul>
+<li><strong>Explore:</strong> hover over a numbered marker or a label to read what that component does.</li>
+<li><strong>Predict:</strong> press <strong>Predict</strong> and choose the next component at each of six steps. You get one attempt per step, and each answer reveals a connection. Mastery is 5 of 6.</li>
+</ul>
+<h2 id="the-seven-components">The Seven Components<a class="headerlink" href="#the-seven-components" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Crop</li>
+<li>Global hotkey</li>
+<li>Screen freeze</li>
+<li>Clipboard</li>
+<li>Permission check</li>
+<li>Selection overlay</li>
+<li>Menu bar item</li>
+</ol>
+<p>The numbers mark positions on the illustration. They are not the order of the path.</p>
 <h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h2>
 <p>The full specification below is extracted from
 <a href="../../chapters/08-software-design-platform/">Chapter 8: Software Design and Platform Constraints</a>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Type: graph-model
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Type: infographic-overlay
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>**sim-id:** screengrab-component-map&lt;br/&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>**Library:** vis-network&lt;br/&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>**Library:** Infographic Overlay (diagram.js)&lt;br/&gt;
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>**Status:** Specified&lt;br/&gt;
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>**Bloom Level:** Understand&lt;br/&gt;
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>**Bloom Verb:** explain&lt;br/&gt;
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>**Learning Objective:** The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>**Prerequisites:** menu bar app, global hotkey, screen recording permission, freeze-frame selection, clipboard output, component (all defined in this chapter above this block).
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>**Image:** A text-free illustration of the seven components, spaced around a ring so that position and marker number do not reveal the path. Labels, markers and arrows are rendered over it at runtime.
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>**Evidence of Mastery:** At each of six steps the learner commits the next component in the path before it is revealed. A choice is correct when it matches the "Next component" column in Content. Mastery is 5 of 6 correct. Clicking a component to read its description is exploration, not evidence.
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>**Prerequisites:** menu bar app, global hotkey, screen recording permission, freeze-frame selection, clipboard output, component (all defined in this chapter above this block).
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>**Misconceptions:** (1) The picture is taken after the user finishes dragging. (2) The permission is checked only once at install time and then never matters. (3) The menu bar icon does the capturing.
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>**Evidence of Mastery:** At each of six steps the learner commits the next component in the path before it is revealed. A choice is correct when it matches the "Next component" column in Content. Mastery is 5 of 6 correct. Clicking a component to read its description is exploration, not evidence.
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>**Instructional Rationale:** Predicting the next component forces the learner to reason from each component's job to the sequence, which shows the design is understood as a flow and not as a list of parts.
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>**Misconceptions:** (1) The picture is taken after the user finishes dragging. (2) The permission is checked only once at install time and then never matters. (3) The menu bar icon does the capturing.
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>**Content:**
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>**Instructional Rationale:** Predicting the next component forces the learner to reason from each component's job to the sequence, which shows the design is understood as a flow and not as a list of parts.
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>The seven components (the nodes), each with the description shown when the learner opens it. The map is a simplified, illustrative teaching model of the design described in this chapter.
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>**Content:**
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>| # | Component | Description shown |
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>|---|---|---|
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>| 1 | Global hotkey | Listens for Control-Shift-4 from any application and starts a grab |
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>| 2 | Menu bar item | Shows the icon in the menu bar and offers a menu command that starts a grab; it does not capture anything itself |
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>| 3 | Permission check | Confirms that screen recording permission has been granted; if not, tells the user what to change |
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>| 4 | Screen freeze | Captures the whole screen as a still picture at the moment of the grab |
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>| 5 | Selection overlay | Shows the still picture and lets the user drag a rectangle over it |
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>| 6 | Crop | Cuts the chosen rectangle out of the still picture |
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>| 7 | Clipboard | Receives the cropped image so that it can be pasted |
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>The connections (the edges), shown as the path of one immediate grab: Global hotkey to Permission check; Menu bar item to Permission check; Permission check to Screen freeze; Screen freeze to Selection overlay; Selection overlay to Crop; Crop to Clipboard.
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>The seven components (the nodes), each with the description shown when the learner opens it. The map is a simplified, illustrative teaching model of the design described in this chapter.
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>| # | Component | Description shown |
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>|---|---|---|
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>| 1 | Global hotkey | Listens for Control-Shift-4 from any application and starts a grab |
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>| 2 | Menu bar item | Shows the icon in the menu bar and offers a menu command that starts a grab; it does not capture anything itself |
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>| 3 | Permission check | Confirms that screen recording permission has been granted; if not, tells the user what to change |
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>| 4 | Screen freeze | Captures the whole screen as a still picture at the moment of the grab |
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>| 5 | Selection overlay | Shows the still picture and lets the user drag a rectangle over it |
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>| 6 | Crop | Cuts the chosen rectangle out of the still picture |
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>| 7 | Clipboard | Receives the cropped image so that it can be pasted |
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>Six prediction steps, in this order:
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>The connections (the edges), shown as the path of one immediate grab: Global hotkey to Permission check; Menu bar item to Permission check; Permission check to Screen freeze; Screen freeze to Selection overlay; Selection overlay to Crop; Crop to Clipboard.
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>| Step | Component shown | Choices | Next component | Why (shown as feedback) |
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>|---|---|---|---|---|
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>| 1 | Global hotkey | Permission check; Crop; Clipboard | Permission check | Nothing can be captured until permission is confirmed |
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>| 2 | Permission check | Selection overlay; Screen freeze; Clipboard | Screen freeze | With permission confirmed, the whole screen is captured as a still |
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>| 3 | Screen freeze | Crop; Selection overlay; Global hotkey | Selection overlay | The still picture is displayed so the user can drag over it |
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>| 4 | Selection overlay | Clipboard; Crop; Screen freeze | Crop | The chosen rectangle is cut from the still picture |
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>| 5 | Crop | Clipboard; Permission check; Menu bar item | Clipboard | The cropped image is delivered to the clipboard |
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>| 6 | Menu bar item | Permission check; Selection overlay; Clipboard | Permission check | The menu command starts the same path, so it also goes through the permission check first |
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>**Provenance:** Component names and the order come from this chapter, sections "Menu Bar App", "Global Hotkey", "Screen Recording Permission", "Freeze-Frame Selection" and "Clipboard Output" (Chapter 7). The map is a simplified teaching model, and the sim labels it "simplified and illustrative, not the source code layout".
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>Six prediction steps, in this order:
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>| Step | Component shown | Choices | Next component | Why (shown as feedback) |
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>|---|---|---|---|---|
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>| 1 | Global hotkey | Permission check; Crop; Clipboard | Permission check | Nothing can be captured until permission is confirmed |
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>| 2 | Permission check | Selection overlay; Screen freeze; Clipboard | Screen freeze | With permission confirmed, the whole screen is captured as a still |
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>| 3 | Screen freeze | Crop; Selection overlay; Global hotkey | Selection overlay | The still picture is displayed so the user can drag over it |
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>| 4 | Selection overlay | Clipboard; Crop; Screen freeze | Crop | The chosen rectangle is cut from the still picture |
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>| 5 | Crop | Clipboard; Permission check; Menu bar item | Clipboard | The cropped image is delivered to the clipboard |
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>| 6 | Menu bar item | Permission check; Selection overlay; Clipboard | Permission check | The menu command starts the same path, so it also goes through the permission check first |
 </span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>**Rules:** The path has exactly one correct next component at each step. The two start points (Global hotkey and Menu bar item) merge at Permission check. Choices are shown in the fixed order of the table.
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>**Provenance:** Component names and the order come from this chapter, sections "Menu Bar App", "Global Hotkey", "Screen Recording Permission", "Freeze-Frame Selection" and "Clipboard Output" (Chapter 7). The map is a simplified teaching model, and the sim labels it "simplified and illustrative, not the source code layout".
 </span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>**Learner Activity:**
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>**Rules:** The path has exactly one correct next component at each step. The two start points (Global hotkey and Menu bar item) merge at Permission check. Choices are shown in the fixed order of the table.
 </span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>1. The learner sees the seven components and may open any one to read its description.
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>2. The learner starts the six prediction steps. At each step the current component is highlighted and the learner chooses the next one from three choices.
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>3. After each choice the sim reveals the correct next component, draws the connection, and shows the Why text.
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>4. After step 6, the full path is shown, and the learner should notice that two different starts share the same path.
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>**Feedback:** Six steps, fixed order, one attempt each. Correct: "Correct: &lt;component&gt;" and the Why text. Incorrect: the correct component and the Why text. A running count "Correct: n of 6" is shown. A final score of 5 or 6 shows "You can trace a grab"; a lower score invites a restart.
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>**Learner Activity:**
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>1. The learner sees the seven components and may open any one to read its description.
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>2. The learner starts the six prediction steps. At each step the current component is highlighted and the learner chooses the next one from three choices.
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>3. After each choice the sim reveals the correct next component, draws the connection, and shows the Why text.
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>4. After step 6, the full path is shown, and the learner should notice that two different starts share the same path.
 </span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>**Starting State:** The seven components are shown with no connections drawn, and the question is "What happens first when the user presses the hotkey?"
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>**Feedback:** Six steps, fixed order, one attempt each. Correct: "Correct: &lt;component&gt;" and the Why text. Incorrect: the correct component and the Why text. A running count "Correct: n of 6" is shown. A final score of 5 or 6 shows "You can trace a grab"; a lower score invites a restart.
 </span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>**Chapter Anchors:** The chapter states seven components, six prediction steps, mastery at 5 of 6, and the hotkey Control-Shift-4.
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>**Starting State:** The seven components are shown with no connections drawn, and the question is "What happens first when the user presses the hotkey?"
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>**Chapter Anchors:** The chapter states seven components, six prediction steps, mastery at 5 of 6, and the hotkey Control-Shift-4.
 </span></code></pre></div>
 <h2 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1904,6 +1969,10 @@
 
 
 
+  
+
+
+  
 
 
 
@@ -1926,6 +1995,8 @@
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         

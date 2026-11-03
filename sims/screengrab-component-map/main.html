@@ -1,151 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- microsim-scaffold-stub -->
-    <title>ScreenGrab Component Map</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScreenGrab Component Map — Interactive Diagram</title>
+  <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+  <link rel="stylesheet" href="../shared-libs/style.css">
+  <style>
+    #path-layer { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    #path-layer line { stroke: #1a3a6c; stroke-width: 7; }
+    #path-layer marker path { fill: #1a3a6c; }
+    body.tracing #leaders-svg { visibility: hidden; }
+    #sim-caption { margin-left: auto; font-size: 13px; color: #555; }
+    #trace-choices { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+    #trace-choices:empty { display: none; }
+    #trace-choices .mode-btn:disabled { opacity: 1; }
+    #trace-choices .mode-btn.right { background: #2A8040; border-color: #2A8040; color: white; }
+    #trace-choices .mode-btn.wrong { background: #B03A2E; border-color: #B03A2E; color: white; }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <h1>ScreenGrab Component Map</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> screengrab-component-map</p>
-            <p><strong>Library:</strong> vis-network</p>
-            <p><strong>Bloom Level:</strong> Understand</p>
-            <p><strong>Learning Objective:</strong> The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.</p>
-        </div>
-    </div>
 
-    <!--
-    SPECIFICATION (from chapter index.md):
+<div id="layout">
+  <svg id="leaders-svg"></svg>
 
-    Type: graph-model
-    **sim-id:** screengrab-component-map<br/>
-    **Library:** vis-network<br/>
-    **Status:** Specified<br/>
-    **Bloom Level:** Understand<br/>
-    **Bloom Verb:** explain<br/>
-    **Learning Objective:** The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.
-    
-    **Prerequisites:** menu bar app, global hotkey, screen recording permission, freeze-frame selection, clipboard output, component (all defined in this chapter above this block).
-    
-    **Evidence of Mastery:** At each of six steps the learner commits the next component in the path before it is revealed. A choice is correct when it matches the "Next component" column in Content. Mastery is 5 of 6 correct. Clicking a component to read its description is exploration, not evidence.
-    
-    **Misconceptions:** (1) The picture is taken after the user finishes dragging. (2) The permission is checked only once at install time and then never matters. (3) The menu bar icon does the capturing.
-    
-    **Instructional Rationale:** Predicting the next component forces the learner to reason from each component's job to the sequence, which shows the design is understood as a flow and not as a list of parts.
-    
-    **Content:**
-    
-    The seven components (the nodes), each with the description shown when the learner opens it. The map is a simplified, illustrative teaching model of the design described in this chapter.
-    
-    | # | Component | Description shown |
-    |---|---|---|
-    | 1 | Global hotkey | Listens for Control-Shift-4 from any application and starts a grab |
-    | 2 | Menu bar item | Shows the icon in the menu bar and offers a menu command that starts a grab; it does not capture anything itself |
-    | 3 | Permission check | Confirms that screen recording permission has been granted; if not, tells the user what to change |
-    | 4 | Screen freeze | Captures the whole screen as a still picture at the moment of the grab |
-    | 5 | Selection overlay | Shows the still picture and lets the user drag a rectangle over it |
-    | 6 | Crop | Cuts the chosen rectangle out of the still picture |
-    | 7 | Clipboard | Receives the cropped image so that it can be pasted |
-    
-    The connections (the edges), shown as the path of one immediate grab: Global hotkey to Permission check; Menu bar item to Permission check; Permission check to Screen freeze; Screen freeze to Selection overlay; Selection overlay to Crop; Crop to Clipboard.
-    
-    Six prediction steps, in this order:
-    
-    | Step | Component shown | Choices | Next component | Why (shown as feedback) |
-    |---|---|---|---|---|
-    | 1 | Global hotkey | Permission check; Crop; Clipboard | Permission check | Nothing can be captured until permission is confirmed |
-    | 2 | Permission check | Selection overlay; Screen freeze; Clipboard | Screen freeze | With permission confirmed, the whole screen is captured as a still |
-    | 3 | Screen freeze | Crop; Selection overlay; Global hotkey | Selection overlay | The still picture is displayed so the user can drag over it |
-    | 4 | Selection overlay | Clipboard; Crop; Screen freeze | Crop | The chosen rectangle is cut from the still picture |
-    | 5 | Crop | Clipboard; Permission check; Menu bar item | Clipboard | The cropped image is delivered to the clipboard |
-    | 6 | Menu bar item | Permission check; Selection overlay; Clipboard | Permission check | The menu command starts the same path, so it also goes through the permission check first |
-    
-    **Provenance:** Component names and the order come from this chapter, sections "Menu Bar App", "Global Hotkey", "Screen Recording Permission", "Freeze-Frame Selection" and "Clipboard Output" (Chapter 7). The map is a simplified teaching model, and the sim labels it "simplified and illustrative, not the source code layout".
-    
-    **Rules:** The path has exactly one correct next component at each step. The two start points (Global hotkey and Menu bar item) merge at Permission check. Choices are shown in the fixed order of the table.
-    
-    **Learner Activity:**
-    
-    1. The learner sees the seven components and may open any one to read its description.
-    2. The learner starts the six prediction steps. At each step the current component is highlighted and the learner chooses the next one from three choices.
-    3. After each choice the sim reveals the correct next component, draws the connection, and shows the Why text.
-    4. After step 6, the full path is shown, and the learner should notice that two different starts share the same path.
-    
-    **Feedback:** Six steps, fixed order, one attempt each. Correct: "Correct: <component>" and the Why text. Incorrect: the correct component and the Why text. A running count "Correct: n of 6" is shown. A final score of 5 or 6 shows "You can trace a grab"; a lower score invites a restart.
-    
-    **Starting State:** The seven components are shown with no connections drawn, and the question is "What happens first when the user presses the hotkey?"
-    
-    **Chapter Anchors:** The chapter states seven components, six prediction steps, mastery at 5 of 6, and the hotkey Control-Shift-4.
-    -->
+  <div id="diagram-wrapper">
+    <img id="diagram-img" src="component-map-illustration.png" alt="Seven illustrated software components arranged in a ring, with no connections drawn" draggable="false">
+    <svg id="path-layer" viewBox="0 0 1200 900" aria-hidden="true">
+      <defs>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z"></path>
+        </marker>
+      </defs>
+    </svg>
+    <div id="markers-layer"></div>
+  </div>
+
+  <div id="label-panel">
+    <!-- label rows injected by diagram.js -->
+  </div>
+</div>
+
+<div id="controls">
+  <button class="mode-btn active" id="btn-explore" onclick="sim.setMode('explore')">Explore</button>
+  <button class="mode-btn"        id="btn-quiz"    onclick="sim.setMode('quiz')">Predict</button>
+  <span id="quiz-score" style="display:none">
+    Correct: <strong id="score-val">0</strong> of <strong id="score-total">6</strong>
+  </span>
+  <span id="sim-caption">Simplified and illustrative, not the source code layout.</span>
+</div>
+
+<div id="infobox">
+  <div id="infobox-prompt">Hover over a numbered marker or a label to read what that component does. Press Predict to trace one grab.</div>
+  <div id="infobox-content">
+    <div id="infobox-label"></div>
+    <div id="infobox-desc"></div>
+    <div id="trace-choices"></div>
+    <div id="infobox-ap-tip"></div>
+    <button id="quiz-restart" onclick="sim.restartQuiz()">Try Again</button>
+  </div>
+</div>
+
+<div id="edit-panel">
+  <h3>Edit Mode — drag markers to calibrate positions</h3>
+  <div id="coord-display">Drag a marker to see its live coordinates.</div>
+  <textarea id="json-output" readonly spellcheck="false"></textarea>
+  <div id="edit-actions">
+    <button id="copy-json-btn" onclick="sim.copyJSON()">Copy JSON</button>
+    <span id="copy-confirm"></span>
+  </div>
+</div>
+
+<script src="../shared-libs/diagram.js"></script>
+<script src="screengrab-component-map.js"></script>
 </body>
 </html>
