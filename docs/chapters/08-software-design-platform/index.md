@@ -217,13 +217,15 @@ The component map below shows how the choices fit together. Before you use it, h
 
 <details markdown="1">
 <summary>ScreenGrab Component Map</summary>
-Type: graph-model
+Type: infographic-overlay
 **sim-id:** screengrab-component-map<br/>
-**Library:** vis-network<br/>
+**Library:** Infographic Overlay (diagram.js)<br/>
 **Status:** Specified<br/>
 **Bloom Level:** Understand<br/>
 **Bloom Verb:** explain<br/>
 **Learning Objective:** The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.
+
+**Image:** A text-free illustration of the seven components, spaced around a ring so that position and marker number do not reveal the path. Labels, markers and arrows are rendered over it at runtime.
 
 **Prerequisites:** menu bar app, global hotkey, screen recording permission, freeze-frame selection, clipboard output, component (all defined in this chapter above this block).
 

@@ -1,0 +1,123 @@
+{
+  "title": "ScreenGrab Component Map",
+  "orientation": "landscape",
+  "image": "component-map-illustration.png",
+  "layout": "side-panel",
+  "showNumbers": true,
+  "callouts": [
+    {
+      "id": 1,
+      "label": "Crop",
+      "x": 50,
+      "y": 14,
+      "radius": 5,
+      "color": "#E67E22",
+      "hint": "Orange scissors cutting a small picture, top center.",
+      "description": "Cuts the chosen rectangle out of the still picture."
+    },
+    {
+      "id": 2,
+      "label": "Global hotkey",
+      "x": 80,
+      "y": 28,
+      "radius": 5,
+      "color": "#8E44AD",
+      "hint": "Three blank purple keycaps, upper right.",
+      "description": "Listens for Control-Shift-4 from any application and starts a grab."
+    },
+    {
+      "id": 3,
+      "label": "Screen freeze",
+      "x": 87,
+      "y": 58,
+      "radius": 5,
+      "color": "#3498DB",
+      "hint": "Ice-blue monitor with a snowflake, right side.",
+      "description": "Captures the whole screen as a still picture at the moment of the grab."
+    },
+    {
+      "id": 4,
+      "label": "Clipboard",
+      "x": 66,
+      "y": 82,
+      "radius": 5,
+      "color": "#1ABC9C",
+      "hint": "Teal clipboard holding a small picture, lower right.",
+      "description": "Receives the cropped image so that it can be pasted."
+    },
+    {
+      "id": 5,
+      "label": "Permission check",
+      "x": 34,
+      "y": 82,
+      "radius": 5,
+      "color": "#2ECC71",
+      "hint": "Green shield with a keyhole, lower left.",
+      "description": "Confirms that screen recording permission has been granted; if not, tells the user what to change."
+    },
+    {
+      "id": 6,
+      "label": "Selection overlay",
+      "x": 13,
+      "y": 58,
+      "radius": 5,
+      "color": "#34495E",
+      "hint": "Dimmed monitor with a bright dashed rectangle and a mouse pointer, left side.",
+      "description": "Shows the still picture and lets the user drag a rectangle over it."
+    },
+    {
+      "id": 7,
+      "label": "Menu bar item",
+      "x": 20,
+      "y": 28,
+      "radius": 5,
+      "color": "#F39C12",
+      "hint": "Gold bar with a small round icon and a drop-down panel, upper left.",
+      "description": "Shows the icon in the menu bar and offers a menu command that starts a grab; it does not capture anything itself."
+    }
+  ],
+  "trace": [
+    {
+      "current": "Global hotkey",
+      "question": "What happens first when the user presses the hotkey?",
+      "choices": ["Permission check", "Crop", "Clipboard"],
+      "next": "Permission check",
+      "why": "Nothing can be captured until permission is confirmed."
+    },
+    {
+      "current": "Permission check",
+      "question": "Permission is confirmed. Which component runs next?",
+      "choices": ["Selection overlay", "Screen freeze", "Clipboard"],
+      "next": "Screen freeze",
+      "why": "With permission confirmed, the whole screen is captured as a still."
+    },
+    {
+      "current": "Screen freeze",
+      "question": "The screen has been captured. Which component runs next?",
+      "choices": ["Crop", "Selection overlay", "Global hotkey"],
+      "next": "Selection overlay",
+      "why": "The still picture is displayed so the user can drag over it."
+    },
+    {
+      "current": "Selection overlay",
+      "question": "The user has dragged a rectangle. Which component runs next?",
+      "choices": ["Clipboard", "Crop", "Screen freeze"],
+      "next": "Crop",
+      "why": "The chosen rectangle is cut from the still picture."
+    },
+    {
+      "current": "Crop",
+      "question": "The rectangle has been cut out. Which component runs next?",
+      "choices": ["Clipboard", "Permission check", "Menu bar item"],
+      "next": "Clipboard",
+      "why": "The cropped image is delivered to the clipboard."
+    },
+    {
+      "current": "Menu bar item",
+      "question": "Now the user starts a grab from the menu instead. Which component runs next?",
+      "choices": ["Permission check", "Selection overlay", "Clipboard"],
+      "next": "Permission check",
+      "why": "The menu command starts the same path, so it also goes through the permission check first."
+    }
+  ]
+}

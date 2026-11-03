@@ -20,7 +20,7 @@ from pathlib import Path
 import cairosvg
 from PIL import Image, ImageFilter
 
-OUTPUT_WIDTH = 480
+OUTPUT_WIDTH = 420
 OUTLINE_WIDTH = 4  # white outline width, in output pixels
 
 CORAL = "#FF7043"
@@ -158,11 +158,11 @@ def confetti():
     bits = ""
     for x, y, w, h, rot, color in [
         (-20, 60, 16, 9, 25, PINK), (50, -30, 16, 9, -30, TEAL), (140, 20, 16, 9, 40, INDIGO),
-        (230, -30, 16, 9, 15, PINK), (320, -10, 16, 9, -40, TEAL), (400, 90, 16, 9, 30, INDIGO),
+        (230, -30, 16, 9, 15, PINK), (320, -10, 16, 9, -40, TEAL), (392, 112, 16, 9, 30, INDIGO),
         (-30, 220, 16, 9, -20, TEAL), (392, 230, 16, 9, 50, PINK),
     ]:
         bits += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="2" fill="{color}" transform="rotate({rot} {x} {y})"/>'
-    for x, y, r, color in [(95, -20, 15, AMBER), (280, 30, 14, AMBER), (-5, 140, 13, AMBER), (395, 170, 15, AMBER)]:
+    for x, y, r, color in [(95, -20, 15, AMBER), (280, 30, 14, AMBER), (-5, 140, 13, AMBER), (385, 170, 15, AMBER)]:
         bits += star(x, y, r, color)
     return bits
 

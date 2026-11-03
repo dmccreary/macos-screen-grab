@@ -1,18 +1,48 @@
 ---
 title: "ScreenGrab Component Map"
 description: "The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps."
-status: scaffold
-library: vis-network
+status: built
+hide:
+  - toc
+library: Infographic Overlay
 bloom_level: Understand
 ---
 
 # ScreenGrab Component Map
 
-
-
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="762" scrolling="no"></iframe>
 
 [Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+
+## How to Use This MicroSim
+
+!!! note "Illustration needed"
+    This sim needs `component-map-illustration.png` before its markers appear. Render it from `image-prompt.md` in this directory.
+
+- **Explore:** hover over a numbered marker or a label to read what that component does.
+- **Predict:** press **Predict** and choose the next component at each of six steps. You get one attempt per step, and each answer reveals a connection. Mastery is 5 of 6.
+
+## The Seven Components
+
+1. Crop
+2. Global hotkey
+3. Screen freeze
+4. Clipboard
+5. Permission check
+6. Selection overlay
+7. Menu bar item
+
+The numbers mark positions on the illustration. They are not the order of the path.
+
+## Lesson Plan
+
+**Grade level:** Undergraduate. **Time:** 10 minutes.
+
+1. **Explore (3 min).** Hover over each marker and read what the component does. Ask learners to guess the order of a grab before predicting.
+2. **Predict (5 min).** Learners choose the next component at each of six steps. Mastery is 5 of 6.
+3. **Discuss (2 min).** Two starts, the hotkey and the menu command, merge at the permission check. Ask why the menu bar item does not capture anything itself.
+
+**Misconceptions to watch for:** the picture is taken after the drag finishes; the permission is checked once at install and never again; the menu bar icon does the capturing.
 
 ## Specification
 
@@ -20,13 +50,15 @@ The full specification below is extracted from
 [Chapter 8: Software Design and Platform Constraints](../../chapters/08-software-design-platform/index.md).
 
 ```text
-Type: graph-model
+Type: infographic-overlay
 **sim-id:** screengrab-component-map<br/>
-**Library:** vis-network<br/>
+**Library:** Infographic Overlay (diagram.js)<br/>
 **Status:** Specified<br/>
 **Bloom Level:** Understand<br/>
 **Bloom Verb:** explain<br/>
 **Learning Objective:** The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.
+
+**Image:** A text-free illustration of the seven components, spaced around a ring so that position and marker number do not reveal the path. Labels, markers and arrows are rendered over it at runtime.
 
 **Prerequisites:** menu bar app, global hotkey, screen recording permission, freeze-frame selection, clipboard output, component (all defined in this chapter above this block).
 
@@ -84,3 +116,4 @@ Six prediction steps, in this order:
 ## Related Resources
 
 - [Chapter 8: Software Design and Platform Constraints](../../chapters/08-software-design-platform/index.md)
+- [ScreenGrab design](../../design.md)

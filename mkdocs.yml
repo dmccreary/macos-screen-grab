@@ -106,6 +106,8 @@ nav:
       - Concept Enumeration: learning-graph/concept-list.md
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Graph Quality Analysis: learning-graph/quality-metrics.md
+      - Book Metrics: learning-graph/book-metrics.md
+      - Chapter Metrics: learning-graph/chapter-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Test: learning-graph/mascot-test.md
       - Quiz Generation Report: learning-graph/quiz-generation-report.md
