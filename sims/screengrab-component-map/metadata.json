@@ -15,10 +15,19 @@
   "library": "Infographic Overlay",
   "bloomLevel": "Understand",
   "bloomVerb": "explain",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 8,
   "chapter_title": "Software Design and Platform Constraints",
   "chapter_dir": "08-software-design-platform",
   "chapter_rel_dir": "chapters/08-software-design-platform",
-  "canvasHeight": 760
+  "canvasHeight": 760,
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "learningObjective": "The learner will explain the order in which seven components handle one immediate screen grab, by choosing the next component correctly in at least 5 of 6 steps.",
+    "bloomLevel": "Understand"
+  },
+  "pedagogical": {
+    "interactionType": "Explore and predict",
+    "estimatedTime": "10 minutes"
+  }
 }

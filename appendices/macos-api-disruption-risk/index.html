@@ -1,0 +1,1469 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Every Apple API ScreenGrab calls, ranked by how likely a future macOS release is to break or change it.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/macos-screen-grab/appendices/macos-api-disruption-risk/">
+      
+      
+        <link rel="prev" href="../snagit-prices-history/">
+      
+      
+        <link rel="next" href="../../faq/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>macOS API Disruption Risk - ScreenGrab: Software Bloat and the Generated Alternative</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-VS8ZY281P0"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-VS8ZY281P0",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-VS8ZY281P0",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#macos-api-disruption-risk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-header__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenGrab: Software Bloat and the Generated Alternative
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              macOS API Disruption Risk
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/macos-screen-grab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ScreenGrab: Software Bloat and the Generated Alternative" class="md-nav__button md-logo" aria-label="ScreenGrab: Software Bloat and the Generated Alternative" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    ScreenGrab: Software Bloat and the Generated Alternative
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/macos-screen-grab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../specification/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Project Documents
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snagit-pricing-2026-11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snagit Pricing, November 2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snagit-prices-history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snagit Price History, 2010–2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    macOS API Disruption Risk
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    macOS API Disruption Risk
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-the-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Read the Ranking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ranked List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-top-items-rank-where-they-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why the Top Items Rank Where They Do
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why the Top Items Rank Where They Do">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-system-sound-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. The system sound path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-system-settings-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The System Settings link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-screen-recording-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Screen Recording permission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-app-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. App activation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-screencapturekit" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ScreenCaptureKit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-design-already-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where the Design Already Helps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-do-about-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Do About It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-ranking-leaves-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Ranking Leaves Out
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-the-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Read the Ranking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranked-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ranked List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-top-items-rank-where-they-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why the Top Items Rank Where They Do
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why the Top Items Rank Where They Do">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-system-sound-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. The system sound path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-system-settings-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The System Settings link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-screen-recording-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Screen Recording permission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-app-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. App activation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-screencapturekit" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ScreenCaptureKit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-design-already-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where the Design Already Helps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-do-about-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Do About It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-ranking-leaves-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Ranking Leaves Out
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/macos-screen-grab/blob/main/docs/appendices/macos-api-disruption-risk.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="macos-api-disruption-risk">macOS API Disruption Risk<a class="headerlink" href="#macos-api-disruption-risk" title="Permanent link">&para;</a></h1>
+<p>ScreenGrab is a small app, but it touches a wide slice of macOS: a screen-capture framework, a deprecated event system, a window server, the clipboard, and System Settings. This appendix lists every Apple interface the code in <code>src/</code> uses and ranks them from the most likely to cause trouble in a future macOS release to the least.</p>
+<div class="admonition warning">
+<p class="admonition-title">These are estimates, not measurements</p>
+<p>The percentages are the author's judgment, based on Apple's deprecation history for each API. They were not checked against the current macOS release notes. Treat them as a way to order the work, and check Apple's release notes before relying on a specific number.</p>
+</div>
+<h2 id="how-to-read-the-ranking">How to Read the Ranking<a class="headerlink" href="#how-to-read-the-ranking" title="Permanent link">&para;</a></h2>
+<p>Each percentage is the chance that <strong>at least one call in that group needs a source change or workaround within the next three major macOS releases</strong>, roughly three years. A change means the code fails to build, behaves differently, or shows the user something wrong. A deprecation warning that leaves the app working does not count.</p>
+<p>Two different things can go wrong, and they have different odds:</p>
+<ul>
+<li><strong>Interface change.</strong> Apple renames, deprecates, or removes the call. The compiler tells you.</li>
+<li><strong>Behavior change.</strong> The call still compiles but does something new, such as a new permission prompt. Nothing tells you until a user reports it.</li>
+</ul>
+<p>Behavior changes are the bigger threat here, and they score higher in the table for that reason.</p>
+<h2 id="ranked-list">Ranked List<a class="headerlink" href="#ranked-list" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>API or dependency</th>
+<th>Used in</th>
+<th>Chance of disruption</th>
+<th>Main risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hard-coded system sound file path</td>
+<td><code>StatusMenuController.swift</code></td>
+<td>60%</td>
+<td>Behavior: file moves or disappears</td>
+</tr>
+<tr>
+<td>2</td>
+<td>System Settings URL and pane names</td>
+<td><code>ScreenRecordingPermission.swift</code></td>
+<td>50%</td>
+<td>Behavior: link opens the wrong pane</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Screen Recording permission (<code>CGPreflightScreenCaptureAccess</code>, <code>CGRequestScreenCaptureAccess</code>)</td>
+<td><code>ScreenRecordingPermission.swift</code></td>
+<td>45%</td>
+<td>Behavior: new prompts or expiry rules</td>
+</tr>
+<tr>
+<td>4</td>
+<td>App activation (<code>NSApp.activate</code>, <code>NSRunningApplication.activate</code>)</td>
+<td><code>RegionSelector.swift</code>, <code>Alerts.swift</code>, <code>PreferencesWindowController.swift</code>, <code>StatusMenuController.swift</code></td>
+<td>45%</td>
+<td>Interface and behavior: cooperative activation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ScreenCaptureKit (<code>SCShareableContent</code>, <code>SCContentFilter</code>, <code>SCStreamConfiguration</code>, <code>SCScreenshotManager</code>, <code>SCStreamError</code>)</td>
+<td><code>ScreenCapturer.swift</code></td>
+<td>35%</td>
+<td>Interface: young, fast-moving framework</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ad-hoc code signing and Gatekeeper</td>
+<td><code>scripts/build-app.sh</code>, <code>install.sh</code></td>
+<td>30%</td>
+<td>Behavior: stricter launch rules</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Overlay window behavior (<code>NSPanel</code>, window <code>level</code>, <code>collectionBehavior</code>)</td>
+<td><code>OverlayViews.swift</code>, <code>CountdownHUD.swift</code></td>
+<td>30%</td>
+<td>Behavior: window server and Spaces changes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Carbon global hotkeys (<code>RegisterEventHotKey</code>, <code>InstallEventHandler</code>, <code>GetEventParameter</code>)</td>
+<td><code>HotKeyCenter.swift</code></td>
+<td>25%</td>
+<td>Interface: deprecated for decades, no replacement</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Menu bar item (<code>NSStatusBar</code>, <code>NSStatusItem</code>)</td>
+<td><code>StatusMenuController.swift</code></td>
+<td>20%</td>
+<td>Behavior: menu bar redesign, notch hiding</td>
+</tr>
+<tr>
+<td>10</td>
+<td>AppKit controls in Preferences (<code>NSGridView</code>, <code>NSStackView</code>, <code>NSPopUpButton</code>, <code>NSStepper</code>, <code>NSOpenPanel</code>)</td>
+<td><code>PreferencesWindowController.swift</code></td>
+<td>12%</td>
+<td>Appearance only</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>tccutil</code> and <code>PlistBuddy</code></td>
+<td><code>install.sh</code></td>
+<td>10%</td>
+<td>Interface: command-line flags</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Menus and key equivalents (<code>NSMenu</code>, <code>NSMenuItem</code>, hidden main menu)</td>
+<td><code>AppDelegate.swift</code>, <code>StatusMenuController.swift</code></td>
+<td>10%</td>
+<td>Behavior: accessory-app menu handling</td>
+</tr>
+<tr>
+<td>13</td>
+<td>SF Symbols by name (<code>NSImage(systemSymbolName:)</code>)</td>
+<td><code>StatusMenuController.swift</code></td>
+<td>8%</td>
+<td>Interface: symbol renamed or retired</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Pasteboard (<code>NSPasteboard</code>)</td>
+<td><code>GrabOutput.swift</code></td>
+<td>8%</td>
+<td>Behavior: new privacy rules</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Events, tracking, cursors, drawing (<code>NSEvent</code>, <code>NSTrackingArea</code>, <code>NSCursor</code>, <code>NSBezierPath</code>)</td>
+<td><code>OverlayViews.swift</code>, <code>RegionSelector.swift</code></td>
+<td>8%</td>
+<td>Low: long-stable AppKit core</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>NSSound</code></td>
+<td><code>StatusMenuController.swift</code>, <code>PreferencesWindowController.swift</code></td>
+<td>5%</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Image encoding (<code>CGImage</code>, <code>CGImageDestination</code>, <code>kCGImageProperty*</code>)</td>
+<td><code>ImageEncoder.swift</code>, <code>ScreenCapturer.swift</code></td>
+<td>4%</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Foundation, <code>UserDefaults</code>, <code>UniformTypeIdentifiers</code>, key code constants</td>
+<td><code>AppSettings.swift</code>, <code>FileNaming.swift</code>, <code>HotKeyCombo.swift</code></td>
+<td>3%</td>
+<td>Very low</td>
+</tr>
+</tbody>
+</table>
+<h2 id="why-the-top-items-rank-where-they-do">Why the Top Items Rank Where They Do<a class="headerlink" href="#why-the-top-items-rank-where-they-do" title="Permanent link">&para;</a></h2>
+<h3 id="1-the-system-sound-path">1. The system sound path<a class="headerlink" href="#1-the-system-sound-path" title="Permanent link">&para;</a></h3>
+<p><code>StatusMenuController.swift</code> loads the capture sound from a file path inside <code>/System/Library/Components/CoreAudio.component/</code>. That is an implementation detail of macOS, not a documented interface, and Apple has moved system resources before. The code already falls back to the named sound "Pop" if the file is missing, so the failure is a different sound rather than a crash. That is why this is the highest-probability item but not the most damaging one.</p>
+<h3 id="2-the-system-settings-link">2. The System Settings link<a class="headerlink" href="#2-the-system-settings-link" title="Permanent link">&para;</a></h3>
+<p>The app opens <code>x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture</code>, and the alert text tells the user to look under "Screen &amp; System Audio Recording". Apple has renamed this pane before and rebuilt Settings from the old System Preferences. If the URL stops resolving, the user lands on the wrong page. If the pane is renamed, the written instructions are wrong even when the link works. Both strings are plain text with no compiler check.</p>
+<h3 id="3-screen-recording-permission">3. Screen Recording permission<a class="headerlink" href="#3-screen-recording-permission" title="Permanent link">&para;</a></h3>
+<p><code>CGPreflightScreenCaptureAccess</code> and <code>CGRequestScreenCaptureAccess</code> are stable calls, but the rules around them have changed. Apple has tightened screen-capture consent in recent releases, including periodic re-approval prompts for apps that record the screen. A rule change would not alter a single line the compiler sees, yet it could make the grab flow ask for permission at a bad moment. The tests use a stub for <code>PermissionChecking</code>, so they cannot catch this.</p>
+<h3 id="4-app-activation">4. App activation<a class="headerlink" href="#4-app-activation" title="Permanent link">&para;</a></h3>
+<p><code>RegionSelector</code> calls <code>NSApp.activate(ignoringOtherApps: true)</code> so the crosshair cursor and the Esc key work reliably, and <code>Alerts</code> uses the same call for modal alerts. Apple changed activation to a cooperative model in macOS 14 and deprecated the <code>ignoringOtherApps</code> form. The app still works today. The risk is that Apple makes the old behavior a no-op, in which case the overlay may appear but not take keyboard focus.</p>
+<h3 id="5-screencapturekit">5. ScreenCaptureKit<a class="headerlink" href="#5-screencapturekit" title="Permanent link">&para;</a></h3>
+<p>ScreenCaptureKit is the newest framework in the app. <code>SCScreenshotManager</code> and <code>captureResolution</code> both need macOS 14, which is why <code>Package.swift</code> sets that as the minimum. A young framework is more likely to have parameters deprecated or replaced than an old one. Apple usually adds to it rather than breaking it, which keeps the number below the permission and activation items. <code>ScreenCapturer.swift</code> is the only file that imports it, so a change lands in one place.</p>
+<h2 id="where-the-design-already-helps">Where the Design Already Helps<a class="headerlink" href="#where-the-design-already-helps" title="Permanent link">&para;</a></h2>
+<p>Two choices limit the damage:</p>
+<ul>
+<li><strong>Isolation behind protocols.</strong> <code>DisplayCapturing</code>, <code>PermissionChecking</code>, <code>SelectionPresenting</code>, and <code>GrabOutputting</code> hide the risky APIs from <code>GrabCoordinator</code>. Replacing ScreenCaptureKit or the permission check touches one file each.</li>
+<li><strong>Fallbacks where Apple gives none.</strong> The sound path falls back to a named sound, and <code>HotKeyCenter</code> records which shortcuts failed to register and shows a warning in Preferences.</li>
+</ul>
+<p>The gap is that the string-based items (ranks 1 and 2) and the behavioral ones (ranks 3, 4, 6, and 7) have no automated test. They only fail on a real Mac running the new release.</p>
+<h2 id="what-to-do-about-it">What to Do About It<a class="headerlink" href="#what-to-do-about-it" title="Permanent link">&para;</a></h2>
+<p>A short checklist for each new macOS release, in the order of the ranking:</p>
+<ol>
+<li>Run a grab on the new release and confirm the capture sound plays.</li>
+<li>Click "Open System Settings" in the permission alert and confirm it opens the Screen Recording pane, and that the alert wording matches the pane's name.</li>
+<li>Revoke the permission, grab again, and watch what the system asks.</li>
+<li>Start a grab and confirm the crosshair appears and Esc cancels it.</li>
+<li>Build with the new SDK and read every deprecation warning in <code>ScreenCapturer.swift</code> and <code>HotKeyCenter.swift</code>.</li>
+<li>Reinstall with <code>install.sh</code> and confirm the app launches without a Gatekeeper block.</li>
+</ol>
+<h2 id="what-this-ranking-leaves-out">What This Ranking Leaves Out<a class="headerlink" href="#what-this-ranking-leaves-out" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Swift and Xcode tooling.</strong> The Swift toolchain, Swift Testing, and <code>swift build</code> change on Apple's developer-tools schedule, not on macOS releases.</li>
+<li><strong>Third-party code.</strong> <code>Package.swift</code> has no external dependencies, so there is nothing to rank there.</li>
+<li><strong>Hardware.</strong> Notch layout and display geometry affect the menu bar item, but they come from hardware changes rather than API changes.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../snagit-prices-history/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Snagit Price History, 2010–2026">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Snagit Price History, 2010–2026
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../faq/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                FAQ
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Code under the MIT License. Book content under <a href="license/">CC BY-NC-SA 4.0</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex-config.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
