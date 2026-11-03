@@ -1,0 +1,503 @@
+{
+  "metadata": {
+    "id": "feature-count-cld",
+    "title": "What Drives Feature Count?",
+    "archetype": "limits-to-growth",
+    "description": "Feature Count is the stock at the center of software bloat. Three reinforcing loops push it up release after release. Four balancing loops push back, but each one is slower, weaker, or felt by someone other than the team that adds the features, so the reinforcing loops usually win.",
+    "version": "1.0.0",
+    "created_date": "2026-11-03",
+    "author": "ScreenGrab: Software Bloat and the Generated Alternative",
+    "tags": [
+      "software-bloat",
+      "feature-creep",
+      "causal-loop",
+      "reinforcing-loop",
+      "balancing-loop"
+    ],
+    "updated_date": "2026-11-03"
+  },
+  "nodes": [
+    {
+      "id": "feature_count",
+      "label": "Feature Count",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "type": "stock",
+      "description": "The number of features in the product. It is a stock: it accumulates each release and rarely drains, because features are far easier to add than to remove.",
+      "measurement": "Distinct commands, settings, and capabilities in the current version"
+    },
+    {
+      "id": "checklist_appeal",
+      "label": "Feature Checklist Appeal",
+      "position": {
+        "x": 110,
+        "y": -165
+      },
+      "type": "variable",
+      "description": "How good the product looks in a side-by-side comparison chart, a review, or a list of what is new in this release. Longer lists look like more value."
+    },
+    {
+      "id": "sales_upgrades",
+      "label": "New Sales and Upgrades",
+      "position": {
+        "x": 320,
+        "y": -160
+      },
+      "type": "variable",
+      "description": "First-time purchases plus paid upgrades and renewals. A release with a long list of new features gives existing customers a reason to pay again."
+    },
+    {
+      "id": "revenue",
+      "label": "Vendor Revenue",
+      "position": {
+        "x": 390,
+        "y": 15
+      },
+      "type": "variable",
+      "description": "Money the vendor collects from the product in a year."
+    },
+    {
+      "id": "dev_budget",
+      "label": "Development Budget",
+      "position": {
+        "x": 190,
+        "y": 25
+      },
+      "type": "variable",
+      "description": "Engineers and time the vendor can spend on the product. A team that is paid to build will build, and the most visible thing to build is a new feature."
+    },
+    {
+      "id": "competitor_features",
+      "label": "Competitor Feature Count",
+      "position": {
+        "x": -70,
+        "y": -210
+      },
+      "type": "variable",
+      "description": "The number of features in rival products. Rivals watch each other, so a feature added by one is soon added by the others."
+    },
+    {
+      "id": "parity_pressure",
+      "label": "Pressure to Match Competitors",
+      "position": {
+        "x": -240,
+        "y": -150
+      },
+      "type": "variable",
+      "description": "The push inside a vendor to close every gap on a competitor's comparison chart, whether or not its own users asked for the missing feature."
+    },
+    {
+      "id": "user_base_breadth",
+      "label": "Breadth of User Base",
+      "position": {
+        "x": -360,
+        "y": -40
+      },
+      "type": "variable",
+      "description": "How many different kinds of users the product serves. Each new feature attracts a few users with a new kind of job to be done."
+    },
+    {
+      "id": "feature_requests",
+      "label": "Niche Feature Requests",
+      "position": {
+        "x": -230,
+        "y": 65
+      },
+      "type": "variable",
+      "description": "Requests for features that serve a small group of users. A broader user base sends a longer, more varied list of requests."
+    },
+    {
+      "id": "code_complexity",
+      "label": "Code Complexity",
+      "position": {
+        "x": -350,
+        "y": 185
+      },
+      "type": "variable",
+      "description": "The size of the code and the number of ways its parts interact. Every feature adds code, and every pair of features is a possible interaction to test."
+    },
+    {
+      "id": "maintenance_work",
+      "label": "Maintenance and Bug-Fix Work",
+      "position": {
+        "x": -230,
+        "y": 290
+      },
+      "type": "variable",
+      "description": "Time spent fixing defects, updating for new operating system versions, and keeping old features working. This time is not available for new features."
+    },
+    {
+      "id": "ui_clutter",
+      "label": "Interface Clutter",
+      "position": {
+        "x": 25,
+        "y": 180
+      },
+      "type": "variable",
+      "description": "Menus, toolbars, settings, and prompts a user must look past to reach the feature they need."
+    },
+    {
+      "id": "feature_pruning",
+      "label": "Feature Pruning",
+      "position": {
+        "x": -90,
+        "y": 205
+      },
+      "type": "variable",
+      "description": "Deliberate removal of little-used features. It is rare: removing a feature upsets the few users who rely on it, and no release note celebrates a deletion."
+    },
+    {
+      "id": "user_satisfaction",
+      "label": "User Satisfaction",
+      "position": {
+        "x": 250,
+        "y": 190
+      },
+      "type": "variable",
+      "description": "How well the product does the job the user hired it for, including how easy it is to find and use the one or two features they need."
+    },
+    {
+      "id": "resource_footprint",
+      "label": "Resource Footprint",
+      "position": {
+        "x": 180,
+        "y": 305
+      },
+      "type": "variable",
+      "description": "Download size, disk space, memory, processor, and battery use. Features cost resources even when they are never used."
+    },
+    {
+      "id": "switching",
+      "label": "Switching to Lean Alternatives",
+      "position": {
+        "x": 395,
+        "y": 285
+      },
+      "type": "variable",
+      "description": "Users who leave for a single-purpose utility, an open source tool, or a tool they generate themselves with an AI coding agent."
+    }
+  ],
+  "edges": [
+    {
+      "id": "fc_to_checklist",
+      "source": "feature_count",
+      "target": "checklist_appeal",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "More features make a longer comparison chart and a longer list of what is new."
+    },
+    {
+      "id": "checklist_to_sales",
+      "source": "checklist_appeal",
+      "target": "sales_upgrades",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "Buyers who compare feature lists pick the longer list, and existing customers upgrade for the new items."
+    },
+    {
+      "id": "sales_to_revenue",
+      "source": "sales_upgrades",
+      "target": "revenue",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "More sales and upgrades bring in more money."
+    },
+    {
+      "id": "revenue_to_budget",
+      "source": "revenue",
+      "target": "dev_budget",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "More revenue pays for a larger development team.",
+      "delay": {
+        "present": true,
+        "duration": "one budget year",
+        "description": "Budgets are set once a year from last year's revenue."
+      }
+    },
+    {
+      "id": "budget_to_fc",
+      "source": "dev_budget",
+      "target": "feature_count",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "A larger team ships more features each release."
+    },
+    {
+      "id": "fc_to_competitor",
+      "source": "feature_count",
+      "target": "competitor_features",
+      "polarity": "positive",
+      "strength": "moderate",
+      "description": "When this product adds a feature, rivals add one to match it."
+    },
+    {
+      "id": "competitor_to_pressure",
+      "source": "competitor_features",
+      "target": "parity_pressure",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "Every feature a rival adds is a gap on the comparison chart."
+    },
+    {
+      "id": "pressure_to_fc",
+      "source": "parity_pressure",
+      "target": "feature_count",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "The vendor closes the gap by adding the missing feature."
+    },
+    {
+      "id": "fc_to_breadth",
+      "source": "feature_count",
+      "target": "user_base_breadth",
+      "polarity": "positive",
+      "strength": "moderate",
+      "description": "Each new feature attracts a few users with a different job to be done."
+    },
+    {
+      "id": "breadth_to_requests",
+      "source": "user_base_breadth",
+      "target": "feature_requests",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "A wider range of users asks for a wider range of features."
+    },
+    {
+      "id": "requests_to_fc",
+      "source": "feature_requests",
+      "target": "feature_count",
+      "polarity": "positive",
+      "strength": "moderate",
+      "description": "Each request is small and easy to justify, so many are granted. This is feature creep."
+    },
+    {
+      "id": "fc_to_complexity",
+      "source": "feature_count",
+      "target": "code_complexity",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "Every feature adds code and new ways for parts of the code to interact."
+    },
+    {
+      "id": "complexity_to_maintenance",
+      "source": "code_complexity",
+      "target": "maintenance_work",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "More complex code has more defects and takes longer to change safely.",
+      "delay": {
+        "present": true,
+        "duration": "several releases",
+        "description": "Maintenance cost shows up long after the feature ships."
+      }
+    },
+    {
+      "id": "maintenance_to_fc",
+      "source": "maintenance_work",
+      "target": "feature_count",
+      "polarity": "negative",
+      "strength": "moderate",
+      "description": "Time spent on maintenance is time not spent adding features, so growth slows."
+    },
+    {
+      "id": "fc_to_clutter",
+      "source": "feature_count",
+      "target": "ui_clutter",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "Every feature needs a menu item, a button, or a setting."
+    },
+    {
+      "id": "clutter_to_satisfaction",
+      "source": "ui_clutter",
+      "target": "user_satisfaction",
+      "polarity": "negative",
+      "strength": "moderate",
+      "description": "The more a user must look past, the harder the product is to use for the one job they need."
+    },
+    {
+      "id": "satisfaction_to_revenue",
+      "source": "user_satisfaction",
+      "target": "revenue",
+      "polarity": "positive",
+      "strength": "moderate",
+      "description": "Satisfied users renew and recommend the product.",
+      "delay": {
+        "present": true,
+        "duration": "a renewal period",
+        "description": "Dissatisfaction shows up in revenue only at the next renewal."
+      }
+    },
+    {
+      "id": "clutter_to_pruning",
+      "source": "ui_clutter",
+      "target": "feature_pruning",
+      "polarity": "positive",
+      "strength": "weak",
+      "description": "Enough clutter eventually leads a team to remove some features."
+    },
+    {
+      "id": "pruning_to_fc",
+      "source": "feature_pruning",
+      "target": "feature_count",
+      "polarity": "negative",
+      "strength": "weak",
+      "description": "Removing features lowers the feature count. This is the only link in the diagram that drains the stock."
+    },
+    {
+      "id": "fc_to_footprint",
+      "source": "feature_count",
+      "target": "resource_footprint",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "More features mean a larger download and more memory and processor use."
+    },
+    {
+      "id": "footprint_to_switching",
+      "source": "resource_footprint",
+      "target": "switching",
+      "polarity": "positive",
+      "strength": "moderate",
+      "description": "A slow, heavy product pushes users toward a small tool that does only their job."
+    },
+    {
+      "id": "switching_to_revenue",
+      "source": "switching",
+      "target": "revenue",
+      "polarity": "negative",
+      "strength": "moderate",
+      "description": "Each user who leaves takes their payments with them."
+    }
+  ],
+  "loops": [
+    {
+      "id": "R1",
+      "type": "reinforcing",
+      "label": "R1: Feature Checklist Sales",
+      "description": "More features sell more copies and upgrades, which pays for a larger team that adds more features.",
+      "path": [
+        "feature_count",
+        "checklist_appeal",
+        "sales_upgrades",
+        "revenue",
+        "dev_budget",
+        "feature_count"
+      ],
+      "behavior_pattern": "Exponential growth in feature count for as long as buyers compare products by their feature lists.",
+      "position": {
+        "x": 215,
+        "y": -75
+      },
+      "is_primary": true
+    },
+    {
+      "id": "R2",
+      "type": "reinforcing",
+      "label": "R2: Competitive Feature Race",
+      "description": "Each vendor adds features to match its rivals, and the rivals match back.",
+      "path": [
+        "feature_count",
+        "competitor_features",
+        "parity_pressure",
+        "feature_count"
+      ],
+      "behavior_pattern": "An escalation: every product in the category grows together, and none can stop first.",
+      "position": {
+        "x": -108,
+        "y": -135
+      }
+    },
+    {
+      "id": "R3",
+      "type": "reinforcing",
+      "label": "R3: Niche Requests",
+      "description": "New features attract new kinds of users, who request more features of their own.",
+      "path": [
+        "feature_count",
+        "user_base_breadth",
+        "feature_requests",
+        "feature_count"
+      ],
+      "behavior_pattern": "Steady feature creep, one small and reasonable request at a time.",
+      "position": {
+        "x": -220,
+        "y": 24
+      }
+    },
+    {
+      "id": "B1",
+      "type": "balancing",
+      "label": "B1: Complexity Drag",
+      "description": "More features make the code harder to maintain, which leaves less time for new features.",
+      "path": [
+        "feature_count",
+        "code_complexity",
+        "maintenance_work",
+        "feature_count"
+      ],
+      "behavior_pattern": "Feature growth slows as the product ages, but the delay means the brake arrives late.",
+      "position": {
+        "x": -228,
+        "y": 192
+      }
+    },
+    {
+      "id": "B2",
+      "type": "balancing",
+      "label": "B2: Clutter Dissatisfaction",
+      "description": "More features clutter the interface, which lowers satisfaction and revenue, which shrinks the budget for new features.",
+      "path": [
+        "feature_count",
+        "ui_clutter",
+        "user_satisfaction",
+        "revenue",
+        "dev_budget",
+        "feature_count"
+      ],
+      "behavior_pattern": "Weak while buyers judge by feature lists, because the users who suffer the clutter are not always the people who make the purchase.",
+      "position": {
+        "x": 175,
+        "y": 110
+      }
+    },
+    {
+      "id": "B3",
+      "type": "balancing",
+      "label": "B3: Exit to Lean Alternatives",
+      "description": "A heavier product drives users to small single-purpose or generated tools, which cuts revenue and the budget for new features.",
+      "path": [
+        "feature_count",
+        "resource_footprint",
+        "switching",
+        "revenue",
+        "dev_budget",
+        "feature_count"
+      ],
+      "behavior_pattern": "Grows stronger as lean alternatives get cheaper to find or to generate, which is the argument of this book.",
+      "position": {
+        "x": 300,
+        "y": 245
+      }
+    },
+    {
+      "id": "B4",
+      "type": "balancing",
+      "label": "B4: Feature Pruning",
+      "description": "Enough clutter can lead a team to remove features, which lowers the feature count directly.",
+      "path": [
+        "feature_count",
+        "ui_clutter",
+        "feature_pruning",
+        "feature_count"
+      ],
+      "behavior_pattern": "The weakest loop in the system. It is the only one that drains the stock, and it rarely runs.",
+      "position": {
+        "x": -25,
+        "y": 125
+      }
+    }
+  ]
+}
