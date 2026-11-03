@@ -34,7 +34,7 @@ and the [design](../docs/design.md).
 |---|---|
 | macOS | 14 Sonoma or later |
 | Processor | Apple Silicon or Intel (Intel needs `--universal`, or a build on that Mac) |
-| Build tools | Xcode Command Line Tools with a Swift 5.9 or later compiler. The full Xcode app isn't needed. |
+| Build tools | Swift 6.0 or later, which ships with Xcode 16 or later. The Command Line Tools alone are usually enough (see [Common commands](#common-commands)); verified with Xcode 26.3 / Swift 6.2.4. |
 
 To install the Command Line Tools:
 
@@ -293,6 +293,7 @@ capture tool.
 | `The Command Line Tools aren't installed` | Run `xcode-select --install`, then try again. |
 | `Swift won't run` | If you've just installed Xcode, run `sudo xcodebuild -license`. |
 | `already exists and isn't this app` | Another app named `ScreenGrab.app` is in that folder. Move it, or use `--dest`. |
+| `no such module '_Testing_Foundation'` | The Command Line Tools install is missing or broken (seen on some Xcode 26.x Command Line Tools packages). Reinstall them with `xcode-select --install`, or install the full Xcode app from the App Store. `--skip-tests` installs anyway. |
 | `The test run failed` | Run with `--verbose` to see which test failed. `--skip-tests` installs anyway. |
 | `Don't run this with sudo` | Run it without `sudo`. Use `--user` if `/Applications` isn't writable. |
 
@@ -354,6 +355,9 @@ scripts/build-app.sh
 Use `scripts/test.sh` rather than `swift test` on its own. With only the Command Line
 Tools installed, `swift test` can't always find Swift Testing or its macro plugin, and
 fails with `no such module 'Testing'`. This script supplies their locations.
+
+The tests need Swift 6.0 or later, since they use the Swift Testing framework
+(`import Testing`), which first shipped with Xcode 16.
 
 ### What the tests cover
 

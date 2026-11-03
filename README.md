@@ -16,6 +16,28 @@
 Visit the interactive textbook at:
 [https://dmccreary.github.io/macos-screen-grab/](https://dmccreary.github.io/macos-screen-grab/)
 
+## Installing ScreenGrab
+
+Requires macOS 14 Sonoma or later and Swift 6.0 or later, which ships with Xcode 16
+or later. The Command Line Tools alone (`xcode-select --install`) are usually
+enough; see the [app README](src/README.md#requirements) if `swift test` can't
+find the Testing module.
+
+```bash
+git clone https://github.com/dmccreary/macos-screen-grab.git
+cd macos-screen-grab/src
+./install.sh
+```
+
+The script tests, builds, signs, and installs `ScreenGrab.app` to
+`/Applications` (falling back to `~/Applications`), then opens it — look for
+the viewfinder icon in the menu bar. The first grab (**⌃⇧4**) will prompt for
+the Screen Recording permission.
+
+See the [app README](src/README.md) for install options (`--user`,
+`--uninstall`, `--universal`, etc.), keeping the permission across rebuilds,
+usage, preferences, and troubleshooting.
+
 ## Overview
 
 A screen grab utility that once cost $9 now charges $30 per computer every year.
