@@ -1,4 +1,5 @@
 // Verification Status Classifier MicroSim
+// CANVAS_HEIGHT: 588
 // Judge the verification status of ten ScreenGrab claims from the evidence
 // offered for each. One attempt per claim, fixed order. Mastery is 8 of 10.
 

@@ -28,7 +28,7 @@
       "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
     }
   ],
-  "canvasHeight": 533,
+  "canvasHeight": 537,
   "educational": {
     "gradeLevel": "Undergraduate",
     "learningObjective": "The learner will classify each of 12 specification statements as a functional requirement, a non-functional requirement, a non-goal, or an assumption, with at least 10 correct.",

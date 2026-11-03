@@ -1,4 +1,5 @@
 // AI-Assisted Build Stage Sequencer
+// CANVAS_HEIGHT: 622
 // Remember level: the learner lists the five stages of the ScreenGrab build in
 // order by arranging five scrambled cards. Two submissions are allowed.
 // Drag a card to a new position, or select it and use Move up / Move down.

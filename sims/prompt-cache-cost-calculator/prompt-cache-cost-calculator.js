@@ -1,4 +1,5 @@
 // Prompt Cache Cost Calculator
+// CANVAS_HEIGHT: 620
 // A fixed context is resent on every turn of a conversation.
 // Cost without caching = turns x context x 5.00 / 1,000,000
 // Cost with caching    = context x 5.00 / 1,000,000            (one cache write)

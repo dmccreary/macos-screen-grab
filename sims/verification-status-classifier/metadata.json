@@ -28,7 +28,7 @@
       "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
     }
   ],
-  "canvasHeight": 584,
+  "canvasHeight": 588,
   "educational": {
     "gradeLevel": "Undergraduate",
     "learningObjective": "The learner will judge the verification status of each of ten ScreenGrab claims from the evidence offered for it, with at least 8 of 10 correct on the first attempt.",

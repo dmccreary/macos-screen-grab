@@ -1,4 +1,5 @@
 // Resource Footprint Comparison MicroSim (Chart.js)
+// CANVAS_HEIGHT: 712
 // Learner ranks three measures by ratio (full-featured / single-purpose)
 // before the grouped bars and ratios are revealed. All values illustrative.
 

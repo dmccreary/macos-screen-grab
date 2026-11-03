@@ -1,4 +1,5 @@
 /*
+// CANVAS_HEIGHT: 680
  * Bug Investigation Workflow (Mermaid MicroSim)
  * Bloom: Remember (identify). The learner clicks each of the seven steps,
  * picks which of three outputs the step produces, and gets one attempt per step.

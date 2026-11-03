@@ -28,7 +28,7 @@
       "url": "https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"
     }
   ],
-  "canvasHeight": 546,
+  "canvasHeight": 550,
   "educational": {
     "gradeLevel": "Undergraduate",
     "learningObjective": "The learner will classify six described software offers by when payment is made (one time or recurring) and by what is counted (per computer or per user), getting both answers right for at least 5 of 6 offers.",

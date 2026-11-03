@@ -21,5 +21,6 @@
   "chapter_dir": "13-bugs-evidence-verification",
   "chapter_rel_dir": "chapters/13-bugs-evidence-verification",
   "library_version": "mermaid 11.4.1",
-  "iframe_height": 680
+  "iframe_height": 680,
+  "canvasHeight": 680
 }

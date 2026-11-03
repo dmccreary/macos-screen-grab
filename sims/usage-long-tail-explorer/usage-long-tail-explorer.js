@@ -1,4 +1,5 @@
 // Long Tail of Feature Usage Explorer MicroSim (Chart.js)
+// CANVAS_HEIGHT: 734
 // 20 illustrative features sorted by share of users. A threshold marks the
 // features used by at least that share; three counting challenges follow.
 

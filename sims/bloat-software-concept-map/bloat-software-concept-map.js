@@ -1,4 +1,5 @@
 /*
+// CANVAS_HEIGHT: 800
  * Software Vocabulary Concept Map (vis-network MicroSim)
  * Bloom: Understand (classify). The learner explores an eight-node concept map,
  * then classifies six described examples under one of six terms.

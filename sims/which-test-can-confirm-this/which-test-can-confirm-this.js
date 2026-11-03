@@ -1,4 +1,5 @@
 // Which Test Can Confirm This MicroSim
+// CANVAS_HEIGHT: 598
 // Classify twelve ScreenGrab behaviors by the kind of test that could confirm
 // each: unit, integration, smoke, or manual acceptance. One attempt per
 // behavior, fixed order. Mastery is 10 of 12.

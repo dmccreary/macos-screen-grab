@@ -1,4 +1,5 @@
 // Token Share Versus Cost Share MicroSim (Chart.js)
+// CANVAS_HEIGHT: 624
 // Two stacked 100% bars: share of tokens and share of cost for the three
 // token types of the whole ScreenGrab session. The learner predicts first.
 

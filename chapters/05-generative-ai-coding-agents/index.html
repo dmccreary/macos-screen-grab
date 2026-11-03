@@ -1218,6 +1218,10 @@
         
       
         
+          
+        
+      
+        
       
         
       
@@ -1279,6 +1283,10 @@
   
     
     
+      
+        
+          
+        
       
         
           
@@ -2241,7 +2249,7 @@ When someone says a tool is "huge" or "tiny," ask for the line count and the num
 <p>A worked example of one trip around the loop shows why the agent is more than a chat. The agent writes a new source file and then runs the build command. The build fails with a message that a variable name is misspelled. The agent reads that message, which is new information it did not have when it wrote the code, fixes the spelling, and builds again. The second build succeeds. You asked for none of those steps individually; the agent chose them to reach the goal you stated. This is also why agents can fail in more interesting ways than a chat: a wrong step early in the loop can carry through everything that follows.</p>
 <p>The loop is the key idea. An agent receives a request, works out a plan, takes an action with a tool, observes the result, and repeats until the task is done or it needs you. The MicroSim below lets you step through that loop. Before you use it, here are the stage names it shows, each explained in the sections that follow: the request, clarifying questions, the plan, tool use, the report, and human review. A <strong>permission check</strong> is a moment when the agent stops and asks you to approve an action before it runs.</p>
 <h4 id="diagram-ai-coding-agent-loop-stepper">Diagram: AI Coding Agent Loop Stepper<a class="headerlink" href="#diagram-ai-coding-agent-loop-stepper" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/ai-coding-agent-loop-stepper/main.html" height="664px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/ai-coding-agent-loop-stepper/main.html" height="644px" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="../../sims/ai-coding-agent-loop-stepper/main.html">Run the AI Coding Agent Loop Stepper MicroSim Fullscreen</a></p>
 <details>
@@ -2519,7 +2527,7 @@ A common trap is clicking "allow" on every permission prompt to make the interru
 <p>A worked example: an agent writes a delay feature and reports, "Delayed capture works correctly." What did it check? If it ran an automated test that captures after a one-second delay and compared the timing, that is evidence. If it only wrote the code and re-read it, the sentence is a hope. Several acceptance tests in the ScreenGrab case study still had to be run by hand, because only a person at the keyboard could see whether the real screen grab behaved.</p>
 <p>The following MicroSim lets you practice the habit this chapter recommends: separating what an agent claims from what it showed. Each claim in a short report comes with the evidence the agent provided, and you decide whether the claim is supported.</p>
 <h4 id="diagram-claim-and-evidence-checker">Diagram: Claim and Evidence Checker<a class="headerlink" href="#diagram-claim-and-evidence-checker" title="Permanent link">&para;</a></h4>
-<iframe src="../../sims/agent-claim-evidence-checker/main.html" height="532px" width="100%" scrolling="no"></iframe>
+<iframe src="../../sims/agent-claim-evidence-checker/main.html" height="538px" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="../../sims/agent-claim-evidence-checker/main.html">Run the Claim and Evidence Checker MicroSim Fullscreen</a></p>
 <details>

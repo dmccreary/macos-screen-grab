@@ -1,4 +1,5 @@
 // Vendor Incentive Explorer
+// CANVAS_HEIGHT: 589
 // Eight illustrative vendor decisions in fixed order, one attempt each.
 // The learner attributes each decision to the pricing model whose incentives
 // make it more likely: one-time license or subscription license.

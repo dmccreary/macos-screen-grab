@@ -1,4 +1,5 @@
 // Design Trade-Off Judge
+// CANVAS_HEIGHT: 521
 // Evaluate level: for each of 8 illustrative ScreenGrab design decisions the
 // learner judges which of two options better serves the stated priority.
 // Eight decisions, fixed order, one attempt each. Mastery is 6 of 8.

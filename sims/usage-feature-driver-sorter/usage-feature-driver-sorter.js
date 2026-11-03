@@ -1,4 +1,5 @@
 // Why Features Get Added Sorter MicroSim
+// CANVAS_HEIGHT: 550
 // Assign each of eight illustrative situations to one of four reasons a
 // vendor adds a feature. One attempt per situation, fixed order.
 // Mastery is 7 of 8.

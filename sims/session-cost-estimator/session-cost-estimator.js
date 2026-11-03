@@ -1,4 +1,5 @@
 // Session Cost Estimator
+// CANVAS_HEIGHT: 692
 // Other new tokens = new tokens including output - output tokens
 // Cost per type    = tokens x price / 1,000,000
 // Total            = output cost + other new cost + cache read cost

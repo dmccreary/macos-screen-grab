@@ -1,4 +1,5 @@
 // Total Cost of Ownership Calculator
+// CANVAS_HEIGHT: 676
 // TCO = P + n x f x y + m x r x y + L x r, rounded to the nearest dollar.
 //   P = purchase or build cost, n = computers, f = annual fee per computer,
 //   y = years, m = maintenance hours per year, r = value of an hour,

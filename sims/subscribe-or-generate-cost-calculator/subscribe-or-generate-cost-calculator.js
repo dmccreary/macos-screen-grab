@@ -1,4 +1,5 @@
 // Subscribe or Generate Cost Calculator
+// CANVAS_HEIGHT: 748
 // Subscribe cost = computers x fee x years
 // Generate cost  = build cost + years x (maintenance hours x time value + sessions x session cost)
 // Break-even maintenance hours per year (shown only when time value > 0)

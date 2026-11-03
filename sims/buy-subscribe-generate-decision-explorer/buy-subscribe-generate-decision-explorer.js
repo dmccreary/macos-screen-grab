@@ -1,4 +1,5 @@
 // Buy, Subscribe, or Generate Decision Explorer
+// CANVAS_HEIGHT: 629
 // Eight illustrative scenarios in fixed order, one attempt each.
 // The learner picks Buy, Subscribe, or Generate, confirms, and sees the Why text.
 

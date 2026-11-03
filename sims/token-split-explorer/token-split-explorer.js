@@ -1,4 +1,5 @@
 // Token Split Explorer
+// CANVAS_HEIGHT: 659
 // The learner predicts the token count of five short texts, reveals an
 // illustrative split, then names the text the four-characters-per-token rule
 // underestimates by more than 50%. Splits are illustrative, not a real tokenizer.

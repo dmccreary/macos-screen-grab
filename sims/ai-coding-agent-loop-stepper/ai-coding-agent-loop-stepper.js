@@ -1,4 +1,5 @@
 // AI Coding Agent Loop Stepper
+// CANVAS_HEIGHT: 640
 // Understand level: the learner explains the order of the seven stages an AI
 // coding agent moves through by predicting the next stage at each of six steps.
 // Step-through with Previous/Next; each prediction is locked in before the
@@ -444,8 +445,7 @@ function drawSummary(y) {
   const mastered = correctCount >= MASTERY;
   textSize(16);
   const msg = mastered ? 'You can explain the loop' : 'Mastery is 5 of 6. Press Restart to try again.';
-  const loopL = wrapLines('After stage 7 the loop can return to stage 1 with a new or refined prompt.', w - 30);
-  const h = 40 + 24 + loopL.length * 22 + 10;
+  const h = 40 + 24 + 6;
   fill(mastered ? '#e8f5e9' : '#fff8e1');
   stroke(mastered ? '#2e7d32' : '#f9a825');
   strokeWeight(2);
@@ -459,8 +459,6 @@ function drawSummary(y) {
   textStyle(NORMAL);
   textSize(16);
   text(msg, margin + 15, y + 38);
-  fill('#6a1b9a');
-  drawLines(loopL, margin + 15, y + 62, 22);
   y += h + 12;
 
   // The seven stages in order, with the permission checks and human review marked
@@ -470,23 +468,35 @@ function drawSummary(y) {
   text('The seven stages in order', margin, y);
   textStyle(NORMAL);
   y += 24;
-  const twoCol = w >= 680;
-  const colW = twoCol ? w / 2 : w;
+  // Stages 1-4 in the left column and 5-7 in a right-aligned column, but only
+  // when both columns fit side by side; otherwise one column of seven rows.
   textSize(15);
+  const entries = stages.map((st, i) => {
+    let mark = '';
+    if (st.permission) mark = '  (permission check first)';
+    if (i === 6) mark = '  (person checks the report)';
+    const base = (i + 1) + '. ' + st.name;
+    textStyle(BOLD);
+    const markW = textWidth(mark);
+    textStyle(NORMAL);
+    return { base, mark, width: textWidth(base) + markW };
+  });
+  const leftW = Math.max(...entries.slice(0, 4).map(e => e.width));
+  // Pad the right column: bold text draws a little wider than textWidth reports.
+  const rightW = Math.max(...entries.slice(4).map(e => e.width)) + 20;
+  const twoCol = leftW + 24 + rightW <= w;
   for (let i = 0; i < 7; i++) {
+    const e = entries[i];
     const col = twoCol && i >= 4 ? 1 : 0;
-    const row = twoCol ? (i >= 4 ? i - 4 : i) : i;
-    const x = margin + col * colW;
+    const row = col ? i - 4 : i;
+    const x = col ? margin + w - rightW : margin;
     const ty = y + row * 22;
     fill('#222');
-    const base = (i + 1) + '. ' + stages[i].name;
-    text(base, x, ty);
-    let mark = '';
-    if (stages[i].permission) { mark = '  (permission check first)'; fill('#c62828'); }
-    if (i === 6) { mark = '  (the person checks the report)'; fill('#2e7d32'); }
-    if (mark) {
+    text(e.base, x, ty);
+    if (e.mark) {
+      fill(stages[i].permission ? '#c62828' : '#2e7d32');
       textStyle(BOLD);
-      text(mark, x + textWidth(base), ty);
+      text(e.mark, x + textWidth(e.base), ty);
       textStyle(NORMAL);
     }
   }

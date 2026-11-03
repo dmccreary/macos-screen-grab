@@ -1,4 +1,5 @@
 // Feature Growth and Usage Explorer
+// CANVAS_HEIGHT: 599
 // Illustrative model: F(v) = 6 + 4 x (v - 1); a user uses min(wanted, F(v)).
 // Learners explore with the version slider and user-type select, then
 // complete three challenges (two attempts each) calculating the unused share.
