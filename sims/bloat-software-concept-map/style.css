@@ -1,0 +1,81 @@
+/* Software Vocabulary Concept Map - vis-network MicroSim
+   Layout: concept map on top (full width), definition card and matching quiz below.
+   Fixed height so the iframe never shows a scrollbar. */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #1f2937;
+    background: #ffffff;
+}
+
+#app { width: 100%; height: 800px; display: flex; flex-direction: column; }
+
+#prompt {
+    padding: 8px 12px 4px; background: aliceblue;
+    font-size: 16px; font-weight: bold; color: #1e3a8a;
+}
+#map-wrap { position: relative; height: 390px; background: aliceblue; border-bottom: 1px solid #cbd5e1; }
+#network { width: 100%; height: 100%; }
+
+#panels { flex: 1; display: flex; gap: 12px; padding: 10px 12px; background: #f8fafc; min-height: 0; }
+
+.card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 15px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+}
+.card h3 { font-size: 16px; color: #1e3a8a; margin-bottom: 6px; }
+.card p { margin-bottom: 6px; }
+.hint { color: #475569; }
+.links { margin: 4px 0 0 18px; }
+.links li { margin-bottom: 2px; }
+
+.item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.item-num { font-weight: bold; color: #1e3a8a; }
+.tag {
+    font-size: 14px; color: #6b21a8; background: #f3e8ff; border: 1px solid #a855f7;
+    border-radius: 10px; padding: 0 8px;
+}
+.desc { font-weight: bold; margin: 6px 0 8px; }
+
+.terms { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.term {
+    font-family: inherit; font-size: 15px; text-align: left;
+    padding: 6px 8px; border: 1px solid #94a3b8; border-radius: 5px;
+    background: #f1f5f9; color: #1f2937; cursor: pointer;
+}
+.term:hover:enabled { background: #e0e7ff; border-color: #4338ca; }
+.term:disabled { cursor: default; }
+.term.picked-wrong { background: #fee2e2; border-color: #b91c1c; }
+.term.is-correct { background: #dcfce7; border-color: #15803d; font-weight: bold; }
+
+.feedback { margin-top: 8px; padding: 6px 10px; border-radius: 5px; font-size: 15px; }
+.feedback.ok { background: #dcfce7; color: #14532d; }
+.feedback.bad { background: #fee2e2; color: #7f1d1d; }
+
+.row { margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.btn {
+    font-family: inherit; font-size: 15px; padding: 6px 14px;
+    border: 1px solid #1e40af; border-radius: 5px; background: #1e40af; color: #ffffff; cursor: pointer;
+}
+.btn:hover { background: #1e3a8a; }
+.btn.secondary { background: #ffffff; color: #1e40af; }
+.btn.secondary:hover { background: #e0e7ff; }
+.score { font-weight: bold; }
+.mastery { color: #15803d; font-weight: bold; }
+
+@media (max-width: 640px) {
+    #app { height: auto; }
+    #panels { flex-direction: column; }
+}

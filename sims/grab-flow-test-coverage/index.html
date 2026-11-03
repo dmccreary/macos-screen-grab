@@ -212,6 +212,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -757,7 +759,7 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -902,7 +904,7 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -1172,7 +1174,7 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -1191,7 +1193,7 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -1213,6 +1215,24 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#specification" class="md-nav__link">
@@ -1287,7 +1307,7 @@
     
   
   
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
+    <span class="md-status md-status--built" title="Built — implementation complete, awaiting review">
     </span>
   
 
@@ -1780,7 +1800,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1797,6 +1819,24 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#specification" class="md-nav__link">
@@ -1840,9 +1880,25 @@
 
 
 <h1 id="screengrab-grab-flow-test-coverage">ScreenGrab Grab Flow Test Coverage<a class="headerlink" href="#screengrab-grab-flow-test-coverage" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" width="100%" height="690" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run MicroSim in Fullscreen</a></p>
+<h2 id="how-to-use-this-microsim">How to Use This MicroSim<a class="headerlink" href="#how-to-use-this-microsim" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Explore:</strong> click any of the seven steps of a grab to read what happens. The label on each arrow says what that step hands to the next one.</li>
+<li><strong>Judge:</strong> for each step, choose <em>Automated can confirm</em> or <em>Only a person can confirm</em>. You get one attempt per step, in any order.</li>
+<li><strong>Read the feedback:</strong> each judgment shows the answer and the reason. Answered steps turn green when you matched and red when you did not.</li>
+<li><strong>Score:</strong> after the seventh judgment the panel shows <em>Matched: n of 7</em>, with <em>Mastery</em> at 6 or more. The fills switch to show the answer: orange steps need a person, blue steps can be automated. The badges still show which ones you matched. Press <strong>Reset</strong> to start again.</li>
+</ul>
+<h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<p><strong>Grade level:</strong> Undergraduate or adult learners. <strong>Time:</strong> 12 minutes.</p>
+<ol>
+<li><strong>Predict (2 min).</strong> Ask learners whether a test suite that covers most steps of a grab proves the whole grab works.</li>
+<li><strong>Judge (6 min).</strong> Learners judge all seven steps. Mastery is 6 of 7.</li>
+<li><strong>Look at the pattern (2 min).</strong> After scoring, the orange steps are the first, fourth, and last. Automation covers the middle of the chain, not its two ends or the real capture.</li>
+<li><strong>Discuss (2 min).</strong> Ask what a person must actually do to confirm steps 1, 4, and 7, and why the hotkey test does not cover the real key press.</li>
+</ol>
+<p><strong>Misconceptions to watch for:</strong> if most steps are automated, the whole flow is verified; the key press itself is covered by the hotkey tests.</p>
 <h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h2>
 <p>The full specification below is extracted from
 <a href="../../chapters/12-software-testing/">Chapter 12: Software Testing: Automated and Manual</a>.</p>
@@ -1915,6 +1971,8 @@
   
 
 
+  
+
 
 
                 
@@ -1936,6 +1994,8 @@
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         

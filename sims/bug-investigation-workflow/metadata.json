@@ -15,9 +15,11 @@
   "library": "Mermaid",
   "bloomLevel": "Remember",
   "bloomVerb": "identify",
-  "completion_status": "scaffold",
+  "completion_status": "built",
   "chapter_number": 13,
   "chapter_title": "Bugs, Evidence, and Verification Plans",
   "chapter_dir": "13-bugs-evidence-verification",
-  "chapter_rel_dir": "chapters/13-bugs-evidence-verification"
+  "chapter_rel_dir": "chapters/13-bugs-evidence-verification",
+  "library_version": "mermaid 11.4.1",
+  "iframe_height": 680
 }

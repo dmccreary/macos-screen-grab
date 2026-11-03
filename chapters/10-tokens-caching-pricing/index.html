@@ -2090,6 +2090,9 @@ A model never sees your sentence; it sees a numbered list of fragments. Every pr
 <p>ScreenGrab has about 2,000 lines of Swift in its app code. If a line of Swift averages roughly 10 tokens (an illustrative figure, since code varies), the finished app code is about 20,000 tokens. Yet the first install stage in the course description used about 206,000 output tokens. The gap is not waste. Output tokens also include the agent's reasoning, the tests, the scripts, the specification, the README, and every draft that was rewritten. The finished files are only a fraction of what the model wrote on the way there.</p>
 <p>Try the estimate yourself before the sim reveals the answers.</p>
 <h4 id="diagram-token-split-explorer">Diagram: Token Split Explorer<a class="headerlink" href="#diagram-token-split-explorer" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/token-split-explorer/main.html" height="662px" width="100%" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/token-split-explorer/main.html">Run the Token Split Explorer MicroSim Fullscreen</a></p>
 <details>
 <summary>Token Split Explorer</summary>
 <p>Type: microsim
@@ -2317,6 +2320,9 @@ After a long pause, look at the next usage report. If cache reads are near zero 
 <p>The ScreenGrab session had 325,000 output tokens, 825,000 other new tokens (1.15 million new minus 325,000 output), and 18.9 million cache reads. Then <span class="arithmatex">\( C = (325{,}000 \times 20 + 825{,}000 \times 5 + 18{,}900{,}000 \times 0.20) / 1{,}000{,}000 = 6.50 + 4.13 + 3.78 \)</span> = $14.41, which the course description rounds to about $14.</p>
 <p>The next sim lets you change the context size and number of turns and see how the totals move.</p>
 <h4 id="diagram-prompt-cache-cost-calculator">Diagram: Prompt Cache Cost Calculator<a class="headerlink" href="#diagram-prompt-cache-cost-calculator" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/prompt-cache-cost-calculator/main.html" height="622px" width="100%" scrolling="no"></iframe>
+
+<p><a class="md-button md-button--primary" href="../../sims/prompt-cache-cost-calculator/main.html">Run the Prompt Cache Cost Calculator MicroSim Fullscreen</a></p>
 <details>
 <summary>Prompt Cache Cost Calculator</summary>
 <p>Type: microsim

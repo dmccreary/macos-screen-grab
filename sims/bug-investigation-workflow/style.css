@@ -83,6 +83,9 @@ html, body {
 .feedback.ok { background: #dcfce7; color: #14532d; }
 .feedback.bad { background: #fee2e2; color: #7f1d1d; }
 
+.note { background: #fef9c3; border: 1px solid #ca8a04; border-radius: 6px; padding: 8px 10px; font-size: 15px; line-height: 1.4; color: #422006; }
+.note[hidden] { display: none; }
+
 .footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 #score { font-size: 15px; font-weight: bold; color: #1f2937; }
 #reset {
@@ -91,13 +94,13 @@ html, body {
 }
 #reset:hover { background: #e2e8f0; }
 
-/* Node states in the Mermaid SVG (override classDef inline fills) */
+/* Node states are painted inline by the script (Mermaid uses inline !important) */
 #diagram .node { cursor: pointer; }
 #diagram .node:hover rect, #diagram .node:hover polygon { filter: brightness(0.93); }
 #diagram .node.st-selected rect, #diagram .node.st-selected polygon { stroke: #111827 !important; stroke-width: 4px !important; }
 #diagram .node.st-correct rect, #diagram .node.st-correct polygon { fill: #bbf7d0 !important; stroke: #15803d !important; }
 #diagram .node.st-wrong rect, #diagram .node.st-wrong polygon { fill: #fecaca !important; stroke: #b91c1c !important; }
-#diagram .mark { font-size: 20px; font-weight: bold; pointer-events: none; }
+#diagram .mark { font-size: 16px; font-weight: bold; pointer-events: none; }
 
 .error { color: #b91c1c; font-size: 15px; padding: 12px; }
 

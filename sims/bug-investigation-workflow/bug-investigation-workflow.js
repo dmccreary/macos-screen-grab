@@ -94,6 +94,40 @@ const DIAGRAM = `flowchart TD
     linkStyle default stroke:#475569,stroke-width:2px`;
 
 // ---------------------------------------------------------------------------
+// Sim-specific behavior (the engine below is shared by the Mermaid sims)
+// ---------------------------------------------------------------------------
+const RENDER_ID = 'bugflow';
+const PROMPT = 'What does this step produce?';
+const START_HINT = 'Click a step in the flowchart to begin. Each step gives you one attempt.';
+const COMPLETION_NOTE = 'Look at the flowchart again: step 3 sends the process down one of two paths, and both paths end in written evidence.';
+
+// Rules: the order of the three choices is shuffled once per visit.
+function choicesFor(id) {
+    return shuffle([STEPS[id].correct].concat(STEPS[id].wrong));
+}
+
+function isCorrect(id, choice) { return choice === STEPS[id].correct; }
+
+function correctChoice(id) { return STEPS[id].correct; }
+
+function feedbackText(step, ans) {
+    return ans.correct
+        ? `Correct. ${step.reason}`
+        : `Not quite: this step produces ${lowerFirst(step.correct)}. ${step.reason}`;
+}
+
+function scoreText(done, score) {
+    if (done < TOTAL) return `Answered: ${done} of ${TOTAL}`;
+    return `Correct: ${score} of ${TOTAL}` +
+        (score >= MASTERY ? ' — mastery reached' : ` — mastery is ${MASTERY} of ${TOTAL}; press Reset to try again`);
+}
+
+function nodeState(id) {
+    const a = answers[id];
+    return a ? (a.correct ? 'correct' : 'wrong') : null;
+}
+
+// ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
 let answers = {};        // id -> { picked, correct }
@@ -114,10 +148,7 @@ function newVisit() {
     answers = {};
     selectedId = null;
     choiceOrder = {};
-    // Shuffled once per visit (rules): order stays fixed until Reset.
-    Object.keys(STEPS).forEach(id => {
-        choiceOrder[id] = shuffle([STEPS[id].correct].concat(STEPS[id].wrong));
-    });
+    Object.keys(STEPS).forEach(id => { choiceOrder[id] = choicesFor(id); });
 }
 
 // ---------------------------------------------------------------------------
@@ -133,7 +164,7 @@ async function renderDiagram() {
             flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis', nodeSpacing: 30, rankSpacing: 36, padding: 10 },
             themeVariables: { fontSize: '16px', fontFamily: 'Arial, Helvetica, sans-serif' }
         });
-        const { svg } = await mermaid.render('bugflow', DIAGRAM);
+        const { svg } = await mermaid.render(RENDER_ID, DIAGRAM);
         host.innerHTML = svg;
     } catch (err) {
         host.innerHTML = '<p class="error">The diagram could not be drawn.</p>';
@@ -182,23 +213,40 @@ function paintNode(g, state, selected) {
     });
 }
 
+// A drawn badge (not a text glyph) so it never falls back to an emoji font.
+function makeMark(cx, cy, ok) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const m = document.createElementNS(NS, 'g');
+    m.setAttribute('class', 'mark');
+    m.setAttribute('transform', `translate(${cx},${cy})`);
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('r', '10');
+    c.style.setProperty('fill', ok ? '#15803d' : '#b91c1c', 'important');
+    c.style.setProperty('stroke', '#ffffff', 'important');
+    c.style.setProperty('stroke-width', '2px', 'important');
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', ok ? 'M-5,0 L-1.5,4 L5,-4' : 'M-4,-4 L4,4 M4,-4 L-4,4');
+    p.style.setProperty('fill', 'none', 'important');
+    p.style.setProperty('stroke', '#ffffff', 'important');
+    p.style.setProperty('stroke-width', '2.5px', 'important');
+    p.style.setProperty('stroke-linecap', 'round');
+    m.appendChild(c);
+    m.appendChild(p);
+    const title = document.createElementNS(NS, 'title');
+    title.textContent = ok ? 'Answered correctly' : 'Answered incorrectly';
+    m.appendChild(title);
+    return m;
+}
+
 function applyNodeStates() {
     Object.entries(nodeEls).forEach(([id, g]) => {
         const a = answers[id];
-        paintNode(g, a ? (a.correct ? 'correct' : 'wrong') : null, id === selectedId);
+        paintNode(g, nodeState(id), id === selectedId);
         const old = g.querySelector('.mark');
         if (old) old.remove();
         if (a) {
             const box = g.getBBox();
-            const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            t.setAttribute('class', 'mark');
-            t.setAttribute('x', box.x + box.width - 7);
-            t.setAttribute('y', box.y + 5);
-            t.setAttribute('text-anchor', 'end');
-            t.setAttribute('dominant-baseline', 'hanging');
-            t.style.setProperty('fill', a.correct ? '#15803d' : '#b91c1c', 'important');
-            t.textContent = a.correct ? '\u2713' : '\u2717';
-            g.appendChild(t);
+            g.appendChild(makeMark(box.x + box.width - 2, box.y + 2, a.correct));
         }
     });
 }
@@ -223,7 +271,7 @@ function renderCard() {
     const card = document.getElementById('card');
     card.innerHTML = '';
     if (!selectedId) {
-        card.appendChild(el('p', 'hint', 'Click a step in the flowchart to begin. Each step gives you one attempt.'));
+        card.appendChild(el('p', 'hint', START_HINT));
         return;
     }
     if (INFO_NODES[selectedId]) {
@@ -236,14 +284,14 @@ function renderCard() {
     const step = STEPS[selectedId];
     card.appendChild(el('h3', null, `Step ${step.num}: ${step.title}`));
     card.appendChild(el('p', null, step.description));
-    card.appendChild(el('p', 'prompt', 'What does this step produce?'));
+    card.appendChild(el('p', 'prompt', PROMPT));
     const ans = answers[selectedId];
     choiceOrder[selectedId].forEach(choice => {
         const b = el('button', 'choice', choice);
         b.type = 'button';
         if (ans) {
             b.disabled = true;
-            if (choice === step.correct) b.classList.add('is-correct');
+            if (choice === correctChoice(selectedId)) b.classList.add('is-correct');
             else if (choice === ans.picked) b.classList.add('picked-wrong');
         } else {
             b.addEventListener('click', () => pick(selectedId, choice));
@@ -251,9 +299,7 @@ function renderCard() {
         card.appendChild(b);
     });
     if (ans) {
-        const fb = ans.correct
-            ? el('div', 'feedback ok', `Correct. ${step.reason}`)
-            : el('div', 'feedback bad', `Not quite: this step produces ${lowerFirst(step.correct)}. ${step.reason}`);
+        const fb = el('div', ans.correct ? 'feedback ok' : 'feedback bad', feedbackText(step, ans));
         fb.setAttribute('role', 'status');
         card.appendChild(fb);
     }
@@ -263,7 +309,7 @@ function lowerFirst(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
 
 function pick(id, choice) {
     if (answers[id]) return;               // one attempt per step
-    answers[id] = { picked: choice, correct: choice === STEPS[id].correct };
+    answers[id] = { picked: choice, correct: isCorrect(id, choice) };
     applyNodeStates();
     renderCard();
     updateScore();
@@ -273,12 +319,11 @@ function updateScore() {
     const done = Object.keys(answers).length;
     const score = Object.values(answers).filter(a => a.correct).length;
     const s = document.getElementById('score');
-    if (done < TOTAL) {
-        s.textContent = `Answered: ${done} of ${TOTAL}`;
-    } else {
-        s.textContent = `Correct: ${score} of ${TOTAL}` +
-            (score >= MASTERY ? ' — mastery reached' : ` — mastery is ${MASTERY} of ${TOTAL}; press Reset to try again`);
-    }
+    s.textContent = scoreText(done, score);
+    const note = document.getElementById('note');
+    note.textContent = done === TOTAL ? COMPLETION_NOTE : '';
+    note.hidden = done !== TOTAL;
+    applyNodeStates();
 }
 
 function reset() {
