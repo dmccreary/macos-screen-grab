@@ -166,8 +166,8 @@ nav:
 theme:
   name: material
   # Once a logo is generated, point this at docs/img/logo.png or a mascot pose:
-  # logo: img/logo.png
-  # favicon: img/favicon.ico
+  logo: img/mascot/neutral.png
+  favicon: img/favicon.ico
   palette:
     primary: 'indigo'
     accent: 'orange'
@@ -285,7 +285,7 @@ extra:
   textbook_name: 'ScreenGrab: Software Bloat and the Generated Alternative'
   textbook_version: '0.1'
 
-  # Google Analytics — uncomment once a property ID exists:
-  # analytics:
-  #   provider: google
-  #   property: G-XXXXXXXXXX
+  # Google Analytics (GA4)
+  analytics:
+    provider: google
+    property: G-VS8ZY281P0
